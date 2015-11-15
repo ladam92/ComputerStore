@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+  <xs:element name="ProcFoglalat_GetKategoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcFoglalat_GetKategoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriakResult" nillable="true" type="q1:ArrayOfProcesszorFoglalatTipus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MemoriaFoglalat_GetKaegoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MemoriaFoglalat_GetKaegoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKaegoriakResult" nillable="true" type="q2:ArrayOfMemoriaTipus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsbTipus_GetKaegoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsbTipus_GetKaegoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKaegoriakResult" nillable="true" type="q3:ArrayOfUsbTipus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HattertatTipus_GetKaegoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HattertatTipus_GetKaegoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKaegoriakResult" nillable="true" type="q4:ArrayOfHattertarTipus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HattertatCsatoloTipus_GetKaegoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HattertatCsatoloTipus_GetKaegoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKaegoriakResult" nillable="true" type="q5:ArrayOfHattertarCsatoloTipus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitorFelbontasTipus_GetKaegoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitorFelbontasTipus_GetKaegoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKaegoriakResult" nillable="true" type="q6:ArrayOfMonitorFelbontas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitorMeretTipus_GetKaegoriak">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitorMeretTipus_GetKaegoriakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKaegoriakResult" nillable="true" type="q7:ArrayOfMonitorMeret" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Alaplap_GetByFoglalatID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Alaplap_GetByFoglalatIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetByFoglalatIDResult" nillable="true" type="q8:ArrayOfAlaplap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

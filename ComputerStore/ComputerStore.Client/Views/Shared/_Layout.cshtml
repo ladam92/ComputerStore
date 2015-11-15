@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 15px;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ComputerStore", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Főoldal", "Index", "Home")</li>
+    <li>@Html.ActionLink("Rólunk", "About", "Home")</li>
+    <li>@Html.ActionLink("Elérhetőség", "Contact", "Home")</li>*@
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+     <div class="container">
+
+        <div class="container body-content">
+            <div class="row">
+                @if (ComputerStore.Client.Utils.SessionData.Instance.ShowCategories)
+                {
+                    <div class="col-md-3" id="MainMenu">
+                        <p class="lead">Kategóriák</p>
+                        <div class="list-group panel">
+                            <a href="#alaplapKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Alaplap<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="alaplapKat">
+                                <a href="#procFoglalat" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#alaplapKat">Processzor foglalat<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="procFoglalat">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.ProcList)
+                                    {
+                                        <a href="@Url.Action("GetByFoglalat", "Alaplap", new { procFoglalatId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                                <a href="#memoriaFoglalat" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#alaplapKat">Memória foglalat<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="memoriaFoglalat">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MemList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                            </div>
+                            <a href="#billKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Billentyűzet<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="billKat">
+                                <a href="#usbTipusBill" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#billKat">USB típus<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="usbTipusBill">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.UsbList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                                <a href="#" class="list-group-item list-group-submenu">PS/2</a>
+                            </div>
+                            <a href="#egerKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Egér<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="egerKat">
+                                <a href="#usbTipusEger" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#egerKat">USB típus<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="usbTipusEger">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.UsbList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                                <a href="#" class="list-group-item list-group-submenu">PS/2</a>
+                            </div>
+                            <a href="#hattertarKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Háttértár<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="hattertarKat">
+                                <a href="#hattertarTipus" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#hattertarKat">Háttértár típus<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="hattertarTipus">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.HattertarList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                                <a href="#hattertarCsatolo" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#hattertarKat">Csatoló felület<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="hattertarCsatolo">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.HattertarCsatoloList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                            </div>
+                            <a href="#memoriaKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Memória<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="memoriaKat">
+                                <a href="#memoriaFoglalat2" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#memoriaKat">Memória foglalat<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="memoriaFoglalat2">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MemList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                            </div>
+                            <a href="#monitorKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Monitor<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="monitorKat">
+                                <a href="#monitorMeretTipus" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#monitorKat">Monitor méret<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="monitorMeretTipus">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MonitorMeretList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@String.Concat(item.Megnevezes, "\"")</a>
+                                    }
+                                </div>
+                                <a href="#monitorFelbontas" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#monitorKat">Monitor felbontás<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="monitorFelbontas">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MonitorFelbontasList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                            </div>
+                            <a href="#procKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Processzor<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <div class="collapse submenu" id="procKat">
+                                <a href="#procTipus2" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#procKat">Foglalat típusa<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                                <div class="collapse submenu" id="procTipus2">
+                                    @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.ProcList)
+                                    {
+                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                    }
+                                </div>
+                            </div>
+                            <a href="#" class="list-group-item">Számítógép-ház</a>
+                            <a href="#" class="list-group-item">Tápegység</a>
+                            <a href="#" class="list-group-item">Videókártya</a>
+                        </div>
+                    </div>
+                }
+                <div class="col-md-9">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ComputerStore</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/css")
+</body>
+</html>

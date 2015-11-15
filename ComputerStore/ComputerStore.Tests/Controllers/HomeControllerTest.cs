@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ComputerStore;
-using ComputerStore.Controllers;
+using ComputerStore.Client;
+using ComputerStore.Client.Controllers;
 
 namespace ComputerStore.Tests.Controllers
 {

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProcesszorFoglalatTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcesszorFoglalatTipus" nillable="true" type="tns:ProcesszorFoglalatTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcesszorFoglalatTipus" nillable="true" type="tns:ArrayOfProcesszorFoglalatTipus" />
+  <xs:complexType name="ProcesszorFoglalatTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcesszorFoglalatTipus" nillable="true" type="tns:ProcesszorFoglalatTipus" />
+  <xs:complexType name="AlkatreszTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlkatreszTipus" nillable="true" type="tns:AlkatreszTipus" />
+  <xs:complexType name="ArrayOfMemoriaTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemoriaTipus" nillable="true" type="tns:ArrayOfMemoriaTipus" />
+  <xs:complexType name="MemoriaTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
+  <xs:complexType name="ArrayOfUsbTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsbTipus" nillable="true" type="tns:UsbTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsbTipus" nillable="true" type="tns:ArrayOfUsbTipus" />
+  <xs:complexType name="UsbTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UsbTipus" nillable="true" type="tns:UsbTipus" />
+  <xs:complexType name="ArrayOfHattertarTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HattertarTipus" nillable="true" type="tns:HattertarTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHattertarTipus" nillable="true" type="tns:ArrayOfHattertarTipus" />
+  <xs:complexType name="HattertarTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HattertarTipus" nillable="true" type="tns:HattertarTipus" />
+  <xs:complexType name="ArrayOfHattertarCsatoloTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HattertarCsatoloTipus" nillable="true" type="tns:HattertarCsatoloTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHattertarCsatoloTipus" nillable="true" type="tns:ArrayOfHattertarCsatoloTipus" />
+  <xs:complexType name="HattertarCsatoloTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HattertarCsatoloTipus" nillable="true" type="tns:HattertarCsatoloTipus" />
+  <xs:complexType name="ArrayOfMonitorFelbontas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonitorFelbontas" nillable="true" type="tns:MonitorFelbontas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonitorFelbontas" nillable="true" type="tns:ArrayOfMonitorFelbontas" />
+  <xs:complexType name="MonitorFelbontas">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MonitorFelbontas" nillable="true" type="tns:MonitorFelbontas" />
+  <xs:complexType name="ArrayOfMonitorMeret">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonitorMeret" nillable="true" type="tns:MonitorMeret" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonitorMeret" nillable="true" type="tns:ArrayOfMonitorMeret" />
+  <xs:complexType name="MonitorMeret">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MonitorMeret" nillable="true" type="tns:MonitorMeret" />
+  <xs:complexType name="ArrayOfAlaplap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Alaplap" nillable="true" type="tns:Alaplap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlaplap" nillable="true" type="tns:ArrayOfAlaplap" />
+  <xs:complexType name="Alaplap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FoglalatID" type="xs:int" />
+      <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Leiras" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemoriaDarab" type="xs:int" />
+      <xs:element minOccurs="0" name="MemoriaFoglalat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemoriaFoglalatID" type="xs:int" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VGADarab" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Alaplap" nillable="true" type="tns:Alaplap" />
+</xs:schema>

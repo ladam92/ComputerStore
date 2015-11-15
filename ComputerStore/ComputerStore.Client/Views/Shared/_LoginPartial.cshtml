@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="@Url.Action("Index", "Manage")">Adatlapom <span class="glyphicon glyphicon-user" aria-hidden="true" /></a>
+            @*Html.ActionLink("Adatlapom", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+        </li>
+        <li><a href="javascript:#">Kosaram <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"/></a></li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Kijelentkezés <span class="glyphicon glyphicon-log-out" aria-hidden="true"/></a></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="@Url.Action("Register", "Account")">Regisztráció <span class="glyphicon glyphicon-user" aria-hidden="true" id="registerLink" /></a></li>
+        <li><a href="@Url.Action("Login", "Account")">Bejelentkezés <span class="glyphicon glyphicon-log-in" aria-hidden="true" id="loginLink" /></a></li>
+        @*<li>@Html.ActionLink("Regisztráció", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Bejelentkezés", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+    </ul>
+}

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Logic" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILogic_ProcFoglalat_GetKategoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcFoglalat_GetKategoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcFoglalat_GetKategoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcFoglalat_GetKategoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaFoglalat_GetKaegoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaFoglalat_GetKaegoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaFoglalat_GetKaegoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaFoglalat_GetKaegoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_UsbTipus_GetKaegoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsbTipus_GetKaegoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_UsbTipus_GetKaegoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsbTipus_GetKaegoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatTipus_GetKaegoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatTipus_GetKaegoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatTipus_GetKaegoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatTipus_GetKaegoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatCsatoloTipus_GetKaegoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_GetKaegoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatCsatoloTipus_GetKaegoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_GetKaegoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorFelbontasTipus_GetKaegoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_GetKaegoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorFelbontasTipus_GetKaegoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_GetKaegoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorMeretTipus_GetKaegoriak_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorMeretTipus_GetKaegoriak" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorMeretTipus_GetKaegoriak_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorMeretTipus_GetKaegoriakResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByFoglalatID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByFoglalatID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByFoglalatID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByFoglalatIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILogic">
+    <wsdl:operation name="ProcFoglalat_GetKategoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" message="tns:ILogic_ProcFoglalat_GetKategoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriakResponse" message="tns:ILogic_ProcFoglalat_GetKategoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MemoriaFoglalat_GetKaegoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriak" message="tns:ILogic_MemoriaFoglalat_GetKaegoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriakResponse" message="tns:ILogic_MemoriaFoglalat_GetKaegoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsbTipus_GetKaegoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/UsbTipus_GetKaegoriak" message="tns:ILogic_UsbTipus_GetKaegoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/UsbTipus_GetKaegoriakResponse" message="tns:ILogic_UsbTipus_GetKaegoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HattertatTipus_GetKaegoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatTipus_GetKaegoriak" message="tns:ILogic_HattertatTipus_GetKaegoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatTipus_GetKaegoriakResponse" message="tns:ILogic_HattertatTipus_GetKaegoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HattertatCsatoloTipus_GetKaegoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriak" message="tns:ILogic_HattertatCsatoloTipus_GetKaegoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriakResponse" message="tns:ILogic_HattertatCsatoloTipus_GetKaegoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorFelbontasTipus_GetKaegoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_GetKaegoriak" message="tns:ILogic_MonitorFelbontasTipus_GetKaegoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_GetKaegoriakResponse" message="tns:ILogic_MonitorFelbontasTipus_GetKaegoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorMeretTipus_GetKaegoriak">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriak" message="tns:ILogic_MonitorMeretTipus_GetKaegoriak_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriakResponse" message="tns:ILogic_MonitorMeretTipus_GetKaegoriak_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByFoglalatID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID" message="tns:ILogic_Alaplap_GetByFoglalatID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse" message="tns:ILogic_Alaplap_GetByFoglalatID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcFoglalat_GetKategoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemoriaFoglalat_GetKaegoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsbTipus_GetKaegoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/UsbTipus_GetKaegoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HattertatTipus_GetKaegoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertatTipus_GetKaegoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HattertatCsatoloTipus_GetKaegoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorFelbontasTipus_GetKaegoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_GetKaegoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorMeretTipus_GetKaegoriak">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriak" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByFoglalatID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Logic">
+    <wsdl:port name="BasicHttpBinding_ILogic" binding="tns:BasicHttpBinding_ILogic">
+      <soap:address location="http://localhost:51437/Logic.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

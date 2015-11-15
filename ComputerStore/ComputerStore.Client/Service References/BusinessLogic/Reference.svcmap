@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="10059563-2afa-4079-b98e-ae860619487b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="ComputerStore.DTO" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51437/Logic.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Logic.wsdl" MetadataType="Wsdl" ID="c3eadf4f-29ff-4846-8088-6ca077adbb79" SourceId="1" SourceUrl="http://localhost:51437/Logic.svc?wsdl" />
+    <MetadataFile FileName="Logic.xsd" MetadataType="Schema" ID="b9bc6c31-499a-48cb-a4f8-163205af549d" SourceId="1" SourceUrl="http://localhost:51437/Logic.svc?xsd=xsd2" />
+    <MetadataFile FileName="Logic1.xsd" MetadataType="Schema" ID="743551cb-c138-45ed-9df8-a8665f7c3352" SourceId="1" SourceUrl="http://localhost:51437/Logic.svc?xsd=xsd1" />
+    <MetadataFile FileName="Logic2.xsd" MetadataType="Schema" ID="70de421f-c4cd-480d-914c-6bb8f6bc23b6" SourceId="1" SourceUrl="http://localhost:51437/Logic.svc?xsd=xsd0" />
+    <MetadataFile FileName="Logic.disco" MetadataType="Disco" ID="5e3717dc-e0bc-42fd-a3e9-2f2284ed6b2b" SourceId="1" SourceUrl="http://localhost:51437/Logic.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

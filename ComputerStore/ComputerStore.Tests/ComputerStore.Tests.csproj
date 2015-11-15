@@ -92,8 +92,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ComputerStore\ComputerStore.Client.csproj">
-      <Project>{98BF29EA-C09F-42BD-9F13-522130F12825}</Project>
+    <ProjectReference Include="..\ComputerStore.Client\ComputerStore.Client.csproj">
+      <Project>{5bc1708d-3798-461c-a991-ecdf0a578bbc}</Project>
       <Name>ComputerStore.Client</Name>
     </ProjectReference>
   </ItemGroup>

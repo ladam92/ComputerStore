@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aba5d83ddcf440a2b10e4ff9d31ece40" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="ComputerStoreModel.alaplap" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.billentyuzet" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.cpu" Width="1.5" PointX="6" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.eger" Width="1.5" PointX="9" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.hattertar" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.memoria" Width="1.5" PointX="9" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.monitor" Width="1.5" PointX="6" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.szamitogep_haz" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.tapegyseg" Width="1.5" PointX="9" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.videokartya" Width="1.5" PointX="3" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.alaplap_hattertar" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.alaplap_usb" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.alkatresz_gyarto" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.cpu_frekvencia_mertekegyseg" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.hattertar_tipus" Width="1.5" PointX="0.75" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.hattertarolo_csatolo_tipus" Width="1.5" PointX="6" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.kepek" Width="1.5" PointX="0.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.memoria_foglalat_tipus" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.monitor_csatolo" Width="1.5" PointX="3.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.monitor_felbontas" Width="1.5" PointX="3.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.monitor_meret" Width="1.5" PointX="3.75" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.pci_express_tipus" Width="1.5" PointX="0.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.proc_foglalat_tipus" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.usb_tipus" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.vga_csatolo_felulet_tipus" Width="1.5" PointX="0.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComputerStoreModel.videokartya_monitor" Width="1.5" PointX="5.25" PointY="29.25" IsExpanded="true" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap__alkatre__7F80E8EA" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap__kep_id__04459E07" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap__memoria__0169315C" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap__pci_exp__035179CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap__proc_fo__00750D23" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap__vga_csa__025D5595" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap_h__alapl__0AF29B96" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap_u__alapl__07220AB2" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__billentyu__alkat__1FEDB87C" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__billentyu__kep_i__21D600EE" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__billentyu__usb_t__20E1DCB5" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__cpu__alkatresz_g__4CC05EF3" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__cpu__frekvencia___4DB4832C" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__cpu__kep_id__4F9CCB9E" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__cpu__proc_foglal__4EA8A765" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__eger__alkatresz___24B26D99" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__eger__kep_id__269AB60B" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__eger__usb_tipus___25A691D2" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__hattertar__alkat__5A1A5A11" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__hattertar__hatte__5B0E7E4A" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__hattertar__hatte__5C02A283" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__hattertar__kep_i__5CF6C6BC" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__memoria__alkatre__15702A09" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__memoria__kep_id__1758727B" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__memoria__memoria__16644E42" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__monitor__alkatre__3118447E" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__monitor__kep_id__34E8D562" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__monitor__monitor__320C68B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__monitor__monitor__33008CF0" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__monitor__monitor__33F4B129" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__szamitoge__alkat__52793849" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__szamitoge__kep_i__536D5C82" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__tapegyseg__alkat__5649C92D" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__tapegyseg__kep_i__573DED66" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__videokart__alkat__37C5420D" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__videokart__kep_i__39AD8A7F" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__videokart__memor__38B96646" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__videokart__video__3C89F72A" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap_h__hatte__0BE6BFCF" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__alaplap_u__usb_t__08162EEB" ManuallyRouted="false" />
+        <AssociationConnector Association="ComputerStoreModel.FK__videokart__monit__3D7E1B63" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
