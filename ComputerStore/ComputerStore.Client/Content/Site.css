@@ -113,12 +113,17 @@ footer {
     margin: 50px 0;
 }
 
-.list-group-item.list-group-submenu {
+.list-group-item{
   border: 1px solid #0083ff;
+  color: #0083ff;
+}
+
+.list-group-item.list-group-submenu {
+  border: 1px solid #009900;
   margin-left: 50px;
   text-align: center;
   margin-right: 20px;
-  color: #0083ff;
+  color: #009900;
 }
 
 .list-group-item.list-group-submenu:first-of-type {
@@ -132,11 +137,11 @@ footer {
 }
 
 .list-group-item.list-group-submenu2 {
-  border: 1px solid #009900;
+  border: 1px solid #FF3300;
   margin-left: 60px;
   text-align: center;
   margin-right: 30px;
-  color: #009900;
+  color: #FF3300;
 }
 
 .list-group-item.list-group-submenu2:first-of-type {
@@ -152,9 +157,10 @@ footer {
 }
 
 .thumbnail{
-    width: 250px;
-    height: 300px;
+    max-width: 250px;
+    max-height: 300px;
     word-wrap: break-word;
+    border: 1px solid #0083ff;
 }
 
 .thumbnail img{
@@ -173,4 +179,14 @@ pre{
     font-family: monospace;
     white-space: pre;
     margin: 1em 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+    background-color: #0083ff;
 }

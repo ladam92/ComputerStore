@@ -58,7 +58,7 @@ namespace ComputerStore.Client.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Jegyezz meg")]
         public bool RememberMe { get; set; }
     }
 

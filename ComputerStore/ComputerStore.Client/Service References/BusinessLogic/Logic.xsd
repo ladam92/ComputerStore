@@ -115,6 +115,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="FoglalatID" type="xs:int" />
       <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
       <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="Leiras" nillable="true" type="xs:string" />
