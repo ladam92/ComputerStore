@@ -58,10 +58,10 @@ namespace ComputerStore.Client.BusinessLogic {
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.MonitorMeret[]> MonitorMeretTipus_GetKaegoriakAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse")]
-        ComputerStore.DTO.Types.Alaplap[] Alaplap_GetByFoglalatID(int id);
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap[]> Alaplap_GetByFoglalatIDAsync(int id);
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByFoglalatIDAsync(int id, int pageNumber, int pageSize);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -147,12 +147,12 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.MonitorMeretTipus_GetKaegoriakAsync();
         }
         
-        public ComputerStore.DTO.Types.Alaplap[] Alaplap_GetByFoglalatID(int id) {
-            return base.Channel.Alaplap_GetByFoglalatID(id);
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize) {
+            return base.Channel.Alaplap_GetByFoglalatID(id, pageNumber, pageSize);
         }
         
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap[]> Alaplap_GetByFoglalatIDAsync(int id) {
-            return base.Channel.Alaplap_GetByFoglalatIDAsync(id);
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByFoglalatIDAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Alaplap_GetByFoglalatIDAsync(id, pageNumber, pageSize);
         }
     }
 }

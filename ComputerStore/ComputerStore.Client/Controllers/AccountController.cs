@@ -64,6 +64,15 @@ namespace ComputerStore.Client.Controllers
         }
 
         //
+        // GET: /Account/Login
+        [AllowAnonymous]
+        public ActionResult _Login(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return PartialView("Login");
+        }
+
+        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -78,10 +87,11 @@ namespace ComputerStore.Client.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = SignInManager.PasswordSignIn(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
+                    SessionData.Instance.CurrentUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

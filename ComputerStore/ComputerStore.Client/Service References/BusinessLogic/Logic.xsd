@@ -105,6 +105,21 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="MonitorMeret" nillable="true" type="tns:MonitorMeret" />
+  <xs:complexType name="PageableListOfAlaplap6PZ3m5ND">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageableListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Alaplap" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfAlaplap" />
+      <xs:element minOccurs="0" name="MaxPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageableListOfAlaplap6PZ3m5ND" nillable="true" type="tns:PageableListOfAlaplap6PZ3m5ND" />
   <xs:complexType name="ArrayOfAlaplap">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Alaplap" nillable="true" type="tns:Alaplap" />

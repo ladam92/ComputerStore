@@ -34,6 +34,6 @@ namespace CoputerStore.BL
         List<MonitorMeret> MonitorMeretTipus_GetKaegoriak();
 
         [OperationContract]
-        List<Alaplap> Alaplap_GetByFoglalatID(int id);
+        PageableList<Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
     }
 }

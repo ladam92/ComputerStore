@@ -55,7 +55,7 @@ namespace ComputerStore.Client.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Jelszó")]
         public string Password { get; set; }
 
         [Display(Name = "Jegyezz meg")]

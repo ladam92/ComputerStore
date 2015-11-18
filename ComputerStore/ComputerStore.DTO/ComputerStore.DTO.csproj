@@ -60,6 +60,7 @@
     <Compile Include="Types\MonitorCsatoloTipus.cs" />
     <Compile Include="Types\MonitorFelbontas.cs" />
     <Compile Include="Types\MonitorMeret.cs" />
+    <Compile Include="Types\PageableList.cs" />
     <Compile Include="Types\PciExpressTipus.cs" />
     <Compile Include="Types\ProcesszorFoglalatTipus.cs" />
     <Compile Include="Types\UsbTipus.cs" />

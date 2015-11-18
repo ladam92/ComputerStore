@@ -1,4 +1,4 @@
-﻿@model List<ComputerStore.DTO.Types.Alaplap>
+﻿@model ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>
 
 @{
     ViewBag.Title = "GetByFoglalat";
@@ -6,7 +6,7 @@
 
 <div class="row">
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.Items)
     {
         <div class="col-sm-4 col-lg-4 col-md-4">
             <div class="thumbnail">
@@ -52,5 +52,11 @@
             </div>
         </div>
     }
+</div>
+
+<div class="pageSelector">
+    <button onclick="javascript:location.href='@Url.Action("GetByFoglalat", "Alaplap", new { procFoglalatId = ViewBag.CurrentID, pageNumber = Model.CurrentPage -1 })'" @if (Model.CurrentPage == 1) { <text> disabled </text>    } class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left" /></button>
+    @String.Concat(Model.CurrentPage, "/", Model.MaxPages, " oldal")
+    <button onclick="javascript:location.href='@Url.Action("GetByFoglalat", "Alaplap", new { procFoglalatId = ViewBag.CurrentID, pageNumber = Model.CurrentPage +1 })'" @if (Model.CurrentPage == Model.MaxPages) { <text> disabled </text>     } class="btn btn-primary"> <span class="glyphicon glyphicon-chevron-right" /></button>
 </div>
 

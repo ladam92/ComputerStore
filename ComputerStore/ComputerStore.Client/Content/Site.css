@@ -113,9 +113,19 @@ footer {
     margin: 50px 0;
 }
 
-.list-group-item{
+a.list-group-item{
   border: 1px solid #0083ff;
   color: #0083ff;
+}
+
+a.list-group-item:hover {
+  background-color: #0083ff;
+  color: white;
+}
+
+a.list-group-item:focus{
+  background-color: #0083ff;
+  color:white;
 }
 
 .list-group-item.list-group-submenu {
@@ -124,6 +134,16 @@ footer {
   text-align: center;
   margin-right: 20px;
   color: #009900;
+}
+
+.list-group-item.list-group-submenu:hover{
+  background-color: #009900;
+  color: white;
+}
+
+.list-group-item.list-group-submenu:focus{
+  background-color: #009900;
+  color: white;
 }
 
 .list-group-item.list-group-submenu:first-of-type {
@@ -142,6 +162,16 @@ footer {
   text-align: center;
   margin-right: 30px;
   color: #FF3300;
+}
+
+.list-group-item.list-group-submenu2:hover {
+  background-color: #FF3300;
+  color: white;
+}
+
+.list-group-item.list-group-submenu2:focus {
+  background-color: #FF3300;
+  color: white;
 }
 
 .list-group-item.list-group-submenu2:first-of-type {
@@ -189,4 +219,14 @@ hr {
     margin: 1em 0;
     padding: 0; 
     background-color: #0083ff;
+}
+
+.pageSelector{
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.navbar-nav > li > .dropdown-menu.login{
+    min-width: 250px;
 }

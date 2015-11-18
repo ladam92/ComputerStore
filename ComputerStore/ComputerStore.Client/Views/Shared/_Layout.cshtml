@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 }
-                <div class="col-md-9">
+                <div class="col-md-9" style="margin-top:50px;">
                     @RenderBody()
                 </div>
             </div>
@@ -150,7 +150,25 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("Scripts", required: false)
     @Styles.Render("~/Content/css")
+
+   
+        <script>
+                $(document).ready(function () {
+                        $.ajax({
+                            url: "@Url.Action("_Login", "Account")",
+                            type: "GET",
+                        success: function (response) {
+                            $("#loginDropdown").html(response);
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(textStatus, errorThrown);
+                        }
+                    });
+                });
+        </script>
+    
 </body>
 </html>
