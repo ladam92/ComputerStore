@@ -28,5 +28,24 @@ namespace ComputerStore.Client.Controllers
 
             return View(alaplapok);
         }
+
+        public ActionResult GetByMemoria(int memoriaId, int? pageNumber)
+        {
+            PageableList<Alaplap> alaplapok = null;
+
+            if (!pageNumber.HasValue)
+            {
+                pageNumber = 1;
+            }
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                alaplapok = bl.Alaplap_GetByMemoriaID(memoriaId, pageNumber.Value, SessionData.Instance.ListingPageSize);
+            }
+
+            ViewBag.CurrentID = memoriaId;
+
+            return View("GetByFoglalat", alaplapok);
+        }
     }
 }

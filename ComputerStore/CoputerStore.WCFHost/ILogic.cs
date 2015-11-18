@@ -35,5 +35,8 @@ namespace CoputerStore.BL
 
         [OperationContract]
         PageableList<Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize);
     }
 }

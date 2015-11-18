@@ -51,7 +51,7 @@
                                 <div class="collapse submenu" id="memoriaFoglalat">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MemList)
                                     {
-                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                        <a href="@Url.Action("GetByMemoria", "Alaplap", new { memoriaId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
                             </div>

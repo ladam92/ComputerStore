@@ -62,6 +62,12 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByFoglalatIDAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByMemoriaID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByMemoriaIDResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByMemoriaID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByMemoriaIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByMemoriaIDAsync(int id, int pageNumber, int pageSize);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -153,6 +159,14 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByFoglalatIDAsync(int id, int pageNumber, int pageSize) {
             return base.Channel.Alaplap_GetByFoglalatIDAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize) {
+            return base.Channel.Alaplap_GetByMemoriaID(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByMemoriaIDAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Alaplap_GetByMemoriaIDAsync(id, pageNumber, pageSize);
         }
     }
 }

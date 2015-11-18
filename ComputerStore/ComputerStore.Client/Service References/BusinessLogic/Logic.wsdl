@@ -55,6 +55,12 @@
   <wsdl:message name="ILogic_Alaplap_GetByFoglalatID_OutputMessage">
     <wsdl:part name="parameters" element="tns:Alaplap_GetByFoglalatIDResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByMemoriaID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByMemoriaID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByMemoriaID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByMemoriaIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILogic">
     <wsdl:operation name="ProcFoglalat_GetKategoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" message="tns:ILogic_ProcFoglalat_GetKategoriak_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="Alaplap_GetByFoglalatID">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID" message="tns:ILogic_Alaplap_GetByFoglalatID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse" message="tns:ILogic_Alaplap_GetByFoglalatID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByMemoriaID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByMemoriaID" message="tns:ILogic_Alaplap_GetByMemoriaID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByMemoriaIDResponse" message="tns:ILogic_Alaplap_GetByMemoriaID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="Alaplap_GetByFoglalatID">
       <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByMemoriaID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByMemoriaID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
