@@ -119,12 +119,12 @@ a.list-group-item{
 }
 
 a.list-group-item:hover {
-  background-color: #0083ff;
+  background-color: #33CCFF;
   color: white;
 }
 
 a.list-group-item:focus{
-  background-color: #0083ff;
+  background-color: #33CCFF;
   color:white;
 }
 
@@ -137,12 +137,12 @@ a.list-group-item:focus{
 }
 
 .list-group-item.list-group-submenu:hover{
-  background-color: #009900;
+  background-color: #00C200;
   color: white;
 }
 
 .list-group-item.list-group-submenu:focus{
-  background-color: #009900;
+  background-color: #00C200;
   color: white;
 }
 
@@ -157,11 +157,11 @@ a.list-group-item:focus{
 }
 
 .list-group-item.list-group-submenu2 {
-  border: 1px solid #FF3300;
+  border: 1px solid #CC3300;
   margin-left: 60px;
   text-align: center;
   margin-right: 30px;
-  color: #FF3300;
+  color: #CC3300;
 }
 
 .list-group-item.list-group-submenu2:hover {
@@ -229,4 +229,7 @@ hr {
 
 .navbar-nav > li > .dropdown-menu.login{
     min-width: 250px;
+    background-color: #73AD21;
+    opacity: 0.9;
+    color: white;
 }
