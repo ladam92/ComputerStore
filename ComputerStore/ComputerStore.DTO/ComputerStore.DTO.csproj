@@ -56,6 +56,7 @@
     <Compile Include="Types\Alaplap.cs" />
     <Compile Include="Types\AlkatreszTipus.cs" />
     <Compile Include="Types\Billentyuzet.cs" />
+    <Compile Include="Types\Datacontract.cs" />
     <Compile Include="Types\Eger.cs" />
     <Compile Include="Types\Hattertar.cs" />
     <Compile Include="Types\HattertarCsatoloTipus.cs" />
@@ -68,9 +69,13 @@
     <Compile Include="Types\MonitorMeret.cs" />
     <Compile Include="Types\PageableList.cs" />
     <Compile Include="Types\PciExpressTipus.cs" />
+    <Compile Include="Types\Processzor.cs" />
     <Compile Include="Types\ProcesszorFoglalatTipus.cs" />
+    <Compile Include="Types\Szamitogephaz.cs" />
+    <Compile Include="Types\Tapegyseg.cs" />
     <Compile Include="Types\UsbTipus.cs" />
     <Compile Include="Types\VgaCsatoloFeluletTipus.cs" />
+    <Compile Include="Types\Videokartya.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

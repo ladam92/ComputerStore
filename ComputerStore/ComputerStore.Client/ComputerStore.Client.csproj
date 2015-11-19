@@ -175,6 +175,10 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MemoriaController.cs" />
     <Compile Include="Controllers\MonitorController.cs" />
+    <Compile Include="Controllers\ProcesszorController.cs" />
+    <Compile Include="Controllers\SzamitogephazController.cs" />
+    <Compile Include="Controllers\TapegysegController.cs" />
+    <Compile Include="Controllers\VideokartyaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +228,10 @@
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Hattertar.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Memoria.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Monitor.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Processzor.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Szamitogephaz.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Tapegyseg.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Videokartya.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -297,6 +305,10 @@
     <Content Include="Views\Memoria\GetByFoglalat.cshtml" />
     <Content Include="Views\Monitor\GetByMeret.cshtml" />
     <Content Include="Views\Monitor\GetByFelbontas.cshtml" />
+    <Content Include="Views\Processzor\GetByFoglalat.cshtml" />
+    <Content Include="Views\Szamitogephaz\Gethaz.cshtml" />
+    <Content Include="Views\Tapegyseg\GetTapegyseg.cshtml" />
+    <Content Include="Views\Videokartya\GetVideokartya.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

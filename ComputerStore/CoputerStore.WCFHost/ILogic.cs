@@ -65,5 +65,17 @@ namespace CoputerStore.BL
 
         [OperationContract]
         PageableList<Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Videokartya> Videokartya_Get(int pageNumber, int pageSize);
     }
 }

@@ -115,6 +115,30 @@
   <wsdl:message name="ILogic_Monitor_GetByFelbontas_OutputMessage">
     <wsdl:part name="parameters" element="tns:Monitor_GetByFelbontasResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Processzor_GetByFoglalat_InputMessage">
+    <wsdl:part name="parameters" element="tns:Processzor_GetByFoglalat" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Processzor_GetByFoglalat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Processzor_GetByFoglalatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Szamitogephaz_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Szamitogephaz_Get" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Szamitogephaz_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Szamitogephaz_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Tapegyseg_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Tapegyseg_Get" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Tapegyseg_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Tapegyseg_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Videokartya_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Videokartya_Get" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Videokartya_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Videokartya_GetResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILogic">
     <wsdl:operation name="ProcFoglalat_GetKategoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" message="tns:ILogic_ProcFoglalat_GetKategoriak_InputMessage" />
@@ -187,6 +211,22 @@
     <wsdl:operation name="Monitor_GetByFelbontas">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Monitor_GetByFelbontas" message="tns:ILogic_Monitor_GetByFelbontas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Monitor_GetByFelbontasResponse" message="tns:ILogic_Monitor_GetByFelbontas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Processzor_GetByFoglalat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat" message="tns:ILogic_Processzor_GetByFoglalat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse" message="tns:ILogic_Processzor_GetByFoglalat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Szamitogephaz_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Szamitogephaz_Get" message="tns:ILogic_Szamitogephaz_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Szamitogephaz_GetResponse" message="tns:ILogic_Szamitogephaz_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Tapegyseg_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Tapegyseg_Get" message="tns:ILogic_Tapegyseg_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Tapegyseg_GetResponse" message="tns:ILogic_Tapegyseg_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Videokartya_Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Videokartya_Get" message="tns:ILogic_Videokartya_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetResponse" message="tns:ILogic_Videokartya_Get_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
@@ -346,6 +386,42 @@
     </wsdl:operation>
     <wsdl:operation name="Monitor_GetByFelbontas">
       <soap:operation soapAction="http://tempuri.org/ILogic/Monitor_GetByFelbontas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Processzor_GetByFoglalat">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Processzor_GetByFoglalat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Szamitogephaz_Get">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Szamitogephaz_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tapegyseg_Get">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Tapegyseg_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Videokartya_Get">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Videokartya_Get" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

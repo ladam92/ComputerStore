@@ -122,6 +122,30 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByFelbontas", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByFelbontasResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByFelbontasAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz>> Szamitogephaz_GetAsync(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_Get", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_Get", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg>> Tapegyseg_GetAsync(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya> Videokartya_Get(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -293,6 +317,38 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByFelbontasAsync(int id, int pageNumber, int pageSize) {
             return base.Channel.Monitor_GetByFelbontasAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize) {
+            return base.Channel.Processzor_GetByFoglalat(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Processzor_GetByFoglalatAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize) {
+            return base.Channel.Szamitogephaz_Get(pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz>> Szamitogephaz_GetAsync(int pageNumber, int pageSize) {
+            return base.Channel.Szamitogephaz_GetAsync(pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize) {
+            return base.Channel.Tapegyseg_Get(pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg>> Tapegyseg_GetAsync(int pageNumber, int pageSize) {
+            return base.Channel.Tapegyseg_GetAsync(pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya> Videokartya_Get(int pageNumber, int pageSize) {
+            return base.Channel.Videokartya_Get(pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize) {
+            return base.Channel.Videokartya_GetAsync(pageNumber, pageSize);
         }
     }
 }

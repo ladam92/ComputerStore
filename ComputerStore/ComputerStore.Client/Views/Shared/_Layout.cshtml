@@ -137,14 +137,16 @@
                                 <div class="collapse submenu" id="procTipus2">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.ProcList)
                                     {
-                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                         <a href="@Url.Action("GetByFoglalat", "Processzor", new { procFoglalatId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
                             </div>
-                            <a href="#" class="list-group-item">Számítógép-ház</a>
-                            <a href="#" class="list-group-item">Tápegység</a>
-                            <a href="#" class="list-group-item">Videókártya</a>
-                        </div>
+
+
+                            <a href="@Url.Action("Gethaz", "Szamitogephaz")" class="list-group-item">Számítógép-ház</a>
+                            <a href="@Url.Action("GetTapegyseg", "Tapegyseg")" class="list-group-item">Tápegység</a>
+                            <a href="@Url.Action("GetVideokartya", "Videokartya")" class="list-group-item">Videókártya</a>
+</div>
                     </div>
                 }
                 <div @if (ComputerStore.Client.Utils.SessionData.Instance.ShowCategories) {  <text> class="col-md-9" </text> } else { <text> class="col-md-12" </text> } style="margin-top:50px;">
