@@ -251,5 +251,92 @@ namespace CoputerStore.BL
             }
             return new PageableList<Billentyuzet>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
         }
+
+        public PageableList<Eger> Eger_GetByUsbID(int id, int pageNumber, int pageSize)
+        {
+            List<Eger> list = new List<Eger>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.eger.Where(i => i.usb_tipus_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Eger
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        IsPs2 = item.is_ps2_csatolo,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        UsbID = item.usb_tipus.id,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Eger>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public PageableList<Hattertar> Hattertar_GetByHattertarTipus(int id, int pageNumber, int pageSize)
+        {
+            List<Hattertar> list = new List<Hattertar>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.hattertar.Where(i => i.hattertar_tipus_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Hattertar
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        CsatoloID=item.hattertar_csatolo_tipus_id,
+                        TipusID=item.hattertar_tipus_id,
+                        Meret=item.meret_gb,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Hattertar>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public PageableList<Hattertar> Hattertar_GetByHattertarCsatolo(int id, int pageNumber, int pageSize)
+        {
+            List<Hattertar> list = new List<Hattertar>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.hattertar.Where(i => i.hattertar_csatolo_tipus_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Hattertar
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        CsatoloID = item.hattertar_csatolo_tipus_id,
+                        TipusID = item.hattertar_tipus_id,
+                        Meret = item.meret_gb,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Hattertar>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
     }
 }

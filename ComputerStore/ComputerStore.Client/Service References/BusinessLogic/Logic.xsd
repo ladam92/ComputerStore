@@ -170,10 +170,77 @@
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
       <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="Megnevezés" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
       <xs:element minOccurs="0" name="UsbID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
+  <xs:complexType name="PageableListOfEger6PZ3m5ND">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageableListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Eger" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfEger" />
+      <xs:element minOccurs="0" name="MaxPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageableListOfEger6PZ3m5ND" nillable="true" type="tns:PageableListOfEger6PZ3m5ND" />
+  <xs:complexType name="ArrayOfEger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Eger" nillable="true" type="tns:Eger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEger" nillable="true" type="tns:ArrayOfEger" />
+  <xs:complexType name="Eger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsbID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Eger" nillable="true" type="tns:Eger" />
+  <xs:complexType name="PageableListOfHattertar6PZ3m5ND">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageableListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Hattertar" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfHattertar" />
+      <xs:element minOccurs="0" name="MaxPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageableListOfHattertar6PZ3m5ND" nillable="true" type="tns:PageableListOfHattertar6PZ3m5ND" />
+  <xs:complexType name="ArrayOfHattertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hattertar" nillable="true" type="tns:Hattertar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHattertar" nillable="true" type="tns:ArrayOfHattertar" />
+  <xs:complexType name="Hattertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
+      <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Meret" type="xs:int" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipusID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hattertar" nillable="true" type="tns:Hattertar" />
 </xs:schema>

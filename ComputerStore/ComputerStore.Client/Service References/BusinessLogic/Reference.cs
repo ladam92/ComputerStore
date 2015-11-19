@@ -74,6 +74,24 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Billentyuzet_GetByUsbID", ReplyAction="http://tempuri.org/ILogic/Billentyuzet_GetByUsbIDResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Billentyuzet>> Billentyuzet_GetByUsbIDAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Eger_GetByUsbID", ReplyAction="http://tempuri.org/ILogic/Eger_GetByUsbIDResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Eger> Eger_GetByUsbID(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Eger_GetByUsbID", ReplyAction="http://tempuri.org/ILogic/Eger_GetByUsbIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Eger>> Eger_GetByUsbIDAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipus", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipusResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByHattertarTipus(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipus", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipusResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar>> Hattertar_GetByHattertarTipusAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatolo", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatoloResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByHattertarCsatolo(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatolo", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatoloResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar>> Hattertar_GetByHattertarCsatoloAsync(int id, int pageNumber, int pageSize);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -181,6 +199,30 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Billentyuzet>> Billentyuzet_GetByUsbIDAsync(int id, int pageNumber, int pageSize) {
             return base.Channel.Billentyuzet_GetByUsbIDAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Eger> Eger_GetByUsbID(int id, int pageNumber, int pageSize) {
+            return base.Channel.Eger_GetByUsbID(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Eger>> Eger_GetByUsbIDAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Eger_GetByUsbIDAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByHattertarTipus(int id, int pageNumber, int pageSize) {
+            return base.Channel.Hattertar_GetByHattertarTipus(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar>> Hattertar_GetByHattertarTipusAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Hattertar_GetByHattertarTipusAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByHattertarCsatolo(int id, int pageNumber, int pageSize) {
+            return base.Channel.Hattertar_GetByHattertarCsatolo(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Hattertar>> Hattertar_GetByHattertarCsatoloAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Hattertar_GetByHattertarCsatoloAsync(id, pageNumber, pageSize);
         }
     }
 }

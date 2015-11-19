@@ -169,6 +169,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlaplapController.cs" />
     <Compile Include="Controllers\BillentyuzetController.cs" />
+    <Compile Include="Controllers\EgerController.cs" />
+    <Compile Include="Controllers\HattertarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -204,6 +206,8 @@
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.MonitorMeret.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Alaplap.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Billentyuzet.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Eger.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Hattertar.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -269,6 +273,9 @@
     </None>
     <Content Include="Views\Alaplap\GetByFoglalat.cshtml" />
     <Content Include="Views\Billentyuzet\GetByUsb.cshtml" />
+    <Content Include="Views\Eger\GetByUsb.cshtml" />
+    <Content Include="Views\Hattertar\GetByCsatoloTipus.cshtml" />
+    <Content Include="Views\Hattertar\GetByHattertarTipus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

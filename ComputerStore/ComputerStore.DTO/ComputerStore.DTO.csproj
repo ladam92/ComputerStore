@@ -56,6 +56,8 @@
     <Compile Include="Types\Alaplap.cs" />
     <Compile Include="Types\AlkatreszTipus.cs" />
     <Compile Include="Types\Billentyuzet.cs" />
+    <Compile Include="Types\Eger.cs" />
+    <Compile Include="Types\Hattertar.cs" />
     <Compile Include="Types\HattertarCsatoloTipus.cs" />
     <Compile Include="Types\HattertarTipus.cs" />
     <Compile Include="Types\MemoriaTipus.cs" />
