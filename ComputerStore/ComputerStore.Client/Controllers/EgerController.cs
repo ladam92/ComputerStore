@@ -28,5 +28,22 @@ namespace ComputerStore.Client.Controllers
 
             return View(eger);
         }
+
+        public ActionResult GetByPs(int? pageNumber)
+        {
+            PageableList<Eger> eger = null;
+
+            if (!pageNumber.HasValue)
+            {
+                pageNumber = 1;
+            }
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                eger = bl.Eger_GetByPs(pageNumber.Value, SessionData.Instance.ListingPageSize);
+            }
+
+            return View(eger);
+        }
 	}
 }

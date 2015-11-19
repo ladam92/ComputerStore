@@ -43,12 +43,27 @@ namespace CoputerStore.BL
         PageableList<Billentyuzet> Billentyuzet_GetByUsbID(int id, int pageNumber, int pageSize);
 
         [OperationContract]
+        PageableList<Billentyuzet> Billentyuzet_GetByPs( int pageNumber, int pageSize);
+
+        [OperationContract]
         PageableList<Eger> Eger_GetByUsbID(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Eger> Eger_GetByPs(int pageNumber, int pageSize);
 
         [OperationContract]
         PageableList<Hattertar> Hattertar_GetByHattertarTipus(int id, int pageNumber, int pageSize);
 
         [OperationContract]
         PageableList<Hattertar> Hattertar_GetByHattertarCsatolo(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Memoria> Memoria_GetByFoglalat(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Monitor> Monitor_GetByMeret(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize);
     }
 }

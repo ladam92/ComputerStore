@@ -65,7 +65,7 @@
                                         <a href="@Url.Action("GetByUsb", "Billentyuzet", new { usbId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
-                                <a href="#" class="list-group-item list-group-submenu">PS/2</a>
+                                <a href="@Url.Action("GetByPs", "Billentyuzet")" class="list-group-item list-group-submenu">PS/2</a>
                             </div>
 
                             <a href="#egerKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Egér<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
@@ -77,7 +77,7 @@
                                         <a href="@Url.Action("GetByUsb", "Eger", new { usbId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
-                                <a href="#" class="list-group-item list-group-submenu">PS/2</a>
+                                <a href="@Url.Action("GetByPs", "Eger")" class="list-group-item list-group-submenu">PS/2</a>
                             </div>
 
 
@@ -93,9 +93,9 @@
                                 <a href="#hattertarCsatolo" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#hattertarKat">Csatoló felület<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                                 <div class="collapse submenu" id="hattertarCsatolo">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.HattertarCsatoloList)
-{
-    <a href="@Url.Action("GetByCsatoloTipus", "Hattertar", new { csatoloId = item.ID })"  class=" list-group-item list-group-submenu2"> @item.Megnevezes</a>
-}
+                                    {
+                                        <a href="@Url.Action("GetByHattertarCsatolo", "Hattertar", new { csatoloId = item.ID })"  class=" list-group-item list-group-submenu2"> @item.Megnevezes</a>
+                                    }
                                 </div>
                             </div>
 
@@ -106,27 +106,31 @@
                                 <div class="collapse submenu" id="memoriaFoglalat2">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MemList)
                                     {
-                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                        <a href="@Url.Action("GetByFoglalat", "Memoria", new { memFoglalatId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
                             </div>
+
+
                             <a href="#monitorKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Monitor<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                             <div class="collapse submenu" id="monitorKat">
                                 <a href="#monitorMeretTipus" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#monitorKat">Monitor méret<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                                 <div class="collapse submenu" id="monitorMeretTipus">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MonitorMeretList)
                                     {
-                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@String.Concat(item.Megnevezes, "\"")</a>
+                                        <a href="@Url.Action("GetByMeret", "Monitor", new { meretId = item.ID })" class="list-group-item list-group-submenu2">@String.Concat(item.Megnevezes, "\"")</a>
                                     }
                                 </div>
                                 <a href="#monitorFelbontas" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#monitorKat">Monitor felbontás<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                                 <div class="collapse submenu" id="monitorFelbontas">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.MonitorFelbontasList)
                                     {
-                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                        <a href="@Url.Action("GetByFelbontas", "Monitor", new { felbontasId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
                             </div>
+
+
                             <a href="#procKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Processzor<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                             <div class="collapse submenu" id="procKat">
                                 <a href="#procTipus2" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#procKat">Foglalat típusa<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
