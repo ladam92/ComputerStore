@@ -117,4 +117,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Billentyuzet_GetByUsbID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="pageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Billentyuzet_GetByUsbIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetByUsbIDResult" nillable="true" type="q10:PageableListOfBillentyuzet6PZ3m5ND" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

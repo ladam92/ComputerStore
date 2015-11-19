@@ -55,17 +55,19 @@
                                     }
                                 </div>
                             </div>
+
                             <a href="#billKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Billentyűzet<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                             <div class="collapse submenu" id="billKat">
                                 <a href="#usbTipusBill" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#billKat">USB típus<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                                 <div class="collapse submenu" id="usbTipusBill">
                                     @foreach (var item in ComputerStore.Client.Utils.SessionData.Instance.UsbList)
                                     {
-                                        <a href="javascript:;" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
+                                        <a href="@Url.Action("GetByUsb", "Billentyuzet", new { usbId = item.ID })" class="list-group-item list-group-submenu2">@item.Megnevezes</a>
                                     }
                                 </div>
                                 <a href="#" class="list-group-item list-group-submenu">PS/2</a>
                             </div>
+
                             <a href="#egerKat" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Egér<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
                             <div class="collapse submenu" id="egerKat">
                                 <a href="#usbTipusEger" class="list-group-item list-group-submenu" data-toggle="collapse" data-parent="#egerKat">USB típus<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>

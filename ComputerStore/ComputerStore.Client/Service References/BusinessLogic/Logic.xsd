@@ -143,4 +143,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Alaplap" nillable="true" type="tns:Alaplap" />
+  <xs:complexType name="PageableListOfBillentyuzet6PZ3m5ND">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageableListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Billentyuzet" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfBillentyuzet" />
+      <xs:element minOccurs="0" name="MaxPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageableListOfBillentyuzet6PZ3m5ND" nillable="true" type="tns:PageableListOfBillentyuzet6PZ3m5ND" />
+  <xs:complexType name="ArrayOfBillentyuzet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillentyuzet" nillable="true" type="tns:ArrayOfBillentyuzet" />
+  <xs:complexType name="Billentyuzet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Megnevezés" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsbID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
 </xs:schema>

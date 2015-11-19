@@ -184,6 +184,8 @@ namespace CoputerStore.BL
             }
 
 
+
+
             return new PageableList<Alaplap>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
         }
 
@@ -194,7 +196,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var query = ctx.alaplap.Where(i => i.memoria_foglalat_tipus_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+                var query = ctx.alaplap.Where(i => i.memoria_foglalat_tipus_id== id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
 
                 foreach (var item in query)
                 {
@@ -220,6 +222,34 @@ namespace CoputerStore.BL
 
 
             return new PageableList<Alaplap>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public PageableList<Billentyuzet> Billentyuzet_GetByUsbID(int id, int pageNumber, int pageSize)
+        {
+            List<Billentyuzet> list = new List<Billentyuzet>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.billentyuzet.Where(i => i.usb_tipus_id==id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Billentyuzet
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        IsPs2 = item.is_ps2_csatolo,
+                        Kep = item.kepek.kep,
+                        Megnevezes=item.megnevezes,
+                        UsbID=item.usb_tipus.id,
+                        NettoAr=item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Billentyuzet>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
         }
     }
 }

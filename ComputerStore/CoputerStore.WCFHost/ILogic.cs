@@ -38,5 +38,8 @@ namespace CoputerStore.BL
 
         [OperationContract]
         PageableList<Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        PageableList<Billentyuzet> Billentyuzet_GetByUsbID(int id, int pageNumber, int pageSize);
     }
 }
