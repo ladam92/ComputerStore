@@ -16,6 +16,8 @@ namespace ComputerStore.Client.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public bool IsAdmin { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -176,6 +176,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511151105094_InitialCreate.cs" />
+    <Compile Include="Migrations\201511151105094_InitialCreate.Designer.cs">
+      <DependentUpon>201511151105094_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511202151253_Admin.cs" />
+    <Compile Include="Migrations\201511202151253_Admin.Designer.cs">
+      <DependentUpon>201511202151253_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -302,6 +311,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BusinessLogic\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511151105094_InitialCreate.resx">
+      <DependentUpon>201511151105094_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511202151253_Admin.resx">
+      <DependentUpon>201511202151253_Admin.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

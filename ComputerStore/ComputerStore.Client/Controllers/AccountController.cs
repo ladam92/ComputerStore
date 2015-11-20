@@ -91,7 +91,8 @@ namespace ComputerStore.Client.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    SessionData.Instance.CurrentUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+                    //var currentUser = System.Web.HttpContext.Current.GetOwinContext().Authentication.User.Identity.GetUserId();
+                    //SessionData.Instance.CurrentUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

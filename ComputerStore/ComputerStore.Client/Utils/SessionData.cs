@@ -1,5 +1,7 @@
 ﻿using ComputerStore.Client.Models;
 using ComputerStore.DTO.Types;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +25,13 @@ namespace ComputerStore.Client.Utils
 
         public int ListingPageSize { get; set; }
 
-        public ApplicationUser CurrentUser { get; set; }
+        public ApplicationUser CurrentUser
+        {
+            get
+            {
+                return System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+            }
+        }
 
         public SessionData()
         {
