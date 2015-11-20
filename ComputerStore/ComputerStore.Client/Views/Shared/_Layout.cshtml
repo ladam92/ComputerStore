@@ -147,16 +147,18 @@
                         </div>
                     </div>
                 }
-                <div class="col-md-9" style="margin-top:50px;">
+                <div @if (ComputerStore.Client.Utils.SessionData.Instance.ShowCategories) {  <text> class="col-md-9" </text> } else { <text> class="col-md-12" </text> } style="margin-top:50px;">
                     @RenderBody()
                 </div>
             </div>
         </div>
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - ComputerStore</p>
-        </footer>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-top: 15px;">&copy; @DateTime.Now.Year - ComputerStore</p>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
