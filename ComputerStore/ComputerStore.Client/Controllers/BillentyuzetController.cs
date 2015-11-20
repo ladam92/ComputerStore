@@ -29,6 +29,27 @@ namespace ComputerStore.Client.Controllers
             return View(billentyuzet);
         }
 
+ 
+        public ActionResult GetByPs(int? pageNumber)
+        {
+            PageableList<Billentyuzet> billentyuzet = null;
+
+            if (!pageNumber.HasValue)
+            {
+                pageNumber = 1;
+            }
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                billentyuzet = bl.Billentyuzet_GetByPs(pageNumber.Value, SessionData.Instance.ListingPageSize);
+            }
+
+
+            return View(billentyuzet);
+        }
+
+       
+
 
     }
 }

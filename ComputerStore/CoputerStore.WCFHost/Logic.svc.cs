@@ -252,6 +252,35 @@ namespace CoputerStore.BL
             return new PageableList<Billentyuzet>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
         }
 
+
+        public PageableList<Billentyuzet> Billentyuzet_GetByPs(int pageNumber, int pageSize)
+        {
+            List<Billentyuzet> list = new List<Billentyuzet>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.billentyuzet.Where(i => i.is_ps2_csatolo == true).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Billentyuzet
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        IsPs2 = item.is_ps2_csatolo,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        UsbID = item.usb_tipus.id,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Billentyuzet>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
         public PageableList<Eger> Eger_GetByUsbID(int id, int pageNumber, int pageSize)
         {
             List<Eger> list = new List<Eger>();
@@ -260,6 +289,34 @@ namespace CoputerStore.BL
             using (var ctx = new ComputerStoreEntities())
             {
                 var query = ctx.eger.Where(i => i.usb_tipus_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Eger
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        IsPs2 = item.is_ps2_csatolo,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        UsbID = item.usb_tipus.id,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Eger>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public PageableList<Eger> Eger_GetByPs(int pageNumber, int pageSize)
+        {
+            List<Eger> list = new List<Eger>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.eger.Where(i => i.is_ps2_csatolo == true).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
 
                 foreach (var item in query)
                 {
@@ -338,5 +395,91 @@ namespace CoputerStore.BL
             return new PageableList<Hattertar>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
         }
 
+
+        public PageableList<Memoria> Memoria_GetByFoglalat(int id, int pageNumber, int pageSize)
+        {
+            List<Memoria> list = new List<Memoria>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.memoria.Where(i => i.memoria_foglalat_tipus_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Memoria
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        FoglalatID=item.memoria_foglalat_tipus_id,
+                        MemoriaMeret=item.memoria_meret_mb,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Memoria>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public PageableList<Monitor> Monitor_GetByMeret(int id, int pageNumber, int pageSize)
+        {
+            List<Monitor> list = new List<Monitor>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.monitor.Where(i => i.monitor_meret_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Monitor
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        CsatoloID = item.monitor_csatolo_id,
+                        FelbontasID = item.monitor_felbontas_id,
+                        MeretID=item.monitor_meret_id,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Monitor>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public PageableList<Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize)
+        {
+            List<Monitor> list = new List<Monitor>();
+            int maxNumber = 0;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.monitor.Where(i => i.monitor_felbontas_id == id).OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+                foreach (var item in query)
+                {
+                    list.Add(new Monitor
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        CsatoloID = item.monitor_csatolo_id,
+                        FelbontasID = item.monitor_felbontas_id,
+                        MeretID = item.monitor_meret_id,
+                        NettoAr = item.netto_ar
+                    });
+                }
+
+                maxNumber = query.Count();
+            }
+            return new PageableList<Monitor>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
     }
 }

@@ -243,4 +243,71 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Hattertar" nillable="true" type="tns:Hattertar" />
+  <xs:complexType name="PageableListOfMemoria6PZ3m5ND">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageableListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Memoria" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfMemoria" />
+      <xs:element minOccurs="0" name="MaxPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageableListOfMemoria6PZ3m5ND" nillable="true" type="tns:PageableListOfMemoria6PZ3m5ND" />
+  <xs:complexType name="ArrayOfMemoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Memoria" nillable="true" type="tns:Memoria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemoria" nillable="true" type="tns:ArrayOfMemoria" />
+  <xs:complexType name="Memoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FoglalatID" type="xs:int" />
+      <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemoriaMeret" type="xs:int" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Memoria" nillable="true" type="tns:Memoria" />
+  <xs:complexType name="PageableListOfMonitor6PZ3m5ND">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageableListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Monitor" Namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfMonitor" />
+      <xs:element minOccurs="0" name="MaxPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageableListOfMonitor6PZ3m5ND" nillable="true" type="tns:PageableListOfMonitor6PZ3m5ND" />
+  <xs:complexType name="ArrayOfMonitor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Monitor" nillable="true" type="tns:Monitor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonitor" nillable="true" type="tns:ArrayOfMonitor" />
+  <xs:complexType name="Monitor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
+      <xs:element minOccurs="0" name="FelbontasID" type="xs:int" />
+      <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeretID" type="xs:int" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Monitor" nillable="true" type="tns:Monitor" />
 </xs:schema>
