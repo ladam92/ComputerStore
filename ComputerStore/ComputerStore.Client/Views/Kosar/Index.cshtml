@@ -1,0 +1,43 @@
+﻿@{
+    var list = ComputerStore.Client.Utils.SessionData.Instance.Kosar;
+}
+    <table class="table">
+        <tr>
+            <th> Kép </th>
+            <th> Megnevezés </th>
+            <th> Ár </th>
+            <th> Darabszám </th>
+            <th> </th>
+        </tr>
+
+@foreach (var item in list)
+{
+
+        <tr>
+            <td>
+                <img height="100" src="@String.Concat("data:image/jpeg;base64,", Convert.ToBase64String(item.Kep))" alt="">
+            </td>
+        
+            <td>
+                <p>@item.Megnevezes</p>
+            </td>
+
+            <td>
+                <p>@String.Concat(item.NettoAr*item.Db, " Ft")</p>
+            </td>
+
+            <td>
+               <p> @item.Db</p>
+            </td>
+
+            <td>
+                
+                @Html.ActionLink("Törlés a kosárból", "Delete", "Kosar", new { megnevezes = item.Megnevezes, id=item.ID }, "")
+            </td>
+        </tr>
+
+}
+    </table>
+<br/>
+<button type="button" class="btn btn-success" onclick="javascript:location.href='@Url.Action("DeleteFull", "Kosar" )'" style="width:200px">Vásárlás véglegesítése</button>
+

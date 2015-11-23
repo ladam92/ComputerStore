@@ -8,23 +8,21 @@ using System.Threading.Tasks;
 namespace ComputerStore.DTO.Types
 {
     [DataContract]
-    public class Memoria:Kategoria
+    public class Kategoria
     {
+        [DataMember]
+        public string Megnevezes { get; set; }
+
+        [DataMember]
+        public decimal NettoAr { get; set; }
+
+        [DataMember]
+        public int Db { get; set; }
+
         [DataMember]
         public int ID { get; set; }
 
         [DataMember]
-        public string Gyarto { get; set; }
-
-        [DataMember]
-        public int FoglalatID { get; set; }
-
-        [DataMember]
-        public int MemoriaMeret { get; set; }
-
-
-        [DataMember]
         public Byte[] Kep { get; set; }
-
     }
 }

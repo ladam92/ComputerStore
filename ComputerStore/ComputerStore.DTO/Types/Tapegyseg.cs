@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ComputerStore.DTO.Types
 {
     [DataContract]
-    public class Tapegyseg
+    public class Tapegyseg:Kategoria
     {
         [DataMember]
         public int ID { get; set; }
@@ -19,13 +19,9 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         public int Teljesitmeny { get; set; }
 
-        [DataMember]
-        public string Megnevezes { get; set; }
 
         [DataMember]
         public Byte[] Kep { get; set; }
 
-        [DataMember]
-        public decimal NettoAr { get; set; }
     }
 }

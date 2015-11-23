@@ -172,6 +172,7 @@
     <Compile Include="Controllers\EgerController.cs" />
     <Compile Include="Controllers\HattertarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KosarController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MemoriaController.cs" />
     <Compile Include="Controllers\MonitorController.cs" />
@@ -309,6 +310,9 @@
     <Content Include="Views\Szamitogephaz\Gethaz.cshtml" />
     <Content Include="Views\Tapegyseg\GetTapegyseg.cshtml" />
     <Content Include="Views\Videokartya\GetVideokartya.cshtml" />
+    <Content Include="Views\Alaplap\Kosar.cshtml" />
+    <Content Include="Views\Kosar\Index.cshtml" />
+    <Content Include="Views\Kosar\DeleteFull.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

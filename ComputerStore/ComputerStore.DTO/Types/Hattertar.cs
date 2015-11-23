@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ComputerStore.DTO.Types
 {
     [DataContract]
-    public class Hattertar
+    public class Hattertar:Kategoria
     {
         [DataMember]
         public int ID { get; set; }
@@ -26,12 +26,8 @@ namespace ComputerStore.DTO.Types
         public int Meret { get; set; }
 
         [DataMember]
-        public string Megnevezes { get; set; }
-
-        [DataMember]
         public Byte[] Kep { get; set; }
 
-        [DataMember]
-        public decimal NettoAr { get; set; }
+        
     }
 }

@@ -20,6 +20,8 @@ namespace ComputerStore.Client.Utils
         public List<HattertarCsatoloTipus> HattertarCsatoloList { get; set; }
         public List<MonitorMeret> MonitorMeretList { get; set; }
         public List<MonitorFelbontas> MonitorFelbontasList { get; set; }
+        public List<Kategoria> Kosar { get; set; }
+        public int KategoriaID { get; set; }
 
         public bool ShowCategories { get; set; }
 
@@ -37,6 +39,7 @@ namespace ComputerStore.Client.Utils
         {
             ShowCategories = true;
             ListingPageSize = 6;
+            Kosar = new List<Kategoria>();
         }
 
         public static SessionData Instance

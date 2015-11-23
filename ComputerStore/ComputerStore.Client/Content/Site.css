@@ -185,7 +185,7 @@ a.list-group-item:focus{
 
 .thumbnail{
     max-width: 250px;
-    max-height: 300px;
+    max-height: 320px;
     word-wrap: break-word;
     border: 1px solid #0083ff;
 }
