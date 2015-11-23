@@ -167,6 +167,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AlaplapController.cs" />
     <Compile Include="Controllers\BillentyuzetController.cs" />
     <Compile Include="Controllers\EgerController.cs" />
@@ -309,6 +310,7 @@
     <Content Include="Views\Szamitogephaz\Gethaz.cshtml" />
     <Content Include="Views\Tapegyseg\GetTapegyseg.cshtml" />
     <Content Include="Views\Videokartya\GetVideokartya.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

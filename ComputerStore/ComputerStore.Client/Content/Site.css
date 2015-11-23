@@ -242,3 +242,22 @@ hr {
     border-color: #00c7ff;
     border-top: 1px solid;
 }
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: white;
+    text-decoration: none;
+    background-color: #00c7ff;
+}
+
+.dropdown-menu > li > a {
+    color: #0083ff;
+}
+
+.dropdown-header {
+    color: #33CCFF;
+}
+
+dropdown-menu .divider {
+    background-color: #33CCFF;
+    border-color: #33CCFF;
+}
