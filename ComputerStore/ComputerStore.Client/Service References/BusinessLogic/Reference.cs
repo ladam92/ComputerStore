@@ -146,6 +146,12 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByIDResponse")]
+        ComputerStore.DTO.Types.Alaplap Alaplap_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByIDAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -349,6 +355,14 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize) {
             return base.Channel.Videokartya_GetAsync(pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.Alaplap Alaplap_GetByID(int id) {
+            return base.Channel.Alaplap_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByIDAsync(int id) {
+            return base.Channel.Alaplap_GetByIDAsync(id);
         }
     }
 }

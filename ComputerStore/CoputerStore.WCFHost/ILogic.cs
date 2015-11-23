@@ -77,5 +77,8 @@ namespace CoputerStore.BL
 
         [OperationContract]
         PageableList<Videokartya> Videokartya_Get(int pageNumber, int pageSize);
+
+        [OperationContract]
+        Alaplap Alaplap_GetByID(int id);
     }
 }

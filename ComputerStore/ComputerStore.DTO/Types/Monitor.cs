@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ComputerStore.DTO.Types
 {
     [DataContract]
-    public class Monitor
+    public class Monitor:Kategoria
     {
         [DataMember]
         public int ID { get; set; }
@@ -25,13 +25,9 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         public int CsatoloID { get; set; }
 
-        [DataMember]
-        public string Megnevezes { get; set; }
 
         [DataMember]
         public Byte[] Kep { get; set; }
 
-        [DataMember]
-        public decimal NettoAr { get; set; }
     }
 }

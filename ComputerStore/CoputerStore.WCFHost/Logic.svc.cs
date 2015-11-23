@@ -176,7 +176,8 @@ namespace CoputerStore.BL
                         MemoriaFoglalat = item.memoria_foglalat_tipus.megnevezes,
                         MemoriaFoglalatID = item.memoria_foglalat_tipus_id,
                         NettoAr = item.netto_ar,
-                        VGADarab = item.vga_csatolo_darab
+                        VGADarab = item.vga_csatolo_darab,
+                        Db=(Int32)item.db
                     });
                 }
 
@@ -213,7 +214,10 @@ namespace CoputerStore.BL
                         MemoriaFoglalat = item.memoria_foglalat_tipus.megnevezes,
                         MemoriaFoglalatID = item.memoria_foglalat_tipus_id,
                         NettoAr = item.netto_ar,
-                        VGADarab = item.vga_csatolo_darab
+                        VGADarab = item.vga_csatolo_darab,
+                        Db=(Int32)item.db
+                       
+                      
                     });
                 }
 
@@ -573,7 +577,7 @@ namespace CoputerStore.BL
             using (var ctx = new ComputerStoreEntities())
             {
                 var query = ctx.videokartya.OrderBy(i => i.megnevezes).Skip((pageNumber - 1) * pageSize).Take(pageSize);
-
+                
                 foreach (var item in query)
                 {
                     list.Add(new Videokartya
@@ -591,6 +595,31 @@ namespace CoputerStore.BL
                 maxNumber = query.Count();
             }
             return new PageableList<Videokartya>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
+        }
+
+        public Alaplap Alaplap_GetByID(int id)
+        {
+            Alaplap alaplap;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.alaplap.Where(i=>i.id==id).Single();
+                alaplap = new Alaplap
+                {
+                    ID = query.id,
+                    FoglalatID = query.proc_foglalat_tipus_id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    IsPs2 = query.van_ps2_port,
+                    Kep = query.kepek.kep,
+                    Leiras = query.leiras,
+                    Megnevezes = query.megnevezes,
+                    MemoriaDarab = query.memoria_foglalat_darab,
+                    MemoriaFoglalat = query.memoria_foglalat_tipus.megnevezes,
+                    MemoriaFoglalatID = query.memoria_foglalat_tipus_id,
+                    NettoAr = query.netto_ar,
+                    VGADarab = query.vga_csatolo_darab
+                };
+            }
+            return alaplap;
         }
     }
 }

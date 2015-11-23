@@ -32,7 +32,7 @@
             }
             @*Html.ActionLink("Adatlapom", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
         </li>
-        <li><a href="#">Kosaram <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"/></a></li>
+        <li><a href="@Url.Action("Index", "Kosar")">Kosaram <span class=" glyphicon glyphicon-shopping-cart" aria-hidden="true" /></a></li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Kijelentkezés <span class="glyphicon glyphicon-log-out" aria-hidden="true"/></a></li>
     </ul>
     }

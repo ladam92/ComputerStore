@@ -23,6 +23,7 @@ namespace ComputerStore.Client.Controllers
                 SessionData.Instance.HattertarCsatoloList = bl.HattertatCsatoloTipus_GetKaegoriak().ToList();
                 SessionData.Instance.MonitorFelbontasList = bl.MonitorFelbontasTipus_GetKaegoriak().ToList();
                 SessionData.Instance.MonitorMeretList = bl.MonitorMeretTipus_GetKaegoriak().ToList();
+             
             }
             return View();
         }

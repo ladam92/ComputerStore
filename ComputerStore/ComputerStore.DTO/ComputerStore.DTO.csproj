@@ -61,6 +61,7 @@
     <Compile Include="Types\Hattertar.cs" />
     <Compile Include="Types\HattertarCsatoloTipus.cs" />
     <Compile Include="Types\HattertarTipus.cs" />
+    <Compile Include="Types\Kategoria.cs" />
     <Compile Include="Types\Memoria.cs" />
     <Compile Include="Types\MemoriaTipus.cs" />
     <Compile Include="Types\Monitor.cs" />

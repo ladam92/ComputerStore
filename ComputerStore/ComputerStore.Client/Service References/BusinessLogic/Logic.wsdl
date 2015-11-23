@@ -139,6 +139,12 @@
   <wsdl:message name="ILogic_Videokartya_Get_OutputMessage">
     <wsdl:part name="parameters" element="tns:Videokartya_GetResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILogic">
     <wsdl:operation name="ProcFoglalat_GetKategoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" message="tns:ILogic_ProcFoglalat_GetKategoriak_InputMessage" />
@@ -227,6 +233,10 @@
     <wsdl:operation name="Videokartya_Get">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Videokartya_Get" message="tns:ILogic_Videokartya_Get_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetResponse" message="tns:ILogic_Videokartya_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByID" message="tns:ILogic_Alaplap_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByIDResponse" message="tns:ILogic_Alaplap_GetByID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
@@ -422,6 +432,15 @@
     </wsdl:operation>
     <wsdl:operation name="Videokartya_Get">
       <soap:operation soapAction="http://tempuri.org/ILogic/Videokartya_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

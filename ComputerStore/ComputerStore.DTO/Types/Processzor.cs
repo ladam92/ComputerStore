@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ComputerStore.DTO.Types
 {
     [DataContract]
-    public class Processzor
+    public class Processzor:Kategoria
     {
         [DataMember]
         public int ID { get; set; }
@@ -16,8 +16,6 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         public string Gyarto { get; set; }
 
-        [DataMember]
-        public string Megnevezes { get; set; }
 
         [DataMember]
         public int Magok { get; set; }
@@ -34,7 +32,6 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         public Byte[] Kep { get; set; }
 
-        [DataMember]
-        public decimal NettoAr { get; set; }
+  
     }
 }
