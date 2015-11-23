@@ -29,6 +29,32 @@ namespace ComputerStore.Client.Controllers
             return View(hattertar);
         }
 
+        public ActionResult Kosar(int db, int id)
+        {
+
+            Hattertar hattertar1; Hattertar háttértárkivant;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                hattertar1 = bl.Hattertar_GetByID(id);
+                háttértárkivant = new Hattertar
+                {
+                    ID = hattertar1.ID,
+                    Db = db,
+                    Gyarto = hattertar1.Gyarto,
+                    Kep = hattertar1.Kep,
+                    NettoAr = hattertar1.NettoAr,
+                    Megnevezes = hattertar1.Megnevezes,
+                    CsatoloID=hattertar1.CsatoloID,
+                    Meret=hattertar1.Meret,
+                    TipusID=hattertar1.TipusID
+                };
+            }
+            Kategoria k = new Kategoria { ID = háttértárkivant.ID, Db = háttértárkivant.Db, Kep = háttértárkivant.Kep, Megnevezes = háttértárkivant.Megnevezes, NettoAr = háttértárkivant.NettoAr };
+            SessionData.Instance.Kosar.Add(k);
+
+            return View();
+        }
+
         public ActionResult GetByHattertarTipus(int tipusId, int? pageNumber)
         {
             PageableList<Hattertar> hattertar = null;

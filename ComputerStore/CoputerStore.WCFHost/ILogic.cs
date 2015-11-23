@@ -80,5 +80,32 @@ namespace CoputerStore.BL
 
         [OperationContract]
         Alaplap Alaplap_GetByID(int id);
+
+        [OperationContract]
+        Billentyuzet Billentyuzet_GetByID(int id);
+
+        [OperationContract]
+        Eger Eger_GetByID(int id);
+
+        [OperationContract]
+        Hattertar Hattertar_GetByID(int id);
+
+        [OperationContract]
+        Memoria Memoria_GetByID(int id);
+
+        [OperationContract]
+        Monitor Monitor_GetByID(int id);
+
+        [OperationContract]
+        Processzor Processzor_GetByID(int id);
+
+        [OperationContract]
+        Szamitogephaz Szamitogephaz_GetByID(int id);
+
+        [OperationContract]
+        Tapegyseg Tapegyseg_GetByID(int id);
+
+        [OperationContract]
+        Videokartya Videokartya_GetByID(int id);
     }
 }

@@ -29,5 +29,8 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         public Byte[] Kep { get; set; }
 
+        [DataMember]
+        public int Db { get; set; }
+
     }
 }

@@ -313,6 +313,15 @@
     <Content Include="Views\Alaplap\Kosar.cshtml" />
     <Content Include="Views\Kosar\Index.cshtml" />
     <Content Include="Views\Kosar\DeleteFull.cshtml" />
+    <Content Include="Views\Billentyuzet\Kosar.cshtml" />
+    <Content Include="Views\Eger\Kosar.cshtml" />
+    <Content Include="Views\Hattertar\Kosar.cshtml" />
+    <Content Include="Views\Memoria\Kosar.cshtml" />
+    <Content Include="Views\Monitor\Kosar.cshtml" />
+    <Content Include="Views\Processzor\Kosar.cshtml" />
+    <Content Include="Views\Szamitogephaz\Kosar.cshtml" />
+    <Content Include="Views\Tapegyseg\Kosar.cshtml" />
+    <Content Include="Views\Videokartya\Kosar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

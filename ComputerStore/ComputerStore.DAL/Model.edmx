@@ -23,6 +23,7 @@
           <Property Name="kep_id" Type="int" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="db" Type="int" />
+          <Property Name="nyuszi" Type="int" />
         </EntityType>
         <EntityType Name="billentyuzet">
           <Key>
@@ -35,6 +36,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="cpu">
           <Key>
@@ -49,6 +51,7 @@
           <Property Name="proc_foglalat_tipus_id" Type="int" />
           <Property Name="kep_id" Type="int" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="eger">
           <Key>
@@ -61,6 +64,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="hattertar">
           <Key>
@@ -74,6 +78,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="int" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="memoria">
           <Key>
@@ -86,6 +91,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="monitor">
           <Key>
@@ -99,6 +105,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="szamitogep_haz">
           <Key>
@@ -109,6 +116,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="tapegyseg">
           <Key>
@@ -120,6 +128,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="videokartya">
           <Key>
@@ -132,6 +141,7 @@
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="kep_id" Type="int" />
+          <Property Name="db" Type="int" />
         </EntityType>
         <EntityType Name="alaplap_hattertar">
           <Key>
@@ -965,6 +975,7 @@
           <NavigationProperty Name="alaplap_hattertar" Relationship="Self.FK__alaplap_h__alapl__0AF29B96" FromRole="alaplap" ToRole="alaplap_hattertar" />
           <NavigationProperty Name="alaplap_usb" Relationship="Self.FK__alaplap_u__alapl__07220AB2" FromRole="alaplap" ToRole="alaplap_usb" />
           <Property Name="db" Type="Int32" />
+          <Property Name="nyuszi" Type="Int32" />
         </EntityType>
         <EntityType Name="billentyuzet">
           <Key>
@@ -980,6 +991,7 @@
           <NavigationProperty Name="alkatresz_gyarto" Relationship="Self.FK__billentyu__alkat__1FEDB87C" FromRole="billentyuzet" ToRole="alkatresz_gyarto" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__billentyu__kep_i__21D600EE" FromRole="billentyuzet" ToRole="kepek" />
           <NavigationProperty Name="usb_tipus" Relationship="Self.FK__billentyu__usb_t__20E1DCB5" FromRole="billentyuzet" ToRole="usb_tipus" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="cpu">
           <Key>
@@ -998,6 +1010,7 @@
           <NavigationProperty Name="cpu_frekvencia_mertekegyseg" Relationship="Self.FK__cpu__frekvencia___4DB4832C" FromRole="cpu" ToRole="cpu_frekvencia_mertekegyseg" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__cpu__kep_id__4F9CCB9E" FromRole="cpu" ToRole="kepek" />
           <NavigationProperty Name="proc_foglalat_tipus" Relationship="Self.FK__cpu__proc_foglal__4EA8A765" FromRole="cpu" ToRole="proc_foglalat_tipus" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="eger">
           <Key>
@@ -1013,6 +1026,7 @@
           <NavigationProperty Name="alkatresz_gyarto" Relationship="Self.FK__eger__alkatresz___24B26D99" FromRole="eger" ToRole="alkatresz_gyarto" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__eger__kep_id__269AB60B" FromRole="eger" ToRole="kepek" />
           <NavigationProperty Name="usb_tipus" Relationship="Self.FK__eger__usb_tipus___25A691D2" FromRole="eger" ToRole="usb_tipus" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="hattertar">
           <Key>
@@ -1030,6 +1044,7 @@
           <NavigationProperty Name="hattertar_tipus" Relationship="Self.FK__hattertar__hatte__5B0E7E4A" FromRole="hattertar" ToRole="hattertar_tipus" />
           <NavigationProperty Name="hattertarolo_csatolo_tipus" Relationship="Self.FK__hattertar__hatte__5C02A283" FromRole="hattertar" ToRole="hattertarolo_csatolo_tipus" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__hattertar__kep_i__5CF6C6BC" FromRole="hattertar" ToRole="kepek" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="memoria">
           <Key>
@@ -1045,6 +1060,7 @@
           <NavigationProperty Name="alkatresz_gyarto" Relationship="Self.FK__memoria__alkatre__15702A09" FromRole="memoria" ToRole="alkatresz_gyarto" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__memoria__kep_id__1758727B" FromRole="memoria" ToRole="kepek" />
           <NavigationProperty Name="memoria_foglalat_tipus" Relationship="Self.FK__memoria__memoria__16644E42" FromRole="memoria" ToRole="memoria_foglalat_tipus" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="monitor">
           <Key>
@@ -1063,6 +1079,7 @@
           <NavigationProperty Name="monitor_meret" Relationship="Self.FK__monitor__monitor__320C68B7" FromRole="monitor" ToRole="monitor_meret" />
           <NavigationProperty Name="monitor_felbontas" Relationship="Self.FK__monitor__monitor__33008CF0" FromRole="monitor" ToRole="monitor_felbontas" />
           <NavigationProperty Name="monitor_csatolo" Relationship="Self.FK__monitor__monitor__33F4B129" FromRole="monitor" ToRole="monitor_csatolo" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="szamitogep_haz">
           <Key>
@@ -1075,6 +1092,7 @@
           <Property Name="kep_id" Type="Int32" />
           <NavigationProperty Name="alkatresz_gyarto" Relationship="Self.FK__szamitoge__alkat__52793849" FromRole="szamitogep_haz" ToRole="alkatresz_gyarto" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__szamitoge__kep_i__536D5C82" FromRole="szamitogep_haz" ToRole="kepek" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="tapegyseg">
           <Key>
@@ -1088,6 +1106,7 @@
           <Property Name="kep_id" Type="Int32" />
           <NavigationProperty Name="alkatresz_gyarto" Relationship="Self.FK__tapegyseg__alkat__5649C92D" FromRole="tapegyseg" ToRole="alkatresz_gyarto" />
           <NavigationProperty Name="kepek" Relationship="Self.FK__tapegyseg__kep_i__573DED66" FromRole="tapegyseg" ToRole="kepek" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="videokartya">
           <Key>
@@ -1104,6 +1123,7 @@
           <NavigationProperty Name="kepek" Relationship="Self.FK__videokart__kep_i__39AD8A7F" FromRole="videokartya" ToRole="kepek" />
           <NavigationProperty Name="memoria_foglalat_tipus" Relationship="Self.FK__videokart__memor__38B96646" FromRole="videokartya" ToRole="memoria_foglalat_tipus" />
           <NavigationProperty Name="videokartya_monitor" Relationship="Self.FK__videokart__video__3C89F72A" FromRole="videokartya" ToRole="videokartya_monitor" />
+          <Property Name="db" Type="Int32" />
         </EntityType>
         <EntityType Name="alaplap_hattertar">
           <Key>
@@ -1960,6 +1980,7 @@
           <EntitySetMapping Name="alaplap">
             <EntityTypeMapping TypeName="ComputerStoreModel.alaplap">
               <MappingFragment StoreEntitySet="alaplap">
+                <ScalarProperty Name="nyuszi" ColumnName="nyuszi" />
                 <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
@@ -1980,6 +2001,7 @@
           <EntitySetMapping Name="billentyuzet">
             <EntityTypeMapping TypeName="ComputerStoreModel.billentyuzet">
               <MappingFragment StoreEntitySet="billentyuzet">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="usb_tipus_id" ColumnName="usb_tipus_id" />
@@ -1993,6 +2015,7 @@
           <EntitySetMapping Name="cpu">
             <EntityTypeMapping TypeName="ComputerStoreModel.cpu">
               <MappingFragment StoreEntitySet="cpu">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="megnevezes" ColumnName="megnevezes" />
@@ -2008,6 +2031,7 @@
           <EntitySetMapping Name="eger">
             <EntityTypeMapping TypeName="ComputerStoreModel.eger">
               <MappingFragment StoreEntitySet="eger">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="usb_tipus_id" ColumnName="usb_tipus_id" />
@@ -2021,6 +2045,7 @@
           <EntitySetMapping Name="hattertar">
             <EntityTypeMapping TypeName="ComputerStoreModel.hattertar">
               <MappingFragment StoreEntitySet="hattertar">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="hattertar_tipus_id" ColumnName="hattertar_tipus_id" />
@@ -2035,6 +2060,7 @@
           <EntitySetMapping Name="memoria">
             <EntityTypeMapping TypeName="ComputerStoreModel.memoria">
               <MappingFragment StoreEntitySet="memoria">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="memoria_foglalat_tipus_id" ColumnName="memoria_foglalat_tipus_id" />
@@ -2048,6 +2074,7 @@
           <EntitySetMapping Name="monitor">
             <EntityTypeMapping TypeName="ComputerStoreModel.monitor">
               <MappingFragment StoreEntitySet="monitor">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="monitor_meret_id" ColumnName="monitor_meret_id" />
@@ -2062,6 +2089,7 @@
           <EntitySetMapping Name="szamitogep_haz">
             <EntityTypeMapping TypeName="ComputerStoreModel.szamitogep_haz">
               <MappingFragment StoreEntitySet="szamitogep_haz">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="megnevezes" ColumnName="megnevezes" />
@@ -2073,6 +2101,7 @@
           <EntitySetMapping Name="tapegyseg">
             <EntityTypeMapping TypeName="ComputerStoreModel.tapegyseg">
               <MappingFragment StoreEntitySet="tapegyseg">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="teljesitmeny" ColumnName="teljesitmeny" />
@@ -2085,6 +2114,7 @@
           <EntitySetMapping Name="videokartya">
             <EntityTypeMapping TypeName="ComputerStoreModel.videokartya">
               <MappingFragment StoreEntitySet="videokartya">
+                <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
                 <ScalarProperty Name="memoria_tipus_id" ColumnName="memoria_tipus_id" />

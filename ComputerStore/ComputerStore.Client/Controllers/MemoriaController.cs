@@ -29,6 +29,30 @@ namespace ComputerStore.Client.Controllers
             return View(memoria);
         }
 
+        public ActionResult Kosar(int db, int id)
+        {
+
+            Memoria memoria1; Memoria memoriakivant;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                memoria1 = bl.Memoria_GetByID(id);
+                memoriakivant = new Memoria
+                {
+                    ID = memoria1.ID,
+                    Db = db,
+                    Gyarto = memoria1.Gyarto,
+                    Kep = memoria1.Kep,
+                    NettoAr = memoria1.NettoAr,
+                    Megnevezes = memoria1.Megnevezes,
+                    FoglalatID=memoria1.FoglalatID,
+                    MemoriaMeret=memoria1.MemoriaMeret
+                };
+            }
+            Kategoria k = new Kategoria { ID = memoriakivant.ID, Db = memoriakivant.Db, Kep = memoriakivant.Kep, Megnevezes = memoriakivant.Megnevezes, NettoAr = memoriakivant.NettoAr };
+            SessionData.Instance.Kosar.Add(k);
+
+            return View();
+        }
        
 	}
 }

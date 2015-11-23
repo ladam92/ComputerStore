@@ -247,7 +247,8 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes=item.megnevezes,
                         UsbID=item.usb_tipus.id,
-                        NettoAr=item.netto_ar
+                        NettoAr=item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -276,7 +277,8 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         UsbID = item.usb_tipus.id,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -304,7 +306,8 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         UsbID = item.usb_tipus.id,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -332,7 +335,8 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         UsbID = item.usb_tipus.id,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -361,7 +365,8 @@ namespace CoputerStore.BL
                         CsatoloID=item.hattertar_csatolo_tipus_id,
                         TipusID=item.hattertar_tipus_id,
                         Meret=item.meret_gb,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -390,7 +395,8 @@ namespace CoputerStore.BL
                         CsatoloID = item.hattertar_csatolo_tipus_id,
                         TipusID = item.hattertar_tipus_id,
                         Meret = item.meret_gb,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -419,7 +425,8 @@ namespace CoputerStore.BL
                         Megnevezes = item.megnevezes,
                         FoglalatID=item.memoria_foglalat_tipus_id,
                         MemoriaMeret=item.memoria_meret_mb,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -448,7 +455,8 @@ namespace CoputerStore.BL
                         CsatoloID = item.monitor_csatolo_id,
                         FelbontasID = item.monitor_felbontas_id,
                         MeretID=item.monitor_meret_id,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -477,7 +485,8 @@ namespace CoputerStore.BL
                         CsatoloID = item.monitor_csatolo_id,
                         FelbontasID = item.monitor_felbontas_id,
                         MeretID = item.monitor_meret_id,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -507,7 +516,8 @@ namespace CoputerStore.BL
                         FrekvenciaMertekID=item.frekvencia_mertekegyseg_id,
                         Magok=item.magok_darab,
                         ProcFoglalatID=item.proc_foglalat_tipus.id,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -533,7 +543,8 @@ namespace CoputerStore.BL
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
-                        NettoAr = item.netto_ar
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -560,7 +571,8 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         NettoAr = item.netto_ar,
-                        Teljesitmeny=item.teljesitmeny
+                        Teljesitmeny=item.teljesitmeny,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -588,7 +600,8 @@ namespace CoputerStore.BL
                         Megnevezes = item.megnevezes,
                         NettoAr = item.netto_ar,
                         MemoriaMeret=item.memoria_meret_gb,
-                        MemoriaTipusID=item.memoria_tipus_id
+                        MemoriaTipusID=item.memoria_tipus_id,
+                        Db = (Int32)item.db
                     });
                 }
 
@@ -616,10 +629,209 @@ namespace CoputerStore.BL
                     MemoriaFoglalat = query.memoria_foglalat_tipus.megnevezes,
                     MemoriaFoglalatID = query.memoria_foglalat_tipus_id,
                     NettoAr = query.netto_ar,
-                    VGADarab = query.vga_csatolo_darab
+                    VGADarab = query.vga_csatolo_darab,
+                    Db=(Int32)query.db
                 };
             }
             return alaplap;
+        }
+
+        public Billentyuzet Billentyuzet_GetByID(int id)
+        {
+            Billentyuzet billentyuzet;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.billentyuzet.Where(i => i.id == id).Single();
+                billentyuzet = new Billentyuzet
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db=(Int32)query.db,
+                    IsPs2=query.is_ps2_csatolo,
+                    UsbID=query.usb_tipus.id
+                    
+                };
+            }
+            return billentyuzet;
+        }
+
+        public Eger Eger_GetByID(int id)
+        {
+            Eger eger;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.eger.Where(i => i.id == id).Single();
+                eger = new Eger
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+                    IsPs2 = query.is_ps2_csatolo,
+                    UsbID = query.usb_tipus.id
+
+                };
+            }
+            return eger;
+        }
+
+        public Hattertar Hattertar_GetByID(int id)
+        {
+            Hattertar hattertar;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.hattertar.Where(i => i.id == id).Single();
+                hattertar = new Hattertar
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+                    CsatoloID=query.hattertar_csatolo_tipus_id,
+                    Meret=query.meret_gb,
+                    TipusID=query.hattertar_tipus_id
+
+                };
+            }
+            return hattertar;
+        }
+
+        public Memoria Memoria_GetByID(int id)
+        {
+            Memoria memoria;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.memoria.Where(i => i.id == id).Single();
+                memoria = new Memoria
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+                    FoglalatID=query.memoria_foglalat_tipus_id,
+                    MemoriaMeret=query.memoria_meret_mb
+
+                };
+            }
+            return memoria;
+        }
+
+        public Monitor Monitor_GetByID(int id)
+        {
+            Monitor monitor;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.monitor.Where(i => i.id == id).Single();
+                monitor = new Monitor
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+                    CsatoloID=query.monitor_csatolo_id,
+                    FelbontasID=query.monitor_felbontas_id,
+                    MeretID=query.monitor_meret_id
+
+                };
+            }
+            return monitor;
+        }
+
+        public Processzor Processzor_GetByID(int id)
+        {
+            Processzor processzor;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.cpu.Where(i => i.id == id).Single();
+                processzor = new Processzor
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+                    Frekvencia=query.frekvencia,
+                    FrekvenciaMertekID=query.frekvencia_mertekegyseg_id,
+                    Magok=query.magok_darab,
+                    ProcFoglalatID=query.proc_foglalat_tipus.id
+
+                };
+            }
+            return processzor;
+        }
+
+        public Szamitogephaz Szamitogephaz_GetByID(int id)
+        {
+            Szamitogephaz szamitogephaz;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.szamitogep_haz.Where(i => i.id == id).Single();
+                szamitogephaz = new Szamitogephaz
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db
+
+                };
+            }
+            return szamitogephaz;
+        }
+
+        public Tapegyseg Tapegyseg_GetByID(int id)
+        {
+            Tapegyseg tapegyseg;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.tapegyseg.Where(i => i.id == id).Single();
+                tapegyseg = new Tapegyseg
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+
+                };
+            }
+            return tapegyseg;
+        }
+
+        public Videokartya Videokartya_GetByID(int id)
+        {
+            Videokartya videokartya;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.videokartya.Where(i => i.id == id).Single();
+                videokartya = new Videokartya
+                {
+                    ID = query.id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    Kep = query.kepek.kep,
+                    Megnevezes = query.megnevezes,
+                    NettoAr = query.netto_ar,
+                    Db = (Int32)query.db,
+                    MemoriaMeret=query.memoria_meret_gb,
+                    MemoriaTipusID=query.memoria_tipus_id
+
+                };
+            }
+            return videokartya;
         }
     }
 }
