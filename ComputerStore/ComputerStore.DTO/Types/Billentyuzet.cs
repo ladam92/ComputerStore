@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -14,18 +15,25 @@ namespace ComputerStore.DTO.Types
         public int ID { get; set; }
 
         [DataMember]
+        [Display(Name = "Gyártó")]
         public string Gyarto { get; set; }
 
         [DataMember]
         public int UsbID { get; set; }
 
         [DataMember]
+        [Display(Name = "USB típus")]
+        public string Usb { get; set; }
+
+        [DataMember]
+        [Display(Name = "PS/2 port")]
         public bool IsPs2 { get; set; }
 
         [DataMember]
         public Byte[] Kep { get; set; }
 
         [DataMember]
+        [Display(Name = "Raktáron (db)")]
         public int Db { get; set; }
 
 

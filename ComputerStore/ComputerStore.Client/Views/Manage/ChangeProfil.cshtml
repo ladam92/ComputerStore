@@ -10,29 +10,34 @@
     var user = ComputerStore.Client.Utils.SessionData.Instance.CurrentUser;
    
     @Html.AntiForgeryToken()
-    <h4>Profil adatok módosítása</h4>
-    <hr />
+    <h2>Profil adatok módosítása</h2>
+    <hr style="margin-bottom: 50px;"/>
 
-    <div class="form-group">
-        <div class="row">
-            @Html.Label("Felhasználónév:", new { @class = "col-md-1 pull-left" })
-            <input type="text" value="@user.UserName" class="col-md-3 col-md-offset-1" name="uname" />
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Felhasználónév:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                <input type="text" value="@user.UserName" class="form-control" name="uname" />
+            </div>
         </div>
-        <div class="row">
-            @Html.Label("E-mail cím:", new { @class = "col-md-2 pull-left" })
-            <input type="text" value="@user.Email" class="col-md-3 " name="email" />
+        <div class="form-group">
+            @Html.Label("E-mail cím:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                <input type="text" value="@user.Email" class="form-control" name="email" />
+            </div>
         </div>
-        <div class="row">
-            @Html.Label("Teljes név:", new { @class = "col-md-2 pull-left" })
-            <input type="text" value="@user.FullName" class="col-md-3 " name="name" />
+        <div class="form-group">
+            @Html.Label("Teljes név:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                <input type="text" value="@user.FullName" class="form-control " name="name" />
+            </div>
         </div>
-        
-    </div>
 
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Módosítások mentése" class="btn btn-default" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Módosítások mentése" class="btn btn-primary" />
+            </div>
         </div>
     </div>
 }

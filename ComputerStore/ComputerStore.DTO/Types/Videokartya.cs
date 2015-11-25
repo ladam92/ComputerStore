@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -14,12 +15,18 @@ namespace ComputerStore.DTO.Types
         public int ID { get; set; }
 
         [DataMember]
+        [Display(Name = "Gyártó")]
         public string Gyarto { get; set; }
+
+        [DataMember]
+        [Display(Name = "Memória típus")]
+        public string MemoriaTipus { get; set; }
 
         [DataMember]
         public int MemoriaTipusID { get; set; }
 
         [DataMember]
+        [Display(Name = "Memória (GB)")]
         public int MemoriaMeret { get; set; }
 
 

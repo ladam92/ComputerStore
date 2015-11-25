@@ -1,0 +1,66 @@
+﻿@model ComputerStore.DTO.Types.Processzor
+
+@{
+    ViewBag.Title = "Processzor";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Megnevezes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Megnevezes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NettoAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NettoAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Db)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Db)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gyarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gyarto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Magok)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Magok)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Frekvencia) (@Model.FrekvenciaMertek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frekvencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcFoglalat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcFoglalat)
+        </dd>
+
+    </dl>
+</div>
