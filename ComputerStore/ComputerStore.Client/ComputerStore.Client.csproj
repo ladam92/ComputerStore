@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201511202151253_Admin.Designer.cs">
       <DependentUpon>201511202151253_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511242028079_Teribul.cs" />
+    <Compile Include="Migrations\201511242028079_Teribul.Designer.cs">
+      <DependentUpon>201511242028079_Teribul.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -311,11 +315,11 @@
     <Content Include="Views\Szamitogephaz\Gethaz.cshtml" />
     <Content Include="Views\Tapegyseg\GetTapegyseg.cshtml" />
     <Content Include="Views\Videokartya\GetVideokartya.cshtml" />
-<Content Include="Views\Admin\Index.cshtml" />
-<Content Include="Views\Alaplap\Kosar.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Alaplap\Kosar.cshtml" />
     <Content Include="Views\Kosar\Index.cshtml" />
     <Content Include="Views\Kosar\DeleteFull.cshtml" />
-	<Content Include="Views\Billentyuzet\Kosar.cshtml" />
+    <Content Include="Views\Billentyuzet\Kosar.cshtml" />
     <Content Include="Views\Eger\Kosar.cshtml" />
     <Content Include="Views\Hattertar\Kosar.cshtml" />
     <Content Include="Views\Memoria\Kosar.cshtml" />
@@ -324,7 +328,12 @@
     <Content Include="Views\Szamitogephaz\Kosar.cshtml" />
     <Content Include="Views\Tapegyseg\Kosar.cshtml" />
     <Content Include="Views\Videokartya\Kosar.cshtml" />
-    <Folder Include="App_Data\" />
+    <Content Include="Views\Manage\ChangeBill.cshtml" />
+    <Content Include="Views\Manage\ChangeTransport.cshtml" />
+    <Content Include="Views\Manage\ChangeProfil.cshtml" />
+    <Content Include="Views\Manage\ChangeBillGet.cshtml" />
+    <Content Include="Views\Manage\ChangeTransportGet.cshtml" />
+    <Content Include="Views\Manage\ChangeProfilGet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -353,6 +362,12 @@
     <EmbeddedResource Include="Migrations\201511202151253_Admin.resx">
       <DependentUpon>201511202151253_Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511242028079_Teribul.resx">
+      <DependentUpon>201511242028079_Teribul.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

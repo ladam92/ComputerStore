@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="proc_foglalat_tipus_id" Type="int" Nullable="false" />
           <Property Name="memoria_foglalat_tipus_id" Type="int" Nullable="false" />
@@ -23,13 +23,12 @@
           <Property Name="kep_id" Type="int" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="db" Type="int" />
-          <Property Name="nyuszi" Type="int" />
         </EntityType>
         <EntityType Name="billentyuzet">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="usb_tipus_id" Type="int" />
           <Property Name="is_ps2_csatolo" Type="bit" Nullable="false" />
@@ -42,7 +41,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="magok_darab" Type="int" Nullable="false" />
@@ -57,7 +56,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="usb_tipus_id" Type="int" />
           <Property Name="is_ps2_csatolo" Type="bit" Nullable="false" />
@@ -70,7 +69,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="hattertar_tipus_id" Type="int" Nullable="false" />
           <Property Name="hattertar_csatolo_tipus_id" Type="int" Nullable="false" />
@@ -84,7 +83,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="memoria_foglalat_tipus_id" Type="int" Nullable="false" />
           <Property Name="memoria_meret_mb" Type="int" Nullable="false" />
@@ -97,7 +96,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="monitor_meret_id" Type="int" Nullable="false" />
           <Property Name="monitor_felbontas_id" Type="int" Nullable="false" />
@@ -111,7 +110,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="netto_ar" Type="numeric" Precision="5" Scale="0" Nullable="false" />
@@ -122,7 +121,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="teljesitmeny" Type="int" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -134,7 +133,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alkatresz_gyarto_id" Type="int" Nullable="false" />
           <Property Name="memoria_tipus_id" Type="int" Nullable="false" />
           <Property Name="memoria_meret_gb" Type="int" Nullable="false" />
@@ -147,7 +146,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alaplap_id" Type="int" />
           <Property Name="hattertar_csatolo_tipus_id" Type="int" />
           <Property Name="darab" Type="int" Nullable="false" />
@@ -156,7 +155,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="alaplap_id" Type="int" />
           <Property Name="usb_tipus_id" Type="int" />
           <Property Name="darab" Type="int" Nullable="false" />
@@ -165,103 +164,103 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="cpu_frekvencia_mertekegyseg">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="mertekegyseg" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="hattertar_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="hattertarolo_csatolo_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="kepek">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="kep" Type="varbinary(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="memoria_foglalat_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="monitor_csatolo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="monitor_felbontas">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="felbontás" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="monitor_meret">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="meret" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="pci_express_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="proc_foglalat_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="usb_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="vga_csatolo_felulet_tipus">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="megnevezes" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="videokartya_monitor">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="videokartya_id" Type="int" Nullable="false" />
           <Property Name="monitor_csatolo_id" Type="int" Nullable="false" />
           <Property Name="darab" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__alaplap__alkatre__286302EC">
+        <Association Name="FK__alaplap__alkatre__276EDEB3">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -273,7 +272,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap__kep_id__2D27B809">
+        <Association Name="FK__alaplap__kep_id__2C3393D0">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -285,7 +284,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap__memoria__2A4B4B5E">
+        <Association Name="FK__alaplap__memoria__29572725">
           <End Role="memoria_foglalat_tipus" Type="Self.memoria_foglalat_tipus" Multiplicity="1" />
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,7 +296,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap__pci_exp__2C3393D0">
+        <Association Name="FK__alaplap__pci_exp__2B3F6F97">
           <End Role="pci_express_tipus" Type="Self.pci_express_tipus" Multiplicity="0..1" />
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -309,7 +308,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap__proc_fo__29572725">
+        <Association Name="FK__alaplap__proc_fo__286302EC">
           <End Role="proc_foglalat_tipus" Type="Self.proc_foglalat_tipus" Multiplicity="1" />
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -321,7 +320,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap__vga_csa__2B3F6F97">
+        <Association Name="FK__alaplap__vga_csa__2A4B4B5E">
           <End Role="vga_csatolo_felulet_tipus" Type="Self.vga_csatolo_felulet_tipus" Multiplicity="1" />
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -333,7 +332,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap_h__alapl__33D4B598">
+        <Association Name="FK__alaplap_h__alapl__32E0915F">
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="0..1" />
           <End Role="alaplap_hattertar" Type="Self.alaplap_hattertar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -345,7 +344,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap_h__hatte__34C8D9D1">
+        <Association Name="FK__alaplap_h__hatte__33D4B598">
           <End Role="hattertarolo_csatolo_tipus" Type="Self.hattertarolo_csatolo_tipus" Multiplicity="0..1" />
           <End Role="alaplap_hattertar" Type="Self.alaplap_hattertar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -357,7 +356,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap_u__alapl__300424B4">
+        <Association Name="FK__alaplap_u__alapl__2F10007B">
           <End Role="alaplap" Type="Self.alaplap" Multiplicity="0..1" />
           <End Role="alaplap_usb" Type="Self.alaplap_usb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -369,7 +368,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__alaplap_u__usb_t__30F848ED">
+        <Association Name="FK__alaplap_u__usb_t__300424B4">
           <End Role="usb_tipus" Type="Self.usb_tipus" Multiplicity="0..1" />
           <End Role="alaplap_usb" Type="Self.alaplap_usb" Multiplicity="*" />
           <ReferentialConstraint>
@@ -381,7 +380,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__billentyu__alkat__49C3F6B7">
+        <Association Name="FK__billentyu__alkat__48CFD27E">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="billentyuzet" Type="Self.billentyuzet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -393,7 +392,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__billentyu__kep_i__4BAC3F29">
+        <Association Name="FK__billentyu__kep_i__4AB81AF0">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="billentyuzet" Type="Self.billentyuzet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -405,7 +404,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__billentyu__usb_t__4AB81AF0">
+        <Association Name="FK__billentyu__usb_t__49C3F6B7">
           <End Role="usb_tipus" Type="Self.usb_tipus" Multiplicity="0..1" />
           <End Role="billentyuzet" Type="Self.billentyuzet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -417,7 +416,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__cpu__alkatresz_g__398D8EEE">
+        <Association Name="FK__cpu__alkatresz_g__38996AB5">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="cpu" Type="Self.cpu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -429,7 +428,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__cpu__frekvencia___3A81B327">
+        <Association Name="FK__cpu__frekvencia___398D8EEE">
           <End Role="cpu_frekvencia_mertekegyseg" Type="Self.cpu_frekvencia_mertekegyseg" Multiplicity="1" />
           <End Role="cpu" Type="Self.cpu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -441,7 +440,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__cpu__kep_id__3C69FB99">
+        <Association Name="FK__cpu__kep_id__3B75D760">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="cpu" Type="Self.cpu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -453,7 +452,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__cpu__proc_foglal__3B75D760">
+        <Association Name="FK__cpu__proc_foglal__3A81B327">
           <End Role="proc_foglalat_tipus" Type="Self.proc_foglalat_tipus" Multiplicity="0..1" />
           <End Role="cpu" Type="Self.cpu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -465,7 +464,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__eger__alkatresz___4E88ABD4">
+        <Association Name="FK__eger__alkatresz___4D94879B">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="eger" Type="Self.eger" Multiplicity="*" />
           <ReferentialConstraint>
@@ -477,7 +476,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__eger__kep_id__5070F446">
+        <Association Name="FK__eger__kep_id__4F7CD00D">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="eger" Type="Self.eger" Multiplicity="*" />
           <ReferentialConstraint>
@@ -489,7 +488,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__eger__usb_tipus___4F7CD00D">
+        <Association Name="FK__eger__usb_tipus___4E88ABD4">
           <End Role="usb_tipus" Type="Self.usb_tipus" Multiplicity="0..1" />
           <End Role="eger" Type="Self.eger" Multiplicity="*" />
           <ReferentialConstraint>
@@ -501,7 +500,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hattertar__alkat__440B1D61">
+        <Association Name="FK__hattertar__alkat__4316F928">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="hattertar" Type="Self.hattertar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -513,7 +512,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hattertar__hatte__44FF419A">
+        <Association Name="FK__hattertar__hatte__440B1D61">
           <End Role="hattertar_tipus" Type="Self.hattertar_tipus" Multiplicity="1" />
           <End Role="hattertar" Type="Self.hattertar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -525,7 +524,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hattertar__hatte__45F365D3">
+        <Association Name="FK__hattertar__hatte__44FF419A">
           <End Role="hattertarolo_csatolo_tipus" Type="Self.hattertarolo_csatolo_tipus" Multiplicity="1" />
           <End Role="hattertar" Type="Self.hattertar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -537,7 +536,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hattertar__kep_i__46E78A0C">
+        <Association Name="FK__hattertar__kep_i__45F365D3">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="hattertar" Type="Self.hattertar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -549,7 +548,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__memoria__alkatre__3F466844">
+        <Association Name="FK__memoria__alkatre__3E52440B">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="memoria" Type="Self.memoria" Multiplicity="*" />
           <ReferentialConstraint>
@@ -561,7 +560,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__memoria__kep_id__412EB0B6">
+        <Association Name="FK__memoria__kep_id__403A8C7D">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="memoria" Type="Self.memoria" Multiplicity="*" />
           <ReferentialConstraint>
@@ -573,7 +572,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__memoria__memoria__403A8C7D">
+        <Association Name="FK__memoria__memoria__3F466844">
           <End Role="memoria_foglalat_tipus" Type="Self.memoria_foglalat_tipus" Multiplicity="1" />
           <End Role="memoria" Type="Self.memoria" Multiplicity="*" />
           <ReferentialConstraint>
@@ -585,7 +584,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__monitor__alkatre__5AEE82B9">
+        <Association Name="FK__monitor__alkatre__59FA5E80">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -597,7 +596,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__monitor__kep_id__5EBF139D">
+        <Association Name="FK__monitor__kep_id__5DCAEF64">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -609,7 +608,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__monitor__monitor__5BE2A6F2">
+        <Association Name="FK__monitor__monitor__5AEE82B9">
           <End Role="monitor_meret" Type="Self.monitor_meret" Multiplicity="1" />
           <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -621,7 +620,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__monitor__monitor__5CD6CB2B">
+        <Association Name="FK__monitor__monitor__5BE2A6F2">
           <End Role="monitor_felbontas" Type="Self.monitor_felbontas" Multiplicity="1" />
           <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -633,7 +632,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__monitor__monitor__5DCAEF64">
+        <Association Name="FK__monitor__monitor__5CD6CB2B">
           <End Role="monitor_csatolo" Type="Self.monitor_csatolo" Multiplicity="1" />
           <End Role="monitor" Type="Self.monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -645,7 +644,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__szamitoge__alkat__534D60F1">
+        <Association Name="FK__szamitoge__alkat__52593CB8">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="szamitogep_haz" Type="Self.szamitogep_haz" Multiplicity="*" />
           <ReferentialConstraint>
@@ -657,7 +656,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__szamitoge__kep_i__5441852A">
+        <Association Name="FK__szamitoge__kep_i__534D60F1">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="szamitogep_haz" Type="Self.szamitogep_haz" Multiplicity="*" />
           <ReferentialConstraint>
@@ -669,7 +668,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tapegyseg__alkat__571DF1D5">
+        <Association Name="FK__tapegyseg__alkat__5629CD9C">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="tapegyseg" Type="Self.tapegyseg" Multiplicity="*" />
           <ReferentialConstraint>
@@ -681,7 +680,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tapegyseg__kep_i__5812160E">
+        <Association Name="FK__tapegyseg__kep_i__571DF1D5">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="tapegyseg" Type="Self.tapegyseg" Multiplicity="*" />
           <ReferentialConstraint>
@@ -693,7 +692,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__videokart__alkat__619B8048">
+        <Association Name="FK__videokart__alkat__60A75C0F">
           <End Role="alkatresz_gyarto" Type="Self.alkatresz_gyarto" Multiplicity="1" />
           <End Role="videokartya" Type="Self.videokartya" Multiplicity="*" />
           <ReferentialConstraint>
@@ -705,7 +704,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__videokart__kep_i__6383C8BA">
+        <Association Name="FK__videokart__kep_i__628FA481">
           <End Role="kepek" Type="Self.kepek" Multiplicity="0..1" />
           <End Role="videokartya" Type="Self.videokartya" Multiplicity="*" />
           <ReferentialConstraint>
@@ -717,7 +716,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__videokart__memor__628FA481">
+        <Association Name="FK__videokart__memor__619B8048">
           <End Role="memoria_foglalat_tipus" Type="Self.memoria_foglalat_tipus" Multiplicity="1" />
           <End Role="videokartya" Type="Self.videokartya" Multiplicity="*" />
           <ReferentialConstraint>
@@ -729,7 +728,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__videokart__monit__6754599E">
+        <Association Name="FK__videokart__monit__66603565">
           <End Role="monitor_csatolo" Type="Self.monitor_csatolo" Multiplicity="1" />
           <End Role="videokartya_monitor" Type="Self.videokartya_monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -741,7 +740,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__videokart__video__66603565">
+        <Association Name="FK__videokart__video__656C112C">
           <End Role="videokartya" Type="Self.videokartya" Multiplicity="1" />
           <End Role="videokartya_monitor" Type="Self.videokartya_monitor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -780,167 +779,167 @@
           <EntitySet Name="usb_tipus" EntityType="Self.usb_tipus" Schema="main" store:Type="Tables" />
           <EntitySet Name="vga_csatolo_felulet_tipus" EntityType="Self.vga_csatolo_felulet_tipus" Schema="main" store:Type="Tables" />
           <EntitySet Name="videokartya_monitor" EntityType="Self.videokartya_monitor" Schema="main" store:Type="Tables" />
-          <AssociationSet Name="FK__alaplap__alkatre__286302EC" Association="Self.FK__alaplap__alkatre__286302EC">
+          <AssociationSet Name="FK__alaplap__alkatre__276EDEB3" Association="Self.FK__alaplap__alkatre__276EDEB3">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="alaplap" EntitySet="alaplap" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap__kep_id__2D27B809" Association="Self.FK__alaplap__kep_id__2D27B809">
+          <AssociationSet Name="FK__alaplap__kep_id__2C3393D0" Association="Self.FK__alaplap__kep_id__2C3393D0">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="alaplap" EntitySet="alaplap" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap__memoria__2A4B4B5E" Association="Self.FK__alaplap__memoria__2A4B4B5E">
+          <AssociationSet Name="FK__alaplap__memoria__29572725" Association="Self.FK__alaplap__memoria__29572725">
             <End Role="memoria_foglalat_tipus" EntitySet="memoria_foglalat_tipus" />
             <End Role="alaplap" EntitySet="alaplap" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap__pci_exp__2C3393D0" Association="Self.FK__alaplap__pci_exp__2C3393D0">
+          <AssociationSet Name="FK__alaplap__pci_exp__2B3F6F97" Association="Self.FK__alaplap__pci_exp__2B3F6F97">
             <End Role="pci_express_tipus" EntitySet="pci_express_tipus" />
             <End Role="alaplap" EntitySet="alaplap" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap__proc_fo__29572725" Association="Self.FK__alaplap__proc_fo__29572725">
+          <AssociationSet Name="FK__alaplap__proc_fo__286302EC" Association="Self.FK__alaplap__proc_fo__286302EC">
             <End Role="proc_foglalat_tipus" EntitySet="proc_foglalat_tipus" />
             <End Role="alaplap" EntitySet="alaplap" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap__vga_csa__2B3F6F97" Association="Self.FK__alaplap__vga_csa__2B3F6F97">
+          <AssociationSet Name="FK__alaplap__vga_csa__2A4B4B5E" Association="Self.FK__alaplap__vga_csa__2A4B4B5E">
             <End Role="vga_csatolo_felulet_tipus" EntitySet="vga_csatolo_felulet_tipus" />
             <End Role="alaplap" EntitySet="alaplap" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap_h__alapl__33D4B598" Association="Self.FK__alaplap_h__alapl__33D4B598">
+          <AssociationSet Name="FK__alaplap_h__alapl__32E0915F" Association="Self.FK__alaplap_h__alapl__32E0915F">
             <End Role="alaplap" EntitySet="alaplap" />
             <End Role="alaplap_hattertar" EntitySet="alaplap_hattertar" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap_h__hatte__34C8D9D1" Association="Self.FK__alaplap_h__hatte__34C8D9D1">
+          <AssociationSet Name="FK__alaplap_h__hatte__33D4B598" Association="Self.FK__alaplap_h__hatte__33D4B598">
             <End Role="hattertarolo_csatolo_tipus" EntitySet="hattertarolo_csatolo_tipus" />
             <End Role="alaplap_hattertar" EntitySet="alaplap_hattertar" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap_u__alapl__300424B4" Association="Self.FK__alaplap_u__alapl__300424B4">
+          <AssociationSet Name="FK__alaplap_u__alapl__2F10007B" Association="Self.FK__alaplap_u__alapl__2F10007B">
             <End Role="alaplap" EntitySet="alaplap" />
             <End Role="alaplap_usb" EntitySet="alaplap_usb" />
           </AssociationSet>
-          <AssociationSet Name="FK__alaplap_u__usb_t__30F848ED" Association="Self.FK__alaplap_u__usb_t__30F848ED">
+          <AssociationSet Name="FK__alaplap_u__usb_t__300424B4" Association="Self.FK__alaplap_u__usb_t__300424B4">
             <End Role="usb_tipus" EntitySet="usb_tipus" />
             <End Role="alaplap_usb" EntitySet="alaplap_usb" />
           </AssociationSet>
-          <AssociationSet Name="FK__billentyu__alkat__49C3F6B7" Association="Self.FK__billentyu__alkat__49C3F6B7">
+          <AssociationSet Name="FK__billentyu__alkat__48CFD27E" Association="Self.FK__billentyu__alkat__48CFD27E">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="billentyuzet" EntitySet="billentyuzet" />
           </AssociationSet>
-          <AssociationSet Name="FK__billentyu__kep_i__4BAC3F29" Association="Self.FK__billentyu__kep_i__4BAC3F29">
+          <AssociationSet Name="FK__billentyu__kep_i__4AB81AF0" Association="Self.FK__billentyu__kep_i__4AB81AF0">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="billentyuzet" EntitySet="billentyuzet" />
           </AssociationSet>
-          <AssociationSet Name="FK__billentyu__usb_t__4AB81AF0" Association="Self.FK__billentyu__usb_t__4AB81AF0">
+          <AssociationSet Name="FK__billentyu__usb_t__49C3F6B7" Association="Self.FK__billentyu__usb_t__49C3F6B7">
             <End Role="usb_tipus" EntitySet="usb_tipus" />
             <End Role="billentyuzet" EntitySet="billentyuzet" />
           </AssociationSet>
-          <AssociationSet Name="FK__cpu__alkatresz_g__398D8EEE" Association="Self.FK__cpu__alkatresz_g__398D8EEE">
+          <AssociationSet Name="FK__cpu__alkatresz_g__38996AB5" Association="Self.FK__cpu__alkatresz_g__38996AB5">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="cpu" EntitySet="cpu" />
           </AssociationSet>
-          <AssociationSet Name="FK__cpu__frekvencia___3A81B327" Association="Self.FK__cpu__frekvencia___3A81B327">
+          <AssociationSet Name="FK__cpu__frekvencia___398D8EEE" Association="Self.FK__cpu__frekvencia___398D8EEE">
             <End Role="cpu_frekvencia_mertekegyseg" EntitySet="cpu_frekvencia_mertekegyseg" />
             <End Role="cpu" EntitySet="cpu" />
           </AssociationSet>
-          <AssociationSet Name="FK__cpu__kep_id__3C69FB99" Association="Self.FK__cpu__kep_id__3C69FB99">
+          <AssociationSet Name="FK__cpu__kep_id__3B75D760" Association="Self.FK__cpu__kep_id__3B75D760">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="cpu" EntitySet="cpu" />
           </AssociationSet>
-          <AssociationSet Name="FK__cpu__proc_foglal__3B75D760" Association="Self.FK__cpu__proc_foglal__3B75D760">
+          <AssociationSet Name="FK__cpu__proc_foglal__3A81B327" Association="Self.FK__cpu__proc_foglal__3A81B327">
             <End Role="proc_foglalat_tipus" EntitySet="proc_foglalat_tipus" />
             <End Role="cpu" EntitySet="cpu" />
           </AssociationSet>
-          <AssociationSet Name="FK__eger__alkatresz___4E88ABD4" Association="Self.FK__eger__alkatresz___4E88ABD4">
+          <AssociationSet Name="FK__eger__alkatresz___4D94879B" Association="Self.FK__eger__alkatresz___4D94879B">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="eger" EntitySet="eger" />
           </AssociationSet>
-          <AssociationSet Name="FK__eger__kep_id__5070F446" Association="Self.FK__eger__kep_id__5070F446">
+          <AssociationSet Name="FK__eger__kep_id__4F7CD00D" Association="Self.FK__eger__kep_id__4F7CD00D">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="eger" EntitySet="eger" />
           </AssociationSet>
-          <AssociationSet Name="FK__eger__usb_tipus___4F7CD00D" Association="Self.FK__eger__usb_tipus___4F7CD00D">
+          <AssociationSet Name="FK__eger__usb_tipus___4E88ABD4" Association="Self.FK__eger__usb_tipus___4E88ABD4">
             <End Role="usb_tipus" EntitySet="usb_tipus" />
             <End Role="eger" EntitySet="eger" />
           </AssociationSet>
-          <AssociationSet Name="FK__hattertar__alkat__440B1D61" Association="Self.FK__hattertar__alkat__440B1D61">
+          <AssociationSet Name="FK__hattertar__alkat__4316F928" Association="Self.FK__hattertar__alkat__4316F928">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="hattertar" EntitySet="hattertar" />
           </AssociationSet>
-          <AssociationSet Name="FK__hattertar__hatte__44FF419A" Association="Self.FK__hattertar__hatte__44FF419A">
+          <AssociationSet Name="FK__hattertar__hatte__440B1D61" Association="Self.FK__hattertar__hatte__440B1D61">
             <End Role="hattertar_tipus" EntitySet="hattertar_tipus" />
             <End Role="hattertar" EntitySet="hattertar" />
           </AssociationSet>
-          <AssociationSet Name="FK__hattertar__hatte__45F365D3" Association="Self.FK__hattertar__hatte__45F365D3">
+          <AssociationSet Name="FK__hattertar__hatte__44FF419A" Association="Self.FK__hattertar__hatte__44FF419A">
             <End Role="hattertarolo_csatolo_tipus" EntitySet="hattertarolo_csatolo_tipus" />
             <End Role="hattertar" EntitySet="hattertar" />
           </AssociationSet>
-          <AssociationSet Name="FK__hattertar__kep_i__46E78A0C" Association="Self.FK__hattertar__kep_i__46E78A0C">
+          <AssociationSet Name="FK__hattertar__kep_i__45F365D3" Association="Self.FK__hattertar__kep_i__45F365D3">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="hattertar" EntitySet="hattertar" />
           </AssociationSet>
-          <AssociationSet Name="FK__memoria__alkatre__3F466844" Association="Self.FK__memoria__alkatre__3F466844">
+          <AssociationSet Name="FK__memoria__alkatre__3E52440B" Association="Self.FK__memoria__alkatre__3E52440B">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="memoria" EntitySet="memoria" />
           </AssociationSet>
-          <AssociationSet Name="FK__memoria__kep_id__412EB0B6" Association="Self.FK__memoria__kep_id__412EB0B6">
+          <AssociationSet Name="FK__memoria__kep_id__403A8C7D" Association="Self.FK__memoria__kep_id__403A8C7D">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="memoria" EntitySet="memoria" />
           </AssociationSet>
-          <AssociationSet Name="FK__memoria__memoria__403A8C7D" Association="Self.FK__memoria__memoria__403A8C7D">
+          <AssociationSet Name="FK__memoria__memoria__3F466844" Association="Self.FK__memoria__memoria__3F466844">
             <End Role="memoria_foglalat_tipus" EntitySet="memoria_foglalat_tipus" />
             <End Role="memoria" EntitySet="memoria" />
           </AssociationSet>
-          <AssociationSet Name="FK__monitor__alkatre__5AEE82B9" Association="Self.FK__monitor__alkatre__5AEE82B9">
+          <AssociationSet Name="FK__monitor__alkatre__59FA5E80" Association="Self.FK__monitor__alkatre__59FA5E80">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="monitor" EntitySet="monitor" />
           </AssociationSet>
-          <AssociationSet Name="FK__monitor__kep_id__5EBF139D" Association="Self.FK__monitor__kep_id__5EBF139D">
+          <AssociationSet Name="FK__monitor__kep_id__5DCAEF64" Association="Self.FK__monitor__kep_id__5DCAEF64">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="monitor" EntitySet="monitor" />
           </AssociationSet>
-          <AssociationSet Name="FK__monitor__monitor__5BE2A6F2" Association="Self.FK__monitor__monitor__5BE2A6F2">
+          <AssociationSet Name="FK__monitor__monitor__5AEE82B9" Association="Self.FK__monitor__monitor__5AEE82B9">
             <End Role="monitor_meret" EntitySet="monitor_meret" />
             <End Role="monitor" EntitySet="monitor" />
           </AssociationSet>
-          <AssociationSet Name="FK__monitor__monitor__5CD6CB2B" Association="Self.FK__monitor__monitor__5CD6CB2B">
+          <AssociationSet Name="FK__monitor__monitor__5BE2A6F2" Association="Self.FK__monitor__monitor__5BE2A6F2">
             <End Role="monitor_felbontas" EntitySet="monitor_felbontas" />
             <End Role="monitor" EntitySet="monitor" />
           </AssociationSet>
-          <AssociationSet Name="FK__monitor__monitor__5DCAEF64" Association="Self.FK__monitor__monitor__5DCAEF64">
+          <AssociationSet Name="FK__monitor__monitor__5CD6CB2B" Association="Self.FK__monitor__monitor__5CD6CB2B">
             <End Role="monitor_csatolo" EntitySet="monitor_csatolo" />
             <End Role="monitor" EntitySet="monitor" />
           </AssociationSet>
-          <AssociationSet Name="FK__szamitoge__alkat__534D60F1" Association="Self.FK__szamitoge__alkat__534D60F1">
+          <AssociationSet Name="FK__szamitoge__alkat__52593CB8" Association="Self.FK__szamitoge__alkat__52593CB8">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="szamitogep_haz" EntitySet="szamitogep_haz" />
           </AssociationSet>
-          <AssociationSet Name="FK__szamitoge__kep_i__5441852A" Association="Self.FK__szamitoge__kep_i__5441852A">
+          <AssociationSet Name="FK__szamitoge__kep_i__534D60F1" Association="Self.FK__szamitoge__kep_i__534D60F1">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="szamitogep_haz" EntitySet="szamitogep_haz" />
           </AssociationSet>
-          <AssociationSet Name="FK__tapegyseg__alkat__571DF1D5" Association="Self.FK__tapegyseg__alkat__571DF1D5">
+          <AssociationSet Name="FK__tapegyseg__alkat__5629CD9C" Association="Self.FK__tapegyseg__alkat__5629CD9C">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="tapegyseg" EntitySet="tapegyseg" />
           </AssociationSet>
-          <AssociationSet Name="FK__tapegyseg__kep_i__5812160E" Association="Self.FK__tapegyseg__kep_i__5812160E">
+          <AssociationSet Name="FK__tapegyseg__kep_i__571DF1D5" Association="Self.FK__tapegyseg__kep_i__571DF1D5">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="tapegyseg" EntitySet="tapegyseg" />
           </AssociationSet>
-          <AssociationSet Name="FK__videokart__alkat__619B8048" Association="Self.FK__videokart__alkat__619B8048">
+          <AssociationSet Name="FK__videokart__alkat__60A75C0F" Association="Self.FK__videokart__alkat__60A75C0F">
             <End Role="alkatresz_gyarto" EntitySet="alkatresz_gyarto" />
             <End Role="videokartya" EntitySet="videokartya" />
           </AssociationSet>
-          <AssociationSet Name="FK__videokart__kep_i__6383C8BA" Association="Self.FK__videokart__kep_i__6383C8BA">
+          <AssociationSet Name="FK__videokart__kep_i__628FA481" Association="Self.FK__videokart__kep_i__628FA481">
             <End Role="kepek" EntitySet="kepek" />
             <End Role="videokartya" EntitySet="videokartya" />
           </AssociationSet>
-          <AssociationSet Name="FK__videokart__memor__628FA481" Association="Self.FK__videokart__memor__628FA481">
+          <AssociationSet Name="FK__videokart__memor__619B8048" Association="Self.FK__videokart__memor__619B8048">
             <End Role="memoria_foglalat_tipus" EntitySet="memoria_foglalat_tipus" />
             <End Role="videokartya" EntitySet="videokartya" />
           </AssociationSet>
-          <AssociationSet Name="FK__videokart__monit__6754599E" Association="Self.FK__videokart__monit__6754599E">
+          <AssociationSet Name="FK__videokart__monit__66603565" Association="Self.FK__videokart__monit__66603565">
             <End Role="monitor_csatolo" EntitySet="monitor_csatolo" />
             <End Role="videokartya_monitor" EntitySet="videokartya_monitor" />
           </AssociationSet>
-          <AssociationSet Name="FK__videokart__video__66603565" Association="Self.FK__videokart__video__66603565">
+          <AssociationSet Name="FK__videokart__video__656C112C" Association="Self.FK__videokart__video__656C112C">
             <End Role="videokartya" EntitySet="videokartya" />
             <End Role="videokartya_monitor" EntitySet="videokartya_monitor" />
           </AssociationSet>
@@ -975,7 +974,6 @@
           <NavigationProperty Name="alaplap_hattertar" Relationship="Self.FK__alaplap_h__alapl__0AF29B96" FromRole="alaplap" ToRole="alaplap_hattertar" />
           <NavigationProperty Name="alaplap_usb" Relationship="Self.FK__alaplap_u__alapl__07220AB2" FromRole="alaplap" ToRole="alaplap_usb" />
           <Property Name="db" Type="Int32" />
-          <Property Name="nyuszi" Type="Int32" />
         </EntityType>
         <EntityType Name="billentyuzet">
           <Key>
@@ -1980,7 +1978,6 @@
           <EntitySetMapping Name="alaplap">
             <EntityTypeMapping TypeName="ComputerStoreModel.alaplap">
               <MappingFragment StoreEntitySet="alaplap">
-                <ScalarProperty Name="nyuszi" ColumnName="nyuszi" />
                 <ScalarProperty Name="db" ColumnName="db" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="alkatresz_gyarto_id" ColumnName="alkatresz_gyarto_id" />
