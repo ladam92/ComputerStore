@@ -29,6 +29,32 @@ namespace ComputerStore.Client.Controllers
             return View(monitor);
         }
 
+        public ActionResult Kosar(int db, int id)
+        {
+
+            Monitor monitor1; Monitor monitorkivant;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                monitor1 = bl.Monitor_GetByID(id);
+                monitorkivant = new Monitor
+                {
+                    ID = monitor1.ID,
+                    Db = db,
+                    Gyarto = monitor1.Gyarto,
+                    Kep = monitor1.Kep,
+                    NettoAr = monitor1.NettoAr,
+                    Megnevezes = monitor1.Megnevezes,
+                    CsatoloID=monitor1.CsatoloID,
+                    FelbontasID=monitor1.FelbontasID,
+                    MeretID=monitor1.MeretID
+                };
+            }
+            Kategoria k = new Kategoria { ID = monitorkivant.ID, Db = monitorkivant.Db, Kep = monitorkivant.Kep, Megnevezes = monitorkivant.Megnevezes, NettoAr = monitorkivant.NettoAr };
+            SessionData.Instance.Kosar.Add(k);
+
+            return View();
+        }
+
         public ActionResult GetByFelbontas(int felbontasId, int? pageNumber)
         {
             PageableList<Monitor> monitor = null;

@@ -26,5 +26,29 @@ namespace ComputerStore.Client.Controllers
 
             return View(szamitogephaz);
         }
+
+        public ActionResult Kosar(int db, int id)
+        {
+
+            Szamitogephaz szamitogephaz1; Szamitogephaz szamitogephazkivant;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                szamitogephaz1 = bl.Szamitogephaz_GetByID(id);
+                szamitogephazkivant = new Szamitogephaz
+                {
+                    ID = szamitogephaz1.ID,
+                    Db = db,
+                    Gyarto = szamitogephaz1.Gyarto,
+                    Kep = szamitogephaz1.Kep,
+                    NettoAr = szamitogephaz1.NettoAr,
+                    Megnevezes = szamitogephaz1.Megnevezes,
+                    
+                };
+            }
+            Kategoria k = new Kategoria { ID = szamitogephazkivant.ID, Db = szamitogephazkivant.Db, Kep = szamitogephazkivant.Kep, Megnevezes = szamitogephazkivant.Megnevezes, NettoAr = szamitogephazkivant.NettoAr };
+            SessionData.Instance.Kosar.Add(k);
+
+            return View();
+        }
 	}
 }

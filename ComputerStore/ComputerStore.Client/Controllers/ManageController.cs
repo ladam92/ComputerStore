@@ -7,6 +7,10 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ComputerStore.Client.Models;
+using ComputerStore.Client.Utils;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 
 namespace ComputerStore.Client.Controllers
 {
@@ -49,6 +53,65 @@ namespace ComputerStore.Client.Controllers
                 _userManager = value;
             }
         }
+
+
+        public ActionResult ChangeBill()
+        {
+            return View();
+        }
+
+        public ActionResult ChangeBillGet(string name, string country, string city, string ir, string street)
+        {
+            
+            var user = SessionData.Instance.CurrentUser;
+            user.BillName = name;
+            user.BillCountry = country;
+            user.BillCity = city;
+            user.BillIr = ir;
+            user.BillStreet = street;
+
+            UserManager.Update(user);
+                  
+            return View();
+          
+        }
+
+        public ActionResult ChangeProfil()
+        {
+            return View();
+        }
+
+        public ActionResult ChangeProfilGet(string name, string email, string uname)
+        {
+            var user = SessionData.Instance.CurrentUser;
+            user.FullName = name;
+            user.Email = email;
+            user.UserName = uname;
+
+            UserManager.Update(user);
+
+            return View();
+        }
+
+        public ActionResult ChangeTransport()
+        {
+            return View();
+        }
+
+        public ActionResult ChangeTransportGet(string name, string country, string city, string ir, string street)
+        {
+            var user = SessionData.Instance.CurrentUser;
+            user.TransportName = name;
+            user.TransportCountry = country;
+            user.TransportCity = city;
+            user.TransportIr = ir;
+            user.TransportStreet = street;
+
+            UserManager.Update(user);
+
+            return View();
+        }
+
 
         //
         // GET: /Manage/Index

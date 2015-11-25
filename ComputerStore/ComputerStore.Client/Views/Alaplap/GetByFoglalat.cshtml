@@ -1,16 +1,13 @@
 ﻿@model ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>
-@using System.Web.Mvc.Html;
-@using System.Web.Mvc;
+    @using System.Web.Mvc.Html;
+    @using System.Web.Mvc;
     @{
         ViewBag.Title = "GetByFoglalat";
-        //azokkal nincs gond csak aláhúzza :D oké xD
         var model = Model.Items;
     }
 
-@*@using (Html.BeginForm("Kosar", "Alaplap", System.Web.Mvc.FormMethod.Post))
- {*@ 
     <div class="row">
-        
+
         @foreach (var item in model)
         {
 
@@ -20,37 +17,14 @@
                     <div class="caption">
                         <h4>
                             <a href="#" data-toggle="modal" data-target="@String.Concat("#alaplapModal", item.ID)">@item.Megnevezes</a>
-                        </h4>             
-                        <h4 >@String.Concat(item.NettoAr, " Ft")</h4>
-                        
-                        @*@Html.EditorFor(m=> item.Db, new { htmlAttributes = new { min = 1, max = item.Db } })
-                        @Html.ValidationMessageFor(m => item.Db)*@
-                        
-                        @*<button class="btn btn-primary" @*type="button" class="btn btn-success" data-dismiss="modal"*@ @*onclick="javascript:location.href='@Url.Action("Kosar", "Alaplap", new {k =  item.ID} )'">Kosárba</button>*@
-                        @*<input type="submit" value="Kosárba" class="btn btn-default" />*@                                                                                                                                                                                                         
-                        @*<h4>@String.Concat(item.Db, "db")</h4>*@
-                    </div>
+                        </h4>
+                        <h4>@String.Concat(item.NettoAr, " Ft")</h4>
 
-             
-                    
-                       
-                    
-                            
-                    @*<div class="ratings">
-                            <p class="pull-right">15 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
-                        </div>*@
+                    </div>
                 </div>
             </div>
-    
+
             <div id=@String.Concat("alaplapModal", item.ID) class="modal fade" role="dialog" hidden>
-                @*@ComputerStore.Client.Utils.SessionData.Instance.KategoriaID=@item.ID;*@
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
@@ -61,31 +35,26 @@
                         </div>
                         <div class="modal-body">
                             <p><pre>@item.Leiras</pre></p>
-                     
+
                         </div>
                         <div class="modal-footer">
-                         @using(Html.BeginForm("Kosar", "Alaplap", FormMethod.Get))
-                         { 
-                               // int id = item.ID;
-                              //miért id az editorban? mert nem az kell oda xD
-                             
-                             <div class="form-group">
-                                 <div class="col-md-4 col-md-offset-3" style="padding: 0px;">
-                                    <input type="number" min="1" max="@item.Db" value="1" class="form-control pull-right" name="db"/>
-                                    <input type="hidden" name="id" value="@item.ID" />
-                                     <input type="hidden" name="kep" value="@item.Kep" />
-                                     <input type="hidden" name="ar" value="@item.NettoAr" />
-                                   
+                            @using (Html.BeginForm("Kosar", "Alaplap", FormMethod.Get))
+                            {
+
+                                <div class="form-group">
+                                    <div class="col-md-4 col-md-offset-3" style="padding: 0px;">
+                                        <input type="number" min="1" max="@item.Db" value="1" class="form-control pull-right" name="db" />
+                                        <input type="hidden" name="id" value="@item.ID" />
+                                        <input type="hidden" name="kep" value="@item.Kep" />
+                                        <input type="hidden" name="ar" value="@item.NettoAr" />
+                                        
+
+                                    </div>
                                 </div>
-                            </div> 
-                            <input type="submit" class="btn btn-success" value="Kosárba" />
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Bezárás</button>
-                            
-                            @*<button type="button" class="btn btn-success" data-dismiss="modal" onclick="javascript:location.href='@Url.Action("Kosar", "Alaplap" )'">Kosárba</button>*@
-                         }
+                                <input type="submit" class="btn btn-success" value="Kosárba" />
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Bezárás</button>
 
-
-                            
+                            }
 
                         </div>
                     </div>
@@ -94,45 +63,44 @@
             </div>
         }
 
-
     </div>
- @*}*@
+
     <button type="button" id="popup" class="btn btn-success">
         NEM MEGY
     </button>
 
-        <div class="pageSelector">
-            <button onclick="javascript:location.href='@Url.Action("GetByFoglalat", "Alaplap", new { usbId = ViewBag.CurrentID, pageNumber = Model.CurrentPage -1 })'" @if (Model.CurrentPage == 1) { <text> disabled </text>          } class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left" /></button>
-            @String.Concat(Model.CurrentPage, "/", Model.MaxPages, " oldal")
-            <button onclick="javascript:location.href='@Url.Action("GetByFoglalat", "Alaplap", new { usbId = ViewBag.CurrentID, pageNumber = Model.CurrentPage +1 })'" @if (Model.CurrentPage == Model.MaxPages) { <text> disabled </text>           } class="btn btn-primary"> <span class="glyphicon glyphicon-chevron-right" /></button>
-        </div>
+    <div class="pageSelector">
+        <button onclick="javascript:location.href='@Url.Action("GetByFoglalat", "Alaplap", new { usbId = ViewBag.CurrentID, pageNumber = Model.CurrentPage -1 })'" @if (Model.CurrentPage == 1) { <text> disabled </text>           } class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left" /></button>
+        @String.Concat(Model.CurrentPage, "/", Model.MaxPages, " oldal")
+        <button onclick="javascript:location.href='@Url.Action("GetByFoglalat", "Alaplap", new { usbId = ViewBag.CurrentID, pageNumber = Model.CurrentPage +1 })'" @if (Model.CurrentPage == Model.MaxPages) { <text> disabled </text>            } class="btn btn-primary"> <span class="glyphicon glyphicon-chevron-right" /></button>
+    </div>
 
-        <div id="divpopup" style="display:none">
-            A termék a kosárba került!
-        </div>
+    <div id="divpopup" style="display:none">
+        A termék a kosárba került!
+    </div>
 
 
-        @section Scripts {
-            @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
-            @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
-            <script type="text/javascript">
-                $(function () {
-                    $('#popup').click(function () {
-                        $('#divpopup').dialog({
-                            title: "Kosar",
-                            width: 430,
-                            height: 200,
-                            modal: true,
-                            buttons: {
-                                Close:
-                                    function () {
-                                        $(this).dialog('close');
-                                    }
-                            }
+    @section Scripts {
+        @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+        @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+        <script type="text/javascript">
+            $(function () {
+                $('#popup').click(function () {
+                    $('#divpopup').dialog({
+                        title: "Kosar",
+                        width: 430,
+                        height: 200,
+                        modal: true,
+                        buttons: {
+                            Close:
+                                function () {
+                                    $(this).dialog('close');
+                                }
+                        }
 
-                        });
                     });
-                })
+                });
+            })
 
-            </script>
-        }
+        </script>
+    }

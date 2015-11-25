@@ -181,6 +181,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
@@ -216,6 +217,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
@@ -252,6 +254,7 @@
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
           <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
@@ -287,6 +290,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="FoglalatID" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
@@ -323,6 +327,7 @@
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
           <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="FelbontasID" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
@@ -358,6 +363,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Frekvencia" type="xs:decimal" />
           <xs:element minOccurs="0" name="FrekvenciaMertekID" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
@@ -395,6 +401,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
@@ -428,6 +435,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
@@ -462,6 +470,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
           <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
