@@ -1,4 +1,5 @@
-﻿using ComputerStore.Client.Utils;
+﻿using ComputerStore.Client.Models;
+using ComputerStore.Client.Utils;
 using ComputerStore.DTO.Enums;
 using ComputerStore.DTO.Types;
 using System;
@@ -15,6 +16,120 @@ namespace ComputerStore.Client.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreateCategory()
+        {
+            SessionData.Instance.ShowCategories = false;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateCategory(CreateCategoryViewModel model)
+        {
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                Kategoriak kat = model.Tipus;
+
+                switch (kat)
+                {
+                    case Kategoriak.AlkatreszGyarto:
+                        var gyartoToUpdate = new AlkatreszGyarto
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.Gyarto_Add(gyartoToUpdate);
+                        break;
+                    case Kategoriak.HattertarCsatoloTipus:
+                        var hatterCsatoloToUpdate = new HattertarCsatoloTipus
+                        {
+                            Megnevezes = model.Megnevezes
+                        };
+
+                        bl.HattertatCsatoloTipus_Add(hatterCsatoloToUpdate);
+                        break;
+                    case Kategoriak.HattertarTipus:
+                        var hatterTipusToUpdate = new HattertarTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.HattertatTipus_Add(hatterTipusToUpdate);
+                        break;
+                    case Kategoriak.MemoriaFoglalat:
+                        var memoriaToUpdate = new MemoriaTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+
+                        bl.MemoriaFoglalat_Add(memoriaToUpdate);
+                        break;
+                    case Kategoriak.MonitorFelbontas:
+                        var monitorFelbontasToUpdate = new MonitorFelbontas
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.MonitorFelbontasTipus_Add(monitorFelbontasToUpdate);
+                        break;
+                    case Kategoriak.MonitorMeret:
+                        var monitorMeretToUpdate = new MonitorMeret
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.MonitorMeretTipus_Add(monitorMeretToUpdate);
+                        break;
+                    case Kategoriak.PciExpress:
+                        var pciToUpdate = new PciExpressTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.PCIExpress_Add(pciToUpdate);
+                        break;
+                    case Kategoriak.ProcFoglalat:
+                        var procFoglalatToUpdate = new ProcesszorFoglalatTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.ProcFoglalat_Add(procFoglalatToUpdate);
+                        break;
+                    case Kategoriak.USB:
+                        var usbToUpdate = new UsbTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.UsbTipus_Add(usbToUpdate);
+                        break;
+                    case Kategoriak.VGACsatolo:
+                        var vgaToUpdate = new VgaCsatoloFeluletTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.VgaCsatolo_Add(vgaToUpdate);
+                        break;
+                    case Kategoriak.MonitorCsatolo:
+                        var monitorCsatoloToUpdate = new MonitorCsatoloTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                        };
+
+                        bl.MonitorCsatolo_Add(monitorCsatoloToUpdate);
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+
+            return RedirectToAction("CreateCategory");
         }
 
         [HttpGet]
@@ -56,6 +171,9 @@ namespace ComputerStore.Client.Controllers
                         break;
                     case Kategoriak.VGACsatolo:
                         tipus = bl.VgaCsatolo_GetByID(id);
+                        break;
+                    case Kategoriak.MonitorCsatolo:
+                        tipus = bl.MonitorCsatolo_GetByID(id);
                         break;
                     default:
                         throw new NotImplementedException();
@@ -165,6 +283,15 @@ namespace ComputerStore.Client.Controllers
 
                         bl.VgaCsatolo_Update(vgaToUpdate);
                         break;
+                    case Kategoriak.MonitorCsatolo:
+                        var monitorCsatoloToUpdate = new MonitorCsatoloTipus
+                        {
+                            Megnevezes = model.Megnevezes,
+                            ID = model.ID
+                        };
+
+                        bl.MonitorCsatolo_Update(monitorCsatoloToUpdate);
+                        break;
                     default:
                         throw new NotImplementedException();
                 }
@@ -220,6 +347,9 @@ namespace ComputerStore.Client.Controllers
                         break;
                     case Kategoriak.VGACsatolo:
                         model.AddRange(bl.VgaCsatolo_GetByName(text));
+                        break;
+                    case Kategoriak.MonitorCsatolo:
+                        model.AddRange(bl.MonitorCsatolo_GetByName(text));
                         break;
                     default:
                         throw new NotImplementedException();

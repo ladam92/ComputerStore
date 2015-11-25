@@ -261,3 +261,15 @@ dropdown-menu .divider {
     background-color: #33CCFF;
     border-color: #33CCFF;
 }
+
+.dataList{
+    padding-top: 50px;
+}
+
+.centerText{
+    text-align:center;
+}
+
+.form-button-submit{
+    padding-top: 30px;
+}

@@ -39,6 +39,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcFoglalat_Update", ReplyAction="http://tempuri.org/ILogic/ProcFoglalat_UpdateResponse")]
         System.Threading.Tasks.Task ProcFoglalat_UpdateAsync(ComputerStore.DTO.Types.ProcesszorFoglalatTipus type);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcFoglalat_Add", ReplyAction="http://tempuri.org/ILogic/ProcFoglalat_AddResponse")]
+        void ProcFoglalat_Add(ComputerStore.DTO.Types.ProcesszorFoglalatTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcFoglalat_Add", ReplyAction="http://tempuri.org/ILogic/ProcFoglalat_AddResponse")]
+        System.Threading.Tasks.Task ProcFoglalat_AddAsync(ComputerStore.DTO.Types.ProcesszorFoglalatTipus type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriak", ReplyAction="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriakResponse")]
         ComputerStore.DTO.Types.MemoriaTipus[] MemoriaFoglalat_GetKaegoriak();
         
@@ -63,6 +69,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaFoglalat_Update", ReplyAction="http://tempuri.org/ILogic/MemoriaFoglalat_UpdateResponse")]
         System.Threading.Tasks.Task MemoriaFoglalat_UpdateAsync(ComputerStore.DTO.Types.MemoriaTipus type);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaFoglalat_Add", ReplyAction="http://tempuri.org/ILogic/MemoriaFoglalat_AddResponse")]
+        void MemoriaFoglalat_Add(ComputerStore.DTO.Types.MemoriaTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaFoglalat_Add", ReplyAction="http://tempuri.org/ILogic/MemoriaFoglalat_AddResponse")]
+        System.Threading.Tasks.Task MemoriaFoglalat_AddAsync(ComputerStore.DTO.Types.MemoriaTipus type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_GetKaegoriak", ReplyAction="http://tempuri.org/ILogic/UsbTipus_GetKaegoriakResponse")]
         ComputerStore.DTO.Types.UsbTipus[] UsbTipus_GetKaegoriak();
         
@@ -80,6 +92,12 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_Update", ReplyAction="http://tempuri.org/ILogic/UsbTipus_UpdateResponse")]
         System.Threading.Tasks.Task UsbTipus_UpdateAsync(ComputerStore.DTO.Types.UsbTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_Add", ReplyAction="http://tempuri.org/ILogic/UsbTipus_AddResponse")]
+        void UsbTipus_Add(ComputerStore.DTO.Types.UsbTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_Add", ReplyAction="http://tempuri.org/ILogic/UsbTipus_AddResponse")]
+        System.Threading.Tasks.Task UsbTipus_AddAsync(ComputerStore.DTO.Types.UsbTipus type);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_GetKategoriaByID", ReplyAction="http://tempuri.org/ILogic/UsbTipus_GetKategoriaByIDResponse")]
         ComputerStore.DTO.Types.UsbTipus UsbTipus_GetKategoriaByID(int id);
@@ -111,6 +129,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatTipus_Update", ReplyAction="http://tempuri.org/ILogic/HattertatTipus_UpdateResponse")]
         System.Threading.Tasks.Task HattertatTipus_UpdateAsync(ComputerStore.DTO.Types.HattertarTipus type);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatTipus_Add", ReplyAction="http://tempuri.org/ILogic/HattertatTipus_AddResponse")]
+        void HattertatTipus_Add(ComputerStore.DTO.Types.HattertarTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatTipus_Add", ReplyAction="http://tempuri.org/ILogic/HattertatTipus_AddResponse")]
+        System.Threading.Tasks.Task HattertatTipus_AddAsync(ComputerStore.DTO.Types.HattertarTipus type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriak", ReplyAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriakResponse")]
         ComputerStore.DTO.Types.HattertarCsatoloTipus[] HattertatCsatoloTipus_GetKaegoriak();
         
@@ -134,6 +158,12 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Update", ReplyAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_UpdateResponse")]
         System.Threading.Tasks.Task HattertatCsatoloTipus_UpdateAsync(ComputerStore.DTO.Types.HattertarCsatoloTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Add", ReplyAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_AddResponse")]
+        void HattertatCsatoloTipus_Add(ComputerStore.DTO.Types.HattertarCsatoloTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Add", ReplyAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_AddResponse")]
+        System.Threading.Tasks.Task HattertatCsatoloTipus_AddAsync(ComputerStore.DTO.Types.HattertarCsatoloTipus type);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_GetKaegoriak", ReplyAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_GetKaegoriakResponse")]
         ComputerStore.DTO.Types.MonitorFelbontas[] MonitorFelbontasTipus_GetKaegoriak();
@@ -159,6 +189,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Update", ReplyAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_UpdateResponse")]
         System.Threading.Tasks.Task MonitorFelbontasTipus_UpdateAsync(ComputerStore.DTO.Types.MonitorFelbontas type);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Add", ReplyAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_AddResponse")]
+        void MonitorFelbontasTipus_Add(ComputerStore.DTO.Types.MonitorFelbontas type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Add", ReplyAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_AddResponse")]
+        System.Threading.Tasks.Task MonitorFelbontasTipus_AddAsync(ComputerStore.DTO.Types.MonitorFelbontas type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriak", ReplyAction="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriakResponse")]
         ComputerStore.DTO.Types.MonitorMeret[] MonitorMeretTipus_GetKaegoriak();
         
@@ -182,6 +218,12 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorMeretTipus_Update", ReplyAction="http://tempuri.org/ILogic/MonitorMeretTipus_UpdateResponse")]
         System.Threading.Tasks.Task MonitorMeretTipus_UpdateAsync(ComputerStore.DTO.Types.MonitorMeret meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorMeretTipus_Add", ReplyAction="http://tempuri.org/ILogic/MonitorMeretTipus_AddResponse")]
+        void MonitorMeretTipus_Add(ComputerStore.DTO.Types.MonitorMeret meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorMeretTipus_Add", ReplyAction="http://tempuri.org/ILogic/MonitorMeretTipus_AddResponse")]
+        System.Threading.Tasks.Task MonitorMeretTipus_AddAsync(ComputerStore.DTO.Types.MonitorMeret meret);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse")]
         ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
@@ -297,6 +339,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Update", ReplyAction="http://tempuri.org/ILogic/PCIExpress_UpdateResponse")]
         System.Threading.Tasks.Task PCIExpress_UpdateAsync(ComputerStore.DTO.Types.PciExpressTipus type);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Add", ReplyAction="http://tempuri.org/ILogic/PCIExpress_AddResponse")]
+        void PCIExpress_Add(ComputerStore.DTO.Types.PciExpressTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Add", ReplyAction="http://tempuri.org/ILogic/PCIExpress_AddResponse")]
+        System.Threading.Tasks.Task PCIExpress_AddAsync(ComputerStore.DTO.Types.PciExpressTipus type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse")]
         ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorFoglalat_GetByName(string name);
         
@@ -327,6 +375,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse")]
         System.Threading.Tasks.Task VgaCsatolo_UpdateAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_AddResponse")]
+        void VgaCsatolo_Add(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_AddResponse")]
+        System.Threading.Tasks.Task VgaCsatolo_AddAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByName", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByNameResponse")]
         ComputerStore.DTO.Types.AlkatreszGyarto[] Gyarto_GetByName(string name);
         
@@ -344,6 +398,36 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Update", ReplyAction="http://tempuri.org/ILogic/Gyarto_UpdateResponse")]
         System.Threading.Tasks.Task Gyarto_UpdateAsync(ComputerStore.DTO.Types.AlkatreszGyarto type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Add", ReplyAction="http://tempuri.org/ILogic/Gyarto_AddResponse")]
+        void Gyarto_Add(ComputerStore.DTO.Types.AlkatreszGyarto type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Add", ReplyAction="http://tempuri.org/ILogic/Gyarto_AddResponse")]
+        System.Threading.Tasks.Task Gyarto_AddAsync(ComputerStore.DTO.Types.AlkatreszGyarto type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByName", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_GetByNameResponse")]
+        ComputerStore.DTO.Types.MonitorCsatoloTipus[] MonitorCsatolo_GetByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByName", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_GetByNameResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.MonitorCsatoloTipus[]> MonitorCsatolo_GetByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_GetByIDResponse")]
+        ComputerStore.DTO.Types.MonitorCsatoloTipus MonitorCsatolo_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.MonitorCsatoloTipus> MonitorCsatolo_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_UpdateResponse")]
+        void MonitorCsatolo_Update(ComputerStore.DTO.Types.MonitorCsatoloTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_UpdateResponse")]
+        System.Threading.Tasks.Task MonitorCsatolo_UpdateAsync(ComputerStore.DTO.Types.MonitorCsatoloTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_AddResponse")]
+        void MonitorCsatolo_Add(ComputerStore.DTO.Types.MonitorCsatoloTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_AddResponse")]
+        System.Threading.Tasks.Task MonitorCsatolo_AddAsync(ComputerStore.DTO.Types.MonitorCsatoloTipus type);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -405,6 +489,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.ProcFoglalat_UpdateAsync(type);
         }
         
+        public void ProcFoglalat_Add(ComputerStore.DTO.Types.ProcesszorFoglalatTipus type) {
+            base.Channel.ProcFoglalat_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task ProcFoglalat_AddAsync(ComputerStore.DTO.Types.ProcesszorFoglalatTipus type) {
+            return base.Channel.ProcFoglalat_AddAsync(type);
+        }
+        
         public ComputerStore.DTO.Types.MemoriaTipus[] MemoriaFoglalat_GetKaegoriak() {
             return base.Channel.MemoriaFoglalat_GetKaegoriak();
         }
@@ -437,6 +529,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.MemoriaFoglalat_UpdateAsync(type);
         }
         
+        public void MemoriaFoglalat_Add(ComputerStore.DTO.Types.MemoriaTipus type) {
+            base.Channel.MemoriaFoglalat_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task MemoriaFoglalat_AddAsync(ComputerStore.DTO.Types.MemoriaTipus type) {
+            return base.Channel.MemoriaFoglalat_AddAsync(type);
+        }
+        
         public ComputerStore.DTO.Types.UsbTipus[] UsbTipus_GetKaegoriak() {
             return base.Channel.UsbTipus_GetKaegoriak();
         }
@@ -459,6 +559,14 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task UsbTipus_UpdateAsync(ComputerStore.DTO.Types.UsbTipus type) {
             return base.Channel.UsbTipus_UpdateAsync(type);
+        }
+        
+        public void UsbTipus_Add(ComputerStore.DTO.Types.UsbTipus type) {
+            base.Channel.UsbTipus_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task UsbTipus_AddAsync(ComputerStore.DTO.Types.UsbTipus type) {
+            return base.Channel.UsbTipus_AddAsync(type);
         }
         
         public ComputerStore.DTO.Types.UsbTipus UsbTipus_GetKategoriaByID(int id) {
@@ -501,6 +609,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.HattertatTipus_UpdateAsync(type);
         }
         
+        public void HattertatTipus_Add(ComputerStore.DTO.Types.HattertarTipus type) {
+            base.Channel.HattertatTipus_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task HattertatTipus_AddAsync(ComputerStore.DTO.Types.HattertarTipus type) {
+            return base.Channel.HattertatTipus_AddAsync(type);
+        }
+        
         public ComputerStore.DTO.Types.HattertarCsatoloTipus[] HattertatCsatoloTipus_GetKaegoriak() {
             return base.Channel.HattertatCsatoloTipus_GetKaegoriak();
         }
@@ -531,6 +647,14 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task HattertatCsatoloTipus_UpdateAsync(ComputerStore.DTO.Types.HattertarCsatoloTipus type) {
             return base.Channel.HattertatCsatoloTipus_UpdateAsync(type);
+        }
+        
+        public void HattertatCsatoloTipus_Add(ComputerStore.DTO.Types.HattertarCsatoloTipus type) {
+            base.Channel.HattertatCsatoloTipus_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task HattertatCsatoloTipus_AddAsync(ComputerStore.DTO.Types.HattertarCsatoloTipus type) {
+            return base.Channel.HattertatCsatoloTipus_AddAsync(type);
         }
         
         public ComputerStore.DTO.Types.MonitorFelbontas[] MonitorFelbontasTipus_GetKaegoriak() {
@@ -565,6 +689,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.MonitorFelbontasTipus_UpdateAsync(type);
         }
         
+        public void MonitorFelbontasTipus_Add(ComputerStore.DTO.Types.MonitorFelbontas type) {
+            base.Channel.MonitorFelbontasTipus_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task MonitorFelbontasTipus_AddAsync(ComputerStore.DTO.Types.MonitorFelbontas type) {
+            return base.Channel.MonitorFelbontasTipus_AddAsync(type);
+        }
+        
         public ComputerStore.DTO.Types.MonitorMeret[] MonitorMeretTipus_GetKaegoriak() {
             return base.Channel.MonitorMeretTipus_GetKaegoriak();
         }
@@ -595,6 +727,14 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task MonitorMeretTipus_UpdateAsync(ComputerStore.DTO.Types.MonitorMeret meret) {
             return base.Channel.MonitorMeretTipus_UpdateAsync(meret);
+        }
+        
+        public void MonitorMeretTipus_Add(ComputerStore.DTO.Types.MonitorMeret meret) {
+            base.Channel.MonitorMeretTipus_Add(meret);
+        }
+        
+        public System.Threading.Tasks.Task MonitorMeretTipus_AddAsync(ComputerStore.DTO.Types.MonitorMeret meret) {
+            return base.Channel.MonitorMeretTipus_AddAsync(meret);
         }
         
         public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize) {
@@ -749,6 +889,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.PCIExpress_UpdateAsync(type);
         }
         
+        public void PCIExpress_Add(ComputerStore.DTO.Types.PciExpressTipus type) {
+            base.Channel.PCIExpress_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task PCIExpress_AddAsync(ComputerStore.DTO.Types.PciExpressTipus type) {
+            return base.Channel.PCIExpress_AddAsync(type);
+        }
+        
         public ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorFoglalat_GetByName(string name) {
             return base.Channel.ProcesszorFoglalat_GetByName(name);
         }
@@ -789,6 +937,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.VgaCsatolo_UpdateAsync(type);
         }
         
+        public void VgaCsatolo_Add(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
+            base.Channel.VgaCsatolo_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task VgaCsatolo_AddAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
+            return base.Channel.VgaCsatolo_AddAsync(type);
+        }
+        
         public ComputerStore.DTO.Types.AlkatreszGyarto[] Gyarto_GetByName(string name) {
             return base.Channel.Gyarto_GetByName(name);
         }
@@ -811,6 +967,46 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task Gyarto_UpdateAsync(ComputerStore.DTO.Types.AlkatreszGyarto type) {
             return base.Channel.Gyarto_UpdateAsync(type);
+        }
+        
+        public void Gyarto_Add(ComputerStore.DTO.Types.AlkatreszGyarto type) {
+            base.Channel.Gyarto_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task Gyarto_AddAsync(ComputerStore.DTO.Types.AlkatreszGyarto type) {
+            return base.Channel.Gyarto_AddAsync(type);
+        }
+        
+        public ComputerStore.DTO.Types.MonitorCsatoloTipus[] MonitorCsatolo_GetByName(string name) {
+            return base.Channel.MonitorCsatolo_GetByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.MonitorCsatoloTipus[]> MonitorCsatolo_GetByNameAsync(string name) {
+            return base.Channel.MonitorCsatolo_GetByNameAsync(name);
+        }
+        
+        public ComputerStore.DTO.Types.MonitorCsatoloTipus MonitorCsatolo_GetByID(int id) {
+            return base.Channel.MonitorCsatolo_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.MonitorCsatoloTipus> MonitorCsatolo_GetByIDAsync(int id) {
+            return base.Channel.MonitorCsatolo_GetByIDAsync(id);
+        }
+        
+        public void MonitorCsatolo_Update(ComputerStore.DTO.Types.MonitorCsatoloTipus type) {
+            base.Channel.MonitorCsatolo_Update(type);
+        }
+        
+        public System.Threading.Tasks.Task MonitorCsatolo_UpdateAsync(ComputerStore.DTO.Types.MonitorCsatoloTipus type) {
+            return base.Channel.MonitorCsatolo_UpdateAsync(type);
+        }
+        
+        public void MonitorCsatolo_Add(ComputerStore.DTO.Types.MonitorCsatoloTipus type) {
+            base.Channel.MonitorCsatolo_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task MonitorCsatolo_AddAsync(ComputerStore.DTO.Types.MonitorCsatoloTipus type) {
+            return base.Channel.MonitorCsatolo_AddAsync(type);
         }
     }
 }

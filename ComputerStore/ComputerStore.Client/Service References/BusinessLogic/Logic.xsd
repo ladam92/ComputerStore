@@ -514,4 +514,18 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
+  <xs:complexType name="ArrayOfMonitorCsatoloTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonitorCsatoloTipus" nillable="true" type="tns:MonitorCsatoloTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonitorCsatoloTipus" nillable="true" type="tns:ArrayOfMonitorCsatoloTipus" />
+  <xs:complexType name="MonitorCsatoloTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MonitorCsatoloTipus" nillable="true" type="tns:MonitorCsatoloTipus" />
 </xs:schema>

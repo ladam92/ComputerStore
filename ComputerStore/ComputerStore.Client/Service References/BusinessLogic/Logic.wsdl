@@ -31,6 +31,12 @@
   <wsdl:message name="ILogic_ProcFoglalat_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:ProcFoglalat_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_ProcFoglalat_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcFoglalat_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcFoglalat_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcFoglalat_AddResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_MemoriaFoglalat_GetKaegoriak_InputMessage">
     <wsdl:part name="parameters" element="tns:MemoriaFoglalat_GetKaegoriak" />
   </wsdl:message>
@@ -55,6 +61,12 @@
   <wsdl:message name="ILogic_MemoriaFoglalat_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:MemoriaFoglalat_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaFoglalat_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaFoglalat_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaFoglalat_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaFoglalat_AddResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_UsbTipus_GetKaegoriak_InputMessage">
     <wsdl:part name="parameters" element="tns:UsbTipus_GetKaegoriak" />
   </wsdl:message>
@@ -72,6 +84,12 @@
   </wsdl:message>
   <wsdl:message name="ILogic_UsbTipus_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:UsbTipus_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_UsbTipus_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsbTipus_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_UsbTipus_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsbTipus_AddResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_UsbTipus_GetKategoriaByID_InputMessage">
     <wsdl:part name="parameters" element="tns:UsbTipus_GetKategoriaByID" />
@@ -103,6 +121,12 @@
   <wsdl:message name="ILogic_HattertatTipus_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:HattertatTipus_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_HattertatTipus_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatTipus_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatTipus_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatTipus_AddResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_HattertatCsatoloTipus_GetKaegoriak_InputMessage">
     <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_GetKaegoriak" />
   </wsdl:message>
@@ -126,6 +150,12 @@
   </wsdl:message>
   <wsdl:message name="ILogic_HattertatCsatoloTipus_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatCsatoloTipus_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatCsatoloTipus_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_AddResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_MonitorFelbontasTipus_GetKaegoriak_InputMessage">
     <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_GetKaegoriak" />
@@ -151,6 +181,12 @@
   <wsdl:message name="ILogic_MonitorFelbontasTipus_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_MonitorFelbontasTipus_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorFelbontasTipus_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_AddResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_MonitorMeretTipus_GetKaegoriak_InputMessage">
     <wsdl:part name="parameters" element="tns:MonitorMeretTipus_GetKaegoriak" />
   </wsdl:message>
@@ -174,6 +210,12 @@
   </wsdl:message>
   <wsdl:message name="ILogic_MonitorMeretTipus_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:MonitorMeretTipus_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorMeretTipus_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorMeretTipus_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorMeretTipus_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorMeretTipus_AddResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_Alaplap_GetByFoglalatID_InputMessage">
     <wsdl:part name="parameters" element="tns:Alaplap_GetByFoglalatID" />
@@ -289,6 +331,12 @@
   <wsdl:message name="ILogic_PCIExpress_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:PCIExpress_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_AddResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_ProcesszorFoglalat_GetByName_InputMessage">
     <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByName" />
   </wsdl:message>
@@ -319,6 +367,12 @@
   <wsdl:message name="ILogic_VgaCsatolo_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:VgaCsatolo_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_AddResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_Gyarto_GetByName_InputMessage">
     <wsdl:part name="parameters" element="tns:Gyarto_GetByName" />
   </wsdl:message>
@@ -337,6 +391,36 @@
   <wsdl:message name="ILogic_Gyarto_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:Gyarto_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Gyarto_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Gyarto_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Gyarto_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Gyarto_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_GetByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_GetByName" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_GetByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_GetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_Update" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_AddResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILogic">
     <wsdl:operation name="ProcFoglalat_GetKategoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" message="tns:ILogic_ProcFoglalat_GetKategoriak_InputMessage" />
@@ -354,6 +438,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_Update" message="tns:ILogic_ProcFoglalat_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_UpdateResponse" message="tns:ILogic_ProcFoglalat_Update_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ProcFoglalat_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_Add" message="tns:ILogic_ProcFoglalat_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_AddResponse" message="tns:ILogic_ProcFoglalat_Add_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="MemoriaFoglalat_GetKaegoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriak" message="tns:ILogic_MemoriaFoglalat_GetKaegoriak_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_GetKaegoriakResponse" message="tns:ILogic_MemoriaFoglalat_GetKaegoriak_OutputMessage" />
@@ -370,6 +458,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_Update" message="tns:ILogic_MemoriaFoglalat_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_UpdateResponse" message="tns:ILogic_MemoriaFoglalat_Update_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MemoriaFoglalat_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_Add" message="tns:ILogic_MemoriaFoglalat_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_AddResponse" message="tns:ILogic_MemoriaFoglalat_Add_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UsbTipus_GetKaegoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/UsbTipus_GetKaegoriak" message="tns:ILogic_UsbTipus_GetKaegoriak_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/UsbTipus_GetKaegoriakResponse" message="tns:ILogic_UsbTipus_GetKaegoriak_OutputMessage" />
@@ -381,6 +473,10 @@
     <wsdl:operation name="UsbTipus_Update">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/UsbTipus_Update" message="tns:ILogic_UsbTipus_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/UsbTipus_UpdateResponse" message="tns:ILogic_UsbTipus_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsbTipus_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/UsbTipus_Add" message="tns:ILogic_UsbTipus_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/UsbTipus_AddResponse" message="tns:ILogic_UsbTipus_Add_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UsbTipus_GetKategoriaByID">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/UsbTipus_GetKategoriaByID" message="tns:ILogic_UsbTipus_GetKategoriaByID_InputMessage" />
@@ -402,6 +498,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatTipus_Update" message="tns:ILogic_HattertatTipus_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatTipus_UpdateResponse" message="tns:ILogic_HattertatTipus_Update_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="HattertatTipus_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatTipus_Add" message="tns:ILogic_HattertatTipus_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatTipus_AddResponse" message="tns:ILogic_HattertatTipus_Add_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="HattertatCsatoloTipus_GetKaegoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriak" message="tns:ILogic_HattertatCsatoloTipus_GetKaegoriak_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriakResponse" message="tns:ILogic_HattertatCsatoloTipus_GetKaegoriak_OutputMessage" />
@@ -417,6 +517,10 @@
     <wsdl:operation name="HattertatCsatoloTipus_Update">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Update" message="tns:ILogic_HattertatCsatoloTipus_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_UpdateResponse" message="tns:ILogic_HattertatCsatoloTipus_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HattertatCsatoloTipus_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Add" message="tns:ILogic_HattertatCsatoloTipus_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_AddResponse" message="tns:ILogic_HattertatCsatoloTipus_Add_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="MonitorFelbontasTipus_GetKaegoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_GetKaegoriak" message="tns:ILogic_MonitorFelbontasTipus_GetKaegoriak_InputMessage" />
@@ -434,6 +538,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Update" message="tns:ILogic_MonitorFelbontasTipus_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_UpdateResponse" message="tns:ILogic_MonitorFelbontasTipus_Update_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MonitorFelbontasTipus_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Add" message="tns:ILogic_MonitorFelbontasTipus_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_AddResponse" message="tns:ILogic_MonitorFelbontasTipus_Add_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="MonitorMeretTipus_GetKaegoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriak" message="tns:ILogic_MonitorMeretTipus_GetKaegoriak_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriakResponse" message="tns:ILogic_MonitorMeretTipus_GetKaegoriak_OutputMessage" />
@@ -449,6 +557,10 @@
     <wsdl:operation name="MonitorMeretTipus_Update">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_Update" message="tns:ILogic_MonitorMeretTipus_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_UpdateResponse" message="tns:ILogic_MonitorMeretTipus_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorMeretTipus_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_Add" message="tns:ILogic_MonitorMeretTipus_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_AddResponse" message="tns:ILogic_MonitorMeretTipus_Add_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Alaplap_GetByFoglalatID">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID" message="tns:ILogic_Alaplap_GetByFoglalatID_InputMessage" />
@@ -526,6 +638,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Update" message="tns:ILogic_PCIExpress_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_UpdateResponse" message="tns:ILogic_PCIExpress_Update_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Add" message="tns:ILogic_PCIExpress_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_AddResponse" message="tns:ILogic_PCIExpress_Add_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ProcesszorFoglalat_GetByName">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName" message="tns:ILogic_ProcesszorFoglalat_GetByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse" message="tns:ILogic_ProcesszorFoglalat_GetByName_OutputMessage" />
@@ -546,6 +662,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_Update" message="tns:ILogic_VgaCsatolo_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse" message="tns:ILogic_VgaCsatolo_Update_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_Add" message="tns:ILogic_VgaCsatolo_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_AddResponse" message="tns:ILogic_VgaCsatolo_Add_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Gyarto_GetByName">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Gyarto_GetByName" message="tns:ILogic_Gyarto_GetByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Gyarto_GetByNameResponse" message="tns:ILogic_Gyarto_GetByName_OutputMessage" />
@@ -557,6 +677,26 @@
     <wsdl:operation name="Gyarto_Update">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Gyarto_Update" message="tns:ILogic_Gyarto_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Gyarto_UpdateResponse" message="tns:ILogic_Gyarto_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Gyarto_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Gyarto_Add" message="tns:ILogic_Gyarto_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Gyarto_AddResponse" message="tns:ILogic_Gyarto_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_GetByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByName" message="tns:ILogic_MonitorCsatolo_GetByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByNameResponse" message="tns:ILogic_MonitorCsatolo_GetByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByID" message="tns:ILogic_MonitorCsatolo_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_GetByIDResponse" message="tns:ILogic_MonitorCsatolo_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_Update" message="tns:ILogic_MonitorCsatolo_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_UpdateResponse" message="tns:ILogic_MonitorCsatolo_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_Add" message="tns:ILogic_MonitorCsatolo_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_AddResponse" message="tns:ILogic_MonitorCsatolo_Add_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
@@ -590,6 +730,15 @@
     </wsdl:operation>
     <wsdl:operation name="ProcFoglalat_Update">
       <soap:operation soapAction="http://tempuri.org/ILogic/ProcFoglalat_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcFoglalat_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/ProcFoglalat_Add" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -633,6 +782,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MemoriaFoglalat_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MemoriaFoglalat_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UsbTipus_GetKaegoriak">
       <soap:operation soapAction="http://tempuri.org/ILogic/UsbTipus_GetKaegoriak" style="document" />
       <wsdl:input>
@@ -653,6 +811,15 @@
     </wsdl:operation>
     <wsdl:operation name="UsbTipus_Update">
       <soap:operation soapAction="http://tempuri.org/ILogic/UsbTipus_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsbTipus_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/UsbTipus_Add" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -705,6 +872,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HattertatTipus_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertatTipus_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HattertatCsatoloTipus_GetKaegoriak">
       <soap:operation soapAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_GetKaegoriak" style="document" />
       <wsdl:input>
@@ -734,6 +910,15 @@
     </wsdl:operation>
     <wsdl:operation name="HattertatCsatoloTipus_Update">
       <soap:operation soapAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HattertatCsatoloTipus_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_Add" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -777,6 +962,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MonitorFelbontasTipus_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="MonitorMeretTipus_GetKaegoriak">
       <soap:operation soapAction="http://tempuri.org/ILogic/MonitorMeretTipus_GetKaegoriak" style="document" />
       <wsdl:input>
@@ -806,6 +1000,15 @@
     </wsdl:operation>
     <wsdl:operation name="MonitorMeretTipus_Update">
       <soap:operation soapAction="http://tempuri.org/ILogic/MonitorMeretTipus_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorMeretTipus_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorMeretTipus_Add" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -984,6 +1187,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ProcesszorFoglalat_GetByName">
       <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName" style="document" />
       <wsdl:input>
@@ -1029,6 +1241,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Gyarto_GetByName">
       <soap:operation soapAction="http://tempuri.org/ILogic/Gyarto_GetByName" style="document" />
       <wsdl:input>
@@ -1049,6 +1270,51 @@
     </wsdl:operation>
     <wsdl:operation name="Gyarto_Update">
       <soap:operation soapAction="http://tempuri.org/ILogic/Gyarto_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gyarto_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Gyarto_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_GetByName">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorCsatolo_GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorCsatolo_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_Update">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorCsatolo_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorCsatolo_Add" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

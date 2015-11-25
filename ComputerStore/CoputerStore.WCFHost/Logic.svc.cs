@@ -1144,5 +1144,219 @@ namespace CoputerStore.BL
                 ctx.SaveChanges();
             }
         }
+
+        public List<MonitorCsatoloTipus> MonitorCsatolo_GetByName(string name)
+        {
+            List<MonitorCsatoloTipus> ret = new List<MonitorCsatoloTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.monitor_csatolo.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new MonitorCsatoloTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public MonitorCsatoloTipus MonitorCsatolo_GetByID(int id)
+        {
+            MonitorCsatoloTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_csatolo.Single(i => i.id == id);
+
+                ret = new MonitorCsatoloTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public void MonitorCsatolo_Update(MonitorCsatoloTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_csatolo.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void ProcFoglalat_Add(ProcesszorFoglalatTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                proc_foglalat_tipus entity = new proc_foglalat_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.proc_foglalat_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MemoriaFoglalat_Add(MemoriaTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                memoria_foglalat_tipus entity = new memoria_foglalat_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.memoria_foglalat_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void UsbTipus_Add(UsbTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                usb_tipus entity = new usb_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.usb_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void HattertatTipus_Add(HattertarTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                hattertar_tipus entity = new hattertar_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.hattertar_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void HattertatCsatoloTipus_Add(HattertarCsatoloTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                hattertarolo_csatolo_tipus entity = new hattertarolo_csatolo_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.hattertarolo_csatolo_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorFelbontasTipus_Add(MonitorFelbontas type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                monitor_felbontas entity = new monitor_felbontas()
+                {
+                    felbontás = type.Megnevezes
+                };
+
+                ctx.monitor_felbontas.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorMeretTipus_Add(MonitorMeret meret)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                monitor_meret entity = new monitor_meret()
+                {
+                    meret = meret.Megnevezes
+                };
+
+                ctx.monitor_meret.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void PCIExpress_Add(PciExpressTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                pci_express_tipus entity = new pci_express_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.pci_express_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void VgaCsatolo_Add(VgaCsatoloFeluletTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                vga_csatolo_felulet_tipus entity = new vga_csatolo_felulet_tipus()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.vga_csatolo_felulet_tipus.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Gyarto_Add(AlkatreszGyarto type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                alkatresz_gyarto entity = new alkatresz_gyarto()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.alkatresz_gyarto.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorCsatolo_Add(MonitorCsatoloTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                monitor_csatolo entity = new monitor_csatolo()
+                {
+                    megnevezes = type.Megnevezes
+                };
+
+                ctx.monitor_csatolo.Add(entity);
+
+                ctx.SaveChanges();
+            }
+        }
     }
 }

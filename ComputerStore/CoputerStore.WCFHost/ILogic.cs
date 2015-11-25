@@ -25,6 +25,9 @@ namespace CoputerStore.BL
         void ProcFoglalat_Update(ProcesszorFoglalatTipus type);
 
         [OperationContract]
+        void ProcFoglalat_Add(ProcesszorFoglalatTipus type);
+
+        [OperationContract]
         List<MemoriaTipus> MemoriaFoglalat_GetKaegoriak();
 
         [OperationContract]
@@ -37,6 +40,9 @@ namespace CoputerStore.BL
         void MemoriaFoglalat_Update(MemoriaTipus type);
 
         [OperationContract]
+        void MemoriaFoglalat_Add(MemoriaTipus type);
+
+        [OperationContract]
         List<UsbTipus> UsbTipus_GetKaegoriak();
 
         [OperationContract]
@@ -44,6 +50,9 @@ namespace CoputerStore.BL
 
         [OperationContract]
         void UsbTipus_Update(UsbTipus type);
+
+        [OperationContract]
+        void UsbTipus_Add(UsbTipus type);
 
         [OperationContract]
         UsbTipus UsbTipus_GetKategoriaByID(int id);
@@ -61,6 +70,9 @@ namespace CoputerStore.BL
         void HattertatTipus_Update(HattertarTipus type);
 
         [OperationContract]
+        void HattertatTipus_Add(HattertarTipus type);
+
+        [OperationContract]
         List<HattertarCsatoloTipus> HattertatCsatoloTipus_GetKaegoriak();
 
         [OperationContract]
@@ -71,6 +83,9 @@ namespace CoputerStore.BL
 
         [OperationContract]
         void HattertatCsatoloTipus_Update(HattertarCsatoloTipus type);
+
+        [OperationContract]
+        void HattertatCsatoloTipus_Add(HattertarCsatoloTipus type);
 
         [OperationContract]
         List<MonitorFelbontas> MonitorFelbontasTipus_GetKaegoriak();
@@ -85,6 +100,9 @@ namespace CoputerStore.BL
         void MonitorFelbontasTipus_Update(MonitorFelbontas type);
 
         [OperationContract]
+        void MonitorFelbontasTipus_Add(MonitorFelbontas type);
+
+        [OperationContract]
         List<MonitorMeret> MonitorMeretTipus_GetKaegoriak();
 
         [OperationContract]
@@ -95,6 +113,9 @@ namespace CoputerStore.BL
 
         [OperationContract]
         void MonitorMeretTipus_Update(MonitorMeret meret);
+
+        [OperationContract]
+        void MonitorMeretTipus_Add(MonitorMeret meret);
 
         [OperationContract]
         PageableList<Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
@@ -154,6 +175,9 @@ namespace CoputerStore.BL
         void PCIExpress_Update(PciExpressTipus type);
 
         [OperationContract]
+        void PCIExpress_Add(PciExpressTipus type);
+
+        [OperationContract]
         List<ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByName(string name);
 
         [OperationContract]
@@ -169,6 +193,9 @@ namespace CoputerStore.BL
         void VgaCsatolo_Update(VgaCsatoloFeluletTipus type);
 
         [OperationContract]
+        void VgaCsatolo_Add(VgaCsatoloFeluletTipus type);
+
+        [OperationContract]
         List<AlkatreszGyarto> Gyarto_GetByName(string name);
 
         [OperationContract]
@@ -176,5 +203,20 @@ namespace CoputerStore.BL
 
         [OperationContract]
         void Gyarto_Update(AlkatreszGyarto type);
+
+        [OperationContract]
+        void Gyarto_Add(AlkatreszGyarto type);
+
+        [OperationContract]
+        List<MonitorCsatoloTipus> MonitorCsatolo_GetByName(string name);
+
+        [OperationContract]
+        MonitorCsatoloTipus MonitorCsatolo_GetByID(int id);
+
+        [OperationContract]
+        void MonitorCsatolo_Update(MonitorCsatoloTipus type);
+
+        [OperationContract]
+        void MonitorCsatolo_Add(MonitorCsatoloTipus type);
     }
 }

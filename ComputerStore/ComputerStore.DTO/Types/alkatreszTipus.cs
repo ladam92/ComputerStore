@@ -1,6 +1,7 @@
 ﻿using ComputerStore.DTO.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ComputerStore.DTO.Types
     public class AlkatreszTipus
     {
         [DataMember]
+        [Display(Name = "Megnevezés")]
         public string Megnevezes { get; set; }
 
         [DataMember]

@@ -28,6 +28,8 @@ namespace ComputerStore.DTO.Enums
         [Display(Name = "USB típus")]
         USB = 9,
         [Display(Name = "Videókártya csatlakozó felület")]
-        VGACsatolo = 10
+        VGACsatolo = 10,
+        [Display(Name = "Monitor csatlakozó felület")]
+        MonitorCsatolo = 11,
     }
 }

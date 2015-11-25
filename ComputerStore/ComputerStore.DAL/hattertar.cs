@@ -22,6 +22,7 @@ namespace ComputerStore.DAL
         public string megnevezes { get; set; }
         public int netto_ar { get; set; }
         public Nullable<int> kep_id { get; set; }
+        public Nullable<int> db { get; set; }
     
         public virtual alkatresz_gyarto alkatresz_gyarto { get; set; }
         public virtual hattertar_tipus hattertar_tipus { get; set; }

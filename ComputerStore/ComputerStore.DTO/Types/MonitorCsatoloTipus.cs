@@ -9,7 +9,7 @@ using ComputerStore.DTO.Enums;
 namespace ComputerStore.DTO.Types
 {
     [DataContract]
-    class MonitorCsatoloTipus : AlkatreszTipus
+    public class MonitorCsatoloTipus : AlkatreszTipus
     {
         public override Kategoriak Tipus
         {
