@@ -46,7 +46,7 @@
                         <div class="modal-footer">
                             @using (Html.BeginForm("Kosar", "Szamitogephaz", System.Web.Mvc.FormMethod.Get))
                             {
-
+                             if (Request.IsAuthenticated) {
                                 <div class="form-group">
                                     <div class="col-md-4 col-md-offset-3" style="padding: 0px;">
                                         <input type="number" min="1" max="@item.Db" value="1" class="form-control pull-right" name="db" />
@@ -58,6 +58,7 @@
                                 </div>
 
                                 <input type="submit" class="btn btn-success" value="Kosárba" />
+                            }
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Bezárás</button>
                             }
                         </div>
