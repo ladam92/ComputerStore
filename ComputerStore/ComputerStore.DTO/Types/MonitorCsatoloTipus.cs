@@ -15,7 +15,7 @@ namespace ComputerStore.DTO.Types
         {
             get
             {
-                throw new NotImplementedException();
+                return Kategoriak.MonitorCsatolo;
             }
         }
     }
