@@ -14,10 +14,6 @@ namespace CoputerStore.BL
 
     public class Logic : ILogic
     {
-        public void alma()
-        {
-
-        }
 
         public List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriak()
         {
@@ -620,6 +616,533 @@ namespace CoputerStore.BL
                 };
             }
             return alaplap;
+        }
+
+        public List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriakByName(string name)
+        {
+            List<ProcesszorFoglalatTipus> ret = new List<ProcesszorFoglalatTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.proc_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new ProcesszorFoglalatTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<MemoriaTipus> MemoriaFoglalat_GetKaegoriakByName(string name)
+        {
+            List<MemoriaTipus> ret = new List<MemoriaTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.memoria_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new MemoriaTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<HattertarTipus> HattertatTipus_GetKaegoriakByName(string name)
+        {
+            List<HattertarTipus> ret = new List<HattertarTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.hattertar_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new HattertarTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<HattertarCsatoloTipus> HattertatCsatoloTipus_GetKaegoriakByName(string name)
+        {
+            List<HattertarCsatoloTipus> ret = new List<HattertarCsatoloTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.hattertarolo_csatolo_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new HattertarCsatoloTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<MonitorFelbontas> MonitorFelbontasTipus_GetKaegoriakByName(string felbontas)
+        {
+            List<MonitorFelbontas> ret = new List<MonitorFelbontas>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.monitor_felbontas.Where(i => i.felbontás.StartsWith(felbontas)))
+                {
+                    ret.Add(new MonitorFelbontas
+                    {
+                        ID = item.id,
+                        Megnevezes = item.felbontás
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<MonitorMeret> MonitorMeretTipus_GetKaegoriakByName(string felbontas)
+        {
+            List<MonitorMeret> ret = new List<MonitorMeret>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.monitor_meret.Where(i => i.meret.StartsWith(felbontas)))
+                {
+                    ret.Add(new MonitorMeret
+                    {
+                        ID = item.id,
+                        Megnevezes = item.meret
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<UsbTipus> UsbTipus_GetKaegoriakByName(string name)
+        {
+            List<UsbTipus> ret = new List<UsbTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.usb_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new UsbTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<PciExpressTipus> PCIExpress_GetByName(string name)
+        {
+            List<PciExpressTipus> ret = new List<PciExpressTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.pci_express_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new PciExpressTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByName(string name)
+        {
+            List<ProcesszorFoglalatTipus> ret = new List<ProcesszorFoglalatTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.proc_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new ProcesszorFoglalatTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<VgaCsatoloFeluletTipus> VgaCsatolo_GetByName(string name)
+        {
+            List<VgaCsatoloFeluletTipus> ret = new List<VgaCsatoloFeluletTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.vga_csatolo_felulet_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new VgaCsatoloFeluletTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<AlkatreszGyarto> Gyarto_GetByName(string name)
+        {
+            List<AlkatreszGyarto> ret = new List<AlkatreszGyarto>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.alkatresz_gyarto.Where(i => i.megnevezes.StartsWith(name)))
+                {
+                    ret.Add(new AlkatreszGyarto
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public ProcesszorFoglalatTipus ProcFoglalat_GetKategoriaByID(int id)
+        {
+            ProcesszorFoglalatTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.proc_foglalat_tipus.Single(i => i.id == id);
+
+                ret = new ProcesszorFoglalatTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public MemoriaTipus MemoriaFoglalat_GetKategoriaByID(int id)
+        {
+            MemoriaTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.memoria_foglalat_tipus.Single(i => i.id == id);
+
+                ret = new MemoriaTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public UsbTipus UsbTipus_GetKategoriaByID(int id)
+        {
+            UsbTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.usb_tipus.Single(i => i.id == id);
+
+                ret = new UsbTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public HattertarTipus HattertatTipus_GetKategoriaByID(int id)
+        {
+            HattertarTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertar_tipus.Single(i => i.id == id);
+
+                ret = new HattertarTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public HattertarCsatoloTipus HattertatCsatoloTipus_GetKategoriaByID(int id)
+        {
+            HattertarCsatoloTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertarolo_csatolo_tipus.Single(i => i.id == id);
+
+                ret = new HattertarCsatoloTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public MonitorFelbontas MonitorFelbontasTipus_GetKategoriaByID(int id)
+        {
+            MonitorFelbontas ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_felbontas.Single(i => i.id == id);
+
+                ret = new MonitorFelbontas
+                {
+                    Megnevezes = entity.felbontás,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public MonitorMeret MonitorMeretTipus_GetKategoriaByID(int id)
+        {
+            MonitorMeret ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_meret.Single(i => i.id == id);
+
+                ret = new MonitorMeret
+                {
+                    Megnevezes = entity.meret,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public PciExpressTipus PCIExpress_GetByID(int id)
+        {
+            PciExpressTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.pci_express_tipus.Single(i => i.id == id);
+
+                ret = new PciExpressTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id)
+        {
+            ProcesszorFoglalatTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.proc_foglalat_tipus.Single(i => i.id == id);
+
+                ret = new ProcesszorFoglalatTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id)
+        {
+            VgaCsatoloFeluletTipus ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.vga_csatolo_felulet_tipus.Single(i => i.id == id);
+
+                ret = new VgaCsatoloFeluletTipus
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public AlkatreszGyarto Gyarto_GetByID(int id)
+        {
+            AlkatreszGyarto ret = null;
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.alkatresz_gyarto.Single(i => i.id == id);
+
+                ret = new AlkatreszGyarto
+                {
+                    Megnevezes = entity.megnevezes,
+                    ID = entity.id
+                };
+            }
+
+            return ret;
+        }
+
+        public void ProcFoglalat_Update(ProcesszorFoglalatTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.proc_foglalat_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MemoriaFoglalat_Update(MemoriaTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.memoria_foglalat_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void UsbTipus_Update(UsbTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.usb_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void HattertatTipus_Update(HattertarTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertar_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void HattertatCsatoloTipus_Update(HattertarCsatoloTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertarolo_csatolo_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorFelbontasTipus_Update(MonitorFelbontas type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_felbontas.Single(i => i.id == type.ID);
+
+                entity.felbontás = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorMeretTipus_Update(MonitorMeret meret)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_meret.Single(i => i.id == meret.ID);
+
+                entity.meret = meret.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void PCIExpress_Update(PciExpressTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.pci_express_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void VgaCsatolo_Update(VgaCsatoloFeluletTipus type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.vga_csatolo_felulet_tipus.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Gyarto_Update(AlkatreszGyarto type)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.alkatresz_gyarto.Single(i => i.id == type.ID);
+
+                entity.megnevezes = type.Megnevezes;
+
+                ctx.SaveChanges();
+            }
         }
     }
 }

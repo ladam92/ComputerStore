@@ -1,0 +1,14 @@
+﻿@model List<ComputerStore.DTO.Types.AlkatreszTipus>
+
+<div class="col-md-6 col-md-offset-3">
+
+    <table class="table table-hover" style="cursor: pointer">
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td onclick="location.href='@Url.Action("EditCategory", "Admin", new { id = item.ID, type = (int)item.Tipus })'">@item.Megnevezes</td>
+            </tr>
+        }
+    </table>
+
+</div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComputerStore.DTO.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -15,5 +16,11 @@ namespace ComputerStore.DTO.Types
 
         [DataMember]
         public int ID { get; set; }
+
+        public virtual Kategoriak Tipus
+        {
+            get;
+            set;
+        }
     }
 }

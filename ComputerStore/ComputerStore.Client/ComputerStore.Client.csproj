@@ -234,6 +234,9 @@
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Szamitogephaz.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Tapegyseg.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Videokartya.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.AlkatreszGyarto.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.PciExpressTipus.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.VgaCsatoloFeluletTipus.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -311,11 +314,14 @@
     <Content Include="Views\Szamitogephaz\Gethaz.cshtml" />
     <Content Include="Views\Tapegyseg\GetTapegyseg.cshtml" />
     <Content Include="Views\Videokartya\GetVideokartya.cshtml" />
-<Content Include="Views\Admin\Index.cshtml" />
-<Content Include="Views\Alaplap\Kosar.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Alaplap\Kosar.cshtml" />
     <Content Include="Views\Kosar\Index.cshtml" />
     <Content Include="Views\Kosar\DeleteFull.cshtml" />
-</ItemGroup>
+    <Content Include="Views\Admin\GetCategories.cshtml" />
+    <Content Include="Views\Admin\EditCategories.cshtml" />
+    <Content Include="Views\Admin\EditCategory.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
