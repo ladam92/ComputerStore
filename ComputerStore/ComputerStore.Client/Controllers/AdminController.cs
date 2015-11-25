@@ -18,6 +18,54 @@ namespace ComputerStore.Client.Controllers
             return View();
         }
 
+        public ActionResult Delete(string id, string tipus)
+        {
+            int id2 = Int32.Parse(id);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                
+                switch (tipus)
+                {
+                    case "Alaplap":
+                        bl.DeleteAlaplap(id2);
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                       
+                }
+            }
+
+            return View();
+        }
+
+        public ActionResult ProductDelete()
+        {
+            return View();
+        }
+
+        public ActionResult ProductList(int fokategoria)
+        {
+             List<Fokategoriatipus> model = new List<Fokategoriatipus>();
+             FoKategoria kat = (FoKategoria)fokategoria;
+
+             using (var bl = new BusinessLogic.LogicClient())
+             {
+                 switch (kat)
+                 {
+                     case FoKategoria.Alaplap:
+                         Fokategoriatipus[] list = bl.GetAlaplap();
+                         foreach(var item in list){
+                             model.Add(new Fokategoriatipus { ID=item.ID, Kep=item.Kep, Megnevezes=item.Megnevezes, Tipus="Alaplap"});
+                         }
+                         
+                         break;
+                     default:
+                         throw new NotImplementedException();
+                 }
+             }
+            return PartialView(model);
+        }
+
         [HttpGet]
         public ActionResult CreateCategory()
         {

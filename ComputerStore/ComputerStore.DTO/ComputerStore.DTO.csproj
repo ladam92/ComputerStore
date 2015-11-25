@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Enums\FoKategoria.cs" />
     <Compile Include="Enums\Kategoriak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Alaplap.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Types\Billentyuzet.cs" />
     <Compile Include="Types\Datacontract.cs" />
     <Compile Include="Types\Eger.cs" />
+    <Compile Include="Types\Fokategoriatipus.cs" />
     <Compile Include="Types\Hattertar.cs" />
     <Compile Include="Types\HattertarCsatoloTipus.cs" />
     <Compile Include="Types\HattertarTipus.cs" />

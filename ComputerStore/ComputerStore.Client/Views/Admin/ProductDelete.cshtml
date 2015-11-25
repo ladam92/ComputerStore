@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "EditCategories";
+}
+
+<h2>Termék törlése</h2>
+<hr style="margin-bottom: 50px;" />
+
+<div class="form-horizontal">
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Kategória</label>
+        <div class="col-md-3">
+            @Html.DropDownList("dropDown", EnumHelper.GetSelectList(typeof(ComputerStore.DTO.Enums.FoKategoria)), "Kérem válasszon", new { @class = "form-control", @id = "dropDownList" })
+        </div>
+
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" onclick="refreshDatalist()">Listázás</button>
+        </div>
+    </div>
+</div>
+
+<div id="dataList">
+</div>
+
+@section Scripts{
+
+    <script>
+        function refreshDatalist(){
+            var listValue = $("#dropDownList").val();
+
+            $.ajax({
+                url: "@Url.Action("ProductList", "Admin")",
+                type: "GET",
+                data: {
+                    fokategoria: listValue,
+                },
+                success: function(response) {
+                    $("#dataList").html(response);
+
+                }
+                //error: function (jqXHR, textStatus, errorThrown) {
+                //    console.log(textStatus, errorThrown);
+                //}
+            });
+
+        }
+    </script>
+}

@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ILogic_GetAlaplap_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlaplap" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_GetAlaplap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlaplapResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_ProcFoglalat_GetKategoriak_InputMessage">
     <wsdl:part name="parameters" element="tns:ProcFoglalat_GetKategoriak" />
   </wsdl:message>
@@ -307,12 +313,6 @@
   <wsdl:message name="ILogic_Videokartya_Get_OutputMessage">
     <wsdl:part name="parameters" element="tns:Videokartya_GetResponse" />
   </wsdl:message>
-  <wsdl:message name="ILogic_Alaplap_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Alaplap_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Alaplap_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Alaplap_GetByIDResponse" />
-  </wsdl:message>
   <wsdl:message name="ILogic_PCIExpress_GetByName_InputMessage">
     <wsdl:part name="parameters" element="tns:PCIExpress_GetByName" />
   </wsdl:message>
@@ -421,6 +421,12 @@
   <wsdl:message name="ILogic_MonitorCsatolo_Add_OutputMessage">
     <wsdl:part name="parameters" element="tns:MonitorCsatolo_AddResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_Billentyuzet_GetByID_InputMessage">
     <wsdl:part name="parameters" element="tns:Billentyuzet_GetByID" />
   </wsdl:message>
@@ -475,7 +481,17 @@
   <wsdl:message name="ILogic_Videokartya_GetByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:Videokartya_GetByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_DeleteAlaplap_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlaplap" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_DeleteAlaplap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlaplapResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILogic">
+    <wsdl:operation name="GetAlaplap">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/GetAlaplap" message="tns:ILogic_GetAlaplap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/GetAlaplapResponse" message="tns:ILogic_GetAlaplap_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ProcFoglalat_GetKategoriak">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" message="tns:ILogic_ProcFoglalat_GetKategoriak_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriakResponse" message="tns:ILogic_ProcFoglalat_GetKategoriak_OutputMessage" />
@@ -676,10 +692,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Videokartya_Get" message="tns:ILogic_Videokartya_Get_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetResponse" message="tns:ILogic_Videokartya_Get_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Alaplap_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByID" message="tns:ILogic_Alaplap_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByIDResponse" message="tns:ILogic_Alaplap_GetByID_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="PCIExpress_GetByName">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByName" message="tns:ILogic_PCIExpress_GetByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse" message="tns:ILogic_PCIExpress_GetByName_OutputMessage" />
@@ -752,6 +764,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_Add" message="tns:ILogic_MonitorCsatolo_Add_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_AddResponse" message="tns:ILogic_MonitorCsatolo_Add_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByID" message="tns:ILogic_Alaplap_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByIDResponse" message="tns:ILogic_Alaplap_GetByID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Billentyuzet_GetByID">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByID" message="tns:ILogic_Billentyuzet_GetByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse" message="tns:ILogic_Billentyuzet_GetByID_OutputMessage" />
@@ -788,9 +804,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetByID" message="tns:ILogic_Videokartya_GetByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetByIDResponse" message="tns:ILogic_Videokartya_GetByID_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteAlaplap">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/DeleteAlaplap" message="tns:ILogic_DeleteAlaplap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/DeleteAlaplapResponse" message="tns:ILogic_DeleteAlaplap_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAlaplap">
+      <soap:operation soapAction="http://tempuri.org/ILogic/GetAlaplap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ProcFoglalat_GetKategoriak">
       <soap:operation soapAction="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak" style="document" />
       <wsdl:input>
@@ -1241,15 +1270,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Alaplap_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="PCIExpress_GetByName">
       <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_GetByName" style="document" />
       <wsdl:input>
@@ -1412,6 +1432,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Billentyuzet_GetByID">
       <soap:operation soapAction="http://tempuri.org/ILogic/Billentyuzet_GetByID" style="document" />
       <wsdl:input>
@@ -1486,6 +1515,15 @@
     </wsdl:operation>
     <wsdl:operation name="Videokartya_GetByID">
       <soap:operation soapAction="http://tempuri.org/ILogic/Videokartya_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlaplap">
+      <soap:operation soapAction="http://tempuri.org/ILogic/DeleteAlaplap" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

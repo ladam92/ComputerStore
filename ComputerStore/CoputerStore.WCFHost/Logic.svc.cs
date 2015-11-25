@@ -1,4 +1,5 @@
 ﻿using ComputerStore.DAL;
+using ComputerStore.DTO.Enums;
 using ComputerStore.DTO.Types;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,47 @@ namespace CoputerStore.BL
 
     public class Logic : ILogic
     {
+        public void DeleteAlaplap(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var alaplap1 = ctx.alaplap.Where(i => i.id == id).Single();
+                var list=ctx.alaplap_usb.Where(i => i.alaplap_id == id);
+                foreach (var item in list)
+                {
+                    ctx.alaplap_usb.Remove(item);
+                }
+                var list2 = ctx.alaplap_hattertar.Where(i => i.alaplap_id == id);
+                foreach (var item in list2)
+                {
+                    ctx.alaplap_hattertar.Remove(item);
+                }
+                ctx.alaplap.Remove(alaplap1);
+                
+                ctx.SaveChanges();
+            }
+        }
+
+        public List<Fokategoriatipus> GetAlaplap()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.alaplap)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus="Alaplap"
+                    });
+                }
+            }
+
+            return ret;
+        }
 
         public List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriak()
         {
@@ -606,31 +648,31 @@ namespace CoputerStore.BL
             return new PageableList<Videokartya>(list, pageNumber, (int)Math.Ceiling((decimal)maxNumber / pageSize));
         }
 
-        public Alaplap Alaplap_GetByID(int id)
-        {
-            Alaplap alaplap;
-            using (var ctx = new ComputerStoreEntities())
-            {
-                var query = ctx.alaplap.Where(i=>i.id==id).Single();
-                alaplap = new Alaplap
-                {
-                    ID = query.id,
-                    FoglalatID = query.proc_foglalat_tipus_id,
-                    Gyarto = query.alkatresz_gyarto.megnevezes,
-                    IsPs2 = query.van_ps2_port,
-                    Kep = query.kepek.kep,
-                    Leiras = query.leiras,
-                    Megnevezes = query.megnevezes,
-                    MemoriaDarab = query.memoria_foglalat_darab,
-                    MemoriaFoglalat = query.memoria_foglalat_tipus.megnevezes,
-                    MemoriaFoglalatID = query.memoria_foglalat_tipus_id,
-                    NettoAr = query.netto_ar,
-                    VGADarab = query.vga_csatolo_darab,
-                    Db=(Int32)query.db
-                };
-            }
-            return alaplap;
-        }
+        //public Alaplap Alaplap_GetByID(int id)
+        //{
+        //    Alaplap alaplap;
+        //    using (var ctx = new ComputerStoreEntities())
+        //    {
+        //        var query = ctx.alaplap.Where(i=>i.id==id).Single();
+        //        alaplap = new Alaplap
+        //        {
+        //            ID = query.id,
+        //            FoglalatID = query.proc_foglalat_tipus_id,
+        //            Gyarto = query.alkatresz_gyarto.megnevezes,
+        //            IsPs2 = query.van_ps2_port,
+        //            Kep = query.kepek.kep,
+        //            Leiras = query.leiras,
+        //            Megnevezes = query.megnevezes,
+        //            MemoriaDarab = query.memoria_foglalat_darab,
+        //            MemoriaFoglalat = query.memoria_foglalat_tipus.megnevezes,
+        //            MemoriaFoglalatID = query.memoria_foglalat_tipus_id,
+        //            NettoAr = query.netto_ar,
+        //            VGADarab = query.vga_csatolo_darab,
+        //            Db=(Int32)query.db
+        //        };
+        //    }
+        //    return alaplap;
+        //}
 
 
         public List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriakByName(string name)
@@ -1372,6 +1414,32 @@ namespace CoputerStore.BL
 
                 ctx.SaveChanges();
             }
+        }
+
+        public Alaplap Alaplap_GetByID(int id)
+        {
+            Alaplap alaplap;
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.alaplap.Where(i => i.id == id).Single();
+                alaplap = new Alaplap
+                {
+                    ID = id,
+                    FoglalatID = query.proc_foglalat_tipus_id,
+                    Gyarto = query.alkatresz_gyarto.megnevezes,
+                    IsPs2 = query.van_ps2_port,
+                    Kep = query.kepek.kep,
+                    Leiras = query.leiras,
+                    Megnevezes = query.megnevezes,
+                    MemoriaDarab = query.memoria_foglalat_darab,
+                    MemoriaFoglalat = query.memoria_foglalat_tipus.megnevezes,
+                    MemoriaFoglalatID = query.memoria_foglalat_tipus_id,
+                    NettoAr = query.netto_ar,
+                    VGADarab = query.vga_csatolo_darab,
+                    Db = (Int32)query.db
+                };
+            }
+            return alaplap;
         }
 
         public Billentyuzet Billentyuzet_GetByID(int id)

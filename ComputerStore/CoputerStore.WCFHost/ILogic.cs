@@ -13,6 +13,9 @@ namespace CoputerStore.BL
     public interface ILogic
     {
         [OperationContract]
+        List<Fokategoriatipus> GetAlaplap();
+
+        [OperationContract]
         List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriak();
 
         [OperationContract]
@@ -162,8 +165,6 @@ namespace CoputerStore.BL
         [OperationContract]
         PageableList<Videokartya> Videokartya_Get(int pageNumber, int pageSize);
 
-        [OperationContract]
-        Alaplap Alaplap_GetByID(int id);
 
         [OperationContract]
 
@@ -221,6 +222,9 @@ namespace CoputerStore.BL
         void MonitorCsatolo_Add(MonitorCsatoloTipus type);
 
         [OperationContract]
+        Alaplap Alaplap_GetByID(int id);
+
+        [OperationContract]
         Billentyuzet Billentyuzet_GetByID(int id);
 
         [OperationContract]
@@ -246,5 +250,8 @@ namespace CoputerStore.BL
 
         [OperationContract]
         Videokartya Videokartya_GetByID(int id);
+
+        [OperationContract]
+        void DeleteAlaplap(int id);
     }
 }
