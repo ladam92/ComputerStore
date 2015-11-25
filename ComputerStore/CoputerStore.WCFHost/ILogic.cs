@@ -16,22 +16,106 @@ namespace CoputerStore.BL
         List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriak();
 
         [OperationContract]
+        List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriakByName(string name);
+
+        [OperationContract]
+        ProcesszorFoglalatTipus ProcFoglalat_GetKategoriaByID(int id);
+
+        [OperationContract]
+        void ProcFoglalat_Update(ProcesszorFoglalatTipus type);
+
+        [OperationContract]
+        void ProcFoglalat_Add(ProcesszorFoglalatTipus type);
+
+        [OperationContract]
         List<MemoriaTipus> MemoriaFoglalat_GetKaegoriak();
+
+        [OperationContract]
+        List<MemoriaTipus> MemoriaFoglalat_GetKaegoriakByName(string name);
+
+        [OperationContract]
+        MemoriaTipus MemoriaFoglalat_GetKategoriaByID(int id);
+
+        [OperationContract]
+        void MemoriaFoglalat_Update(MemoriaTipus type);
+
+        [OperationContract]
+        void MemoriaFoglalat_Add(MemoriaTipus type);
 
         [OperationContract]
         List<UsbTipus> UsbTipus_GetKaegoriak();
 
         [OperationContract]
+        List<UsbTipus> UsbTipus_GetKaegoriakByName(string name);
+
+        [OperationContract]
+        void UsbTipus_Update(UsbTipus type);
+
+        [OperationContract]
+        void UsbTipus_Add(UsbTipus type);
+
+        [OperationContract]
+        UsbTipus UsbTipus_GetKategoriaByID(int id);
+
+        [OperationContract]
         List<HattertarTipus> HattertatTipus_GetKaegoriak();
+
+        [OperationContract]
+        List<HattertarTipus> HattertatTipus_GetKaegoriakByName(string name);
+
+        [OperationContract]
+        HattertarTipus HattertatTipus_GetKategoriaByID(int id);
+
+        [OperationContract]
+        void HattertatTipus_Update(HattertarTipus type);
+
+        [OperationContract]
+        void HattertatTipus_Add(HattertarTipus type);
 
         [OperationContract]
         List<HattertarCsatoloTipus> HattertatCsatoloTipus_GetKaegoriak();
 
         [OperationContract]
+        List<HattertarCsatoloTipus> HattertatCsatoloTipus_GetKaegoriakByName(string name);
+
+        [OperationContract]
+        HattertarCsatoloTipus HattertatCsatoloTipus_GetKategoriaByID(int id);
+
+        [OperationContract]
+        void HattertatCsatoloTipus_Update(HattertarCsatoloTipus type);
+
+        [OperationContract]
+        void HattertatCsatoloTipus_Add(HattertarCsatoloTipus type);
+
+        [OperationContract]
         List<MonitorFelbontas> MonitorFelbontasTipus_GetKaegoriak();
 
         [OperationContract]
+        List<MonitorFelbontas> MonitorFelbontasTipus_GetKaegoriakByName(string felbontas);
+
+        [OperationContract]
+        MonitorFelbontas MonitorFelbontasTipus_GetKategoriaByID(int id);
+
+        [OperationContract]
+        void MonitorFelbontasTipus_Update(MonitorFelbontas type);
+
+        [OperationContract]
+        void MonitorFelbontasTipus_Add(MonitorFelbontas type);
+
+        [OperationContract]
         List<MonitorMeret> MonitorMeretTipus_GetKaegoriak();
+
+        [OperationContract]
+        List<MonitorMeret> MonitorMeretTipus_GetKaegoriakByName(string meret);
+
+        [OperationContract]
+        MonitorMeret MonitorMeretTipus_GetKategoriaByID(int id);
+
+        [OperationContract]
+        void MonitorMeretTipus_Update(MonitorMeret meret);
+
+        [OperationContract]
+        void MonitorMeretTipus_Add(MonitorMeret meret);
 
         [OperationContract]
         PageableList<Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
@@ -80,6 +164,61 @@ namespace CoputerStore.BL
 
         [OperationContract]
         Alaplap Alaplap_GetByID(int id);
+
+        [OperationContract]
+
+        List<PciExpressTipus> PCIExpress_GetByName(string name);
+
+        [OperationContract]
+        PciExpressTipus PCIExpress_GetByID(int id);
+
+        [OperationContract]
+        void PCIExpress_Update(PciExpressTipus type);
+
+        [OperationContract]
+        void PCIExpress_Add(PciExpressTipus type);
+
+        [OperationContract]
+        List<ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByName(string name);
+
+        [OperationContract]
+        ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id);
+
+        [OperationContract]
+        List<VgaCsatoloFeluletTipus> VgaCsatolo_GetByName(string name);
+
+        [OperationContract]
+        VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id);
+
+        [OperationContract]
+        void VgaCsatolo_Update(VgaCsatoloFeluletTipus type);
+
+        [OperationContract]
+        void VgaCsatolo_Add(VgaCsatoloFeluletTipus type);
+
+        [OperationContract]
+        List<AlkatreszGyarto> Gyarto_GetByName(string name);
+
+        [OperationContract]
+        AlkatreszGyarto Gyarto_GetByID(int id);
+
+        [OperationContract]
+        void Gyarto_Update(AlkatreszGyarto type);
+
+        [OperationContract]
+        void Gyarto_Add(AlkatreszGyarto type);
+
+        [OperationContract]
+        List<MonitorCsatoloTipus> MonitorCsatolo_GetByName(string name);
+
+        [OperationContract]
+        MonitorCsatoloTipus MonitorCsatolo_GetByID(int id);
+
+        [OperationContract]
+        void MonitorCsatolo_Update(MonitorCsatoloTipus type);
+
+        [OperationContract]
+        void MonitorCsatolo_Add(MonitorCsatoloTipus type);
 
         [OperationContract]
         Billentyuzet Billentyuzet_GetByID(int id);

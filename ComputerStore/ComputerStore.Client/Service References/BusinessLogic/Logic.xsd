@@ -481,4 +481,60 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Videokartya" nillable="true" type="tns:Videokartya" />
+  <xs:complexType name="ArrayOfPciExpressTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PciExpressTipus" nillable="true" type="tns:PciExpressTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPciExpressTipus" nillable="true" type="tns:ArrayOfPciExpressTipus" />
+  <xs:complexType name="PciExpressTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PciExpressTipus" nillable="true" type="tns:PciExpressTipus" />
+  <xs:complexType name="ArrayOfVgaCsatoloFeluletTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VgaCsatoloFeluletTipus" nillable="true" type="tns:VgaCsatoloFeluletTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVgaCsatoloFeluletTipus" nillable="true" type="tns:ArrayOfVgaCsatoloFeluletTipus" />
+  <xs:complexType name="VgaCsatoloFeluletTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VgaCsatoloFeluletTipus" nillable="true" type="tns:VgaCsatoloFeluletTipus" />
+  <xs:complexType name="ArrayOfAlkatreszGyarto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlkatreszGyarto" nillable="true" type="tns:ArrayOfAlkatreszGyarto" />
+  <xs:complexType name="AlkatreszGyarto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
+  <xs:complexType name="ArrayOfMonitorCsatoloTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonitorCsatoloTipus" nillable="true" type="tns:MonitorCsatoloTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonitorCsatoloTipus" nillable="true" type="tns:ArrayOfMonitorCsatoloTipus" />
+  <xs:complexType name="MonitorCsatoloTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MonitorCsatoloTipus" nillable="true" type="tns:MonitorCsatoloTipus" />
 </xs:schema>
