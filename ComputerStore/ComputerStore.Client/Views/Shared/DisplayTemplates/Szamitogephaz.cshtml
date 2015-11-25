@@ -1,0 +1,42 @@
+﻿@model ComputerStore.DTO.Types.Szamitogephaz
+
+@{
+    ViewBag.Title = "Szamitogephaz";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Megnevezes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Megnevezes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NettoAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NettoAr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Db)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Db)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gyarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gyarto)
+        </dd>
+
+    </dl>
+</div>

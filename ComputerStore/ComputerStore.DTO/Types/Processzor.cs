@@ -24,7 +24,13 @@ namespace ComputerStore.DTO.Types
         public decimal Frekvencia { get; set; }
 
         [DataMember]
+        public string FrekvenciaMertek { get; set; }
+
+        [DataMember]
         public int FrekvenciaMertekID { get; set; }
+
+        [DataMember]
+        public string ProcFoglalat { get; set; }
 
         [DataMember]
         public int ProcFoglalatID { get; set; }

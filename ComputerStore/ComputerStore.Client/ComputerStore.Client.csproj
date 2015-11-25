@@ -324,13 +324,11 @@
     <Content Include="Views\Alaplap\Kosar.cshtml" />
     <Content Include="Views\Kosar\Index.cshtml" />
     <Content Include="Views\Kosar\DeleteFull.cshtml" />
-<Content Include="Views\Admin\GetCategories.cshtml" />
+    <Content Include="Views\Admin\GetCategories.cshtml" />
     <Content Include="Views\Admin\EditCategories.cshtml" />
     <Content Include="Views\Admin\EditCategory.cshtml" />
     <Content Include="Views\Admin\CreateCategory.cshtml" />
-
-    <Folder Include="App_Data\" />
-  <Content Include="Views\Billentyuzet\Kosar.cshtml" />
+    <Content Include="Views\Billentyuzet\Kosar.cshtml" />
     <Content Include="Views\Eger\Kosar.cshtml" />
     <Content Include="Views\Hattertar\Kosar.cshtml" />
     <Content Include="Views\Memoria\Kosar.cshtml" />
@@ -345,7 +343,17 @@
     <Content Include="Views\Manage\ChangeBillGet.cshtml" />
     <Content Include="Views\Manage\ChangeTransportGet.cshtml" />
     <Content Include="Views\Manage\ChangeProfilGet.cshtml" />
-</ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\Alaplap.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Billentyuzet.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Eger.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Hattertar.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Memoria.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Monitor.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Processzor.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Szamitogephaz.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Tapegyseg.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Videokartya.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

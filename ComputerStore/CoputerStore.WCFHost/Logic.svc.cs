@@ -163,6 +163,7 @@ namespace CoputerStore.BL
                     {
                         ID = item.id,
                         FoglalatID = id,
+                        Foglalat = item.proc_foglalat_tipus.megnevezes,
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         IsPs2 = item.van_ps2_port,
                         Kep = item.kepek.kep,
@@ -201,6 +202,7 @@ namespace CoputerStore.BL
                     {
                         ID = item.id,
                         FoglalatID = id,
+                        Foglalat = item.proc_foglalat_tipus.megnevezes,
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         IsPs2 = item.van_ps2_port,
                         Kep = item.kepek.kep,
@@ -242,7 +244,8 @@ namespace CoputerStore.BL
                         IsPs2 = item.is_ps2_csatolo,
                         Kep = item.kepek.kep,
                         Megnevezes=item.megnevezes,
-                        UsbID=item.usb_tipus.id,
+                        Usb = item.usb_tipus.megnevezes,
+                        UsbID =item.usb_tipus.id,
                         NettoAr=item.netto_ar,
                         Db = (Int32)item.db
                     });
@@ -272,6 +275,7 @@ namespace CoputerStore.BL
                         IsPs2 = item.is_ps2_csatolo,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
+                        Usb = item.usb_tipus.megnevezes,
                         UsbID = item.usb_tipus.id,
                         NettoAr = item.netto_ar,
                         Db = (Int32)item.db
@@ -301,6 +305,7 @@ namespace CoputerStore.BL
                         IsPs2 = item.is_ps2_csatolo,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
+                        Usb = item.usb_tipus.megnevezes,
                         UsbID = item.usb_tipus.id,
                         NettoAr = item.netto_ar,
                         Db = (Int32)item.db
@@ -330,6 +335,7 @@ namespace CoputerStore.BL
                         IsPs2 = item.is_ps2_csatolo,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
+                        Usb = item.usb_tipus.megnevezes,
                         UsbID = item.usb_tipus.id,
                         NettoAr = item.netto_ar,
                         Db = (Int32)item.db
@@ -357,6 +363,8 @@ namespace CoputerStore.BL
                         ID = item.id,
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         Kep = item.kepek.kep,
+                        Csatolo = item.hattertarolo_csatolo_tipus.megnevezes,
+                        Tipus = item.hattertar_tipus.megnevezes,
                         Megnevezes = item.megnevezes,
                         CsatoloID=item.hattertar_csatolo_tipus_id,
                         TipusID=item.hattertar_tipus_id,
@@ -388,6 +396,8 @@ namespace CoputerStore.BL
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
+                        Csatolo = item.hattertarolo_csatolo_tipus.megnevezes,
+                        Tipus = item.hattertar_tipus.megnevezes,
                         CsatoloID = item.hattertar_csatolo_tipus_id,
                         TipusID = item.hattertar_tipus_id,
                         Meret = item.meret_gb,
@@ -419,6 +429,7 @@ namespace CoputerStore.BL
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
+                        Foglalat = item.memoria_foglalat_tipus.megnevezes,
                         FoglalatID=item.memoria_foglalat_tipus_id,
                         MemoriaMeret=item.memoria_meret_mb,
                         NettoAr = item.netto_ar,
@@ -449,6 +460,9 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         CsatoloID = item.monitor_csatolo_id,
+                        Csatolo = item.monitor_csatolo.megnevezes,
+                        Felbontas = item.monitor_felbontas.felbontás,
+                        Meret = item.monitor_meret.meret,
                         FelbontasID = item.monitor_felbontas_id,
                         MeretID=item.monitor_meret_id,
                         NettoAr = item.netto_ar,
@@ -478,6 +492,9 @@ namespace CoputerStore.BL
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
+                        Csatolo = item.monitor_csatolo.megnevezes,
+                        Felbontas = item.monitor_felbontas.felbontás,
+                        Meret = item.monitor_meret.meret,
                         CsatoloID = item.monitor_csatolo_id,
                         FelbontasID = item.monitor_felbontas_id,
                         MeretID = item.monitor_meret_id,
@@ -509,8 +526,10 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         Frekvencia=item.frekvencia,
+                        FrekvenciaMertek = item.cpu_frekvencia_mertekegyseg.mertekegyseg,
                         FrekvenciaMertekID=item.frekvencia_mertekegyseg_id,
                         Magok=item.magok_darab,
+                        ProcFoglalat = item.proc_foglalat_tipus.megnevezes,
                         ProcFoglalatID=item.proc_foglalat_tipus.id,
                         NettoAr = item.netto_ar,
                         Db = (Int32)item.db
@@ -596,6 +615,7 @@ namespace CoputerStore.BL
                         Megnevezes = item.megnevezes,
                         NettoAr = item.netto_ar,
                         MemoriaMeret=item.memoria_meret_gb,
+                        MemoriaTipus = item.memoria_foglalat_tipus.megnevezes,
                         MemoriaTipusID=item.memoria_tipus_id,
                         Db = (Int32)item.db
                     });
