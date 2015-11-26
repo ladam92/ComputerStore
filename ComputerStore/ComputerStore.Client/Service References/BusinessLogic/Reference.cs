@@ -15,6 +15,24 @@ namespace ComputerStore.Client.BusinessLogic {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessLogic.ILogic")]
     public interface ILogic {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse")]
+        void VgaCsatolo_Update(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse")]
+        System.Threading.Tasks.Task VgaCsatolo_UpdateAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_AddResponse")]
+        void VgaCsatolo_Add(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_AddResponse")]
+        System.Threading.Tasks.Task VgaCsatolo_AddAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByName", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByNameResponse")]
+        ComputerStore.DTO.Types.AlkatreszGyarto[] Gyarto_GetByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByName", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByNameResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> Gyarto_GetByNameAsync(string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByID", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByIDResponse")]
         ComputerStore.DTO.Types.AlkatreszGyarto Gyarto_GetByID(int id);
         
@@ -537,6 +555,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByFoglalatIDResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap>> Alaplap_GetByFoglalatIDAsync(int id, int pageNumber, int pageSize);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetListByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetListByFoglalatIDResponse")]
+        ComputerStore.DTO.Types.Alaplap[] Alaplap_GetListByFoglalatID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetListByFoglalatID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetListByFoglalatIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap[]> Alaplap_GetListByFoglalatIDAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByMemoriaID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByMemoriaIDResponse")]
         ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize);
         
@@ -585,6 +609,12 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Memoria_GetByFoglalatResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Memoria>> Memoria_GetByFoglalatAsync(int id, int pageNumber, int pageSize);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Memoria_GetListByFoglalatResponse")]
+        ComputerStore.DTO.Types.Memoria[] Memoria_GetListByFoglalat(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Memoria_GetListByFoglalatResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Memoria[]> Memoria_GetListByFoglalatAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByMeret", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByMeretResponse")]
         ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor> Monitor_GetByMeret(int id, int pageNumber, int pageSize);
         
@@ -602,6 +632,12 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetListByFoglalatResponse")]
+        ComputerStore.DTO.Types.Processzor[] Processzor_GetListByFoglalat(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetListByFoglalatResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor[]> Processzor_GetListByFoglalatAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
         ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize);
@@ -668,24 +704,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus> VgaCsatolo_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse")]
-        void VgaCsatolo_Update(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse")]
-        System.Threading.Tasks.Task VgaCsatolo_UpdateAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_AddResponse")]
-        void VgaCsatolo_Add(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Add", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_AddResponse")]
-        System.Threading.Tasks.Task VgaCsatolo_AddAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByName", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByNameResponse")]
-        ComputerStore.DTO.Types.AlkatreszGyarto[] Gyarto_GetByName(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByName", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByNameResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> Gyarto_GetByNameAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -713,6 +731,30 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public LogicClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void VgaCsatolo_Update(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
+            base.Channel.VgaCsatolo_Update(type);
+        }
+        
+        public System.Threading.Tasks.Task VgaCsatolo_UpdateAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
+            return base.Channel.VgaCsatolo_UpdateAsync(type);
+        }
+        
+        public void VgaCsatolo_Add(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
+            base.Channel.VgaCsatolo_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task VgaCsatolo_AddAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
+            return base.Channel.VgaCsatolo_AddAsync(type);
+        }
+        
+        public ComputerStore.DTO.Types.AlkatreszGyarto[] Gyarto_GetByName(string name) {
+            return base.Channel.Gyarto_GetByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> Gyarto_GetByNameAsync(string name) {
+            return base.Channel.Gyarto_GetByNameAsync(name);
         }
         
         public ComputerStore.DTO.Types.AlkatreszGyarto Gyarto_GetByID(int id) {
@@ -1411,6 +1453,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.Alaplap_GetByFoglalatIDAsync(id, pageNumber, pageSize);
         }
         
+        public ComputerStore.DTO.Types.Alaplap[] Alaplap_GetListByFoglalatID(int id) {
+            return base.Channel.Alaplap_GetListByFoglalatID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap[]> Alaplap_GetListByFoglalatIDAsync(int id) {
+            return base.Channel.Alaplap_GetListByFoglalatIDAsync(id);
+        }
+        
         public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize) {
             return base.Channel.Alaplap_GetByMemoriaID(id, pageNumber, pageSize);
         }
@@ -1475,6 +1525,14 @@ namespace ComputerStore.Client.BusinessLogic {
             return base.Channel.Memoria_GetByFoglalatAsync(id, pageNumber, pageSize);
         }
         
+        public ComputerStore.DTO.Types.Memoria[] Memoria_GetListByFoglalat(int id) {
+            return base.Channel.Memoria_GetListByFoglalat(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Memoria[]> Memoria_GetListByFoglalatAsync(int id) {
+            return base.Channel.Memoria_GetListByFoglalatAsync(id);
+        }
+        
         public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor> Monitor_GetByMeret(int id, int pageNumber, int pageSize) {
             return base.Channel.Monitor_GetByMeret(id, pageNumber, pageSize);
         }
@@ -1497,6 +1555,14 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize) {
             return base.Channel.Processzor_GetByFoglalatAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.Processzor[] Processzor_GetListByFoglalat(int id) {
+            return base.Channel.Processzor_GetListByFoglalat(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor[]> Processzor_GetListByFoglalatAsync(int id) {
+            return base.Channel.Processzor_GetListByFoglalatAsync(id);
         }
         
         public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize) {
@@ -1585,30 +1651,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus> VgaCsatolo_GetByIDAsync(int id) {
             return base.Channel.VgaCsatolo_GetByIDAsync(id);
-        }
-        
-        public void VgaCsatolo_Update(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
-            base.Channel.VgaCsatolo_Update(type);
-        }
-        
-        public System.Threading.Tasks.Task VgaCsatolo_UpdateAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
-            return base.Channel.VgaCsatolo_UpdateAsync(type);
-        }
-        
-        public void VgaCsatolo_Add(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
-            base.Channel.VgaCsatolo_Add(type);
-        }
-        
-        public System.Threading.Tasks.Task VgaCsatolo_AddAsync(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
-            return base.Channel.VgaCsatolo_AddAsync(type);
-        }
-        
-        public ComputerStore.DTO.Types.AlkatreszGyarto[] Gyarto_GetByName(string name) {
-            return base.Channel.Gyarto_GetByName(name);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> Gyarto_GetByNameAsync(string name) {
-            return base.Channel.Gyarto_GetByNameAsync(name);
         }
     }
 }

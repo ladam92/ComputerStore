@@ -1,0 +1,40 @@
+﻿@model List<ComputerStore.DTO.Types.Alaplap>
+
+@Html.DropDownList("Alaplap", new SelectList(Model, "ID", "Megnevezes"), "Kérem válasszon", new { @class="form-control", @onchange= "alaplapComboBoxChanged()", @id="alaplapComboBox" })
+
+<script>
+    function alaplapComboBoxChanged()
+    {
+        var id = $("#alaplapComboBox").val();
+
+        $.ajax({
+            url: "@Url.Action("GetComboBoxByAlaplap", "Processzor")",
+            type: "GET",
+        data: {
+            alaplapID: id,
+            },
+        success: function (response) {
+            $("#procCombo").html(response);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+        });
+
+        $.ajax({
+            url: "@Url.Action("GetComboBoxByAlaplap", "Memoria")",
+            type: "GET",
+        data: {
+            alaplapID: id,
+            },
+        success: function (response) {
+            $("#memoriaCombo").html(response);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+    }
+</script>
