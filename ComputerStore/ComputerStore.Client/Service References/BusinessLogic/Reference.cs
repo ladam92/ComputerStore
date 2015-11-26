@@ -15,11 +15,143 @@ namespace ComputerStore.Client.BusinessLogic {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessLogic.ILogic")]
     public interface ILogic {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_GetByID", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetByIDResponse")]
+        ComputerStore.DTO.Types.Szamitogephaz Szamitogephaz_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_GetByID", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_GetByID", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetByIDResponse")]
+        ComputerStore.DTO.Types.Tapegyseg Tapegyseg_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_GetByID", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_GetByID", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetByIDResponse")]
+        ComputerStore.DTO.Types.Videokartya Videokartya_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_GetByID", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Videokartya> Videokartya_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteAlaplap", ReplyAction="http://tempuri.org/ILogic/DeleteAlaplapResponse")]
+        void DeleteAlaplap(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteAlaplap", ReplyAction="http://tempuri.org/ILogic/DeleteAlaplapResponse")]
+        System.Threading.Tasks.Task DeleteAlaplapAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteBillentyuzet", ReplyAction="http://tempuri.org/ILogic/DeleteBillentyuzetResponse")]
+        void DeleteBillentyuzet(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteBillentyuzet", ReplyAction="http://tempuri.org/ILogic/DeleteBillentyuzetResponse")]
+        System.Threading.Tasks.Task DeleteBillentyuzetAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteEger", ReplyAction="http://tempuri.org/ILogic/DeleteEgerResponse")]
+        void DeleteEger(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteEger", ReplyAction="http://tempuri.org/ILogic/DeleteEgerResponse")]
+        System.Threading.Tasks.Task DeleteEgerAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteHattertar", ReplyAction="http://tempuri.org/ILogic/DeleteHattertarResponse")]
+        void DeleteHattertar(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteHattertar", ReplyAction="http://tempuri.org/ILogic/DeleteHattertarResponse")]
+        System.Threading.Tasks.Task DeleteHattertarAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteMemoria", ReplyAction="http://tempuri.org/ILogic/DeleteMemoriaResponse")]
+        void DeleteMemoria(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteMemoria", ReplyAction="http://tempuri.org/ILogic/DeleteMemoriaResponse")]
+        System.Threading.Tasks.Task DeleteMemoriaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteMonitor", ReplyAction="http://tempuri.org/ILogic/DeleteMonitorResponse")]
+        void DeleteMonitor(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteMonitor", ReplyAction="http://tempuri.org/ILogic/DeleteMonitorResponse")]
+        System.Threading.Tasks.Task DeleteMonitorAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteProcesszor", ReplyAction="http://tempuri.org/ILogic/DeleteProcesszorResponse")]
+        void DeleteProcesszor(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteProcesszor", ReplyAction="http://tempuri.org/ILogic/DeleteProcesszorResponse")]
+        System.Threading.Tasks.Task DeleteProcesszorAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteSzamitogephaz", ReplyAction="http://tempuri.org/ILogic/DeleteSzamitogephazResponse")]
+        void DeleteSzamitogephaz(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteSzamitogephaz", ReplyAction="http://tempuri.org/ILogic/DeleteSzamitogephazResponse")]
+        System.Threading.Tasks.Task DeleteSzamitogephazAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteTapegyseg", ReplyAction="http://tempuri.org/ILogic/DeleteTapegysegResponse")]
+        void DeleteTapegyseg(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteTapegyseg", ReplyAction="http://tempuri.org/ILogic/DeleteTapegysegResponse")]
+        System.Threading.Tasks.Task DeleteTapegysegAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteVideokartya", ReplyAction="http://tempuri.org/ILogic/DeleteVideokartyaResponse")]
+        void DeleteVideokartya(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteVideokartya", ReplyAction="http://tempuri.org/ILogic/DeleteVideokartyaResponse")]
+        System.Threading.Tasks.Task DeleteVideokartyaAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetAlaplap", ReplyAction="http://tempuri.org/ILogic/GetAlaplapResponse")]
         ComputerStore.DTO.Types.Fokategoriatipus[] GetAlaplap();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetAlaplap", ReplyAction="http://tempuri.org/ILogic/GetAlaplapResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetAlaplapAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetBillentyuzet", ReplyAction="http://tempuri.org/ILogic/GetBillentyuzetResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetBillentyuzet();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetBillentyuzet", ReplyAction="http://tempuri.org/ILogic/GetBillentyuzetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetBillentyuzetAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetEger", ReplyAction="http://tempuri.org/ILogic/GetEgerResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetEger();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetEger", ReplyAction="http://tempuri.org/ILogic/GetEgerResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetEgerAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetHattertar", ReplyAction="http://tempuri.org/ILogic/GetHattertarResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetHattertar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetHattertar", ReplyAction="http://tempuri.org/ILogic/GetHattertarResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetHattertarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetMemoria", ReplyAction="http://tempuri.org/ILogic/GetMemoriaResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetMemoria();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetMemoria", ReplyAction="http://tempuri.org/ILogic/GetMemoriaResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetMemoriaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetMonitor", ReplyAction="http://tempuri.org/ILogic/GetMonitorResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetMonitor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetMonitor", ReplyAction="http://tempuri.org/ILogic/GetMonitorResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetMonitorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetProcesszor", ReplyAction="http://tempuri.org/ILogic/GetProcesszorResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetProcesszor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetProcesszor", ReplyAction="http://tempuri.org/ILogic/GetProcesszorResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetProcesszorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetSzamitogephaz", ReplyAction="http://tempuri.org/ILogic/GetSzamitogephazResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetSzamitogephaz();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetSzamitogephaz", ReplyAction="http://tempuri.org/ILogic/GetSzamitogephazResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetSzamitogephazAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetTapegyseg", ReplyAction="http://tempuri.org/ILogic/GetTapegysegResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetTapegyseg();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetTapegyseg", ReplyAction="http://tempuri.org/ILogic/GetTapegysegResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetTapegysegAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetVideokartya", ReplyAction="http://tempuri.org/ILogic/GetVideokartyaResponse")]
+        ComputerStore.DTO.Types.Fokategoriatipus[] GetVideokartya();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetVideokartya", ReplyAction="http://tempuri.org/ILogic/GetVideokartyaResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetVideokartyaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriak", ReplyAction="http://tempuri.org/ILogic/ProcFoglalat_GetKategoriakResponse")]
         ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcFoglalat_GetKategoriak();
@@ -470,30 +602,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByID", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByIDResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor> Processzor_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_GetByID", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetByIDResponse")]
-        ComputerStore.DTO.Types.Szamitogephaz Szamitogephaz_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_GetByID", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_GetByID", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetByIDResponse")]
-        ComputerStore.DTO.Types.Tapegyseg Tapegyseg_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_GetByID", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_GetByID", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetByIDResponse")]
-        ComputerStore.DTO.Types.Videokartya Videokartya_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_GetByID", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Videokartya> Videokartya_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteAlaplap", ReplyAction="http://tempuri.org/ILogic/DeleteAlaplapResponse")]
-        void DeleteAlaplap(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteAlaplap", ReplyAction="http://tempuri.org/ILogic/DeleteAlaplapResponse")]
-        System.Threading.Tasks.Task DeleteAlaplapAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -523,12 +631,188 @@ namespace ComputerStore.Client.BusinessLogic {
                 base(binding, remoteAddress) {
         }
         
+        public ComputerStore.DTO.Types.Szamitogephaz Szamitogephaz_GetByID(int id) {
+            return base.Channel.Szamitogephaz_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_GetByIDAsync(int id) {
+            return base.Channel.Szamitogephaz_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Tapegyseg Tapegyseg_GetByID(int id) {
+            return base.Channel.Tapegyseg_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_GetByIDAsync(int id) {
+            return base.Channel.Tapegyseg_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Videokartya Videokartya_GetByID(int id) {
+            return base.Channel.Videokartya_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Videokartya> Videokartya_GetByIDAsync(int id) {
+            return base.Channel.Videokartya_GetByIDAsync(id);
+        }
+        
+        public void DeleteAlaplap(int id) {
+            base.Channel.DeleteAlaplap(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAlaplapAsync(int id) {
+            return base.Channel.DeleteAlaplapAsync(id);
+        }
+        
+        public void DeleteBillentyuzet(int id) {
+            base.Channel.DeleteBillentyuzet(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteBillentyuzetAsync(int id) {
+            return base.Channel.DeleteBillentyuzetAsync(id);
+        }
+        
+        public void DeleteEger(int id) {
+            base.Channel.DeleteEger(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteEgerAsync(int id) {
+            return base.Channel.DeleteEgerAsync(id);
+        }
+        
+        public void DeleteHattertar(int id) {
+            base.Channel.DeleteHattertar(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteHattertarAsync(int id) {
+            return base.Channel.DeleteHattertarAsync(id);
+        }
+        
+        public void DeleteMemoria(int id) {
+            base.Channel.DeleteMemoria(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteMemoriaAsync(int id) {
+            return base.Channel.DeleteMemoriaAsync(id);
+        }
+        
+        public void DeleteMonitor(int id) {
+            base.Channel.DeleteMonitor(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteMonitorAsync(int id) {
+            return base.Channel.DeleteMonitorAsync(id);
+        }
+        
+        public void DeleteProcesszor(int id) {
+            base.Channel.DeleteProcesszor(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteProcesszorAsync(int id) {
+            return base.Channel.DeleteProcesszorAsync(id);
+        }
+        
+        public void DeleteSzamitogephaz(int id) {
+            base.Channel.DeleteSzamitogephaz(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteSzamitogephazAsync(int id) {
+            return base.Channel.DeleteSzamitogephazAsync(id);
+        }
+        
+        public void DeleteTapegyseg(int id) {
+            base.Channel.DeleteTapegyseg(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteTapegysegAsync(int id) {
+            return base.Channel.DeleteTapegysegAsync(id);
+        }
+        
+        public void DeleteVideokartya(int id) {
+            base.Channel.DeleteVideokartya(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteVideokartyaAsync(int id) {
+            return base.Channel.DeleteVideokartyaAsync(id);
+        }
+        
         public ComputerStore.DTO.Types.Fokategoriatipus[] GetAlaplap() {
             return base.Channel.GetAlaplap();
         }
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetAlaplapAsync() {
             return base.Channel.GetAlaplapAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetBillentyuzet() {
+            return base.Channel.GetBillentyuzet();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetBillentyuzetAsync() {
+            return base.Channel.GetBillentyuzetAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetEger() {
+            return base.Channel.GetEger();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetEgerAsync() {
+            return base.Channel.GetEgerAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetHattertar() {
+            return base.Channel.GetHattertar();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetHattertarAsync() {
+            return base.Channel.GetHattertarAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetMemoria() {
+            return base.Channel.GetMemoria();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetMemoriaAsync() {
+            return base.Channel.GetMemoriaAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetMonitor() {
+            return base.Channel.GetMonitor();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetMonitorAsync() {
+            return base.Channel.GetMonitorAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetProcesszor() {
+            return base.Channel.GetProcesszor();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetProcesszorAsync() {
+            return base.Channel.GetProcesszorAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetSzamitogephaz() {
+            return base.Channel.GetSzamitogephaz();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetSzamitogephazAsync() {
+            return base.Channel.GetSzamitogephazAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetTapegyseg() {
+            return base.Channel.GetTapegyseg();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetTapegysegAsync() {
+            return base.Channel.GetTapegysegAsync();
+        }
+        
+        public ComputerStore.DTO.Types.Fokategoriatipus[] GetVideokartya() {
+            return base.Channel.GetVideokartya();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Fokategoriatipus[]> GetVideokartyaAsync() {
+            return base.Channel.GetVideokartyaAsync();
         }
         
         public ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcFoglalat_GetKategoriak() {
@@ -1129,38 +1413,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor> Processzor_GetByIDAsync(int id) {
             return base.Channel.Processzor_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Szamitogephaz Szamitogephaz_GetByID(int id) {
-            return base.Channel.Szamitogephaz_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_GetByIDAsync(int id) {
-            return base.Channel.Szamitogephaz_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Tapegyseg Tapegyseg_GetByID(int id) {
-            return base.Channel.Tapegyseg_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_GetByIDAsync(int id) {
-            return base.Channel.Tapegyseg_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Videokartya Videokartya_GetByID(int id) {
-            return base.Channel.Videokartya_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Videokartya> Videokartya_GetByIDAsync(int id) {
-            return base.Channel.Videokartya_GetByIDAsync(id);
-        }
-        
-        public void DeleteAlaplap(int id) {
-            base.Channel.DeleteAlaplap(id);
-        }
-        
-        public System.Threading.Tasks.Task DeleteAlaplapAsync(int id) {
-            return base.Channel.DeleteAlaplapAsync(id);
         }
     }
 }

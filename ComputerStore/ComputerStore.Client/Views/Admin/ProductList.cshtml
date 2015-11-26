@@ -1,6 +1,6 @@
 ﻿@model List<ComputerStore.DTO.Types.Fokategoriatipus>
 
-    <div class="col-md-4">
+    <div class="col-md-9">
 
         <table class="table table-hover table-bordered centerText" style="cursor: pointer">
             @foreach (var item in Model)
@@ -11,9 +11,9 @@
                     <td>
                         <p>@item.Megnevezes</p>
                     </td>
-                    <td>
+                    @*<td>
                         <p>@item.Tipus</p>
-                    </td>
+                    </td>*@
                     <td>
 
                         @Html.ActionLink("Törlés", "Delete", "Admin", new {id=item.ID, tipus=item.Tipus }, "")

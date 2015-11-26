@@ -36,6 +36,103 @@ namespace CoputerStore.BL
             }
         }
 
+        public void DeleteBillentyuzet(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var billen1 = ctx.billentyuzet.Where(i => i.id == id).Single();              
+                ctx.billentyuzet.Remove(billen1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteEger(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var eger1 = ctx.eger.Where(i => i.id == id).Single();
+                ctx.eger.Remove(eger1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteHattertar(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var hattertar1 = ctx.hattertar.Where(i => i.id == id).Single();
+                ctx.hattertar.Remove(hattertar1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteMemoria(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var memoria1 = ctx.memoria.Where(i => i.id == id).Single();
+                ctx.memoria.Remove(memoria1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteMonitor(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var monitor1 = ctx.monitor.Where(i => i.id == id).Single();
+                ctx.monitor.Remove(monitor1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteProcesszor(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var cpu1 = ctx.cpu.Where(i => i.id == id).Single();
+                ctx.cpu.Remove(cpu1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteSzamitogephaz(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var haz1 = ctx.szamitogep_haz.Where(i => i.id == id).Single();
+                ctx.szamitogep_haz.Remove(haz1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteTapegyseg(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var tap1 = ctx.tapegyseg.Where(i => i.id == id).Single();
+                ctx.tapegyseg.Remove(tap1);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void DeleteVideokartya(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var vid1 = ctx.videokartya.Where(i => i.id == id).Single();
+                var list = ctx.videokartya_monitor.Where(i => i.videokartya_id == id);
+                foreach (var item in list)
+                {
+                    ctx.videokartya_monitor.Remove(item);
+                }
+                
+                ctx.videokartya.Remove(vid1);
+
+                ctx.SaveChanges();
+            }
+        }
+
         public List<Fokategoriatipus> GetAlaplap()
         {
             List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
@@ -50,6 +147,195 @@ namespace CoputerStore.BL
                         Kep = item.kepek.kep,
                         Megnevezes = item.megnevezes,
                         Tipus="Alaplap"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetBillentyuzet()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.billentyuzet)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Billentyuzet"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetEger()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.eger)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Eger"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetHattertar()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.hattertar)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Hattertar"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetMemoria()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.memoria)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Memoria"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetMonitor()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.monitor)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Monitor"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetProcesszor()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.cpu)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Processzor"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetSzamitogephaz()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.szamitogep_haz)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Szamitogephaz"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetTapegyseg()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.tapegyseg)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Tapegyseg"
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Fokategoriatipus> GetVideokartya()
+        {
+            List<Fokategoriatipus> ret = new List<Fokategoriatipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.videokartya)
+                {
+                    ret.Add(new Fokategoriatipus
+                    {
+                        ID = item.id,
+                        Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Tipus = "Videokartya"
                     });
                 }
             }

@@ -16,6 +16,33 @@ namespace CoputerStore.BL
         List<Fokategoriatipus> GetAlaplap();
 
         [OperationContract]
+        List<Fokategoriatipus> GetBillentyuzet();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetEger();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetHattertar();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetMemoria();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetMonitor();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetProcesszor();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetSzamitogephaz();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetTapegyseg();
+
+        [OperationContract]
+        List<Fokategoriatipus> GetVideokartya();
+
+        [OperationContract]
         List<ProcesszorFoglalatTipus> ProcFoglalat_GetKategoriak();
 
         [OperationContract]
@@ -253,5 +280,32 @@ namespace CoputerStore.BL
 
         [OperationContract]
         void DeleteAlaplap(int id);
+
+        [OperationContract]
+        void DeleteBillentyuzet(int id);
+
+        [OperationContract]
+        void DeleteEger(int id);
+
+        [OperationContract]
+        void DeleteHattertar(int id);
+
+        [OperationContract]
+        void DeleteMemoria(int id);
+
+        [OperationContract]
+        void DeleteMonitor(int id);
+
+        [OperationContract]
+        void DeleteProcesszor(int id);
+
+        [OperationContract]
+        void DeleteSzamitogephaz(int id);
+
+        [OperationContract]
+        void DeleteTapegyseg(int id);
+
+        [OperationContract]
+        void DeleteVideokartya(int id);
     }
 }

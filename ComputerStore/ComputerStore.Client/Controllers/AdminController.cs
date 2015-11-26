@@ -29,6 +29,33 @@ namespace ComputerStore.Client.Controllers
                     case "Alaplap":
                         bl.DeleteAlaplap(id2);
                         break;
+                    case "Billentyuzet":
+                        bl.DeleteBillentyuzet(id2);
+                        break;
+                    case "Eger":
+                        bl.DeleteEger(id2);
+                        break;
+                    case "Hattertar":
+                        bl.DeleteHattertar(id2);
+                        break;
+                    case "Memoria":
+                        bl.DeleteMemoria(id2);
+                        break;
+                    case "Monitor":
+                        bl.DeleteMonitor(id2);
+                        break;
+                    case "Processzor":
+                        bl.DeleteProcesszor(id2);
+                        break;
+                    case "Szamitogephaz":
+                        bl.DeleteSzamitogephaz(id2);
+                        break;
+                    case "Tapegyseg":
+                        bl.DeleteTapegyseg(id2);
+                        break;
+                    case "Videokartya":
+                        bl.DeleteVideokartya(id2);
+                        break;
                     default:
                         throw new NotImplementedException();
                        
@@ -57,7 +84,69 @@ namespace ComputerStore.Client.Controllers
                          foreach(var item in list){
                              model.Add(new Fokategoriatipus { ID=item.ID, Kep=item.Kep, Megnevezes=item.Megnevezes, Tipus="Alaplap"});
                          }
-                         
+                         break;
+                     case FoKategoria.Billentyuzet:
+                         Fokategoriatipus[] list1 = bl.GetBillentyuzet();
+                         foreach (var item in list1)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Billentyuzet" });
+                         }
+                         break;
+                     case FoKategoria.Eger:
+                         Fokategoriatipus[] list2 = bl.GetEger();
+                         foreach (var item in list2)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Eger" });
+                         }
+                         break;
+                     case FoKategoria.Hattertar:
+                         Fokategoriatipus[] list3 = bl.GetHattertar();
+                         foreach (var item in list3)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Hattertar" });
+                         }
+                         break;
+                     case FoKategoria.Memoria:
+                         Fokategoriatipus[] list4 = bl.GetMemoria();
+                         foreach (var item in list4)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Memoria" });
+                         }
+                         break;
+                     case FoKategoria.Monitor:
+                         Fokategoriatipus[] list5 = bl.GetMonitor();
+                         foreach (var item in list5)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Monitor" });
+                         }
+                         break;
+                     case FoKategoria.Processzor:
+                         Fokategoriatipus[] list6 = bl.GetProcesszor();
+                         foreach (var item in list6)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Processzor" });
+                         }
+                         break;
+                     case FoKategoria.Szamitogephaz:
+                         Fokategoriatipus[] list7 = bl.GetSzamitogephaz();
+                         foreach (var item in list7)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Szamitogephaz" });
+                         }
+                         break;
+                     case FoKategoria.Tapegyseg:
+                         Fokategoriatipus[] list8 = bl.GetTapegyseg();
+                         foreach (var item in list8)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Tapegyseg" });
+                         }
+                         break;
+                     case FoKategoria.Videokartya:
+                         Fokategoriatipus[] list9 = bl.GetVideokartya();
+                         foreach (var item in list9)
+                         {
+                             model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Videokartya" });
+                         }
                          break;
                      default:
                          throw new NotImplementedException();
