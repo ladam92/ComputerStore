@@ -18,7 +18,7 @@ namespace ComputerStore.Client.Controllers
             return View();
         }
 
-        public ActionResult AlaplapEditSave(string megnev, string ar, string db, string leiras, string vgadb, string memdb, AlaplapViewModel alaplap)
+        public ActionResult AlaplapEditSave(string megnev, string ar, string db, string vgadb, string memdb, AlaplapViewModel alaplap)
         {           
             int ar1 = Int32.Parse(ar);
             int db1 = Int32.Parse(db);
@@ -26,10 +26,23 @@ namespace ComputerStore.Client.Controllers
             int memdb1 = Int32.Parse(memdb);
             using (var bl = new BusinessLogic.LogicClient())
             {
-                bl.InsertAlaplap(alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, leiras, ar1, db1);
+                bl.InsertAlaplap(alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, ar1, db1);
             }
             return View();
         }
+
+        //public ActionResult BillentyuzetEditSave(string megnev, string ar, string db, string vgadb, string memdb, BillentyuzetViewModel billentyuzet)
+        //{
+        //    int ar1 = Int32.Parse(ar);
+        //    int db1 = Int32.Parse(db);
+        //    int vgadb1 = Int32.Parse(vgadb);
+        //    int memdb1 = Int32.Parse(memdb);
+        //    using (var bl = new BusinessLogic.LogicClient())
+        //    {
+        //        bl.InsertAlaplap(alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, leiras, ar1, db1);
+        //    }
+        //    return View();
+        //}
 
         public ActionResult AlaplapEdit(string id)
         {
