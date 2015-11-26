@@ -187,6 +187,9 @@ namespace CoputerStore.BL
         PageableList<Alaplap> Alaplap_GetByFoglalatID(int id, int pageNumber, int pageSize);
 
         [OperationContract]
+        List<Alaplap> Alaplap_GetListByFoglalatID(int id);
+
+        [OperationContract]
         PageableList<Alaplap> Alaplap_GetByMemoriaID(int id, int pageNumber, int pageSize);
 
         [OperationContract]
@@ -211,6 +214,9 @@ namespace CoputerStore.BL
         PageableList<Memoria> Memoria_GetByFoglalat(int id, int pageNumber, int pageSize);
 
         [OperationContract]
+        List<Memoria> Memoria_GetListByFoglalat(int id);
+
+        [OperationContract]
         PageableList<Monitor> Monitor_GetByMeret(int id, int pageNumber, int pageSize);
 
         [OperationContract]
@@ -218,6 +224,9 @@ namespace CoputerStore.BL
 
         [OperationContract]
         PageableList<Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize);
+
+        [OperationContract]
+        List<Processzor> Processzor_GetListByFoglalat(int id);
 
         [OperationContract]
         PageableList<Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize);

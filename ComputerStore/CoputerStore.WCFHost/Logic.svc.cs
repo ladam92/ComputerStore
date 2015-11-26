@@ -2202,5 +2202,101 @@ namespace CoputerStore.BL
             return videokartya;
 
         }
+
+        public List<Alaplap> Alaplap_GetListByFoglalatID(int id)
+        {
+            List<Alaplap> ret = new List<Alaplap>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.alaplap.Where(i => i.memoria_foglalat_tipus_id == id);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Alaplap
+                    {
+                        ID = item.id,
+                        FoglalatID = id,
+                        Foglalat = item.proc_foglalat_tipus.megnevezes,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        IsPs2 = item.van_ps2_port,
+                        //Kep = item.kepek.kep,
+                        Leiras = item.leiras,
+                        Megnevezes = item.megnevezes,
+                        MemoriaDarab = item.memoria_foglalat_darab,
+                        MemoriaFoglalat = item.memoria_foglalat_tipus.megnevezes,
+                        MemoriaFoglalatID = item.memoria_foglalat_tipus_id,
+                        NettoAr = item.netto_ar,
+                        VGADarab = item.vga_csatolo_darab,
+                        VGA = item.vga_csatolo_felulet_tipus.megnevezes,
+                        VGAID = item.vga_csatolo_felulet_tipus_id,
+                        Db = (Int32)item.db,
+                        PCI = item.pci_express_tipus.megnevezes,
+                        PCIID = (Int32)item.pci_express_tipus_id
+                    });
+                }
+
+                return ret;
+            }
+        }
+
+        public List<Processzor> Processzor_GetListByFoglalat(int id)
+        {
+            List<Processzor> ret = new List<Processzor>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.cpu.Where(i => i.proc_foglalat_tipus_id == id);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Processzor
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        //Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Frekvencia = item.frekvencia,
+                        FrekvenciaMertek = item.cpu_frekvencia_mertekegyseg.mertekegyseg,
+                        FrekvenciaMertekID = item.frekvencia_mertekegyseg_id,
+                        Magok = item.magok_darab,
+                        ProcFoglalat = item.proc_foglalat_tipus.megnevezes,
+                        ProcFoglalatID = item.proc_foglalat_tipus.id,
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
+                    });
+                }
+
+                return ret;
+            }
+        }
+
+        public List<Memoria> Memoria_GetListByFoglalat(int id)
+        {
+            List<Memoria> ret = new List<Memoria>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.memoria.Where(i => i.memoria_foglalat_tipus_id == id);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Memoria
+                    {
+                        ID = item.id,
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        //Kep = item.kepek.kep,
+                        Megnevezes = item.megnevezes,
+                        Foglalat = item.memoria_foglalat_tipus.megnevezes,
+                        FoglalatID = item.memoria_foglalat_tipus_id,
+                        MemoriaMeret = item.memoria_meret_mb,
+                        NettoAr = item.netto_ar,
+                        Db = (Int32)item.db
+                    });
+                }
+
+                return ret;
+            }
+        }
     }
 }

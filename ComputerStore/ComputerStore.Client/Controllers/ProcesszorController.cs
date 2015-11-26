@@ -29,6 +29,20 @@ namespace ComputerStore.Client.Controllers
             return View(processzor);
         }
 
+        public ActionResult GetComboBoxByAlaplap(int alaplapID)
+        {
+            List<Processzor> processzor = null;
+
+            
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var alaplap = bl.Alaplap_GetByID(alaplapID);
+                processzor = bl.Processzor_GetListByFoglalat(alaplap.FoglalatID).ToList();
+            }
+
+            return PartialView(processzor);
+        }
+
         public ActionResult Kosar(int db, int id)
         {
 

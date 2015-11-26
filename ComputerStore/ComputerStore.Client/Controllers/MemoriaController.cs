@@ -29,6 +29,21 @@ namespace ComputerStore.Client.Controllers
             return View(memoria);
         }
 
+        public ActionResult GetComboBoxByAlaplap(int alaplapID)
+        {
+            List<Memoria> memoria = null;
+
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var alaplap = bl.Alaplap_GetByID(alaplapID);
+                memoria = bl.Memoria_GetListByFoglalat(alaplap.MemoriaFoglalatID).ToList();
+            }
+
+
+            return PartialView(memoria);
+        }
+
         public ActionResult Kosar(int db, int id)
         {
 

@@ -10,6 +10,18 @@ namespace ComputerStore.Client.Controllers
 {
     public class AlaplapController : Controller
     {
+        public ActionResult GetComboBoxByFoglalat(int procFoglalatId)
+        {
+            List<Alaplap> alaplapok = null;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                alaplapok = bl.Alaplap_GetListByFoglalatID(procFoglalatId).ToList();
+            }
+
+            return PartialView(alaplapok);
+        }
+
         public ActionResult GetByFoglalat(int procFoglalatId, int? pageNumber)
         {
             PageableList<Alaplap> alaplapok = null;
