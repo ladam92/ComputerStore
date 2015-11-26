@@ -40,6 +40,18 @@ namespace ComputerStore.Client.Utils
             ShowCategories = true;
             ListingPageSize = 6;
             Kosar = new List<Kategoria>();
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                this.MemList = bl.MemoriaFoglalat_GetKaegoriak().ToList();
+                this.ProcList = bl.ProcFoglalat_GetKategoriak().ToList();
+                this.UsbList = bl.UsbTipus_GetKaegoriak().ToList();
+                this.HattertarList = bl.HattertatTipus_GetKaegoriak().ToList();
+                this.HattertarCsatoloList = bl.HattertatCsatoloTipus_GetKaegoriak().ToList();
+                this.MonitorFelbontasList = bl.MonitorFelbontasTipus_GetKaegoriak().ToList();
+                this.MonitorMeretList = bl.MonitorMeretTipus_GetKaegoriak().ToList();
+
+            }
         }
 
         public static SessionData Instance

@@ -14,6 +14,8 @@ namespace ComputerStore.Client.Controllers
         // GET: /Kosar/
         public ActionResult Index()
         {
+            SessionData.Instance.ShowCategories = false;
+
             return View();
         }
 

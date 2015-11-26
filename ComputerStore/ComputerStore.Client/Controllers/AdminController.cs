@@ -84,16 +84,19 @@ namespace ComputerStore.Client.Controllers
                 };
                
             }
-            return PartialView(alaplap);
+            return View(alaplap);
         }
 
         public ActionResult ProductEdit()
         {
+            SessionData.Instance.ShowCategories = false;
+
             return View();
         }
 
         public ActionResult ProductListToEdit(int fokategoria)
         {
+
             List<Fokategoriatipus> model = new List<Fokategoriatipus>();
             FoKategoria kat = (FoKategoria)fokategoria;
 
