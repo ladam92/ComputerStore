@@ -13,7 +13,25 @@ namespace CoputerStore.BL
     public interface ILogic
     {
         [OperationContract]
-        void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db);
+        List<MonitorCsatoloTipus> MonitorCsatoloTipusGet();
+
+        [OperationContract]
+        List<MonitorFelbontas> MonitorFelbontasGet();
+        
+        [OperationContract]
+        List<MonitorMeret> MonitorMeretGet();
+
+        [OperationContract]
+        List<HattertarCsatoloTipus> HattertarCsatoloTipusGet();
+
+        [OperationContract]
+        List<HattertarTipus> HattertarTipusGet();
+
+        [OperationContract]
+        List<UsbTipus> UsbGet();
+
+        [OperationContract]
+        void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db);
 
         [OperationContract]
         List<PciExpressTipus> PciGet();

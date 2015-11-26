@@ -17,7 +17,7 @@ namespace CoputerStore.BL
     public class Logic : ILogic
     {
 
-        public void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db )
+        public void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db )
         {
             using (var ctx = new ComputerStoreEntities())
             {
@@ -32,7 +32,6 @@ namespace CoputerStore.BL
                 alaplap.vga_csatolo_darab = vga_db;
                 alaplap.van_ps2_port = ps2;
                 alaplap.megnevezes = megnevezes;
-                alaplap.leiras = leiras;
                 alaplap.netto_ar = ar;
                 alaplap.db = db;
 
@@ -1279,6 +1278,126 @@ namespace CoputerStore.BL
             return ret;
         }
 
+        public List<UsbTipus> UsbGet()
+        {
+            List<UsbTipus> list = new List<UsbTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.usb_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new UsbTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
+        }
+
+        public List<MonitorMeret> MonitorMeretGet()
+        {
+            List<MonitorMeret> list = new List<MonitorMeret>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_meret;
+                foreach (var item in entity)
+                {
+                    list.Add(new MonitorMeret
+                    {
+                        ID = item.id,
+                        Megnevezes = item.meret
+                    });
+                }
+            }
+
+            return list;
+        }
+
+        public List<MonitorFelbontas> MonitorFelbontasGet()
+        {
+            List<MonitorFelbontas> list = new List<MonitorFelbontas>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_felbontas;
+                foreach (var item in entity)
+                {
+                    list.Add(new MonitorFelbontas
+                    {
+                        ID = item.id,
+                        Megnevezes = item.felbontás
+                    });
+                }
+            }
+
+            return list;
+        }
+
+        public List<MonitorCsatoloTipus> MonitorCsatoloTipusGet()
+        {
+            List<MonitorCsatoloTipus> list = new List<MonitorCsatoloTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_csatolo;
+                foreach (var item in entity)
+                {
+                    list.Add(new MonitorCsatoloTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
+        }
+
+        public List<HattertarTipus> HattertarTipusGet()
+        {
+            List<HattertarTipus> list = new List<HattertarTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertar_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new HattertarTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
+        }
+
+        public List<HattertarCsatoloTipus> HattertarCsatoloTipusGet()
+        {
+            List<HattertarCsatoloTipus> list = new List<HattertarCsatoloTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertarolo_csatolo_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new HattertarCsatoloTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
+        }
+
         public HattertarTipus HattertatTipus_GetKategoriaByID(int id)
         {
             HattertarTipus ret = null;
@@ -1712,6 +1831,8 @@ namespace CoputerStore.BL
                 ctx.SaveChanges();
             }
         }
+
+
 
         public void HattertatTipus_Add(HattertarTipus type)
         {
