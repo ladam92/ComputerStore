@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gépösszerakó</h2>
+<hr style="margin-bottom: 50px;" />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Alaplap</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.ProcList, "ID", "megnevezes"),"Processzor foglalat", new { @class="form-control pull-left" })
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Processzor</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Memória</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Videókártya</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Háttértár</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.HattertarList, "ID", "megnevezes"), "Típus", new { @class = "form-control pull-left" })
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Billentyűzet</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.UsbList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline" })
+                
+            </div>
+            <div class="col-md-3">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("IsBillentyuzetPS2", false)
+                        PS/2 port
+                    </label>
+                </div>               
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Egér</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.UsbList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline" })
+
+            </div>
+            <div class="col-md-3">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("IsBillentyuzetPS2", false)
+                        PS/2 port
+                    </label>
+                </div>
+            </div>
+        </div>
+
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Monitor</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.MonitorMeretList, "ID", "megnevezes"), "Méret", new { @class = "form-control pull-left" })
+                </div>
+            </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Számítógép-ház</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-5">
+                <label class="control-label col-md-3">Tápegység</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+}

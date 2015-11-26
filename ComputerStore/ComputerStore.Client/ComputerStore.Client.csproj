@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AlaplapController.cs" />
     <Compile Include="Controllers\BillentyuzetController.cs" />
     <Compile Include="Controllers\EgerController.cs" />
+    <Compile Include="Controllers\GepOsszerakoController.cs" />
     <Compile Include="Controllers\HattertarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KosarController.cs" />
@@ -365,6 +366,7 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\AlaplapEdit.cshtml" />
     <Content Include="Views\Admin\AlaplapEditSave.cshtml" />
+    <Content Include="Views\GepOsszerako\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

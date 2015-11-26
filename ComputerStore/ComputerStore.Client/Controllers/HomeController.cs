@@ -13,18 +13,6 @@ namespace ComputerStore.Client.Controllers
         public ActionResult Index()
         {
             SessionData.Instance.ShowCategories = true;
-
-            using (var bl = new BusinessLogic.LogicClient())
-            {
-                SessionData.Instance.MemList = bl.MemoriaFoglalat_GetKaegoriak().ToList();
-                SessionData.Instance.ProcList = bl.ProcFoglalat_GetKategoriak().ToList();
-                SessionData.Instance.UsbList = bl.UsbTipus_GetKaegoriak().ToList();
-                SessionData.Instance.HattertarList = bl.HattertatTipus_GetKaegoriak().ToList();
-                SessionData.Instance.HattertarCsatoloList = bl.HattertatCsatoloTipus_GetKaegoriak().ToList();
-                SessionData.Instance.MonitorFelbontasList = bl.MonitorFelbontasTipus_GetKaegoriak().ToList();
-                SessionData.Instance.MonitorMeretList = bl.MonitorMeretTipus_GetKaegoriak().ToList();
-             
-            }
             return View();
         }
 
