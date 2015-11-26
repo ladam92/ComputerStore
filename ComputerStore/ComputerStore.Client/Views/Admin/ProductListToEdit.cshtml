@@ -19,12 +19,64 @@
                         @Html.ActionLink("Módosítás", "AlaplapEdit", "Admin", new { id = item.ID}, "")
                     </td>
                     }
-                    @*else if (item.Tipus == "Billentyuzet")
+                    else if (item.Tipus == "Billentyuzet")
                     {
                         <td>
-                        @Html.ActionLink("Módosítás", "BillenytuzetEdit", "Admin", new { id = item.ID, tipus = item.Tipus }, "")
-                    </td>
-                    }*@
+                            @Html.ActionLink("Módosítás", "BillenytuzetEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Processzor")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "CPUEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Eger")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "EgerEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Hattertar")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "HattertarEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Memoria")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "MemoriaEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Monitor")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "MonitorEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Szamitogephaz")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "SzamitogephazEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Tapegyseg")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "TapegysegEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else if (item.Tipus == "Videokartya")
+                    {
+                        <td>
+                            @Html.ActionLink("Módosítás", "VideokartyaEdit", "Admin", new { id = item.ID }, "")
+                        </td>
+                    }
+                    else
+                    {
+                        <td> </td>
+                    }
                 </tr>
             }
         </table>
