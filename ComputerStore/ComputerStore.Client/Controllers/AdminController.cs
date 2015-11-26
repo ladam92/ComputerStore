@@ -18,6 +18,153 @@ namespace ComputerStore.Client.Controllers
             return View();
         }
 
+        public ActionResult AlaplapEditSave(string megnev, string ar, string db, string leiras, string vgadb, string memdb, AlaplapViewModel alaplap)
+        {           
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            int vgadb1 = Int32.Parse(vgadb);
+            int memdb1 = Int32.Parse(memdb);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertAlaplap(alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, leiras, ar1, db1);
+            }
+            return View();
+        }
+
+        public ActionResult AlaplapEdit(string id)
+        {
+            AlaplapViewModel alaplap;
+            int id1=Int32.Parse(id);
+            
+            using (var bl = new BusinessLogic.LogicClient())
+            {     
+                var gyarto=bl.GyartoGet();
+                var model = bl.Alaplap_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                alaplap = new AlaplapViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    FoglalatID = model.FoglalatID,
+                    Foglalat = model.Foglalat,
+                    MemoriaDarab = model.MemoriaDarab,
+                    MemoriaFoglalatID = model.MemoriaFoglalatID,
+                    Megnevezes = model.Megnevezes,
+                    MemoriaFoglalat = model.MemoriaFoglalat,
+                    VGADarab = model.VGADarab,
+                    Gyarto = gyartoid,
+                    IsPs2 = model.IsPs2,
+                    Kep = model.Kep,
+                    Leiras = model.Leiras,
+                    NettoAr = model.NettoAr,
+                    VGA=model.VGA,
+                    VGAID=model.VGAID,
+                    PCI=model.PCI,
+                    PCIID=model.PCIID,
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    ProcFoglalat=new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes" ),
+                    MemoriaFoglalatList=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                    VGACsatolo=new SelectList(bl.VgaGet(), "ID", "Megnevezes"),
+                    PCIExpressz=new SelectList(bl.PciGet(), "ID", "Megnevezes")
+
+                };
+               
+            }
+            return PartialView(alaplap);
+        }
+
+        public ActionResult ProductEdit()
+        {
+            return View();
+        }
+
+        public ActionResult ProductListToEdit(int fokategoria)
+        {
+            List<Fokategoriatipus> model = new List<Fokategoriatipus>();
+            FoKategoria kat = (FoKategoria)fokategoria;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                switch (kat)
+                {
+                    case FoKategoria.Alaplap:
+                        Fokategoriatipus[] list = bl.GetAlaplap();
+                        foreach (var item in list)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Alaplap" });
+                        }
+                        break;
+                    case FoKategoria.Billentyuzet:
+                        Fokategoriatipus[] list1 = bl.GetBillentyuzet();
+                        foreach (var item in list1)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Billentyuzet" });
+                        }
+                        break;
+                    case FoKategoria.Eger:
+                        Fokategoriatipus[] list2 = bl.GetEger();
+                        foreach (var item in list2)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Eger" });
+                        }
+                        break;
+                    case FoKategoria.Hattertar:
+                        Fokategoriatipus[] list3 = bl.GetHattertar();
+                        foreach (var item in list3)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Hattertar" });
+                        }
+                        break;
+                    case FoKategoria.Memoria:
+                        Fokategoriatipus[] list4 = bl.GetMemoria();
+                        foreach (var item in list4)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Memoria" });
+                        }
+                        break;
+                    case FoKategoria.Monitor:
+                        Fokategoriatipus[] list5 = bl.GetMonitor();
+                        foreach (var item in list5)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Monitor" });
+                        }
+                        break;
+                    case FoKategoria.Processzor:
+                        Fokategoriatipus[] list6 = bl.GetProcesszor();
+                        foreach (var item in list6)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Processzor" });
+                        }
+                        break;
+                    case FoKategoria.Szamitogephaz:
+                        Fokategoriatipus[] list7 = bl.GetSzamitogephaz();
+                        foreach (var item in list7)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Szamitogephaz" });
+                        }
+                        break;
+                    case FoKategoria.Tapegyseg:
+                        Fokategoriatipus[] list8 = bl.GetTapegyseg();
+                        foreach (var item in list8)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Tapegyseg" });
+                        }
+                        break;
+                    case FoKategoria.Videokartya:
+                        Fokategoriatipus[] list9 = bl.GetVideokartya();
+                        foreach (var item in list9)
+                        {
+                            model.Add(new Fokategoriatipus { ID = item.ID, Kep = item.Kep, Megnevezes = item.Megnevezes, Tipus = "Videokartya" });
+                        }
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            return PartialView(model);
+        }
+
         public ActionResult Delete(string id, string tipus)
         {
             int id2 = Int32.Parse(id);

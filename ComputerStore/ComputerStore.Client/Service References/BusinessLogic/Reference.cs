@@ -15,6 +15,42 @@ namespace ComputerStore.Client.BusinessLogic {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessLogic.ILogic")]
     public interface ILogic {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Billentyuzet_GetByID", ReplyAction="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse")]
+        ComputerStore.DTO.Types.Billentyuzet Billentyuzet_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Billentyuzet_GetByID", ReplyAction="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Billentyuzet> Billentyuzet_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Eger_GetByID", ReplyAction="http://tempuri.org/ILogic/Eger_GetByIDResponse")]
+        ComputerStore.DTO.Types.Eger Eger_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Eger_GetByID", ReplyAction="http://tempuri.org/ILogic/Eger_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Eger> Eger_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByID", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByIDResponse")]
+        ComputerStore.DTO.Types.Hattertar Hattertar_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByID", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetByID", ReplyAction="http://tempuri.org/ILogic/Memoria_GetByIDResponse")]
+        ComputerStore.DTO.Types.Memoria Memoria_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetByID", ReplyAction="http://tempuri.org/ILogic/Memoria_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Memoria> Memoria_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByID", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByIDResponse")]
+        ComputerStore.DTO.Types.Monitor Monitor_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByID", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Monitor> Monitor_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByID", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByIDResponse")]
+        ComputerStore.DTO.Types.Processzor Processzor_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByID", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor> Processzor_GetByIDAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_GetByID", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetByIDResponse")]
         ComputerStore.DTO.Types.Szamitogephaz Szamitogephaz_GetByID(int id);
         
@@ -92,6 +128,42 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteVideokartya", ReplyAction="http://tempuri.org/ILogic/DeleteVideokartyaResponse")]
         System.Threading.Tasks.Task DeleteVideokartyaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertAlaplap", ReplyAction="http://tempuri.org/ILogic/InsertAlaplapResponse")]
+        void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertAlaplap", ReplyAction="http://tempuri.org/ILogic/InsertAlaplapResponse")]
+        System.Threading.Tasks.Task InsertAlaplapAsync(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PciGet", ReplyAction="http://tempuri.org/ILogic/PciGetResponse")]
+        ComputerStore.DTO.Types.PciExpressTipus[] PciGet();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PciGet", ReplyAction="http://tempuri.org/ILogic/PciGetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PciGetAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaGet", ReplyAction="http://tempuri.org/ILogic/VgaGetResponse")]
+        ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[] VgaGet();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaGet", ReplyAction="http://tempuri.org/ILogic/VgaGetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[]> VgaGetAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaGet", ReplyAction="http://tempuri.org/ILogic/MemoriaGetResponse")]
+        ComputerStore.DTO.Types.MemoriaTipus[] MemoriaGet();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaGet", ReplyAction="http://tempuri.org/ILogic/MemoriaGetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.MemoriaTipus[]> MemoriaGetAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorGet", ReplyAction="http://tempuri.org/ILogic/ProcesszorGetResponse")]
+        ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorGet();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorGet", ReplyAction="http://tempuri.org/ILogic/ProcesszorGetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus[]> ProcesszorGetAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GyartoGet", ReplyAction="http://tempuri.org/ILogic/GyartoGetResponse")]
+        ComputerStore.DTO.Types.AlkatreszGyarto[] GyartoGet();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GyartoGet", ReplyAction="http://tempuri.org/ILogic/GyartoGetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> GyartoGetAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/GetAlaplap", ReplyAction="http://tempuri.org/ILogic/GetAlaplapResponse")]
         ComputerStore.DTO.Types.Fokategoriatipus[] GetAlaplap();
@@ -566,42 +638,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Alaplap_GetByID", ReplyAction="http://tempuri.org/ILogic/Alaplap_GetByIDResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Billentyuzet_GetByID", ReplyAction="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse")]
-        ComputerStore.DTO.Types.Billentyuzet Billentyuzet_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Billentyuzet_GetByID", ReplyAction="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Billentyuzet> Billentyuzet_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Eger_GetByID", ReplyAction="http://tempuri.org/ILogic/Eger_GetByIDResponse")]
-        ComputerStore.DTO.Types.Eger Eger_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Eger_GetByID", ReplyAction="http://tempuri.org/ILogic/Eger_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Eger> Eger_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByID", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByIDResponse")]
-        ComputerStore.DTO.Types.Hattertar Hattertar_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Hattertar_GetByID", ReplyAction="http://tempuri.org/ILogic/Hattertar_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetByID", ReplyAction="http://tempuri.org/ILogic/Memoria_GetByIDResponse")]
-        ComputerStore.DTO.Types.Memoria Memoria_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Memoria_GetByID", ReplyAction="http://tempuri.org/ILogic/Memoria_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Memoria> Memoria_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByID", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByIDResponse")]
-        ComputerStore.DTO.Types.Monitor Monitor_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByID", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Monitor> Monitor_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByID", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByIDResponse")]
-        ComputerStore.DTO.Types.Processzor Processzor_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByID", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor> Processzor_GetByIDAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -629,6 +665,54 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public LogicClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public ComputerStore.DTO.Types.Billentyuzet Billentyuzet_GetByID(int id) {
+            return base.Channel.Billentyuzet_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Billentyuzet> Billentyuzet_GetByIDAsync(int id) {
+            return base.Channel.Billentyuzet_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Eger Eger_GetByID(int id) {
+            return base.Channel.Eger_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Eger> Eger_GetByIDAsync(int id) {
+            return base.Channel.Eger_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Hattertar Hattertar_GetByID(int id) {
+            return base.Channel.Hattertar_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByIDAsync(int id) {
+            return base.Channel.Hattertar_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Memoria Memoria_GetByID(int id) {
+            return base.Channel.Memoria_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Memoria> Memoria_GetByIDAsync(int id) {
+            return base.Channel.Memoria_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Monitor Monitor_GetByID(int id) {
+            return base.Channel.Monitor_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Monitor> Monitor_GetByIDAsync(int id) {
+            return base.Channel.Monitor_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.Processzor Processzor_GetByID(int id) {
+            return base.Channel.Processzor_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor> Processzor_GetByIDAsync(int id) {
+            return base.Channel.Processzor_GetByIDAsync(id);
         }
         
         public ComputerStore.DTO.Types.Szamitogephaz Szamitogephaz_GetByID(int id) {
@@ -733,6 +817,54 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task DeleteVideokartyaAsync(int id) {
             return base.Channel.DeleteVideokartyaAsync(id);
+        }
+        
+        public void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db) {
+            base.Channel.InsertAlaplap(id, gyarto_id, foglalat_id, memoria_id, vga_id, pci_id, mem_db, vga_db, ps2, megnevezes, leiras, ar, db);
+        }
+        
+        public System.Threading.Tasks.Task InsertAlaplapAsync(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db) {
+            return base.Channel.InsertAlaplapAsync(id, gyarto_id, foglalat_id, memoria_id, vga_id, pci_id, mem_db, vga_db, ps2, megnevezes, leiras, ar, db);
+        }
+        
+        public ComputerStore.DTO.Types.PciExpressTipus[] PciGet() {
+            return base.Channel.PciGet();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PciGetAsync() {
+            return base.Channel.PciGetAsync();
+        }
+        
+        public ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[] VgaGet() {
+            return base.Channel.VgaGet();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[]> VgaGetAsync() {
+            return base.Channel.VgaGetAsync();
+        }
+        
+        public ComputerStore.DTO.Types.MemoriaTipus[] MemoriaGet() {
+            return base.Channel.MemoriaGet();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.MemoriaTipus[]> MemoriaGetAsync() {
+            return base.Channel.MemoriaGetAsync();
+        }
+        
+        public ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorGet() {
+            return base.Channel.ProcesszorGet();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus[]> ProcesszorGetAsync() {
+            return base.Channel.ProcesszorGetAsync();
+        }
+        
+        public ComputerStore.DTO.Types.AlkatreszGyarto[] GyartoGet() {
+            return base.Channel.GyartoGet();
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> GyartoGetAsync() {
+            return base.Channel.GyartoGetAsync();
         }
         
         public ComputerStore.DTO.Types.Fokategoriatipus[] GetAlaplap() {
@@ -1365,54 +1497,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Alaplap> Alaplap_GetByIDAsync(int id) {
             return base.Channel.Alaplap_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Billentyuzet Billentyuzet_GetByID(int id) {
-            return base.Channel.Billentyuzet_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Billentyuzet> Billentyuzet_GetByIDAsync(int id) {
-            return base.Channel.Billentyuzet_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Eger Eger_GetByID(int id) {
-            return base.Channel.Eger_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Eger> Eger_GetByIDAsync(int id) {
-            return base.Channel.Eger_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Hattertar Hattertar_GetByID(int id) {
-            return base.Channel.Hattertar_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Hattertar> Hattertar_GetByIDAsync(int id) {
-            return base.Channel.Hattertar_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Memoria Memoria_GetByID(int id) {
-            return base.Channel.Memoria_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Memoria> Memoria_GetByIDAsync(int id) {
-            return base.Channel.Memoria_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Monitor Monitor_GetByID(int id) {
-            return base.Channel.Monitor_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Monitor> Monitor_GetByIDAsync(int id) {
-            return base.Channel.Monitor_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.Processzor Processzor_GetByID(int id) {
-            return base.Channel.Processzor_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor> Processzor_GetByIDAsync(int id) {
-            return base.Channel.Processzor_GetByIDAsync(id);
         }
     }
 }

@@ -2,7 +2,7 @@
     ViewBag.Title = "Listing";
 }
 
-<h2>Termék törlése</h2>
+<h2>Termék módosítása</h2>
 <hr style="margin-bottom: 50px;" />
 
 <div class="form-horizontal">
@@ -28,7 +28,7 @@
             var listValue = $("#dropDownList").val();
 
             $.ajax({
-                url: "@Url.Action("ProductList", "Admin")",
+                url: "@Url.Action("ProductListToEdit", "Admin")",
                 type: "GET",
                 data: {
                     fokategoria: listValue,

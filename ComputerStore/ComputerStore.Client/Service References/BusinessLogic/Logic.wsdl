@@ -7,6 +7,42 @@
       <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ILogic_Billentyuzet_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Billentyuzet_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Billentyuzet_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Billentyuzet_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Hattertar_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hattertar_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Hattertar_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Hattertar_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Memoria_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Memoria_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Memoria_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Memoria_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Monitor_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Monitor_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Monitor_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Monitor_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Processzor_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Processzor_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Processzor_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Processzor_GetByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_Szamitogephaz_GetByID_InputMessage">
     <wsdl:part name="parameters" element="tns:Szamitogephaz_GetByID" />
   </wsdl:message>
@@ -84,6 +120,42 @@
   </wsdl:message>
   <wsdl:message name="ILogic_DeleteVideokartya_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteVideokartyaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertAlaplap_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAlaplap" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertAlaplap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAlaplapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PciGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:PciGet" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PciGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PciGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:VgaGet" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VgaGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaGet" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorGet" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_GyartoGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GyartoGet" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_GyartoGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GyartoGetResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_GetAlaplap_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAlaplap" />
@@ -559,43 +631,31 @@
   <wsdl:message name="ILogic_Alaplap_GetByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:Alaplap_GetByIDResponse" />
   </wsdl:message>
-  <wsdl:message name="ILogic_Billentyuzet_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Billentyuzet_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Billentyuzet_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Billentyuzet_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Eger_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Eger_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Eger_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Eger_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Hattertar_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Hattertar_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Hattertar_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Hattertar_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Memoria_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Memoria_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Memoria_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Memoria_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Monitor_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Monitor_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Monitor_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Monitor_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Processzor_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Processzor_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Processzor_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Processzor_GetByIDResponse" />
-  </wsdl:message>
   <wsdl:portType name="ILogic">
+    <wsdl:operation name="Billentyuzet_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByID" message="tns:ILogic_Billentyuzet_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse" message="tns:ILogic_Billentyuzet_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetByID" message="tns:ILogic_Eger_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetByIDResponse" message="tns:ILogic_Eger_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hattertar_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByID" message="tns:ILogic_Hattertar_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByIDResponse" message="tns:ILogic_Hattertar_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Memoria_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Memoria_GetByID" message="tns:ILogic_Memoria_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Memoria_GetByIDResponse" message="tns:ILogic_Memoria_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Monitor_GetByID" message="tns:ILogic_Monitor_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Monitor_GetByIDResponse" message="tns:ILogic_Monitor_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Processzor_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Processzor_GetByID" message="tns:ILogic_Processzor_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Processzor_GetByIDResponse" message="tns:ILogic_Processzor_GetByID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Szamitogephaz_GetByID">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Szamitogephaz_GetByID" message="tns:ILogic_Szamitogephaz_GetByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Szamitogephaz_GetByIDResponse" message="tns:ILogic_Szamitogephaz_GetByID_OutputMessage" />
@@ -647,6 +707,30 @@
     <wsdl:operation name="DeleteVideokartya">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/DeleteVideokartya" message="tns:ILogic_DeleteVideokartya_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/DeleteVideokartyaResponse" message="tns:ILogic_DeleteVideokartya_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlaplap">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertAlaplap" message="tns:ILogic_InsertAlaplap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertAlaplapResponse" message="tns:ILogic_InsertAlaplap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PciGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PciGet" message="tns:ILogic_PciGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PciGetResponse" message="tns:ILogic_PciGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VgaGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaGet" message="tns:ILogic_VgaGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaGetResponse" message="tns:ILogic_VgaGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MemoriaGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MemoriaGet" message="tns:ILogic_MemoriaGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MemoriaGetResponse" message="tns:ILogic_MemoriaGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorGet" message="tns:ILogic_ProcesszorGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorGetResponse" message="tns:ILogic_ProcesszorGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GyartoGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/GyartoGet" message="tns:ILogic_GyartoGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/GyartoGetResponse" message="tns:ILogic_GyartoGet_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAlaplap">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/GetAlaplap" message="tns:ILogic_GetAlaplap_InputMessage" />
@@ -964,33 +1048,63 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByID" message="tns:ILogic_Alaplap_GetByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetByIDResponse" message="tns:ILogic_Alaplap_GetByID_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Billentyuzet_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByID" message="tns:ILogic_Billentyuzet_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByIDResponse" message="tns:ILogic_Billentyuzet_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Eger_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetByID" message="tns:ILogic_Eger_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetByIDResponse" message="tns:ILogic_Eger_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Hattertar_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByID" message="tns:ILogic_Hattertar_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByIDResponse" message="tns:ILogic_Hattertar_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Memoria_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Memoria_GetByID" message="tns:ILogic_Memoria_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Memoria_GetByIDResponse" message="tns:ILogic_Memoria_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Monitor_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Monitor_GetByID" message="tns:ILogic_Monitor_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Monitor_GetByIDResponse" message="tns:ILogic_Monitor_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Processzor_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Processzor_GetByID" message="tns:ILogic_Processzor_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Processzor_GetByIDResponse" message="tns:ILogic_Processzor_GetByID_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Billentyuzet_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Billentyuzet_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hattertar_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Hattertar_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Memoria_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Memoria_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Monitor_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Processzor_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Processzor_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Szamitogephaz_GetByID">
       <soap:operation soapAction="http://tempuri.org/ILogic/Szamitogephaz_GetByID" style="document" />
       <wsdl:input>
@@ -1101,6 +1215,60 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteVideokartya">
       <soap:operation soapAction="http://tempuri.org/ILogic/DeleteVideokartya" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlaplap">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertAlaplap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PciGet">
+      <soap:operation soapAction="http://tempuri.org/ILogic/PciGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VgaGet">
+      <soap:operation soapAction="http://tempuri.org/ILogic/VgaGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemoriaGet">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MemoriaGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorGet">
+      <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GyartoGet">
+      <soap:operation soapAction="http://tempuri.org/ILogic/GyartoGet" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1812,60 +1980,6 @@
     </wsdl:operation>
     <wsdl:operation name="Alaplap_GetByID">
       <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Billentyuzet_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Billentyuzet_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Eger_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Hattertar_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Hattertar_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Memoria_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Memoria_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Monitor_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Monitor_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Processzor_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Processzor_GetByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

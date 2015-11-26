@@ -198,6 +198,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AlaplapViewModel.cs" />
     <Compile Include="Models\CreateCategoryViewModel.cs" />
     <Compile Include="Models\DeleteProductViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -359,6 +360,11 @@
     <Content Include="Views\Shared\DisplayTemplates\Szamitogephaz.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Tapegyseg.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Videokartya.cshtml" />
+    <Content Include="Views\Admin\ProductEdit.cshtml" />
+    <Content Include="Views\Admin\ProductListToEdit.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\AlaplapEdit.cshtml" />
+    <Content Include="Views\Admin\AlaplapEditSave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

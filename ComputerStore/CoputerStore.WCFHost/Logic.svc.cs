@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
+
 namespace CoputerStore.BL
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
@@ -15,6 +16,29 @@ namespace CoputerStore.BL
 
     public class Logic : ILogic
     {
+
+        public void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, string leiras, int ar, int db )
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var alaplap = ctx.alaplap.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                alaplap.alkatresz_gyarto_id = gyarto_id;
+                alaplap.proc_foglalat_tipus_id = foglalat_id;
+                alaplap.memoria_foglalat_tipus_id = memoria_id;
+                alaplap.vga_csatolo_felulet_tipus_id = vga_id;
+                alaplap.pci_express_tipus_id = pci_id;
+                alaplap.memoria_foglalat_darab = mem_db;
+                alaplap.vga_csatolo_darab = vga_db;
+                alaplap.van_ps2_port = ps2;
+                alaplap.megnevezes = megnevezes;
+                alaplap.leiras = leiras;
+                alaplap.netto_ar = ar;
+                alaplap.db = db;
+
+                ctx.SaveChanges();
+            }
+        }
         public void DeleteAlaplap(int id)
         {
             using (var ctx = new ComputerStoreEntities())
@@ -35,6 +59,7 @@ namespace CoputerStore.BL
                 ctx.SaveChanges();
             }
         }
+
 
         public void DeleteBillentyuzet(int id)
         {
@@ -502,7 +527,11 @@ namespace CoputerStore.BL
                         MemoriaFoglalatID = item.memoria_foglalat_tipus_id,
                         NettoAr = item.netto_ar,
                         VGADarab = item.vga_csatolo_darab,
-                        Db=(Int32)item.db
+                        VGA=item.vga_csatolo_felulet_tipus.megnevezes,
+                        VGAID=item.vga_csatolo_felulet_tipus_id,
+                        Db=(Int32)item.db,
+                        PCI=item.pci_express_tipus.megnevezes,
+                        PCIID=(Int32)item.pci_express_tipus_id
                     });
                 }
 
@@ -541,7 +570,11 @@ namespace CoputerStore.BL
                         MemoriaFoglalatID = item.memoria_foglalat_tipus_id,
                         NettoAr = item.netto_ar,
                         VGADarab = item.vga_csatolo_darab,
-                        Db=(Int32)item.db
+                        VGA = item.vga_csatolo_felulet_tipus.megnevezes,
+                        VGAID = item.vga_csatolo_felulet_tipus_id,
+                        Db=(Int32)item.db,
+                        PCI = item.pci_express_tipus.megnevezes,
+                        PCIID = (Int32)item.pci_express_tipus_id
                        
                       
                     });
@@ -1152,6 +1185,8 @@ namespace CoputerStore.BL
             return ret;
         }
 
+
+
         public List<VgaCsatoloFeluletTipus> VgaCsatolo_GetByName(string name)
         {
             List<VgaCsatoloFeluletTipus> ret = new List<VgaCsatoloFeluletTipus>();
@@ -1316,6 +1351,26 @@ namespace CoputerStore.BL
             return ret;
         }
 
+        public List<PciExpressTipus> PciGet()
+        {
+            List<PciExpressTipus> list = new List<PciExpressTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.pci_express_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new PciExpressTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
+        }
+
         public PciExpressTipus PCIExpress_GetByID(int id)
         {
             PciExpressTipus ret = null;
@@ -1332,6 +1387,26 @@ namespace CoputerStore.BL
             }
 
             return ret;
+        }
+
+        public List<ProcesszorFoglalatTipus> ProcesszorGet()
+        {
+            List<ProcesszorFoglalatTipus> list = new List<ProcesszorFoglalatTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.proc_foglalat_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new ProcesszorFoglalatTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
         }
 
         public ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id)
@@ -1352,6 +1427,26 @@ namespace CoputerStore.BL
             return ret;
         }
 
+        public List<VgaCsatoloFeluletTipus> VgaGet()
+        {
+            List<VgaCsatoloFeluletTipus> list = new List<VgaCsatoloFeluletTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.vga_csatolo_felulet_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new VgaCsatoloFeluletTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
+        }
+
         public VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id)
         {
             VgaCsatoloFeluletTipus ret = null;
@@ -1368,6 +1463,22 @@ namespace CoputerStore.BL
             }
 
             return ret;
+        }
+
+        public List<AlkatreszGyarto> GyartoGet()
+        {
+            List<AlkatreszGyarto> list = new List<AlkatreszGyarto>();
+
+            using(var ctx=new ComputerStoreEntities()){
+                var entity=ctx.alkatresz_gyarto;
+                foreach(var item in entity){
+                    list.Add(new AlkatreszGyarto{
+                        ID=item.id, Megnevezes=item.megnevezes
+                    });
+                }
+            }
+
+            return list;
         }
 
         public AlkatreszGyarto Gyarto_GetByID(int id)
@@ -1742,7 +1853,11 @@ namespace CoputerStore.BL
                     MemoriaFoglalatID = query.memoria_foglalat_tipus_id,
                     NettoAr = query.netto_ar,
                     VGADarab = query.vga_csatolo_darab,
-                    Db = (Int32)query.db
+                    VGA = query.vga_csatolo_felulet_tipus.megnevezes,
+                    VGAID = query.vga_csatolo_felulet_tipus_id,
+                    Db = (Int32)query.db,
+                    PCI = query.pci_express_tipus.megnevezes,
+                    PCIID = (Int32)query.pci_express_tipus_id
                 };
             }
             return alaplap;
@@ -1813,6 +1928,26 @@ namespace CoputerStore.BL
                 };
             }
             return hattertar;
+        }
+
+        public List<MemoriaTipus> MemoriaGet()
+        {
+            List<MemoriaTipus> list = new List<MemoriaTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.memoria_foglalat_tipus;
+                foreach (var item in entity)
+                {
+                    list.Add(new MemoriaTipus
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return list;
         }
 
         public Memoria Memoria_GetByID(int id)

@@ -1,5 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Billentyuzet">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Kategoria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
+          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Usb" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsbID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
+  <xs:complexType name="Kategoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Db" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kategoria" nillable="true" type="tns:Kategoria" />
+  <xs:complexType name="Eger">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Kategoria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
+          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Usb" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsbID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Eger" nillable="true" type="tns:Eger" />
+  <xs:complexType name="Hattertar">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Kategoria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Csatolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
+          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Meret" type="xs:int" />
+          <xs:element minOccurs="0" name="Tipus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipusID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Hattertar" nillable="true" type="tns:Hattertar" />
+  <xs:complexType name="Memoria">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Kategoria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
+          <xs:element minOccurs="0" name="Foglalat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FoglalatID" type="xs:int" />
+          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="MemoriaMeret" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Memoria" nillable="true" type="tns:Memoria" />
+  <xs:complexType name="Monitor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Kategoria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Csatolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
+          <xs:element minOccurs="0" name="Felbontas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FelbontasID" type="xs:int" />
+          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Meret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MeretID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Monitor" nillable="true" type="tns:Monitor" />
+  <xs:complexType name="Processzor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Kategoria">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Db" type="xs:int" />
+          <xs:element minOccurs="0" name="Frekvencia" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FrekvenciaMertek" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FrekvenciaMertekID" type="xs:int" />
+          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Magok" type="xs:int" />
+          <xs:element minOccurs="0" name="ProcFoglalat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcFoglalatID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Processzor" nillable="true" type="tns:Processzor" />
   <xs:complexType name="Szamitogephaz">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
@@ -13,16 +127,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Szamitogephaz" nillable="true" type="tns:Szamitogephaz" />
-  <xs:complexType name="Kategoria">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Db" type="xs:int" />
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NettoAr" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Kategoria" nillable="true" type="tns:Kategoria" />
   <xs:complexType name="Tapegyseg">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Kategoria">
@@ -53,6 +157,83 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Videokartya" nillable="true" type="tns:Videokartya" />
+  <xs:complexType name="ArrayOfPciExpressTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PciExpressTipus" nillable="true" type="tns:PciExpressTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPciExpressTipus" nillable="true" type="tns:ArrayOfPciExpressTipus" />
+  <xs:complexType name="PciExpressTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PciExpressTipus" nillable="true" type="tns:PciExpressTipus" />
+  <xs:complexType name="AlkatreszTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlkatreszTipus" nillable="true" type="tns:AlkatreszTipus" />
+  <xs:complexType name="ArrayOfVgaCsatoloFeluletTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VgaCsatoloFeluletTipus" nillable="true" type="tns:VgaCsatoloFeluletTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVgaCsatoloFeluletTipus" nillable="true" type="tns:ArrayOfVgaCsatoloFeluletTipus" />
+  <xs:complexType name="VgaCsatoloFeluletTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VgaCsatoloFeluletTipus" nillable="true" type="tns:VgaCsatoloFeluletTipus" />
+  <xs:complexType name="ArrayOfMemoriaTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMemoriaTipus" nillable="true" type="tns:ArrayOfMemoriaTipus" />
+  <xs:complexType name="MemoriaTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
+  <xs:complexType name="ArrayOfProcesszorFoglalatTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcesszorFoglalatTipus" nillable="true" type="tns:ProcesszorFoglalatTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcesszorFoglalatTipus" nillable="true" type="tns:ArrayOfProcesszorFoglalatTipus" />
+  <xs:complexType name="ProcesszorFoglalatTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcesszorFoglalatTipus" nillable="true" type="tns:ProcesszorFoglalatTipus" />
+  <xs:complexType name="ArrayOfAlkatreszGyarto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlkatreszGyarto" nillable="true" type="tns:ArrayOfAlkatreszGyarto" />
+  <xs:complexType name="AlkatreszGyarto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
   <xs:complexType name="ArrayOfFokategoriatipus">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Fokategoriatipus" nillable="true" type="tns:Fokategoriatipus" />
@@ -68,41 +249,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Fokategoriatipus" nillable="true" type="tns:Fokategoriatipus" />
-  <xs:complexType name="ArrayOfProcesszorFoglalatTipus">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcesszorFoglalatTipus" nillable="true" type="tns:ProcesszorFoglalatTipus" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProcesszorFoglalatTipus" nillable="true" type="tns:ArrayOfProcesszorFoglalatTipus" />
-  <xs:complexType name="ProcesszorFoglalatTipus">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlkatreszTipus">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProcesszorFoglalatTipus" nillable="true" type="tns:ProcesszorFoglalatTipus" />
-  <xs:complexType name="AlkatreszTipus">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Megnevezes" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AlkatreszTipus" nillable="true" type="tns:AlkatreszTipus" />
-  <xs:complexType name="ArrayOfMemoriaTipus">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfMemoriaTipus" nillable="true" type="tns:ArrayOfMemoriaTipus" />
-  <xs:complexType name="MemoriaTipus">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlkatreszTipus">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
   <xs:complexType name="ArrayOfUsbTipus">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="UsbTipus" nillable="true" type="tns:UsbTipus" />
@@ -209,7 +355,11 @@
           <xs:element minOccurs="0" name="MemoriaDarab" type="xs:int" />
           <xs:element minOccurs="0" name="MemoriaFoglalat" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="MemoriaFoglalatID" type="xs:int" />
+          <xs:element minOccurs="0" name="PCI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PCIID" type="xs:int" />
+          <xs:element minOccurs="0" name="VGA" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="VGADarab" type="xs:int" />
+          <xs:element minOccurs="0" name="VGAID" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -236,22 +386,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfBillentyuzet" nillable="true" type="tns:ArrayOfBillentyuzet" />
-  <xs:complexType name="Billentyuzet">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Kategoria">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Db" type="xs:int" />
-          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ID" type="xs:int" />
-          <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
-          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="Usb" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="UsbID" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
   <xs:complexType name="PageableListOfEger6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -273,22 +407,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfEger" nillable="true" type="tns:ArrayOfEger" />
-  <xs:complexType name="Eger">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Kategoria">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Db" type="xs:int" />
-          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ID" type="xs:int" />
-          <xs:element minOccurs="0" name="IsPs2" type="xs:boolean" />
-          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="Usb" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="UsbID" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Eger" nillable="true" type="tns:Eger" />
   <xs:complexType name="PageableListOfHattertar6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -310,24 +428,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfHattertar" nillable="true" type="tns:ArrayOfHattertar" />
-  <xs:complexType name="Hattertar">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Kategoria">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Csatolo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
-          <xs:element minOccurs="0" name="Db" type="xs:int" />
-          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ID" type="xs:int" />
-          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="Meret" type="xs:int" />
-          <xs:element minOccurs="0" name="Tipus" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="TipusID" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Hattertar" nillable="true" type="tns:Hattertar" />
   <xs:complexType name="PageableListOfMemoria6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -349,22 +449,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMemoria" nillable="true" type="tns:ArrayOfMemoria" />
-  <xs:complexType name="Memoria">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Kategoria">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Db" type="xs:int" />
-          <xs:element minOccurs="0" name="Foglalat" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="FoglalatID" type="xs:int" />
-          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ID" type="xs:int" />
-          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="MemoriaMeret" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Memoria" nillable="true" type="tns:Memoria" />
   <xs:complexType name="PageableListOfMonitor6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -386,25 +470,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMonitor" nillable="true" type="tns:ArrayOfMonitor" />
-  <xs:complexType name="Monitor">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Kategoria">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Csatolo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="CsatoloID" type="xs:int" />
-          <xs:element minOccurs="0" name="Db" type="xs:int" />
-          <xs:element minOccurs="0" name="Felbontas" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="FelbontasID" type="xs:int" />
-          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ID" type="xs:int" />
-          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="Meret" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="MeretID" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Monitor" nillable="true" type="tns:Monitor" />
   <xs:complexType name="PageableListOfProcesszor6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -426,25 +491,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProcesszor" nillable="true" type="tns:ArrayOfProcesszor" />
-  <xs:complexType name="Processzor">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Kategoria">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Db" type="xs:int" />
-          <xs:element minOccurs="0" name="Frekvencia" type="xs:decimal" />
-          <xs:element minOccurs="0" name="FrekvenciaMertek" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="FrekvenciaMertekID" type="xs:int" />
-          <xs:element minOccurs="0" name="Gyarto" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ID" type="xs:int" />
-          <xs:element minOccurs="0" name="Kep" nillable="true" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="Magok" type="xs:int" />
-          <xs:element minOccurs="0" name="ProcFoglalat" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ProcFoglalatID" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Processzor" nillable="true" type="tns:Processzor" />
   <xs:complexType name="PageableListOfSzamitogephaz6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -508,48 +554,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfVideokartya" nillable="true" type="tns:ArrayOfVideokartya" />
-  <xs:complexType name="ArrayOfPciExpressTipus">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PciExpressTipus" nillable="true" type="tns:PciExpressTipus" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPciExpressTipus" nillable="true" type="tns:ArrayOfPciExpressTipus" />
-  <xs:complexType name="PciExpressTipus">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlkatreszTipus">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="PciExpressTipus" nillable="true" type="tns:PciExpressTipus" />
-  <xs:complexType name="ArrayOfVgaCsatoloFeluletTipus">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="VgaCsatoloFeluletTipus" nillable="true" type="tns:VgaCsatoloFeluletTipus" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfVgaCsatoloFeluletTipus" nillable="true" type="tns:ArrayOfVgaCsatoloFeluletTipus" />
-  <xs:complexType name="VgaCsatoloFeluletTipus">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlkatreszTipus">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="VgaCsatoloFeluletTipus" nillable="true" type="tns:VgaCsatoloFeluletTipus" />
-  <xs:complexType name="ArrayOfAlkatreszGyarto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAlkatreszGyarto" nillable="true" type="tns:ArrayOfAlkatreszGyarto" />
-  <xs:complexType name="AlkatreszGyarto">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlkatreszTipus">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="AlkatreszGyarto" nillable="true" type="tns:AlkatreszGyarto" />
   <xs:complexType name="ArrayOfMonitorCsatoloTipus">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MonitorCsatoloTipus" nillable="true" type="tns:MonitorCsatoloTipus" />
