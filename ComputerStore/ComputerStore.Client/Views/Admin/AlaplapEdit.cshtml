@@ -13,20 +13,26 @@
     
   <div class="form-horizontal">
         <div class="form-group">
-            @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })          
-                <input type="text" value="@Model.Megnevezes" class="form-control col-md-4" name="megnev" />          
+            @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })      
+            <div class="col-md-4">    
+                <input type="text" value="@Model.Megnevezes" class="form-control" name="megnev" />          
+            </div>
         </div>
 
      @Html.HiddenFor(model => model.ID)
 
       <div class="form-group">
           @Html.Label("Nettó Ár:", new { @class = "col-md-2 control-label" })
-          <input type="number" min="0" value="@Model.NettoAr" class="form-control col-md-4" name="ar" />
+          <div class="col-md-4">
+            <input type="number" min="0" value="@Model.NettoAr" class="form-control" name="ar" />
+          </div>
       </div>
 
       <div class="form-group">
           @Html.Label("Raktáron:", new { @class = "col-md-2 control-label" })
-          <input type="number" min="0" value="@Model.Db" class="form-control col-md-4" name="db" />
+          <div class="col-md-4">
+            <input type="number" min="0" value="@Model.Db" class="form-control" name="db" />
+          </div>
       </div>
 
       @*<div class="form-group ">
@@ -36,42 +42,58 @@
 
       <div class="form-group ">
           @Html.Label("Ps2 port:", new { @class = "col-md-2 control-label" })
-          @Html.DropDownListFor(model => model.IsPs2, new[] { new SelectListItem { Text = "Igen", Value = Boolean.TrueString }, new SelectListItem { Text = "Nem", Value = Boolean.FalseString } })
+          <div class="col-md-2">
+            @Html.DropDownListFor(model => model.IsPs2, new[] { new SelectListItem { Text = "Igen", Value = Boolean.TrueString }, new SelectListItem { Text = "Nem", Value = Boolean.FalseString } }, new { @class="form-control" })
+          </div>
       </div>
 
       <div class="form-group ">
           @Html.Label("Alkatrész gyártó:", new { @class = "col-md-2 control-label" })
-          @Html.DropDownListFor(model => model.Gyarto, Model.AlkatreszGyarto)
+          <div class="col-md-2">
+             @Html.DropDownListFor(model => model.Gyarto, Model.AlkatreszGyarto, new { @class="form-control" })
+          </div>
       </div>
 
       <div class="form-group ">
           @Html.Label("Processzor foglalat:", new { @class = "col-md-2 control-label" })
-          @Html.DropDownListFor(model => model.FoglalatID, Model.ProcFoglalat)
+          <div class="col-md-2">
+            @Html.DropDownListFor(model => model.FoglalatID, Model.ProcFoglalat, new { @class = "form-control" })
+          </div>
       </div>
 
       <div class="form-group ">
           @Html.Label("Memória foglalat:", new { @class = "col-md-2 control-label" })
-          @Html.DropDownListFor(model => model.MemoriaFoglalatID, Model.MemoriaFoglalatList)
+          <div class="col-md-2">
+            @Html.DropDownListFor(model => model.MemoriaFoglalatID, Model.MemoriaFoglalatList, new { @class="form-control" })
+          </div>
       </div>
 
       <div class="form-group ">
           @Html.Label("VGA csatoló felület:", new { @class = "col-md-2 control-label" })
-          @Html.DropDownListFor(model => model.VGAID, Model.VGACsatolo)
+          <div class="col-md-2">
+            @Html.DropDownListFor(model => model.VGAID, Model.VGACsatolo, new { @class = "form-control" })
+          </div>
       </div>
       
       <div class="form-group ">
           @Html.Label("PCI Express típus:", new { @class = "col-md-2 control-label" })
-          @Html.DropDownListFor(model => model.PCIID, Model.PCIExpressz)
+          <div class="col-md-2">
+            @Html.DropDownListFor(model => model.PCIID, Model.PCIExpressz, new { @class = "form-control" })
+          </div>
       </div>
 
       <div class="form-group">
           @Html.Label("Memória foglalat db:", new { @class = "col-md-2 control-label" })
-          <input type="number" min="0" value="@Model.MemoriaDarab" class="form-control col-md-4" name="memdb" />
+          <div class="col-md-4">
+            <input type="number" min="0" value="@Model.MemoriaDarab" class="form-control" name="memdb" />
+          </div>
       </div>
 
       <div class="form-group">
           @Html.Label("VGA csatoló darab:", new { @class = "col-md-2 control-label" })
-          <input type="number" min="0" value="@Model.VGADarab" class="form-control col-md-4" name="vgadb" />
+          <div class="col-md-4">
+            <input type="number" min="0" value="@Model.VGADarab" class="form-control" name="vgadb" />
+          </div>
       </div>
 
     
