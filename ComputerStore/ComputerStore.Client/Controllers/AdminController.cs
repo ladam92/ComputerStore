@@ -31,18 +31,29 @@ namespace ComputerStore.Client.Controllers
             return View();
         }
 
-        //public ActionResult BillentyuzetEditSave(string megnev, string ar, string db, string vgadb, string memdb, BillentyuzetViewModel billentyuzet)
-        //{
-        //    int ar1 = Int32.Parse(ar);
-        //    int db1 = Int32.Parse(db);
-        //    int vgadb1 = Int32.Parse(vgadb);
-        //    int memdb1 = Int32.Parse(memdb);
-        //    using (var bl = new BusinessLogic.LogicClient())
-        //    {
-        //        bl.InsertAlaplap(alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, leiras, ar1, db1);
-        //    }
-        //    return View();
-        //}
+        public ActionResult BillentyuzetEditSave(string megnev, string ar, string db, BillentyuzetViewModel billentyuzet)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertBillentyuzet(billentyuzet.ID, billentyuzet.Gyarto, billentyuzet.UsbID, billentyuzet.IsPs2, megnev, ar1, db1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult CPUEditSave(string megnev, string ar, string db, string magok, string frek, ProcesszorViewModel processzor)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            int magok1 = Int32.Parse(magok);
+            int frek1 = Int32.Parse(frek);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertCPU(processzor.ID, processzor.Gyarto, processzor.ProcFoglalatID, megnev, ar1, db1, magok1, frek1);
+            }
+            return View("AlaplapEditSave");
+        }
 
         public ActionResult AlaplapEdit(string id)
         {
@@ -85,6 +96,69 @@ namespace ComputerStore.Client.Controllers
                
             }
             return View(alaplap);
+        }
+
+        public ActionResult BillentyuzetEdit(string id)
+        {
+            BillentyuzetViewModel billentyuzet;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Billentyuzet_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                billentyuzet = new BillentyuzetViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    IsPs2 = model.IsPs2,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    Usb=model.Usb,
+                    UsbID=model.UsbID,
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    USBList=new SelectList(bl.UsbGet(), "id", "megnevezes")
+                };
+
+            }
+            return View(billentyuzet);
+        }
+
+        public ActionResult CPUEdit(string id)
+        {
+            ProcesszorViewModel cpu;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Processzor_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                cpu = new ProcesszorViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    Frekvencia=model.Frekvencia,
+                    FrekvenciaMertek=model.FrekvenciaMertek,
+                    FrekvenciaMertekID=model.FrekvenciaMertekID,
+                    Magok=model.Magok,
+                    ProcFoglalat=model.ProcFoglalat,
+                    ProcFoglalatID=model.ProcFoglalatID,
+                    ProcFoglalatList=new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes"),
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                };
+
+            }
+            return View(cpu);
         }
 
         public ActionResult ProductEdit()

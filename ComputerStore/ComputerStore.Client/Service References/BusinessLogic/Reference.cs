@@ -15,6 +15,18 @@ namespace ComputerStore.Client.BusinessLogic {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessLogic.ILogic")]
     public interface ILogic {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByID", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByIDResponse")]
+        ComputerStore.DTO.Types.AlkatreszGyarto Gyarto_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByID", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto> Gyarto_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Update", ReplyAction="http://tempuri.org/ILogic/Gyarto_UpdateResponse")]
+        void Gyarto_Update(ComputerStore.DTO.Types.AlkatreszGyarto type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Update", ReplyAction="http://tempuri.org/ILogic/Gyarto_UpdateResponse")]
+        System.Threading.Tasks.Task Gyarto_UpdateAsync(ComputerStore.DTO.Types.AlkatreszGyarto type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Add", ReplyAction="http://tempuri.org/ILogic/Gyarto_AddResponse")]
         void Gyarto_Add(ComputerStore.DTO.Types.AlkatreszGyarto type);
         
@@ -164,6 +176,18 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteVideokartya", ReplyAction="http://tempuri.org/ILogic/DeleteVideokartyaResponse")]
         System.Threading.Tasks.Task DeleteVideokartyaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertCPU", ReplyAction="http://tempuri.org/ILogic/InsertCPUResponse")]
+        void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertCPU", ReplyAction="http://tempuri.org/ILogic/InsertCPUResponse")]
+        System.Threading.Tasks.Task InsertCPUAsync(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertBillentyuzet", ReplyAction="http://tempuri.org/ILogic/InsertBillentyuzetResponse")]
+        void InsertBillentyuzet(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertBillentyuzet", ReplyAction="http://tempuri.org/ILogic/InsertBillentyuzetResponse")]
+        System.Threading.Tasks.Task InsertBillentyuzetAsync(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatoloTipusGet", ReplyAction="http://tempuri.org/ILogic/MonitorCsatoloTipusGetResponse")]
         ComputerStore.DTO.Types.MonitorCsatoloTipus[] MonitorCsatoloTipusGet();
@@ -662,18 +686,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByName", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByNameResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> Gyarto_GetByNameAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByID", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByIDResponse")]
-        ComputerStore.DTO.Types.AlkatreszGyarto Gyarto_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_GetByID", ReplyAction="http://tempuri.org/ILogic/Gyarto_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto> Gyarto_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Update", ReplyAction="http://tempuri.org/ILogic/Gyarto_UpdateResponse")]
-        void Gyarto_Update(ComputerStore.DTO.Types.AlkatreszGyarto type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Update", ReplyAction="http://tempuri.org/ILogic/Gyarto_UpdateResponse")]
-        System.Threading.Tasks.Task Gyarto_UpdateAsync(ComputerStore.DTO.Types.AlkatreszGyarto type);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -701,6 +713,22 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public LogicClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public ComputerStore.DTO.Types.AlkatreszGyarto Gyarto_GetByID(int id) {
+            return base.Channel.Gyarto_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto> Gyarto_GetByIDAsync(int id) {
+            return base.Channel.Gyarto_GetByIDAsync(id);
+        }
+        
+        public void Gyarto_Update(ComputerStore.DTO.Types.AlkatreszGyarto type) {
+            base.Channel.Gyarto_Update(type);
+        }
+        
+        public System.Threading.Tasks.Task Gyarto_UpdateAsync(ComputerStore.DTO.Types.AlkatreszGyarto type) {
+            return base.Channel.Gyarto_UpdateAsync(type);
         }
         
         public void Gyarto_Add(ComputerStore.DTO.Types.AlkatreszGyarto type) {
@@ -901,6 +929,22 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task DeleteVideokartyaAsync(int id) {
             return base.Channel.DeleteVideokartyaAsync(id);
+        }
+        
+        public void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia) {
+            base.Channel.InsertCPU(id, gyarto_id, foglalat_id, meg, ar, db, magok, frekvencia);
+        }
+        
+        public System.Threading.Tasks.Task InsertCPUAsync(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia) {
+            return base.Channel.InsertCPUAsync(id, gyarto_id, foglalat_id, meg, ar, db, magok, frekvencia);
+        }
+        
+        public void InsertBillentyuzet(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db) {
+            base.Channel.InsertBillentyuzet(id, gyarto_id, usb_id, ps2, megnevezes, ar, db);
+        }
+        
+        public System.Threading.Tasks.Task InsertBillentyuzetAsync(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db) {
+            return base.Channel.InsertBillentyuzetAsync(id, gyarto_id, usb_id, ps2, megnevezes, ar, db);
         }
         
         public ComputerStore.DTO.Types.MonitorCsatoloTipus[] MonitorCsatoloTipusGet() {
@@ -1565,22 +1609,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto[]> Gyarto_GetByNameAsync(string name) {
             return base.Channel.Gyarto_GetByNameAsync(name);
-        }
-        
-        public ComputerStore.DTO.Types.AlkatreszGyarto Gyarto_GetByID(int id) {
-            return base.Channel.Gyarto_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.AlkatreszGyarto> Gyarto_GetByIDAsync(int id) {
-            return base.Channel.Gyarto_GetByIDAsync(id);
-        }
-        
-        public void Gyarto_Update(ComputerStore.DTO.Types.AlkatreszGyarto type) {
-            base.Channel.Gyarto_Update(type);
-        }
-        
-        public System.Threading.Tasks.Task Gyarto_UpdateAsync(ComputerStore.DTO.Types.AlkatreszGyarto type) {
-            return base.Channel.Gyarto_UpdateAsync(type);
         }
     }
 }

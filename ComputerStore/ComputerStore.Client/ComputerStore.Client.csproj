@@ -376,6 +376,8 @@
     <Content Include="Views\Admin\AlaplapEdit.cshtml" />
     <Content Include="Views\Admin\AlaplapEditSave.cshtml" />
     <Content Include="Views\GepOsszerako\Index.cshtml" />
+    <Content Include="Views\Admin\BillentyuzetEdit.cshtml" />
+    <Content Include="Views\Admin\CPUEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

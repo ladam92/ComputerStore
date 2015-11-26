@@ -37,7 +37,6 @@ namespace ComputerStore.Client.Models
 
         public SelectList ProcFoglalatList { get; set; }
 
-        public SelectList FrekvenciaMertekList { get; set; }
 
     }
 }

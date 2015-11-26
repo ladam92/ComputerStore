@@ -13,6 +13,12 @@ namespace CoputerStore.BL
     public interface ILogic
     {
         [OperationContract]
+        void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia);
+
+        [OperationContract]
+        void InsertBillentyuzet(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db);
+
+        [OperationContract]
         List<MonitorCsatoloTipus> MonitorCsatoloTipusGet();
 
         [OperationContract]

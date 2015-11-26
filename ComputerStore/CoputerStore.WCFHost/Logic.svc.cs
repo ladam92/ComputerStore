@@ -38,6 +38,42 @@ namespace CoputerStore.BL
                 ctx.SaveChanges();
             }
         }
+
+        public void InsertBillentyuzet(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var billentyuzet = ctx.billentyuzet.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                billentyuzet.alkatresz_gyarto_id = gyarto_id;
+                billentyuzet.is_ps2_csatolo = ps2;
+                billentyuzet.usb_tipus_id = usb_id;
+                billentyuzet.megnevezes = megnevezes;
+                billentyuzet.netto_ar = ar;
+                billentyuzet.db = db;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia)
+        {
+            using (var ctx = new ComputerStoreEntities())
+                {
+                    var cpu = ctx.cpu.Where(i => i.id == id).Single();
+                
+                    cpu.alkatresz_gyarto_id = gyarto_id;
+                    cpu.proc_foglalat_tipus_id = foglalat_id;
+                    cpu.megnevezes = meg;
+                    cpu.netto_ar = ar;
+                    cpu.db = db;
+                    cpu.magok_darab = magok;
+                    cpu.frekvencia = frekvencia;
+
+                    ctx.SaveChanges();
+                }
+        }
+
         public void DeleteAlaplap(int id)
         {
             using (var ctx = new ComputerStoreEntities())
