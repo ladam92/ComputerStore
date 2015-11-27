@@ -1,0 +1,127 @@
+﻿@model ComputerStore.Client.Models.AlaplapViewModel
+
+@{
+    ViewBag.Title = "Termék";
+}
+
+
+@using (Html.BeginForm("AlaplapInsertSave", "Admin", System.Web.Mvc.FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    
+    
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.Label("Kép:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-offset-2 col-md-10">
+                <img id="uploadPreview" style="width: 100px; height: 100px;" />
+                <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+             </div>
+        </div>
+
+            <div class="form-group">
+                @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="megnev" />
+                </div>
+            </div>
+
+            @*  @Html.HiddenFor(model => model.ID)*@
+
+            <div class="form-group">
+                @Html.Label("Nettó Ár:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    <input type="number" min="0" class="form-control" name="ar" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Raktáron:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    <input type="number" min="0" class="form-control" name="db" />
+                </div>
+            </div>
+
+            <div class="form-group ">
+                @Html.Label("Ps2 port:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(model => model.IsPs2, new[] { new SelectListItem { Text = "Igen", Value = Boolean.TrueString }, new SelectListItem { Text = "Nem", Value = Boolean.FalseString } }, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group ">
+                @Html.Label("Alkatrész gyártó:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(model => model.Gyarto, Model.AlkatreszGyarto, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group ">
+                @Html.Label("Processzor foglalat:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(model => model.FoglalatID, Model.ProcFoglalat, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group ">
+                @Html.Label("Memória foglalat:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(model => model.MemoriaFoglalatID, Model.MemoriaFoglalatList, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group ">
+                @Html.Label("VGA csatoló felület:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(model => model.VGAID, Model.VGACsatolo, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group ">
+                @Html.Label("PCI Express típus:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(model => model.PCIID, Model.PCIExpressz, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Memória foglalat db:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    <input type="number" min="0" class="form-control" name="memdb" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("VGA csatoló darab:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    <input type="number" min="0" class="form-control" name="vgadb" />
+                </div>
+            </div>
+
+
+
+            <div class="form-group form-button-submit">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Mentés" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+}
+<script type="text/javascript">
+
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+</script>
+
+@section Scripts {
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,83 @@
+﻿@model ComputerStore.Client.Models.HattertarViewModel
+
+@{
+    ViewBag.Title = "Termék";
+}
+
+
+@using (Html.BeginForm("HattertarInsertSave", "Admin", System.Web.Mvc.FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+     <div class="form-group">
+            @Html.Label("Kép:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-offset-2 col-md-10">
+                <img id="uploadPreview" style="width: 100px; height: 100px;" />
+                <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+             </div>
+        </div>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="megnev" />
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.Label("Nettó Ár:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="number" min="0"  class="form-control" name="ar" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Raktáron:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="number" min="0" class="form-control" name="db" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Méret(GB):", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="number" min="0"  class="form-control" name="meret" />
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.Label("Alkatrész gyártó:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.Gyarto, Model.AlkatreszGyarto, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.Label("Háttértár típus:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.TipusID, Model.HattertarTipus, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.Label("Háttértár csatoló típus:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.CsatoloID, Model.HattertarCsatoloTipus, new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div class="form-group form-button-submit">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Mentés" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+}
+

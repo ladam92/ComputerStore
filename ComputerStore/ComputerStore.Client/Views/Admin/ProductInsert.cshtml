@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Listing";
+}
+
+<h2>Termék felvétele</h2>
+<hr style="margin-bottom: 50px;" />
+
+<div class="form-horizontal">
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Kategória</label>
+        <div class="col-md-3">
+            @Html.DropDownList("dropDown", EnumHelper.GetSelectList(typeof(ComputerStore.DTO.Enums.FoKategoria)), "Kérem válasszon", new { @class = "form-control", @id = "dropDownList" })
+        </div>
+
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary" onclick="refreshDatalist()">Listázás</button>
+        </div>
+    </div>
+</div>
+
+<div id="dataList">
+</div>
+
+@section Scripts{
+
+    <script>
+        function refreshDatalist() {
+            var listValue = $("#dropDownList").val();
+
+            if (listValue == 1) {
+                $.ajax({
+                    url: "@Url.Action("AlaplapInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                      
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else if (listValue == 2) {
+                $.ajax({
+                    url: "@Url.Action("BillentyuzetInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                        
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else if (listValue == 3) {
+                $.ajax({
+                    url: "@Url.Action("EgerInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                        
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+
+            }
+            else if (listValue == 4) {
+                $.ajax({
+                    url: "@Url.Action("HattertarInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                        
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else if (listValue == 5) {
+                $.ajax({
+                    url: "@Url.Action("MemoriaInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                        
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+
+            }
+            else if (listValue == 6) {
+                $.ajax({
+                    url: "@Url.Action("MonitorInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                        
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else if (listValue == 7) {
+                $.ajax({
+                    url: "@Url.Action("CPUInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                        
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else if (listValue == 8) {
+                $.ajax({
+                    url: "@Url.Action("SzamitogephazInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else if (listValue == 9) {
+                $.ajax({
+                    url: "@Url.Action("TapegysegInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                       
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+            else{
+                $.ajax({
+                    url: "@Url.Action("VideokartyaInserting", "Admin")",
+
+                    type: "GET",
+                    data: {
+                      
+                    },
+                    success: function (response) {
+                        $("#dataList").html(response);
+
+                    }
+                });
+            }
+        }
+    </script>
+}

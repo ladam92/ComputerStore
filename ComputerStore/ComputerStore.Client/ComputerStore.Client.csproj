@@ -388,6 +388,17 @@
     <Content Include="Views\Admin\SzamitogephazEdit.cshtml" />
     <Content Include="Views\Admin\TapegysegEdit.cshtml" />
     <Content Include="Views\Admin\VideokartyaEdit.cshtml" />
+    <Content Include="Views\Admin\ProductInsert.cshtml" />
+    <Content Include="Views\Admin\AlaplapInserting.cshtml" />
+    <Content Include="Views\Admin\BillentyuzetInserting.cshtml" />
+    <Content Include="Views\Admin\CPUInserting.cshtml" />
+    <Content Include="Views\Admin\EgerInserting.cshtml" />
+    <Content Include="Views\Admin\HattertarInserting.cshtml" />
+    <Content Include="Views\Admin\VideokartyaInserting.cshtml" />
+    <Content Include="Views\Admin\SzamitogephazInserting.cshtml" />
+    <Content Include="Views\Admin\MemoriaInserting.cshtml" />
+    <Content Include="Views\Admin\MonitorInserting.cshtml" />
+    <Content Include="Views\Admin\TapegysegInserting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

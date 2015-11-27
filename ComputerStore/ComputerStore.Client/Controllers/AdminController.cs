@@ -465,6 +465,12 @@ namespace ComputerStore.Client.Controllers
             return View();
         }
 
+        public ActionResult ProductInsert()
+        {
+            SessionData.Instance.ShowCategories = false;
+            return View();
+        }
+
         public ActionResult ProductListToEdit(int fokategoria)
         {
 
@@ -602,6 +608,234 @@ namespace ComputerStore.Client.Controllers
         public ActionResult ProductDelete()
         {
             return View();
+        }
+
+       
+
+        //public ActionResult ProductInsertByFokat(int fokategoria)
+        //{
+        //    FoKategoria kat = (FoKategoria)fokategoria;
+        //    switch (kat)
+        //    {
+        //        case FoKategoria.Alaplap:
+        //            AlaplapViewModel model=null;
+        //            return AlaplapInserting(model);
+                  
+                   
+        //        case FoKategoria.Billentyuzet:
+        //            BillentyuzetViewModel model1 = null;
+        //            return BillentyuzetInserting(model1);
+                   
+        //        case FoKategoria.Eger:
+        //            EgerViewModel model2 = null;
+        //            return EgerInserting(model2);
+                    
+                   
+        //        case FoKategoria.Hattertar:
+        //            HattertarViewModel model3 = null;
+        //            return HattertarInserting(model3);
+                   
+        //        case FoKategoria.Memoria:
+        //            MemoriaViewModel model4 = null;
+        //            return MemoriaInserting(model4);
+                  
+        //        case FoKategoria.Monitor:
+        //            MonitorViewModel model5 = null;
+        //            return MonitorInserting(model5);
+                   
+        //        case FoKategoria.Processzor:
+        //            ProcesszorViewModel model6 = null;
+        //            return CPUInserting(model6);
+                    
+        //        case FoKategoria.Szamitogephaz:
+        //            SzamitogephazViewModel model7 = null;
+        //            return SzamitogephazInserting(model7);
+                    
+        //        case FoKategoria.Tapegyseg:
+        //            TapegysegViewModel model8 = null;
+        //            return TapegysegInserting(model8);
+                    
+        //        case FoKategoria.Videokartya:
+        //            VideokartyaViewModel model9 = null;
+        //            return VideokartyaInserting(model9);
+                    
+        //        default:
+        //            throw new NotImplementedException();
+        //    }
+
+        //}
+        public ActionResult AlaplapInsertSave()
+        {
+            return View();
+        }
+
+        public ActionResult AlaplapInserting()
+        {
+            AlaplapViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                 model = new AlaplapViewModel
+                 {
+                     AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                     ProcFoglalat = new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes"),
+                     MemoriaFoglalatList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                     VGACsatolo = new SelectList(bl.VgaGet(), "ID", "Megnevezes"),
+                     PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes")
+                 };
+            }
+            
+            return PartialView(model);
+        }
+
+        public ActionResult BillentyuzetInserting()
+        {
+            BillentyuzetViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new BillentyuzetViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    USBList=new SelectList(bl.UsbGet(), "id", "megnevezes")
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult EgerInserting()
+        {
+            EgerViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new EgerViewModel
+                {                   
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    USBList = new SelectList(bl.UsbGet(), "id", "megnevezes")
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult HattertarInserting()
+        {
+            HattertarViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new HattertarViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    HattertarTipus=new SelectList(bl.HattertarTipusGet(), "ID", "Megnevezes"),
+                    HattertarCsatoloTipus=new SelectList(bl.HattertarCsatoloTipusGet(), "ID", "Megnevezes")
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult MemoriaInserting()
+        {
+            MemoriaViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new MemoriaViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    MemoriaFoglalatTipus=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                   
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult MonitorInserting()
+        {
+            MonitorViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new MonitorViewModel
+                {
+                    MonitorCsatolo=new SelectList(bl.MonitorCsatoloTipusGet(), "ID", "Megnevezes"),
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    MonitorFelbontas=new SelectList(bl.MonitorFelbontasGet(), "ID", "Megnevezes"),
+                    MonitorMeret=new SelectList(bl.MonitorMeretGet(), "ID", "Megnevezes")
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult CPUInserting()
+        {
+            ProcesszorViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new ProcesszorViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                   ProcFoglalatList=new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes"),
+                  
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult SzamitogephazInserting()
+        {
+            SzamitogephazViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new SzamitogephazViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                   
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult TapegysegInserting()
+        {
+            TapegysegViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new TapegysegViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                   
+                };
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult VideokartyaInserting()
+        {
+            VideokartyaViewModel model;
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                model = new VideokartyaViewModel
+                {
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    MemoriaTipusList=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                   
+                };
+            }
+
+            return PartialView(model);
         }
 
         public ActionResult ProductList(int fokategoria)
