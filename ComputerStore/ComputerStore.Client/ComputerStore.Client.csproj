@@ -376,12 +376,19 @@
     <Content Include="Views\Admin\AlaplapEdit.cshtml" />
     <Content Include="Views\Admin\AlaplapEditSave.cshtml" />
     <Content Include="Views\GepOsszerako\Index.cshtml" />
-<Content Include="Views\Admin\BillentyuzetEdit.cshtml" />
+    <Content Include="Views\Admin\BillentyuzetEdit.cshtml" />
     <Content Include="Views\Admin\CPUEdit.cshtml" />
-<Content Include="Views\Alaplap\GetComboBoxByFoglalat.cshtml" />
+    <Content Include="Views\Alaplap\GetComboBoxByFoglalat.cshtml" />
     <Content Include="Views\Processzor\GetComboBoxByAlaplap.cshtml" />
     <Content Include="Views\Memoria\GetComboBoxByAlaplap.cshtml" />
-</ItemGroup>
+    <Content Include="Views\Admin\EgerEdit.cshtml" />
+    <Content Include="Views\Admin\HattertarEdit.cshtml" />
+    <Content Include="Views\Admin\MemoriaEdit.cshtml" />
+    <Content Include="Views\Admin\MonitorEdit.cshtml" />
+    <Content Include="Views\Admin\SzamitogephazEdit.cshtml" />
+    <Content Include="Views\Admin\TapegysegEdit.cshtml" />
+    <Content Include="Views\Admin\VideokartyaEdit.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

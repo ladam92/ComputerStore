@@ -7,6 +7,48 @@
       <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ILogic_PCIExpress_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_Update" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_Add" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByName" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_GetByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByName" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_GetByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_GetByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_GetByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_VgaCsatolo_Update_InputMessage">
     <wsdl:part name="parameters" element="tns:VgaCsatolo_Update" />
   </wsdl:message>
@@ -186,6 +228,48 @@
   </wsdl:message>
   <wsdl:message name="ILogic_DeleteVideokartya_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteVideokartyaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertVideokartya_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVideokartya" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertVideokartya_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVideokartyaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertTapegyseg_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTapegyseg" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertTapegyseg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTapegysegResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertSzamitogephaz_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSzamitogephaz" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertSzamitogephaz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSzamitogephazResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMonitor" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertMemoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMemoria" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertMemoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMemoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertHattertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertHattertar" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertHattertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertHattertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertEger_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEger" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_InsertEger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEgerResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_InsertCPU_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCPU" />
@@ -655,49 +739,35 @@
   <wsdl:message name="ILogic_PCIExpress_GetByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:PCIExpress_GetByNameResponse" />
   </wsdl:message>
-  <wsdl:message name="ILogic_PCIExpress_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:PCIExpress_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_PCIExpress_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PCIExpress_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_PCIExpress_Update_InputMessage">
-    <wsdl:part name="parameters" element="tns:PCIExpress_Update" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_PCIExpress_Update_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PCIExpress_UpdateResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_PCIExpress_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:PCIExpress_Add" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_PCIExpress_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PCIExpress_AddResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByName_InputMessage">
-    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByName" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByNameResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_ProcesszorFoglalat_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_GetByIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_VgaCsatolo_GetByName_InputMessage">
-    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByName" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_VgaCsatolo_GetByName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByNameResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_VgaCsatolo_GetByID_InputMessage">
-    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_VgaCsatolo_GetByID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:VgaCsatolo_GetByIDResponse" />
-  </wsdl:message>
   <wsdl:portType name="ILogic">
+    <wsdl:operation name="PCIExpress_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByID" message="tns:ILogic_PCIExpress_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse" message="tns:ILogic_PCIExpress_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Update" message="tns:ILogic_PCIExpress_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_UpdateResponse" message="tns:ILogic_PCIExpress_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Add" message="tns:ILogic_PCIExpress_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_AddResponse" message="tns:ILogic_PCIExpress_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorFoglalat_GetByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName" message="tns:ILogic_ProcesszorFoglalat_GetByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse" message="tns:ILogic_ProcesszorFoglalat_GetByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorFoglalat_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID" message="tns:ILogic_ProcesszorFoglalat_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByIDResponse" message="tns:ILogic_ProcesszorFoglalat_GetByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_GetByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByName" message="tns:ILogic_VgaCsatolo_GetByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByNameResponse" message="tns:ILogic_VgaCsatolo_GetByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_GetByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID" message="tns:ILogic_VgaCsatolo_GetByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse" message="tns:ILogic_VgaCsatolo_GetByID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="VgaCsatolo_Update">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_Update" message="tns:ILogic_VgaCsatolo_Update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse" message="tns:ILogic_VgaCsatolo_Update_OutputMessage" />
@@ -817,6 +887,34 @@
     <wsdl:operation name="DeleteVideokartya">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/DeleteVideokartya" message="tns:ILogic_DeleteVideokartya_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/DeleteVideokartyaResponse" message="tns:ILogic_DeleteVideokartya_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVideokartya">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertVideokartya" message="tns:ILogic_InsertVideokartya_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertVideokartyaResponse" message="tns:ILogic_InsertVideokartya_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTapegyseg">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertTapegyseg" message="tns:ILogic_InsertTapegyseg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertTapegysegResponse" message="tns:ILogic_InsertTapegyseg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSzamitogephaz">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertSzamitogephaz" message="tns:ILogic_InsertSzamitogephaz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertSzamitogephazResponse" message="tns:ILogic_InsertSzamitogephaz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertMonitor" message="tns:ILogic_InsertMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertMonitorResponse" message="tns:ILogic_InsertMonitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMemoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertMemoria" message="tns:ILogic_InsertMemoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertMemoriaResponse" message="tns:ILogic_InsertMemoria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertHattertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertHattertar" message="tns:ILogic_InsertHattertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertHattertarResponse" message="tns:ILogic_InsertHattertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertEger" message="tns:ILogic_InsertEger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/InsertEgerResponse" message="tns:ILogic_InsertEger_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCPU">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertCPU" message="tns:ILogic_InsertCPU_InputMessage" />
@@ -1130,37 +1228,72 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByName" message="tns:ILogic_PCIExpress_GetByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse" message="tns:ILogic_PCIExpress_GetByName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PCIExpress_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByID" message="tns:ILogic_PCIExpress_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse" message="tns:ILogic_PCIExpress_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PCIExpress_Update">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Update" message="tns:ILogic_PCIExpress_Update_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_UpdateResponse" message="tns:ILogic_PCIExpress_Update_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PCIExpress_Add">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Add" message="tns:ILogic_PCIExpress_Add_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_AddResponse" message="tns:ILogic_PCIExpress_Add_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ProcesszorFoglalat_GetByName">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName" message="tns:ILogic_ProcesszorFoglalat_GetByName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse" message="tns:ILogic_ProcesszorFoglalat_GetByName_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ProcesszorFoglalat_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID" message="tns:ILogic_ProcesszorFoglalat_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByIDResponse" message="tns:ILogic_ProcesszorFoglalat_GetByID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="VgaCsatolo_GetByName">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByName" message="tns:ILogic_VgaCsatolo_GetByName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByNameResponse" message="tns:ILogic_VgaCsatolo_GetByName_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="VgaCsatolo_GetByID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID" message="tns:ILogic_VgaCsatolo_GetByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse" message="tns:ILogic_VgaCsatolo_GetByID_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PCIExpress_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Update">
+      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Add">
+      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorFoglalat_GetByName">
+      <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorFoglalat_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_GetByName">
+      <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="VgaCsatolo_Update">
       <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_Update" style="document" />
       <wsdl:input>
@@ -1424,6 +1557,69 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteVideokartya">
       <soap:operation soapAction="http://tempuri.org/ILogic/DeleteVideokartya" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVideokartya">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertVideokartya" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTapegyseg">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertTapegyseg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSzamitogephaz">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertSzamitogephaz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMonitor">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMemoria">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertMemoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertHattertar">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertHattertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEger">
+      <soap:operation soapAction="http://tempuri.org/ILogic/InsertEger" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2126,69 +2322,6 @@
     </wsdl:operation>
     <wsdl:operation name="PCIExpress_GetByName">
       <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_GetByName" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PCIExpress_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PCIExpress_Update">
-      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_Update" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PCIExpress_Add">
-      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_Add" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ProcesszorFoglalat_GetByName">
-      <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ProcesszorFoglalat_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VgaCsatolo_GetByName">
-      <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_GetByName" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="VgaCsatolo_GetByID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_GetByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

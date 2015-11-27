@@ -1,0 +1,69 @@
+﻿@model ComputerStore.Client.Models.EgerViewModel
+
+@{
+    ViewBag.Title = "Termék";
+}
+
+
+@using (Html.BeginForm("EgerEditSave", "Admin", System.Web.Mvc.FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h2>Termék módosítása</h2>
+    <hr style="margin-bottom: 50px;" />
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="text" value="@Model.Megnevezes" class="form-control" name="megnev" />
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.Label("Nettó Ár:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="number" min="0" value="@Model.NettoAr" class="form-control" name="ar" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Raktáron:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-4">
+                <input type="number" min="0" value="@Model.Db" class="form-control" name="db" />
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.Label("Ps2 port:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.IsPs2, new[] { new SelectListItem { Text = "Igen", Value = Boolean.TrueString }, new SelectListItem { Text = "Nem", Value = Boolean.FalseString } }, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.Label("Alkatrész gyártó:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.Gyarto, Model.AlkatreszGyarto, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.Label("USB típus:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.UsbID, Model.USBList, new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div class="form-group form-button-submit">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Mentés" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+}

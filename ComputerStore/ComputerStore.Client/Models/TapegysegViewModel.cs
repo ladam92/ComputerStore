@@ -10,7 +10,7 @@ namespace ComputerStore.Client.Models
     {
         public int ID { get; set; }
 
-        public string Gyarto { get; set; }
+        public int Gyarto { get; set; }
 
         public int Teljesitmeny { get; set; }
 

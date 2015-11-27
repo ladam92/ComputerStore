@@ -31,6 +31,17 @@ namespace ComputerStore.Client.Controllers
             return View();
         }
 
+        public ActionResult MonitorEditSave(string megnev, string ar, string db, MonitorViewModel monitor)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertMonitor(monitor.ID, monitor.Gyarto, monitor.CsatoloID, monitor.FelbontasID, monitor.MeretID, megnev, ar1, db1);
+            }
+            return View("AlaplapEditSave");
+        }
+
         public ActionResult BillentyuzetEditSave(string megnev, string ar, string db, BillentyuzetViewModel billentyuzet)
         {
             int ar1 = Int32.Parse(ar);
@@ -51,6 +62,76 @@ namespace ComputerStore.Client.Controllers
             using (var bl = new BusinessLogic.LogicClient())
             {
                 bl.InsertCPU(processzor.ID, processzor.Gyarto, processzor.ProcFoglalatID, megnev, ar1, db1, magok1, frek1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult EgerEditSave(string megnev, string ar, string db, EgerViewModel eger)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertEger(eger.ID, eger.Gyarto, eger.UsbID, eger.IsPs2, megnev, ar1, db1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult SzamitogephazEditSave(string megnev, string ar, string db, SzamitogephazViewModel haz)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertSzamitogephaz(haz.ID, haz.Gyarto, megnev, ar1, db1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult TapegysegEditSave(string megnev, string ar, string db, string telj, TapegysegViewModel tap)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            int telj1 = Int32.Parse(telj);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertTapegyseg(tap.ID, tap.Gyarto, megnev, ar1, db1, telj1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult VideokartyaEditSave(string megnev, string ar, string db, string meret, VideokartyaViewModel vid)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            int meret1 = Int32.Parse(meret);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertVideokartya(vid.ID, vid.Gyarto, vid.MemoriaTipusID, megnev, ar1, db1, meret1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult HattertarEditSave(string megnev, string ar, string db, string meret, HattertarViewModel hat)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            int meret1 = Int32.Parse(meret);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertHattertar(hat.ID, hat.Gyarto, hat.CsatoloID, hat.TipusID, megnev, ar1, db1, meret1);
+            }
+            return View("AlaplapEditSave");
+        }
+
+        public ActionResult MemoriaEditSave(string megnev, string ar, string db, string meret, MemoriaViewModel mem)
+        {
+            int ar1 = Int32.Parse(ar);
+            int db1 = Int32.Parse(db);
+            int meret1 = Int32.Parse(meret);
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                bl.InsertMemoria(mem.ID, mem.Gyarto, mem.FoglalatID, megnev, ar1, db1, meret1);
             }
             return View("AlaplapEditSave");
         }
@@ -98,6 +179,41 @@ namespace ComputerStore.Client.Controllers
             return View(alaplap);
         }
 
+        public ActionResult MonitorEdit(string id)
+        {
+            MonitorViewModel mon;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Monitor_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                mon = new MonitorViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    Csatolo=model.Csatolo,
+                    CsatoloID=model.CsatoloID,
+                    Felbontas=model.Felbontas,
+                    FelbontasID=model.FelbontasID,
+                    Meret=model.Meret,
+                    MeretID=model.MeretID,
+                    MonitorCsatolo=new SelectList(bl.MonitorCsatoloTipusGet(), "ID", "Megnevezes"),
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    MonitorFelbontas=new SelectList(bl.MonitorFelbontasGet(), "ID", "Megnevezes"),
+                    MonitorMeret=new SelectList(bl.MonitorMeretGet(), "ID", "Megnevezes")
+                };
+
+            }
+            return View(mon);
+        }
+
         public ActionResult BillentyuzetEdit(string id)
         {
             BillentyuzetViewModel billentyuzet;
@@ -126,6 +242,157 @@ namespace ComputerStore.Client.Controllers
 
             }
             return View(billentyuzet);
+        }
+
+        public ActionResult SzamitogephazEdit(string id)
+        {
+            SzamitogephazViewModel haz;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Szamitogephaz_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                haz = new SzamitogephazViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes")
+
+                };
+
+            }
+            return View(haz);
+        }
+
+        public ActionResult TapegysegEdit(string id)
+        {
+            TapegysegViewModel tap;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Tapegyseg_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                tap = new TapegysegViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    Teljesitmeny=model.Teljesitmeny,
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes")
+
+                };
+
+            }
+            return View(tap);
+        }
+
+        public ActionResult VideokartyaEdit(string id)
+        {
+            VideokartyaViewModel vid;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Videokartya_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                vid = new VideokartyaViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    MemoriaTipus=model.MemoriaTipus,
+                    MemoriaTipusID=model.MemoriaTipusID,
+                    MemoriaMeret=model.MemoriaMeret,
+                    MemoriaTipusList=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes")
+
+                };
+
+            }
+            return View(vid);
+        }
+
+        public ActionResult HattertarEdit(string id)
+        {
+            HattertarViewModel hattertar;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Hattertar_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                hattertar = new HattertarViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    Csatolo=model.Csatolo,
+                    CsatoloID=model.CsatoloID,
+                    Meret=model.Meret,
+                    Tipus=model.Tipus,
+                    TipusID=model.TipusID,
+                    HattertarTipus=new SelectList(bl.HattertarTipusGet(), "ID", "Megnevezes"),
+                    HattertarCsatoloTipus=new SelectList(bl.HattertarCsatoloTipusGet(), "ID", "Megnevezes"),
+                    NettoAr = model.NettoAr,
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+
+                };
+
+            }
+            return View(hattertar);
+        }
+
+        public ActionResult MemoriaEdit(string id)
+        {
+            MemoriaViewModel memoria;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Memoria_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                memoria = new MemoriaViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    Foglalat=model.Foglalat,
+                    FoglalatID=model.FoglalatID,
+                    MemoriaMeret=model.MemoriaMeret,
+                    MemoriaFoglalatTipus=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+
+                };
+
+            }
+            return View(memoria);
         }
 
         public ActionResult CPUEdit(string id)
@@ -159,6 +426,36 @@ namespace ComputerStore.Client.Controllers
 
             }
             return View(cpu);
+        }
+
+        public ActionResult EgerEdit(string id)
+        {
+            EgerViewModel eger;
+            int id1 = Int32.Parse(id);
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                var gyarto = bl.GyartoGet();
+                var model = bl.Eger_GetByID(id1);
+                AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
+                int gyartoid = gyarto2.ID;
+                eger = new EgerViewModel
+                {
+                    ID = model.ID,
+                    Db = model.Db,
+                    Megnevezes = model.Megnevezes,
+                    Gyarto = gyartoid,
+                    IsPs2 = model.IsPs2,
+                    Kep = model.Kep,
+                    NettoAr = model.NettoAr,
+                    Usb = model.Usb,
+                    UsbID = model.UsbID,
+                    AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
+                    USBList = new SelectList(bl.UsbGet(), "id", "megnevezes")
+                };
+
+            }
+            return View(eger);
         }
 
         public ActionResult ProductEdit()

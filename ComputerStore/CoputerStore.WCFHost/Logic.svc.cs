@@ -56,6 +56,121 @@ namespace CoputerStore.BL
             }
         }
 
+        public void InsertEger(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var eger = ctx.eger.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                eger.alkatresz_gyarto_id = gyarto_id;
+                eger.is_ps2_csatolo = ps2;
+                eger.usb_tipus_id = usb_id;
+                eger.megnevezes = megnevezes;
+                eger.netto_ar = ar;
+                eger.db = db;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertSzamitogephaz(int id, int gyarto_id, string megnev, int ar, int db){
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var haz = ctx.szamitogep_haz.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                haz.alkatresz_gyarto_id = gyarto_id;
+                haz.megnevezes = megnev;
+                haz.netto_ar = ar;
+                haz.db = db;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertTapegyseg(int id, int gyarto_id, string megnev, int ar, int db, int telj){
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var tap = ctx.tapegyseg.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                tap.alkatresz_gyarto_id = gyarto_id;
+                tap.megnevezes = megnev;
+                tap.netto_ar = ar;
+                tap.db = db;
+                tap.teljesitmeny = telj;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var vid = ctx.videokartya.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                vid.alkatresz_gyarto_id = gyarto_id;
+                vid.megnevezes = megnev;
+                vid.netto_ar = ar;
+                vid.db = db;
+                vid.memoria_meret_gb = meret;
+                vid.memoria_tipus_id = memoria_id;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertMemoria(int id, int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret){
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var mem = ctx.memoria.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                mem.alkatresz_gyarto_id = gyarto_id;
+                mem.megnevezes = megnevezes;
+                mem.netto_ar = ar;
+                mem.db = db;
+                mem.memoria_foglalat_tipus_id = foglalat_id;
+                mem.memoria_meret_mb = meret;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertMonitor(int id, int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db){
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var mon = ctx.monitor.Where(i => i.id == id).Single();
+                //var gyarto=ctx.alkatresz_gyarto.Where(i=>i.id==gyarto_id).Single();
+                mon.alkatresz_gyarto_id = gyarto_id;
+                mon.megnevezes = megnev;
+                mon.netto_ar = ar;
+                mon.db = db;
+                mon.monitor_csatolo_id = csatolo_id;
+                mon.monitor_felbontas_id = felbontas_id;
+                mon.monitor_meret_id = meret_id;
+
+                ctx.SaveChanges();
+            }
+
+        }
+
+        public void InsertHattertar(int id, int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret){
+            
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var hatter = ctx.hattertar.Where(i => i.id == id).Single();
+                hatter.alkatresz_gyarto_id = gyarto_id;
+                hatter.megnevezes = megnevezes;
+                hatter.netto_ar = ar;
+                hatter.db = db;
+                hatter.hattertar_csatolo_tipus_id = csatolo_id;
+                hatter.hattertar_tipus_id = tipus_id;
+                hatter.meret_gb = meret;
+
+                ctx.SaveChanges();
+            }
+
+        }
+
         public void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia)
         {
             using (var ctx = new ComputerStoreEntities())
@@ -2210,6 +2325,7 @@ namespace CoputerStore.BL
                     Megnevezes = query.megnevezes,
                     NettoAr = query.netto_ar,
                     Db = (Int32)query.db,
+                    Teljesitmeny=query.teljesitmeny
 
                 };
             }

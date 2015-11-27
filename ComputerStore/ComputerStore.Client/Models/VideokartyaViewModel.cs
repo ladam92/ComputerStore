@@ -10,7 +10,7 @@ namespace ComputerStore.Client.Models
     {
         public int ID { get; set; }
 
-        public string Gyarto { get; set; }
+        public int Gyarto { get; set; }
 
         public string MemoriaTipus { get; set; }
 
@@ -28,6 +28,6 @@ namespace ComputerStore.Client.Models
 
         public SelectList AlkatreszGyarto { get; set; }
 
-        public SelectList MemoriaFoglalat { get; set; }
+        public SelectList MemoriaTipusList { get; set; }
     }
 }

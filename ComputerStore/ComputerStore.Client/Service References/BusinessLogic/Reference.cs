@@ -15,6 +15,48 @@ namespace ComputerStore.Client.BusinessLogic {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessLogic.ILogic")]
     public interface ILogic {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByID", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse")]
+        ComputerStore.DTO.Types.PciExpressTipus PCIExpress_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByID", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus> PCIExpress_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Update", ReplyAction="http://tempuri.org/ILogic/PCIExpress_UpdateResponse")]
+        void PCIExpress_Update(ComputerStore.DTO.Types.PciExpressTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Update", ReplyAction="http://tempuri.org/ILogic/PCIExpress_UpdateResponse")]
+        System.Threading.Tasks.Task PCIExpress_UpdateAsync(ComputerStore.DTO.Types.PciExpressTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Add", ReplyAction="http://tempuri.org/ILogic/PCIExpress_AddResponse")]
+        void PCIExpress_Add(ComputerStore.DTO.Types.PciExpressTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Add", ReplyAction="http://tempuri.org/ILogic/PCIExpress_AddResponse")]
+        System.Threading.Tasks.Task PCIExpress_AddAsync(ComputerStore.DTO.Types.PciExpressTipus type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse")]
+        ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorFoglalat_GetByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus[]> ProcesszorFoglalat_GetByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByIDResponse")]
+        ComputerStore.DTO.Types.ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByName", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByNameResponse")]
+        ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[] VgaCsatolo_GetByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByName", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByNameResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[]> VgaCsatolo_GetByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse")]
+        ComputerStore.DTO.Types.VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus> VgaCsatolo_GetByIDAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Update", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_UpdateResponse")]
         void VgaCsatolo_Update(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type);
         
@@ -194,6 +236,48 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteVideokartya", ReplyAction="http://tempuri.org/ILogic/DeleteVideokartyaResponse")]
         System.Threading.Tasks.Task DeleteVideokartyaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertVideokartya", ReplyAction="http://tempuri.org/ILogic/InsertVideokartyaResponse")]
+        void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertVideokartya", ReplyAction="http://tempuri.org/ILogic/InsertVideokartyaResponse")]
+        System.Threading.Tasks.Task InsertVideokartyaAsync(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertTapegyseg", ReplyAction="http://tempuri.org/ILogic/InsertTapegysegResponse")]
+        void InsertTapegyseg(int id, int gyarto_id, string megnev, int ar, int db, int telj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertTapegyseg", ReplyAction="http://tempuri.org/ILogic/InsertTapegysegResponse")]
+        System.Threading.Tasks.Task InsertTapegysegAsync(int id, int gyarto_id, string megnev, int ar, int db, int telj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertSzamitogephaz", ReplyAction="http://tempuri.org/ILogic/InsertSzamitogephazResponse")]
+        void InsertSzamitogephaz(int id, int gyarto_id, string megnev, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertSzamitogephaz", ReplyAction="http://tempuri.org/ILogic/InsertSzamitogephazResponse")]
+        System.Threading.Tasks.Task InsertSzamitogephazAsync(int id, int gyarto_id, string megnev, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertMonitor", ReplyAction="http://tempuri.org/ILogic/InsertMonitorResponse")]
+        void InsertMonitor(int id, int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertMonitor", ReplyAction="http://tempuri.org/ILogic/InsertMonitorResponse")]
+        System.Threading.Tasks.Task InsertMonitorAsync(int id, int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertMemoria", ReplyAction="http://tempuri.org/ILogic/InsertMemoriaResponse")]
+        void InsertMemoria(int id, int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertMemoria", ReplyAction="http://tempuri.org/ILogic/InsertMemoriaResponse")]
+        System.Threading.Tasks.Task InsertMemoriaAsync(int id, int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertHattertar", ReplyAction="http://tempuri.org/ILogic/InsertHattertarResponse")]
+        void InsertHattertar(int id, int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertHattertar", ReplyAction="http://tempuri.org/ILogic/InsertHattertarResponse")]
+        System.Threading.Tasks.Task InsertHattertarAsync(int id, int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertEger", ReplyAction="http://tempuri.org/ILogic/InsertEgerResponse")]
+        void InsertEger(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertEger", ReplyAction="http://tempuri.org/ILogic/InsertEgerResponse")]
+        System.Threading.Tasks.Task InsertEgerAsync(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertCPU", ReplyAction="http://tempuri.org/ILogic/InsertCPUResponse")]
         void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia);
@@ -662,48 +746,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByName", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PCIExpress_GetByNameAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByID", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse")]
-        ComputerStore.DTO.Types.PciExpressTipus PCIExpress_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByID", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus> PCIExpress_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Update", ReplyAction="http://tempuri.org/ILogic/PCIExpress_UpdateResponse")]
-        void PCIExpress_Update(ComputerStore.DTO.Types.PciExpressTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Update", ReplyAction="http://tempuri.org/ILogic/PCIExpress_UpdateResponse")]
-        System.Threading.Tasks.Task PCIExpress_UpdateAsync(ComputerStore.DTO.Types.PciExpressTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Add", ReplyAction="http://tempuri.org/ILogic/PCIExpress_AddResponse")]
-        void PCIExpress_Add(ComputerStore.DTO.Types.PciExpressTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Add", ReplyAction="http://tempuri.org/ILogic/PCIExpress_AddResponse")]
-        System.Threading.Tasks.Task PCIExpress_AddAsync(ComputerStore.DTO.Types.PciExpressTipus type);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse")]
-        ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorFoglalat_GetByName(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByName", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByNameResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus[]> ProcesszorFoglalat_GetByNameAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByIDResponse")]
-        ComputerStore.DTO.Types.ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByID", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByIDAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByName", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByNameResponse")]
-        ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[] VgaCsatolo_GetByName(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByName", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByNameResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[]> VgaCsatolo_GetByNameAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse")]
-        ComputerStore.DTO.Types.VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_GetByID", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_GetByIDResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus> VgaCsatolo_GetByIDAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -731,6 +773,62 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public LogicClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public ComputerStore.DTO.Types.PciExpressTipus PCIExpress_GetByID(int id) {
+            return base.Channel.PCIExpress_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus> PCIExpress_GetByIDAsync(int id) {
+            return base.Channel.PCIExpress_GetByIDAsync(id);
+        }
+        
+        public void PCIExpress_Update(ComputerStore.DTO.Types.PciExpressTipus type) {
+            base.Channel.PCIExpress_Update(type);
+        }
+        
+        public System.Threading.Tasks.Task PCIExpress_UpdateAsync(ComputerStore.DTO.Types.PciExpressTipus type) {
+            return base.Channel.PCIExpress_UpdateAsync(type);
+        }
+        
+        public void PCIExpress_Add(ComputerStore.DTO.Types.PciExpressTipus type) {
+            base.Channel.PCIExpress_Add(type);
+        }
+        
+        public System.Threading.Tasks.Task PCIExpress_AddAsync(ComputerStore.DTO.Types.PciExpressTipus type) {
+            return base.Channel.PCIExpress_AddAsync(type);
+        }
+        
+        public ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorFoglalat_GetByName(string name) {
+            return base.Channel.ProcesszorFoglalat_GetByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus[]> ProcesszorFoglalat_GetByNameAsync(string name) {
+            return base.Channel.ProcesszorFoglalat_GetByNameAsync(name);
+        }
+        
+        public ComputerStore.DTO.Types.ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id) {
+            return base.Channel.ProcesszorFoglalat_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByIDAsync(int id) {
+            return base.Channel.ProcesszorFoglalat_GetByIDAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[] VgaCsatolo_GetByName(string name) {
+            return base.Channel.VgaCsatolo_GetByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[]> VgaCsatolo_GetByNameAsync(string name) {
+            return base.Channel.VgaCsatolo_GetByNameAsync(name);
+        }
+        
+        public ComputerStore.DTO.Types.VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id) {
+            return base.Channel.VgaCsatolo_GetByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus> VgaCsatolo_GetByIDAsync(int id) {
+            return base.Channel.VgaCsatolo_GetByIDAsync(id);
         }
         
         public void VgaCsatolo_Update(ComputerStore.DTO.Types.VgaCsatoloFeluletTipus type) {
@@ -971,6 +1069,62 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task DeleteVideokartyaAsync(int id) {
             return base.Channel.DeleteVideokartyaAsync(id);
+        }
+        
+        public void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret) {
+            base.Channel.InsertVideokartya(id, gyarto_id, memoria_id, megnev, ar, db, meret);
+        }
+        
+        public System.Threading.Tasks.Task InsertVideokartyaAsync(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret) {
+            return base.Channel.InsertVideokartyaAsync(id, gyarto_id, memoria_id, megnev, ar, db, meret);
+        }
+        
+        public void InsertTapegyseg(int id, int gyarto_id, string megnev, int ar, int db, int telj) {
+            base.Channel.InsertTapegyseg(id, gyarto_id, megnev, ar, db, telj);
+        }
+        
+        public System.Threading.Tasks.Task InsertTapegysegAsync(int id, int gyarto_id, string megnev, int ar, int db, int telj) {
+            return base.Channel.InsertTapegysegAsync(id, gyarto_id, megnev, ar, db, telj);
+        }
+        
+        public void InsertSzamitogephaz(int id, int gyarto_id, string megnev, int ar, int db) {
+            base.Channel.InsertSzamitogephaz(id, gyarto_id, megnev, ar, db);
+        }
+        
+        public System.Threading.Tasks.Task InsertSzamitogephazAsync(int id, int gyarto_id, string megnev, int ar, int db) {
+            return base.Channel.InsertSzamitogephazAsync(id, gyarto_id, megnev, ar, db);
+        }
+        
+        public void InsertMonitor(int id, int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db) {
+            base.Channel.InsertMonitor(id, gyarto_id, csatolo_id, felbontas_id, meret_id, megnev, ar, db);
+        }
+        
+        public System.Threading.Tasks.Task InsertMonitorAsync(int id, int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db) {
+            return base.Channel.InsertMonitorAsync(id, gyarto_id, csatolo_id, felbontas_id, meret_id, megnev, ar, db);
+        }
+        
+        public void InsertMemoria(int id, int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret) {
+            base.Channel.InsertMemoria(id, gyarto_id, foglalat_id, megnevezes, ar, db, meret);
+        }
+        
+        public System.Threading.Tasks.Task InsertMemoriaAsync(int id, int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret) {
+            return base.Channel.InsertMemoriaAsync(id, gyarto_id, foglalat_id, megnevezes, ar, db, meret);
+        }
+        
+        public void InsertHattertar(int id, int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret) {
+            base.Channel.InsertHattertar(id, gyarto_id, csatolo_id, tipus_id, megnevezes, ar, db, meret);
+        }
+        
+        public System.Threading.Tasks.Task InsertHattertarAsync(int id, int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret) {
+            return base.Channel.InsertHattertarAsync(id, gyarto_id, csatolo_id, tipus_id, megnevezes, ar, db, meret);
+        }
+        
+        public void InsertEger(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db) {
+            base.Channel.InsertEger(id, gyarto_id, usb_id, ps2, megnevezes, ar, db);
+        }
+        
+        public System.Threading.Tasks.Task InsertEgerAsync(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db) {
+            return base.Channel.InsertEgerAsync(id, gyarto_id, usb_id, ps2, megnevezes, ar, db);
         }
         
         public void InsertCPU(int id, int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia) {
@@ -1595,62 +1749,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PCIExpress_GetByNameAsync(string name) {
             return base.Channel.PCIExpress_GetByNameAsync(name);
-        }
-        
-        public ComputerStore.DTO.Types.PciExpressTipus PCIExpress_GetByID(int id) {
-            return base.Channel.PCIExpress_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus> PCIExpress_GetByIDAsync(int id) {
-            return base.Channel.PCIExpress_GetByIDAsync(id);
-        }
-        
-        public void PCIExpress_Update(ComputerStore.DTO.Types.PciExpressTipus type) {
-            base.Channel.PCIExpress_Update(type);
-        }
-        
-        public System.Threading.Tasks.Task PCIExpress_UpdateAsync(ComputerStore.DTO.Types.PciExpressTipus type) {
-            return base.Channel.PCIExpress_UpdateAsync(type);
-        }
-        
-        public void PCIExpress_Add(ComputerStore.DTO.Types.PciExpressTipus type) {
-            base.Channel.PCIExpress_Add(type);
-        }
-        
-        public System.Threading.Tasks.Task PCIExpress_AddAsync(ComputerStore.DTO.Types.PciExpressTipus type) {
-            return base.Channel.PCIExpress_AddAsync(type);
-        }
-        
-        public ComputerStore.DTO.Types.ProcesszorFoglalatTipus[] ProcesszorFoglalat_GetByName(string name) {
-            return base.Channel.ProcesszorFoglalat_GetByName(name);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus[]> ProcesszorFoglalat_GetByNameAsync(string name) {
-            return base.Channel.ProcesszorFoglalat_GetByNameAsync(name);
-        }
-        
-        public ComputerStore.DTO.Types.ProcesszorFoglalatTipus ProcesszorFoglalat_GetByID(int id) {
-            return base.Channel.ProcesszorFoglalat_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.ProcesszorFoglalatTipus> ProcesszorFoglalat_GetByIDAsync(int id) {
-            return base.Channel.ProcesszorFoglalat_GetByIDAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[] VgaCsatolo_GetByName(string name) {
-            return base.Channel.VgaCsatolo_GetByName(name);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus[]> VgaCsatolo_GetByNameAsync(string name) {
-            return base.Channel.VgaCsatolo_GetByNameAsync(name);
-        }
-        
-        public ComputerStore.DTO.Types.VgaCsatoloFeluletTipus VgaCsatolo_GetByID(int id) {
-            return base.Channel.VgaCsatolo_GetByID(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.VgaCsatoloFeluletTipus> VgaCsatolo_GetByIDAsync(int id) {
-            return base.Channel.VgaCsatolo_GetByIDAsync(id);
         }
     }
 }
