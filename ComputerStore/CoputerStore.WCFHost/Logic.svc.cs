@@ -17,6 +17,103 @@ namespace CoputerStore.BL
     public class Logic : ILogic
     {
 
+        public void InsertKep(Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                kepek uj = new kepek { kep = kep };
+                ctx.kepek.Add(uj);
+                ctx.SaveChanges();
+            }
+
+        
+        }
+
+        public void InsertingHattertarDB(int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.hattertar uj = new ComputerStore.DAL.hattertar { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnevezes, netto_ar = ar, kepek = k, hattertar_csatolo_tipus_id=csatolo_id, hattertar_tipus_id=tipus_id, meret_gb=meret };
+
+                ctx.hattertar.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingBillentyuzetDB( int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, Byte[]kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.billentyuzet uj = new ComputerStore.DAL.billentyuzet { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnevezes, netto_ar = (Decimal)ar, kepek = k , is_ps2_csatolo=ps2, usb_tipus_id=usb_id};
+
+                ctx.billentyuzet.Add(uj);
+
+                ctx.SaveChanges();
+            }
+
+        }
+
+        public void InsertingEgerDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.eger uj = new ComputerStore.DAL.eger { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnevezes, netto_ar = (Decimal)ar, kepek = k, is_ps2_csatolo = ps2, usb_tipus_id = usb_id };
+
+                ctx.eger.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingMemoriaDB(int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.memoria uj = new ComputerStore.DAL.memoria { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnevezes, netto_ar = (Decimal)ar, kepek = k, memoria_foglalat_tipus_id=foglalat_id, memoria_meret_mb=meret };
+
+                ctx.memoria.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingMonitorDB(int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.monitor uj = new ComputerStore.DAL.monitor { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnev, netto_ar = (Decimal)ar, kepek = k, monitor_csatolo_id=csatolo_id, monitor_felbontas_id=felbontas_id, monitor_meret_id=meret_id};
+
+                ctx.monitor.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[]kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+             
+                kepek k = new kepek { kep = kep };// hol a kep? cFXD Anélkül se ment :/ és akkor hogy adjám át? byte-kjént ahogy most is van
+                ComputerStore.DAL.alaplap uj = new ComputerStore.DAL.alaplap {db=db, alkatresz_gyarto_id=gyarto_id, megnevezes=megnevezes, memoria_foglalat_tipus_id=memoria_id, netto_ar=(Decimal)ar, pci_express_tipus_id=pci_id, proc_foglalat_tipus_id=foglalat_id, van_ps2_port=ps2, vga_csatolo_felulet_tipus_id=vga_id, memoria_foglalat_darab=mem_db, vga_csatolo_darab=vga_db, kepek = k};
+                
+                ctx.alaplap.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
         public void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db )
         {
             using (var ctx = new ComputerStoreEntities())
@@ -669,8 +766,7 @@ namespace CoputerStore.BL
                         Foglalat = item.proc_foglalat_tipus.megnevezes,
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         IsPs2 = item.van_ps2_port,
-                        Kep = item.kepek.kep,
-                        Leiras = item.leiras,
+                        Kep = item.kepek != null ? item.kepek.kep : null,
                         Megnevezes = item.megnevezes,
                         MemoriaDarab = item.memoria_foglalat_darab,
                         MemoriaFoglalat = item.memoria_foglalat_tipus.megnevezes,
@@ -713,7 +809,6 @@ namespace CoputerStore.BL
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         IsPs2 = item.van_ps2_port,
                         Kep = item.kepek.kep,
-                        Leiras = item.leiras,
                         Megnevezes = item.megnevezes,
                         MemoriaDarab = item.memoria_foglalat_darab,
                         MemoriaFoglalat = item.memoria_foglalat_tipus.megnevezes,
@@ -2118,7 +2213,6 @@ namespace CoputerStore.BL
                     Gyarto = query.alkatresz_gyarto.megnevezes,
                     IsPs2 = query.van_ps2_port,
                     Kep = query.kepek.kep,
-                    Leiras = query.leiras,
                     Megnevezes = query.megnevezes,
                     MemoriaDarab = query.memoria_foglalat_darab,
                     MemoriaFoglalat = query.memoria_foglalat_tipus.megnevezes,
@@ -2373,7 +2467,6 @@ namespace CoputerStore.BL
                         Gyarto = item.alkatresz_gyarto.megnevezes,
                         IsPs2 = item.van_ps2_port,
                         //Kep = item.kepek.kep,
-                        Leiras = item.leiras,
                         Megnevezes = item.megnevezes,
                         MemoriaDarab = item.memoria_foglalat_darab,
                         MemoriaFoglalat = item.memoria_foglalat_tipus.megnevezes,

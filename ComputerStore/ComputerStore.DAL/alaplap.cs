@@ -31,7 +31,6 @@ namespace ComputerStore.DAL
         public int vga_csatolo_darab { get; set; }
         public bool van_ps2_port { get; set; }
         public string megnevezes { get; set; }
-        public string leiras { get; set; }
         public Nullable<int> kep_id { get; set; }
         public decimal netto_ar { get; set; }
         public Nullable<int> db { get; set; }

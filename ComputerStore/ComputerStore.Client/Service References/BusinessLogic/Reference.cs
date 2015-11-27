@@ -15,6 +15,48 @@ namespace ComputerStore.Client.BusinessLogic {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BusinessLogic.ILogic")]
     public interface ILogic {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByFelbontas", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByFelbontasResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByFelbontas", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByFelbontasResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByFelbontasAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetListByFoglalatResponse")]
+        ComputerStore.DTO.Types.Processzor[] Processzor_GetListByFoglalat(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetListByFoglalatResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor[]> Processzor_GetListByFoglalatAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz>> Szamitogephaz_GetAsync(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_Get", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_Get", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg>> Tapegyseg_GetAsync(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
+        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya> Videokartya_Get(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByName", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse")]
+        ComputerStore.DTO.Types.PciExpressTipus[] PCIExpress_GetByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByName", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse")]
+        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PCIExpress_GetByNameAsync(string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByID", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByIDResponse")]
         ComputerStore.DTO.Types.PciExpressTipus PCIExpress_GetByID(int id);
         
@@ -236,6 +278,48 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/DeleteVideokartya", ReplyAction="http://tempuri.org/ILogic/DeleteVideokartyaResponse")]
         System.Threading.Tasks.Task DeleteVideokartyaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingMonitorDB", ReplyAction="http://tempuri.org/ILogic/InsertingMonitorDBResponse")]
+        void InsertingMonitorDB(int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingMonitorDB", ReplyAction="http://tempuri.org/ILogic/InsertingMonitorDBResponse")]
+        System.Threading.Tasks.Task InsertingMonitorDBAsync(int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingMemoriaDB", ReplyAction="http://tempuri.org/ILogic/InsertingMemoriaDBResponse")]
+        void InsertingMemoriaDB(int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingMemoriaDB", ReplyAction="http://tempuri.org/ILogic/InsertingMemoriaDBResponse")]
+        System.Threading.Tasks.Task InsertingMemoriaDBAsync(int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingEgerDB", ReplyAction="http://tempuri.org/ILogic/InsertingEgerDBResponse")]
+        void InsertingEgerDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingEgerDB", ReplyAction="http://tempuri.org/ILogic/InsertingEgerDBResponse")]
+        System.Threading.Tasks.Task InsertingEgerDBAsync(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingHattertarDB", ReplyAction="http://tempuri.org/ILogic/InsertingHattertarDBResponse")]
+        void InsertingHattertarDB(int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingHattertarDB", ReplyAction="http://tempuri.org/ILogic/InsertingHattertarDBResponse")]
+        System.Threading.Tasks.Task InsertingHattertarDBAsync(int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingBillentyuzetDB", ReplyAction="http://tempuri.org/ILogic/InsertingBillentyuzetDBResponse")]
+        void InsertingBillentyuzetDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingBillentyuzetDB", ReplyAction="http://tempuri.org/ILogic/InsertingBillentyuzetDBResponse")]
+        System.Threading.Tasks.Task InsertingBillentyuzetDBAsync(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingAlaplapDB", ReplyAction="http://tempuri.org/ILogic/InsertingAlaplapDBResponse")]
+        void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingAlaplapDB", ReplyAction="http://tempuri.org/ILogic/InsertingAlaplapDBResponse")]
+        System.Threading.Tasks.Task InsertingAlaplapDBAsync(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertKep", ReplyAction="http://tempuri.org/ILogic/InsertKepResponse")]
+        void InsertKep(byte[] kep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertKep", ReplyAction="http://tempuri.org/ILogic/InsertKepResponse")]
+        System.Threading.Tasks.Task InsertKepAsync(byte[] kep);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertVideokartya", ReplyAction="http://tempuri.org/ILogic/InsertVideokartyaResponse")]
         void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret);
@@ -704,48 +788,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByMeret", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByMeretResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByMeretAsync(int id, int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByFelbontas", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByFelbontasResponse")]
-        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetByFelbontas", ReplyAction="http://tempuri.org/ILogic/Monitor_GetByFelbontasResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByFelbontasAsync(int id, int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
-        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetByFoglalatResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetListByFoglalatResponse")]
-        ComputerStore.DTO.Types.Processzor[] Processzor_GetListByFoglalat(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Processzor_GetListByFoglalat", ReplyAction="http://tempuri.org/ILogic/Processzor_GetListByFoglalatResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor[]> Processzor_GetListByFoglalatAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
-        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Szamitogephaz_Get", ReplyAction="http://tempuri.org/ILogic/Szamitogephaz_GetResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz>> Szamitogephaz_GetAsync(int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_Get", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetResponse")]
-        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Tapegyseg_Get", ReplyAction="http://tempuri.org/ILogic/Tapegyseg_GetResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg>> Tapegyseg_GetAsync(int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
-        ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya> Videokartya_Get(int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Videokartya_Get", ReplyAction="http://tempuri.org/ILogic/Videokartya_GetResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByName", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse")]
-        ComputerStore.DTO.Types.PciExpressTipus[] PCIExpress_GetByName(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_GetByName", ReplyAction="http://tempuri.org/ILogic/PCIExpress_GetByNameResponse")]
-        System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PCIExpress_GetByNameAsync(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -773,6 +815,62 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public LogicClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize) {
+            return base.Channel.Monitor_GetByFelbontas(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByFelbontasAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Monitor_GetByFelbontasAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize) {
+            return base.Channel.Processzor_GetByFoglalat(id, pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize) {
+            return base.Channel.Processzor_GetByFoglalatAsync(id, pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.Processzor[] Processzor_GetListByFoglalat(int id) {
+            return base.Channel.Processzor_GetListByFoglalat(id);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor[]> Processzor_GetListByFoglalatAsync(int id) {
+            return base.Channel.Processzor_GetListByFoglalatAsync(id);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize) {
+            return base.Channel.Szamitogephaz_Get(pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz>> Szamitogephaz_GetAsync(int pageNumber, int pageSize) {
+            return base.Channel.Szamitogephaz_GetAsync(pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize) {
+            return base.Channel.Tapegyseg_Get(pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg>> Tapegyseg_GetAsync(int pageNumber, int pageSize) {
+            return base.Channel.Tapegyseg_GetAsync(pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya> Videokartya_Get(int pageNumber, int pageSize) {
+            return base.Channel.Videokartya_Get(pageNumber, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize) {
+            return base.Channel.Videokartya_GetAsync(pageNumber, pageSize);
+        }
+        
+        public ComputerStore.DTO.Types.PciExpressTipus[] PCIExpress_GetByName(string name) {
+            return base.Channel.PCIExpress_GetByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PCIExpress_GetByNameAsync(string name) {
+            return base.Channel.PCIExpress_GetByNameAsync(name);
         }
         
         public ComputerStore.DTO.Types.PciExpressTipus PCIExpress_GetByID(int id) {
@@ -1069,6 +1167,62 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task DeleteVideokartyaAsync(int id) {
             return base.Channel.DeleteVideokartyaAsync(id);
+        }
+        
+        public void InsertingMonitorDB(int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db, byte[] kep) {
+            base.Channel.InsertingMonitorDB(gyarto_id, csatolo_id, felbontas_id, meret_id, megnev, ar, db, kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertingMonitorDBAsync(int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db, byte[] kep) {
+            return base.Channel.InsertingMonitorDBAsync(gyarto_id, csatolo_id, felbontas_id, meret_id, megnev, ar, db, kep);
+        }
+        
+        public void InsertingMemoriaDB(int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret, byte[] kep) {
+            base.Channel.InsertingMemoriaDB(gyarto_id, foglalat_id, megnevezes, ar, db, meret, kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertingMemoriaDBAsync(int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret, byte[] kep) {
+            return base.Channel.InsertingMemoriaDBAsync(gyarto_id, foglalat_id, megnevezes, ar, db, meret, kep);
+        }
+        
+        public void InsertingEgerDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep) {
+            base.Channel.InsertingEgerDB(gyarto_id, usb_id, ps2, megnevezes, ar, db, kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertingEgerDBAsync(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep) {
+            return base.Channel.InsertingEgerDBAsync(gyarto_id, usb_id, ps2, megnevezes, ar, db, kep);
+        }
+        
+        public void InsertingHattertarDB(int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret, byte[] kep) {
+            base.Channel.InsertingHattertarDB(gyarto_id, csatolo_id, tipus_id, megnevezes, ar, db, meret, kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertingHattertarDBAsync(int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret, byte[] kep) {
+            return base.Channel.InsertingHattertarDBAsync(gyarto_id, csatolo_id, tipus_id, megnevezes, ar, db, meret, kep);
+        }
+        
+        public void InsertingBillentyuzetDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep) {
+            base.Channel.InsertingBillentyuzetDB(gyarto_id, usb_id, ps2, megnevezes, ar, db, kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertingBillentyuzetDBAsync(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, byte[] kep) {
+            return base.Channel.InsertingBillentyuzetDBAsync(gyarto_id, usb_id, ps2, megnevezes, ar, db, kep);
+        }
+        
+        public void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, byte[] kep) {
+            base.Channel.InsertingAlaplapDB(gyarto_id, foglalat_id, memoria_id, vga_id, pci_id, mem_db, vga_db, ps2, megnevezes, ar, db, kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertingAlaplapDBAsync(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, byte[] kep) {
+            return base.Channel.InsertingAlaplapDBAsync(gyarto_id, foglalat_id, memoria_id, vga_id, pci_id, mem_db, vga_db, ps2, megnevezes, ar, db, kep);
+        }
+        
+        public void InsertKep(byte[] kep) {
+            base.Channel.InsertKep(kep);
+        }
+        
+        public System.Threading.Tasks.Task InsertKepAsync(byte[] kep) {
+            return base.Channel.InsertKepAsync(kep);
         }
         
         public void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret) {
@@ -1693,62 +1847,6 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByMeretAsync(int id, int pageNumber, int pageSize) {
             return base.Channel.Monitor_GetByMeretAsync(id, pageNumber, pageSize);
-        }
-        
-        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor> Monitor_GetByFelbontas(int id, int pageNumber, int pageSize) {
-            return base.Channel.Monitor_GetByFelbontas(id, pageNumber, pageSize);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Monitor>> Monitor_GetByFelbontasAsync(int id, int pageNumber, int pageSize) {
-            return base.Channel.Monitor_GetByFelbontasAsync(id, pageNumber, pageSize);
-        }
-        
-        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor> Processzor_GetByFoglalat(int id, int pageNumber, int pageSize) {
-            return base.Channel.Processzor_GetByFoglalat(id, pageNumber, pageSize);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Processzor>> Processzor_GetByFoglalatAsync(int id, int pageNumber, int pageSize) {
-            return base.Channel.Processzor_GetByFoglalatAsync(id, pageNumber, pageSize);
-        }
-        
-        public ComputerStore.DTO.Types.Processzor[] Processzor_GetListByFoglalat(int id) {
-            return base.Channel.Processzor_GetListByFoglalat(id);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Processzor[]> Processzor_GetListByFoglalatAsync(int id) {
-            return base.Channel.Processzor_GetListByFoglalatAsync(id);
-        }
-        
-        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz> Szamitogephaz_Get(int pageNumber, int pageSize) {
-            return base.Channel.Szamitogephaz_Get(pageNumber, pageSize);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Szamitogephaz>> Szamitogephaz_GetAsync(int pageNumber, int pageSize) {
-            return base.Channel.Szamitogephaz_GetAsync(pageNumber, pageSize);
-        }
-        
-        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg> Tapegyseg_Get(int pageNumber, int pageSize) {
-            return base.Channel.Tapegyseg_Get(pageNumber, pageSize);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Tapegyseg>> Tapegyseg_GetAsync(int pageNumber, int pageSize) {
-            return base.Channel.Tapegyseg_GetAsync(pageNumber, pageSize);
-        }
-        
-        public ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya> Videokartya_Get(int pageNumber, int pageSize) {
-            return base.Channel.Videokartya_Get(pageNumber, pageSize);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PageableList<ComputerStore.DTO.Types.Videokartya>> Videokartya_GetAsync(int pageNumber, int pageSize) {
-            return base.Channel.Videokartya_GetAsync(pageNumber, pageSize);
-        }
-        
-        public ComputerStore.DTO.Types.PciExpressTipus[] PCIExpress_GetByName(string name) {
-            return base.Channel.PCIExpress_GetByName(name);
-        }
-        
-        public System.Threading.Tasks.Task<ComputerStore.DTO.Types.PciExpressTipus[]> PCIExpress_GetByNameAsync(string name) {
-            return base.Channel.PCIExpress_GetByNameAsync(name);
         }
     }
 }

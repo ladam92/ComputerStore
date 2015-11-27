@@ -59,7 +59,6 @@ namespace ComputerStore.Client.Controllers
                     Gyarto = alaplap1.Gyarto,
                     IsPs2 = alaplap1.IsPs2,
                     Kep = alaplap1.Kep,
-                    Leiras = alaplap1.Leiras,
                     Megnevezes = alaplap1.Megnevezes,
                     MemoriaDarab = alaplap1.MemoriaDarab,
                     MemoriaFoglalat = alaplap1.MemoriaFoglalat,

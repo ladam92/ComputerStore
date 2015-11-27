@@ -60,9 +60,6 @@ namespace ComputerStore.DTO.Types
         public int VGAID { get; set; }
 
         [DataMember]
-        public string Leiras { get; set; }
-
-        [DataMember]
         public Byte[] Kep { get; set; }
 
         [DataMember]

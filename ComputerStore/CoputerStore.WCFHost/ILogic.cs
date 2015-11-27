@@ -13,6 +13,27 @@ namespace CoputerStore.BL
     public interface ILogic
     {
         [OperationContract]
+        void InsertingMonitorDB(int gyarto_id, int csatolo_id, int felbontas_id, int meret_id, string megnev, int ar, int db, Byte[] kep);
+
+        [OperationContract]
+        void InsertingMemoriaDB(int gyarto_id, int foglalat_id, string megnevezes, int ar, int db, int meret, Byte[] kep);
+
+        [OperationContract]
+        void InsertingEgerDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, Byte[] kep);
+
+        [OperationContract]
+        void InsertingHattertarDB(int gyarto_id, int csatolo_id, int tipus_id, string megnevezes, int ar, int db, int meret, Byte[] kep);
+
+        [OperationContract]
+        void InsertingBillentyuzetDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, Byte[]kep);
+
+        [OperationContract]
+        void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[]kep);
+
+        [OperationContract]
+        void InsertKep(Byte[] kep);
+
+        [OperationContract]
         void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret);
 
         [OperationContract]

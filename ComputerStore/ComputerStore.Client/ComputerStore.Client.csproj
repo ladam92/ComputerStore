@@ -399,6 +399,13 @@
     <Content Include="Views\Admin\MemoriaInserting.cshtml" />
     <Content Include="Views\Admin\MonitorInserting.cshtml" />
     <Content Include="Views\Admin\TapegysegInserting.cshtml" />
+    <Content Include="Views\Admin\AlaplapInsertSave.cshtml" />
+    <Content Include="Views\Admin\BillentyuzetInsertSave.cshtml" />
+    <Content Include="Views\Admin\HattertarInsertSave.cshtml" />
+    <Content Include="Views\Account\MonitorInsertSave.cshtml" />
+    <Content Include="Views\Admin\EgerInsertSave.cshtml" />
+    <Content Include="Views\Admin\MemoriaInsertSave.cshtml" />
+    <Content Include="Views\Admin\MonitorInsertSave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
