@@ -17,11 +17,11 @@
             <div class="col-md-9" id="memoriaCombo">
                 @if (i == 0)
                 {
-                    <text> @Html.DropDownList(String.Format("Memoria.[{0}]", i), new SelectList(Model.MemoriaList, "ID", "Megnevezes"), new { @class = "form-control" })  </text>
+                    <text> @Html.DropDownList(String.Format("Memoria[{0}]", i), new SelectList(Model.MemoriaList, "ID", "Megnevezes"), new { @class = "form-control" })  </text>
                 }
                 else
                 {
-                    <text> @Html.DropDownList(String.Format("Memoria.[{0}]", i), new SelectList(Model.MemoriaList, "ID", "Megnevezes"), "Nem kérem", new { @class = "form-control" }) </text>
+                    <text> @Html.DropDownList(String.Format("Memoria[{0}]", i), new SelectList(Model.MemoriaList, "ID", "Megnevezes"), "Nem kérem", new { @class = "form-control" }) </text>
                 }
             </div>
         </div>
@@ -36,11 +36,11 @@
             <div class="col-md-9">
             @if (i == 0)
                             {
-                <text> @Html.DropDownList("Videokartya", new SelectList(Model.VideoKartyaList, "ID", "Megnevezes"), new { @class = "form-control" })  </text>
+                <text> @Html.DropDownList(String.Format("Videokartya[{0}]", i), new SelectList(Model.VideoKartyaList, "ID", "Megnevezes"), new { @class = "form-control" })  </text>
             }
             else
             {
-                <text> @Html.DropDownList("Videokartya", new SelectList(Model.VideoKartyaList, "ID", "Megnevezes"), "Nem kérem" ,new { @class = "form-control" }) </text>
+                <text> @Html.DropDownList(String.Format("Videokartya[{0}]", i), new SelectList(Model.VideoKartyaList, "ID", "Megnevezes"), "Nem kérem" ,new { @class = "form-control" }) </text>
             }
             </div>
         </div>

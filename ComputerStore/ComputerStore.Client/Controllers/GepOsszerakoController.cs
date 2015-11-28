@@ -13,9 +13,19 @@ namespace ComputerStore.Client.Controllers
         public object GeposszerakoViewModel { get; private set; }
 
         // GET: GepOsszerako
+        [HttpGet]
         public ActionResult Index()
         {
             SessionData.Instance.ShowCategories = false;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(GepOsszerakoViewModel model)
+        {
+            
+            //Do something
 
             return View();
         }

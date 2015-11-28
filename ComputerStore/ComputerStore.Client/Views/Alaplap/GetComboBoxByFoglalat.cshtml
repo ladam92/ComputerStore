@@ -1,6 +1,6 @@
 ﻿@model List<ComputerStore.DTO.Types.Alaplap>
 
-@Html.DropDownList("Alaplap", new SelectList(Model, "ID", "Megnevezes"), "Kérem válasszon", new { @class="form-control", @onchange= "alaplapComboBoxChanged()", @id="alaplapComboBox" })
+@Html.DropDownList("AlaplapID", new SelectList(Model, "ID", "Megnevezes"), "Kérem válasszon", new { @class="form-control", @onchange= "alaplapComboBoxChanged()", @id="alaplapComboBox" })
 
 <script>
     function alaplapComboBoxChanged()
