@@ -7,6 +7,24 @@
       <xsd:import schemaLocation="http://localhost:51437/Logic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ILogic_Eger_GetByUsbID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetByUsbID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetByUsbID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetByUsbIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetByPs_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetByPs" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetByPs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetByPsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Hattertar_GetByHattertarTipus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hattertar_GetByHattertarTipus" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Hattertar_GetByHattertarTipus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Hattertar_GetByHattertarTipusResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_Hattertar_GetByHattertarCsatolo_InputMessage">
     <wsdl:part name="parameters" element="tns:Hattertar_GetByHattertarCsatolo" />
   </wsdl:message>
@@ -354,6 +372,24 @@
   </wsdl:message>
   <wsdl:message name="ILogic_Monitor_GetListByMeret_OutputMessage">
     <wsdl:part name="parameters" element="tns:Monitor_GetListByMeretResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_USBGetByAlaplapID_InputMessage">
+    <wsdl:part name="parameters" element="tns:USBGetByAlaplapID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_USBGetByAlaplapID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:USBGetByAlaplapIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertarGetByAlaplapID_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertarGetByAlaplapID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertarGetByAlaplapID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertarGetByAlaplapIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorcsatoloGetByVideokartyaID_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorcsatoloGetByVideokartyaID" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorcsatoloGetByVideokartyaID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorcsatoloGetByVideokartyaIDResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_InsertingVideokartyaDB_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertingVideokartyaDB" />
@@ -847,25 +883,19 @@
   <wsdl:message name="ILogic_Billentyuzet_GetByPs_OutputMessage">
     <wsdl:part name="parameters" element="tns:Billentyuzet_GetByPsResponse" />
   </wsdl:message>
-  <wsdl:message name="ILogic_Eger_GetByUsbID_InputMessage">
-    <wsdl:part name="parameters" element="tns:Eger_GetByUsbID" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Eger_GetByUsbID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Eger_GetByUsbIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Eger_GetByPs_InputMessage">
-    <wsdl:part name="parameters" element="tns:Eger_GetByPs" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Eger_GetByPs_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Eger_GetByPsResponse" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Hattertar_GetByHattertarTipus_InputMessage">
-    <wsdl:part name="parameters" element="tns:Hattertar_GetByHattertarTipus" />
-  </wsdl:message>
-  <wsdl:message name="ILogic_Hattertar_GetByHattertarTipus_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Hattertar_GetByHattertarTipusResponse" />
-  </wsdl:message>
   <wsdl:portType name="ILogic">
+    <wsdl:operation name="Eger_GetByUsbID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetByUsbID" message="tns:ILogic_Eger_GetByUsbID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetByUsbIDResponse" message="tns:ILogic_Eger_GetByUsbID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetByPs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetByPs" message="tns:ILogic_Eger_GetByPs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetByPsResponse" message="tns:ILogic_Eger_GetByPs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hattertar_GetByHattertarTipus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipus" message="tns:ILogic_Hattertar_GetByHattertarTipus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipusResponse" message="tns:ILogic_Hattertar_GetByHattertarTipus_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Hattertar_GetByHattertarCsatolo">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatolo" message="tns:ILogic_Hattertar_GetByHattertarCsatolo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatoloResponse" message="tns:ILogic_Hattertar_GetByHattertarCsatolo_OutputMessage" />
@@ -1097,6 +1127,18 @@
     <wsdl:operation name="Monitor_GetListByMeret">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Monitor_GetListByMeret" message="tns:ILogic_Monitor_GetListByMeret_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Monitor_GetListByMeretResponse" message="tns:ILogic_Monitor_GetListByMeret_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="USBGetByAlaplapID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/USBGetByAlaplapID" message="tns:ILogic_USBGetByAlaplapID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/USBGetByAlaplapIDResponse" message="tns:ILogic_USBGetByAlaplapID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HattertarGetByAlaplapID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertarGetByAlaplapID" message="tns:ILogic_HattertarGetByAlaplapID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertarGetByAlaplapIDResponse" message="tns:ILogic_HattertarGetByAlaplapID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorcsatoloGetByVideokartyaID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorcsatoloGetByVideokartyaID" message="tns:ILogic_MonitorcsatoloGetByVideokartyaID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorcsatoloGetByVideokartyaIDResponse" message="tns:ILogic_MonitorcsatoloGetByVideokartyaID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertingVideokartyaDB">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertingVideokartyaDB" message="tns:ILogic_InsertingVideokartyaDB_InputMessage" />
@@ -1426,21 +1468,36 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByPs" message="tns:ILogic_Billentyuzet_GetByPs_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetByPsResponse" message="tns:ILogic_Billentyuzet_GetByPs_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Eger_GetByUsbID">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetByUsbID" message="tns:ILogic_Eger_GetByUsbID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetByUsbIDResponse" message="tns:ILogic_Eger_GetByUsbID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Eger_GetByPs">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetByPs" message="tns:ILogic_Eger_GetByPs_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetByPsResponse" message="tns:ILogic_Eger_GetByPs_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Hattertar_GetByHattertarTipus">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipus" message="tns:ILogic_Hattertar_GetByHattertarTipus_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipusResponse" message="tns:ILogic_Hattertar_GetByHattertarTipus_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILogic" type="tns:ILogic">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Eger_GetByUsbID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetByUsbID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetByPs">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetByPs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hattertar_GetByHattertarTipus">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Hattertar_GetByHattertarCsatolo">
       <soap:operation soapAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarCsatolo" style="document" />
       <wsdl:input>
@@ -1956,6 +2013,33 @@
     </wsdl:operation>
     <wsdl:operation name="Monitor_GetListByMeret">
       <soap:operation soapAction="http://tempuri.org/ILogic/Monitor_GetListByMeret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USBGetByAlaplapID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/USBGetByAlaplapID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HattertarGetByAlaplapID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertarGetByAlaplapID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorcsatoloGetByVideokartyaID">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorcsatoloGetByVideokartyaID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2694,33 +2778,6 @@
     </wsdl:operation>
     <wsdl:operation name="Billentyuzet_GetByPs">
       <soap:operation soapAction="http://tempuri.org/ILogic/Billentyuzet_GetByPs" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Eger_GetByUsbID">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetByUsbID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Eger_GetByPs">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetByPs" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Hattertar_GetByHattertarTipus">
-      <soap:operation soapAction="http://tempuri.org/ILogic/Hattertar_GetByHattertarTipus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

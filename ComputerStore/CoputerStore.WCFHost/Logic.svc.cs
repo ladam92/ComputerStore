@@ -128,15 +128,19 @@ namespace CoputerStore.BL
             }
         }
 
-        public void InsertingVideokartyaDB(int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, Byte[] kep)
+        public void InsertingVideokartyaDB(int csatolo_id, int mondb, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, Byte[] kep)
         {
             using (var ctx = new ComputerStoreEntities())
             {
 
                 kepek k = new kepek { kep = kep };
                 ComputerStore.DAL.videokartya uj = new ComputerStore.DAL.videokartya { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnev, netto_ar = (Decimal)ar, kepek = k, memoria_meret_gb=meret, memoria_tipus_id=memoria_id};
+                ComputerStore.DAL.videokartya_monitor uj2 = new ComputerStore.DAL.videokartya_monitor();
+                uj2.videokartya = uj;
+                uj2.monitor_csatolo_id = csatolo_id;
+                uj2.darab = mondb;
 
-                ctx.videokartya.Add(uj);
+                ctx.videokartya_monitor.Add(uj2);
 
                 ctx.SaveChanges();
             }
@@ -156,21 +160,33 @@ namespace CoputerStore.BL
             }
         }
 
-        public void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[]kep)
+        public void InsertingAlaplapDB(int usb_id, int hattertar_id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[] kep, int hatdb, int usbdb)
         {
             using (var ctx = new ComputerStoreEntities())
             {
              
-                kepek k = new kepek { kep = kep };// hol a kep? cFXD Anélkül se ment :/ és akkor hogy adjám át? byte-kjént ahogy most is van
+                kepek k = new kepek { kep = kep };
                 ComputerStore.DAL.alaplap uj = new ComputerStore.DAL.alaplap {db=db, alkatresz_gyarto_id=gyarto_id, megnevezes=megnevezes, memoria_foglalat_tipus_id=memoria_id, netto_ar=(Decimal)ar, pci_express_tipus_id=pci_id, proc_foglalat_tipus_id=foglalat_id, van_ps2_port=ps2, vga_csatolo_felulet_tipus_id=vga_id, memoria_foglalat_darab=mem_db, vga_csatolo_darab=vga_db, kepek = k};
                 
-                ctx.alaplap.Add(uj);
+                ComputerStore.DAL.alaplap_usb uj2 = new ComputerStore.DAL.alaplap_usb();
+                uj2.alaplap = uj;
+                uj2.darab = usbdb;
+                uj2.usb_tipus_id = usb_id;
+
+                ctx.alaplap_usb.Add(uj2);
+
+                ComputerStore.DAL.alaplap_hattertar uj3 = new ComputerStore.DAL.alaplap_hattertar();
+                uj3.alaplap = uj;
+                uj3.darab = hatdb;
+                uj3.hattertar_csatolo_tipus_id = hattertar_id;
+
+                ctx.alaplap_hattertar.Add(uj3);
 
                 ctx.SaveChanges();
             }
         }
 
-        public void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db )
+        public void InsertAlaplap( int csatolo_id, int usb_id, int usbdb, int hatdb, int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db )
         {
             using (var ctx = new ComputerStoreEntities())
             {
@@ -188,9 +204,61 @@ namespace CoputerStore.BL
                 alaplap.netto_ar = ar;
                 alaplap.db = db;
 
+                var alapusb = ctx.alaplap_usb.Where(i => i.alaplap_id == id).Single();
+                alapusb.darab = usbdb;
+                alapusb.usb_tipus_id = usb_id;
+
+                var alaphat = ctx.alaplap_hattertar.Where(i => i.alaplap_id == id).Single();
+                alaphat.darab = hatdb;
+                alaphat.hattertar_csatolo_tipus_id = csatolo_id;
+
                 ctx.SaveChanges();
             }
         }
+
+        public AlaplapUSB USBGetByAlaplapID(int id)
+        {
+            AlaplapUSB uj=new AlaplapUSB();
+            using(var ctx=new ComputerStoreEntities()){
+               var model=ctx.alaplap_usb.Where(i=>i.alaplap_id==id).Single();
+               uj.Alaplap_ID = (Int32)model.alaplap_id;
+               uj.Darab = model.darab;
+               uj.USB_ID = (Int32)model.usb_tipus_id;
+               uj.ID = model.id;
+            }
+            return uj;
+        }
+
+        public AlaplapHatter HattertarGetByAlaplapID(int id)
+        {
+            AlaplapHatter uj=new AlaplapHatter();
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var model = ctx.alaplap_hattertar.Where(i => i.alaplap_id == id).Single();
+                uj.Alaplap_ID = (Int32)model.alaplap_id;
+                uj.Darab = model.darab;
+                uj.Csatolo_ID = (Int32)model.hattertar_csatolo_tipus_id;
+                uj.ID = model.id;
+            }
+            return uj;
+        }
+
+        public VideokartyaMon MonitorcsatoloGetByVideokartyaID(int id)
+        {
+            VideokartyaMon uj=new VideokartyaMon();
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var model = ctx.videokartya_monitor.Where(i => i.videokartya_id == id).Single();
+                uj.ID = model.id;
+                uj.Darab = model.darab;
+                uj.VideokartyaID = model.videokartya_id;
+                uj.CsatoloID = model.monitor_csatolo_id;
+            }
+            return uj;
+
+        }
+
+
 
         public void InsertBillentyuzet(int id, int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db)
         {
@@ -255,7 +323,7 @@ namespace CoputerStore.BL
             }
         }
 
-        public void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret)
+        public void InsertVideokartya(int csatolo_id, int csatdb, int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret)
         {
             using (var ctx = new ComputerStoreEntities())
             {
@@ -267,6 +335,10 @@ namespace CoputerStore.BL
                 vid.db = db;
                 vid.memoria_meret_gb = meret;
                 vid.memoria_tipus_id = memoria_id;
+
+                var videomon = ctx.videokartya_monitor.Where(i => i.videokartya_id == id).Single();
+                videomon.darab = csatdb;
+                videomon.monitor_csatolo_id = csatolo_id;
 
                 ctx.SaveChanges();
             }

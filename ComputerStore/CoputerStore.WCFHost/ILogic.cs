@@ -1,4 +1,5 @@
-﻿using ComputerStore.DTO.Types;
+﻿
+using ComputerStore.DTO.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,16 @@ namespace CoputerStore.BL
     public interface ILogic
     {
         [OperationContract]
-        void InsertingVideokartyaDB(int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, Byte[] kep);
+        AlaplapUSB USBGetByAlaplapID(int id);
+
+        [OperationContract]
+        AlaplapHatter HattertarGetByAlaplapID(int id);
+
+        [OperationContract]
+        VideokartyaMon MonitorcsatoloGetByVideokartyaID(int id);
+
+        [OperationContract]
+        void InsertingVideokartyaDB(int csatolo_id, int mondb, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, Byte[] kep);
 
         [OperationContract]
         void InsertingTapegysegDB(int gyarto_id, string megnev, int ar, int db, int telj, Byte[] kep);
@@ -40,13 +50,13 @@ namespace CoputerStore.BL
         void InsertingBillentyuzetDB(int gyarto_id, int usb_id, bool ps2, string megnevezes, int ar, int db, Byte[]kep);
 
         [OperationContract]
-        void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[]kep);
+        void InsertingAlaplapDB(int usb_id, int hattertar_id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[] kep, int hatdb, int usbdb);
 
         [OperationContract]
         void InsertKep(Byte[] kep);
 
         [OperationContract]
-        void InsertVideokartya(int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret);
+        void InsertVideokartya(int csatolo_id, int csatdb, int id, int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret);
 
         [OperationContract]
         void InsertTapegyseg(int id, int gyarto_id, string megnev, int ar, int db, int telj);
@@ -91,7 +101,7 @@ namespace CoputerStore.BL
         List<UsbTipus> UsbGet();
 
         [OperationContract]
-        void InsertAlaplap(int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db);
+        void InsertAlaplap(int csatolo_id, int usb_id, int usbdb, int hatdb, int id, int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db);
 
         [OperationContract]
         List<PciExpressTipus> PciGet();

@@ -56,6 +56,8 @@
     <Compile Include="Enums\Kategoriak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Alaplap.cs" />
+    <Compile Include="Types\AlaplapHatter.cs" />
+    <Compile Include="Types\AlaplapUSB.cs" />
     <Compile Include="Types\AlkatreszGyarto.cs" />
     <Compile Include="Types\AlkatreszTipus.cs" />
     <Compile Include="Types\Billentyuzet.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Types\UsbTipus.cs" />
     <Compile Include="Types\VgaCsatoloFeluletTipus.cs" />
     <Compile Include="Types\Videokartya.cs" />
+    <Compile Include="Types\VideokartyaMon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
