@@ -11,8 +11,6 @@ namespace ComputerStore.DTO.Types
     [DataContract]
     public class Alaplap:Kategoria
     {
-        [DataMember]
-        public int ID { get; set; }
 
         [DataMember]
         [Display(Name = "Gyártó")]
@@ -21,7 +19,6 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         [Display(Name = "Processzor foglalat")]
         public string Foglalat { get; set; }
-
 
         [DataMember]
         [Display(Name = "PCI Express tipus")]
@@ -58,12 +55,5 @@ namespace ComputerStore.DTO.Types
 
         [DataMember]
         public int VGAID { get; set; }
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        [Display(Name = "Raktáron (db)")]
-        public int Db { get; set; }
     }
 }

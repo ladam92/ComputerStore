@@ -2638,7 +2638,8 @@ namespace CoputerStore.BL
                             Gyarto = hatterTar.alkatresz_gyarto.megnevezes,
                             Megnevezes = hatterTar.megnevezes,
                             NettoAr = hatterTar.netto_ar,
-                            Meret = hatterTar.meret_gb
+                            Meret = hatterTar.meret_gb,
+                            ID = hatterTar.id
                         });
                     }
                 }

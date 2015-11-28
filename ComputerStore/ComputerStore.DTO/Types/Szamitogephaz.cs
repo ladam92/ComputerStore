@@ -12,19 +12,7 @@ namespace ComputerStore.DTO.Types
     public class Szamitogephaz:Kategoria
     {
         [DataMember]
-        public int ID { get; set; }
-
-        [DataMember]
         [Display(Name = "Gyártó")]
         public string Gyarto { get; set; }
-
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        public int Db { get; set; }
-
-
     }
 }

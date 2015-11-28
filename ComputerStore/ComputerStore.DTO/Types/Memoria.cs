@@ -12,9 +12,6 @@ namespace ComputerStore.DTO.Types
     public class Memoria:Kategoria
     {
         [DataMember]
-        public int ID { get; set; }
-
-        [DataMember]
         [Display(Name = "Gyártó")]
         public string Gyarto { get; set; }
         
@@ -28,13 +25,6 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         [Display(Name = "Kapacitás (GB)")]
         public int MemoriaMeret { get; set; }
-
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        public int Db { get; set; }
 
     }
 }
