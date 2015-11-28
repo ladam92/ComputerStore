@@ -420,6 +420,8 @@
     <Content Include="Views\Admin\SzamitogephazInsertSave.cshtml" />
     <Content Include="Views\Admin\TapegysegInsertSave.cshtml" />
     <Content Include="Views\Admin\VideokartyaInsertSave.cshtml" />
+    <Content Include="Views\Admin\DeleteCategory.cshtml" />
+    <Content Include="Views\Admin\GetCategoriesForDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

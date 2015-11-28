@@ -355,6 +355,72 @@
   <wsdl:message name="ILogic_Monitor_GetListByMeret_OutputMessage">
     <wsdl:part name="parameters" element="tns:Monitor_GetListByMeretResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Gyarto_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Gyarto_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Gyarto_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Gyarto_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatCsatoloTipus_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertatCsatoloTipus_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertatCsatoloTipus_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertarTipus_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:HattertarTipus_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_HattertarTipus_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HattertarTipus_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaFoglalat_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaFoglalat_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MemoriaFoglalat_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemoriaFoglalat_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorFelbontasTipus_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorFelbontasTipus_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorFelbontasTipus_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorMeretTipus_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorMeretTipus_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorMeretTipus_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorMeretTipus_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_PCIExpress_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PCIExpress_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorFoglalat_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_ProcesszorFoglalat_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcesszorFoglalat_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_UsbTipus_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsbTipus_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_UsbTipus_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsbTipus_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_VgaCsatolo_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VgaCsatolo_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_MonitorCsatolo_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorCsatolo_DeleteResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_InsertingVideokartyaDB_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertingVideokartyaDB" />
   </wsdl:message>
@@ -1097,6 +1163,50 @@
     <wsdl:operation name="Monitor_GetListByMeret">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Monitor_GetListByMeret" message="tns:ILogic_Monitor_GetListByMeret_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Monitor_GetListByMeretResponse" message="tns:ILogic_Monitor_GetListByMeret_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Gyarto_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Gyarto_Delete" message="tns:ILogic_Gyarto_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Gyarto_DeleteResponse" message="tns:ILogic_Gyarto_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HattertatCsatoloTipus_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Delete" message="tns:ILogic_HattertatCsatoloTipus_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_DeleteResponse" message="tns:ILogic_HattertatCsatoloTipus_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HattertarTipus_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/HattertarTipus_Delete" message="tns:ILogic_HattertarTipus_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/HattertarTipus_DeleteResponse" message="tns:ILogic_HattertarTipus_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MemoriaFoglalat_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_Delete" message="tns:ILogic_MemoriaFoglalat_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MemoriaFoglalat_DeleteResponse" message="tns:ILogic_MemoriaFoglalat_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorFelbontasTipus_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Delete" message="tns:ILogic_MonitorFelbontasTipus_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_DeleteResponse" message="tns:ILogic_MonitorFelbontasTipus_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorMeretTipus_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_Delete" message="tns:ILogic_MonitorMeretTipus_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorMeretTipus_DeleteResponse" message="tns:ILogic_MonitorMeretTipus_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/PCIExpress_Delete" message="tns:ILogic_PCIExpress_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/PCIExpress_DeleteResponse" message="tns:ILogic_PCIExpress_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorFoglalat_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_Delete" message="tns:ILogic_ProcesszorFoglalat_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/ProcesszorFoglalat_DeleteResponse" message="tns:ILogic_ProcesszorFoglalat_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsbTipus_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/UsbTipus_Delete" message="tns:ILogic_UsbTipus_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/UsbTipus_DeleteResponse" message="tns:ILogic_UsbTipus_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_Delete" message="tns:ILogic_VgaCsatolo_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/VgaCsatolo_DeleteResponse" message="tns:ILogic_VgaCsatolo_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_Delete" message="tns:ILogic_MonitorCsatolo_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/MonitorCsatolo_DeleteResponse" message="tns:ILogic_MonitorCsatolo_Delete_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertingVideokartyaDB">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertingVideokartyaDB" message="tns:ILogic_InsertingVideokartyaDB_InputMessage" />
@@ -1956,6 +2066,105 @@
     </wsdl:operation>
     <wsdl:operation name="Monitor_GetListByMeret">
       <soap:operation soapAction="http://tempuri.org/ILogic/Monitor_GetListByMeret" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gyarto_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Gyarto_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HattertatCsatoloTipus_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HattertarTipus_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/HattertarTipus_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemoriaFoglalat_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MemoriaFoglalat_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorFelbontasTipus_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorMeretTipus_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorMeretTipus_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PCIExpress_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/PCIExpress_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesszorFoglalat_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/ProcesszorFoglalat_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsbTipus_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/UsbTipus_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VgaCsatolo_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/VgaCsatolo_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorCsatolo_Delete">
+      <soap:operation soapAction="http://tempuri.org/ILogic/MonitorCsatolo_Delete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

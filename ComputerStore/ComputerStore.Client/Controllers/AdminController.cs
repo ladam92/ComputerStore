@@ -1801,5 +1801,111 @@ namespace ComputerStore.Client.Controllers
             }
             return PartialView(model);
         }
+
+        public ActionResult DeleteCategory()
+        {
+            SessionData.Instance.ShowCategories = false;
+
+            return View();
+        }
+
+        public ActionResult GetCategoriesForDelete(int kategoria, string text)
+        {
+            List<AlkatreszTipus> model = new List<AlkatreszTipus>();
+
+            Kategoriak kat = (Kategoriak)kategoria;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                switch (kat)
+                {
+                    case Kategoriak.AlkatreszGyarto:
+                        model.AddRange(bl.Gyarto_GetByName(text));
+                        break;
+                    case Kategoriak.HattertarCsatoloTipus:
+                        model.AddRange(bl.HattertatCsatoloTipus_GetKaegoriakByName(text));
+                        break;
+                    case Kategoriak.HattertarTipus:
+                        model.AddRange(bl.HattertatTipus_GetKaegoriakByName(text));
+                        break;
+                    case Kategoriak.MemoriaFoglalat:
+                        model.AddRange(bl.MemoriaFoglalat_GetKaegoriakByName(text));
+                        break;
+                    case Kategoriak.MonitorFelbontas:
+                        model.AddRange(bl.MonitorFelbontasTipus_GetKaegoriakByName(text));
+                        break;
+                    case Kategoriak.MonitorMeret:
+                        model.AddRange(bl.MonitorMeretTipus_GetKaegoriakByName(text));
+                        break;
+                    case Kategoriak.PciExpress:
+                        model.AddRange(bl.PCIExpress_GetByName(text));
+                        break;
+                    case Kategoriak.ProcFoglalat:
+                        model.AddRange(bl.ProcesszorFoglalat_GetByName(text));
+                        break;
+                    case Kategoriak.USB:
+                        model.AddRange(bl.UsbTipus_GetKaegoriakByName(text));
+                        break;
+                    case Kategoriak.VGACsatolo:
+                        model.AddRange(bl.VgaCsatolo_GetByName(text));
+                        break;
+                    case Kategoriak.MonitorCsatolo:
+                        model.AddRange(bl.MonitorCsatolo_GetByName(text));
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+            return PartialView(model);
+        }
+
+        public ActionResult DeleteCategoryConcrete(int id, int type)
+        {
+            Kategoriak kat = (Kategoriak)type;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                switch (kat)
+                {
+                    case Kategoriak.AlkatreszGyarto:
+                        bl.Gyarto_Delete(id);
+                        break;
+                    case Kategoriak.HattertarCsatoloTipus:
+                        bl.HattertatCsatoloTipus_Delete(id);
+                        break;
+                    case Kategoriak.HattertarTipus:
+                        bl.HattertarTipus_Delete(id);
+                        break;
+                    case Kategoriak.MemoriaFoglalat:
+                        bl.MemoriaFoglalat_Delete(id);
+                        break;
+                    case Kategoriak.MonitorFelbontas:
+                        bl.MonitorFelbontasTipus_Delete(id);
+                        break;
+                    case Kategoriak.MonitorMeret:
+                        bl.MonitorMeretTipus_Delete(id);
+                        break;
+                    case Kategoriak.PciExpress:
+                        bl.PCIExpress_Delete(id);
+                        break;
+                    case Kategoriak.ProcFoglalat:
+                        bl.ProcesszorFoglalat_Delete(id);
+                        break;
+                    case Kategoriak.USB:
+                        bl.UsbTipus_Delete(id);
+                        break;
+                    case Kategoriak.VGACsatolo:
+                        bl.VgaCsatolo_Delete(id);
+                        break;
+                    case Kategoriak.MonitorCsatolo:
+                        bl.MonitorCsatolo_Delete(id);
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+
+            return View("DeleteCategory");
+        }
     }
 }

@@ -677,7 +677,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.proc_foglalat_tipus)
+                foreach (var item in ctx.proc_foglalat_tipus.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new ProcesszorFoglalatTipus
                     {
@@ -696,7 +696,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.memoria_foglalat_tipus)
+                foreach (var item in ctx.memoria_foglalat_tipus.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new MemoriaTipus
                     {
@@ -715,7 +715,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.usb_tipus)
+                foreach (var item in ctx.usb_tipus.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new UsbTipus
                     {
@@ -734,7 +734,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.hattertar_tipus)
+                foreach (var item in ctx.hattertar_tipus.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new HattertarTipus
                     {
@@ -753,7 +753,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.hattertarolo_csatolo_tipus)
+                foreach (var item in ctx.hattertarolo_csatolo_tipus.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new HattertarCsatoloTipus
                     {
@@ -772,7 +772,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.monitor_felbontas)
+                foreach (var item in ctx.monitor_felbontas.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new MonitorFelbontas
                     {
@@ -791,7 +791,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.monitor_meret)
+                foreach (var item in ctx.monitor_meret.Where(i => !i.torolve.Value))
                 {
                     ret.Add(new MonitorMeret
                     {
@@ -1321,7 +1321,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.proc_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.proc_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new ProcesszorFoglalatTipus
                     {
@@ -1340,7 +1340,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.memoria_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.memoria_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new MemoriaTipus
                     {
@@ -1359,7 +1359,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.hattertar_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.hattertar_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new HattertarTipus
                     {
@@ -1378,7 +1378,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.hattertarolo_csatolo_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.hattertarolo_csatolo_tipus.Where(i => i.megnevezes.StartsWith(name) &&!i.torolve.Value))
                 {
                     ret.Add(new HattertarCsatoloTipus
                     {
@@ -1397,7 +1397,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.monitor_felbontas.Where(i => i.felbontás.StartsWith(felbontas)))
+                foreach (var item in ctx.monitor_felbontas.Where(i => i.felbontás.StartsWith(felbontas) && !i.torolve.Value))
                 {
                     ret.Add(new MonitorFelbontas
                     {
@@ -1416,7 +1416,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.monitor_meret.Where(i => i.meret.StartsWith(felbontas)))
+                foreach (var item in ctx.monitor_meret.Where(i => i.meret.StartsWith(felbontas) && !i.torolve.Value))
                 {
                     ret.Add(new MonitorMeret
                     {
@@ -1435,7 +1435,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.usb_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.usb_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new UsbTipus
                     {
@@ -1454,7 +1454,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.pci_express_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.pci_express_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new PciExpressTipus
                     {
@@ -1473,7 +1473,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.proc_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.proc_foglalat_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new ProcesszorFoglalatTipus
                     {
@@ -1494,7 +1494,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.vga_csatolo_felulet_tipus.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.vga_csatolo_felulet_tipus.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new VgaCsatoloFeluletTipus
                     {
@@ -1513,7 +1513,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.alkatresz_gyarto.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.alkatresz_gyarto.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new AlkatreszGyarto
                     {
@@ -1586,7 +1586,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.usb_tipus;
+                var entity = ctx.usb_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new UsbTipus
@@ -1606,7 +1606,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.monitor_meret;
+                var entity = ctx.monitor_meret.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new MonitorMeret
@@ -1626,7 +1626,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.monitor_felbontas;
+                var entity = ctx.monitor_felbontas.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new MonitorFelbontas
@@ -1646,7 +1646,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.monitor_csatolo;
+                var entity = ctx.monitor_csatolo.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new MonitorCsatoloTipus
@@ -1666,7 +1666,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.hattertar_tipus;
+                var entity = ctx.hattertar_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new HattertarTipus
@@ -1686,7 +1686,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.hattertarolo_csatolo_tipus;
+                var entity = ctx.hattertarolo_csatolo_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new HattertarCsatoloTipus
@@ -1778,7 +1778,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.pci_express_tipus;
+                var entity = ctx.pci_express_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new PciExpressTipus
@@ -1816,7 +1816,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.proc_foglalat_tipus;
+                var entity = ctx.proc_foglalat_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new ProcesszorFoglalatTipus
@@ -1854,7 +1854,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.vga_csatolo_felulet_tipus;
+                var entity = ctx.vga_csatolo_felulet_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new VgaCsatoloFeluletTipus
@@ -1891,7 +1891,7 @@ namespace CoputerStore.BL
             List<AlkatreszGyarto> list = new List<AlkatreszGyarto>();
 
             using(var ctx=new ComputerStoreEntities()){
-                var entity=ctx.alkatresz_gyarto;
+                var entity=ctx.alkatresz_gyarto.Where(i => !i.torolve.Value);
                 foreach(var item in entity){
                     list.Add(new AlkatreszGyarto{
                         ID=item.id, Megnevezes=item.megnevezes
@@ -2046,7 +2046,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                foreach (var item in ctx.monitor_csatolo.Where(i => i.megnevezes.StartsWith(name)))
+                foreach (var item in ctx.monitor_csatolo.Where(i => i.megnevezes.StartsWith(name) && !i.torolve.Value))
                 {
                     ret.Add(new MonitorCsatoloTipus
                     {
@@ -2095,7 +2095,8 @@ namespace CoputerStore.BL
             {
                 proc_foglalat_tipus entity = new proc_foglalat_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.proc_foglalat_tipus.Add(entity);
@@ -2110,7 +2111,8 @@ namespace CoputerStore.BL
             {
                 memoria_foglalat_tipus entity = new memoria_foglalat_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.memoria_foglalat_tipus.Add(entity);
@@ -2125,7 +2127,8 @@ namespace CoputerStore.BL
             {
                 usb_tipus entity = new usb_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.usb_tipus.Add(entity);
@@ -2142,7 +2145,8 @@ namespace CoputerStore.BL
             {
                 hattertar_tipus entity = new hattertar_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.hattertar_tipus.Add(entity);
@@ -2157,7 +2161,8 @@ namespace CoputerStore.BL
             {
                 hattertarolo_csatolo_tipus entity = new hattertarolo_csatolo_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.hattertarolo_csatolo_tipus.Add(entity);
@@ -2172,7 +2177,8 @@ namespace CoputerStore.BL
             {
                 monitor_felbontas entity = new monitor_felbontas()
                 {
-                    felbontás = type.Megnevezes
+                    felbontás = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.monitor_felbontas.Add(entity);
@@ -2187,7 +2193,8 @@ namespace CoputerStore.BL
             {
                 monitor_meret entity = new monitor_meret()
                 {
-                    meret = meret.Megnevezes
+                    meret = meret.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.monitor_meret.Add(entity);
@@ -2202,7 +2209,8 @@ namespace CoputerStore.BL
             {
                 pci_express_tipus entity = new pci_express_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.pci_express_tipus.Add(entity);
@@ -2217,7 +2225,8 @@ namespace CoputerStore.BL
             {
                 vga_csatolo_felulet_tipus entity = new vga_csatolo_felulet_tipus()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.vga_csatolo_felulet_tipus.Add(entity);
@@ -2232,7 +2241,8 @@ namespace CoputerStore.BL
             {
                 alkatresz_gyarto entity = new alkatresz_gyarto()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.alkatresz_gyarto.Add(entity);
@@ -2247,7 +2257,8 @@ namespace CoputerStore.BL
             {
                 monitor_csatolo entity = new monitor_csatolo()
                 {
-                    megnevezes = type.Megnevezes
+                    megnevezes = type.Megnevezes,
+                    torolve = false
                 };
 
                 ctx.monitor_csatolo.Add(entity);
@@ -2358,7 +2369,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var entity = ctx.memoria_foglalat_tipus;
+                var entity = ctx.memoria_foglalat_tipus.Where(i => !i.torolve.Value);
                 foreach (var item in entity)
                 {
                     list.Add(new MemoriaTipus
@@ -2821,6 +2832,138 @@ namespace CoputerStore.BL
             }
 
             return ret;
+        }
+
+        public void Gyarto_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.alkatresz_gyarto.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void HattertatCsatoloTipus_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertarolo_csatolo_tipus.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void HattertarTipus_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.hattertar_tipus.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MemoriaFoglalat_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.memoria_foglalat_tipus.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorFelbontasTipus_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_felbontas.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorMeretTipus_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_meret.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void PCIExpress_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.pci_express_tipus.Single(i => i.id == id);
+
+                entity.torolve = false;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void ProcesszorFoglalat_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.proc_foglalat_tipus.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void UsbTipus_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.usb_tipus.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void VgaCsatolo_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.vga_csatolo_felulet_tipus.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void MonitorCsatolo_Delete(int id)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var entity = ctx.monitor_csatolo.Single(i => i.id == id);
+
+                entity.torolve = true;
+
+                ctx.SaveChanges();
+            }
         }
     }
 }

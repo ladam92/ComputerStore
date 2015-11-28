@@ -363,6 +363,72 @@ namespace ComputerStore.Client.BusinessLogic {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Monitor_GetListByMeret", ReplyAction="http://tempuri.org/ILogic/Monitor_GetListByMeretResponse")]
         System.Threading.Tasks.Task<ComputerStore.DTO.Types.Monitor[]> Monitor_GetListByMeretAsync(int meretID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Delete", ReplyAction="http://tempuri.org/ILogic/Gyarto_DeleteResponse")]
+        void Gyarto_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/Gyarto_Delete", ReplyAction="http://tempuri.org/ILogic/Gyarto_DeleteResponse")]
+        System.Threading.Tasks.Task Gyarto_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Delete", ReplyAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_DeleteResponse")]
+        void HattertatCsatoloTipus_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertatCsatoloTipus_Delete", ReplyAction="http://tempuri.org/ILogic/HattertatCsatoloTipus_DeleteResponse")]
+        System.Threading.Tasks.Task HattertatCsatoloTipus_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertarTipus_Delete", ReplyAction="http://tempuri.org/ILogic/HattertarTipus_DeleteResponse")]
+        void HattertarTipus_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/HattertarTipus_Delete", ReplyAction="http://tempuri.org/ILogic/HattertarTipus_DeleteResponse")]
+        System.Threading.Tasks.Task HattertarTipus_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaFoglalat_Delete", ReplyAction="http://tempuri.org/ILogic/MemoriaFoglalat_DeleteResponse")]
+        void MemoriaFoglalat_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MemoriaFoglalat_Delete", ReplyAction="http://tempuri.org/ILogic/MemoriaFoglalat_DeleteResponse")]
+        System.Threading.Tasks.Task MemoriaFoglalat_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Delete", ReplyAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_DeleteResponse")]
+        void MonitorFelbontasTipus_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorFelbontasTipus_Delete", ReplyAction="http://tempuri.org/ILogic/MonitorFelbontasTipus_DeleteResponse")]
+        System.Threading.Tasks.Task MonitorFelbontasTipus_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorMeretTipus_Delete", ReplyAction="http://tempuri.org/ILogic/MonitorMeretTipus_DeleteResponse")]
+        void MonitorMeretTipus_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorMeretTipus_Delete", ReplyAction="http://tempuri.org/ILogic/MonitorMeretTipus_DeleteResponse")]
+        System.Threading.Tasks.Task MonitorMeretTipus_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Delete", ReplyAction="http://tempuri.org/ILogic/PCIExpress_DeleteResponse")]
+        void PCIExpress_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/PCIExpress_Delete", ReplyAction="http://tempuri.org/ILogic/PCIExpress_DeleteResponse")]
+        System.Threading.Tasks.Task PCIExpress_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_Delete", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_DeleteResponse")]
+        void ProcesszorFoglalat_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/ProcesszorFoglalat_Delete", ReplyAction="http://tempuri.org/ILogic/ProcesszorFoglalat_DeleteResponse")]
+        System.Threading.Tasks.Task ProcesszorFoglalat_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_Delete", ReplyAction="http://tempuri.org/ILogic/UsbTipus_DeleteResponse")]
+        void UsbTipus_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/UsbTipus_Delete", ReplyAction="http://tempuri.org/ILogic/UsbTipus_DeleteResponse")]
+        System.Threading.Tasks.Task UsbTipus_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Delete", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_DeleteResponse")]
+        void VgaCsatolo_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/VgaCsatolo_Delete", ReplyAction="http://tempuri.org/ILogic/VgaCsatolo_DeleteResponse")]
+        System.Threading.Tasks.Task VgaCsatolo_DeleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_Delete", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_DeleteResponse")]
+        void MonitorCsatolo_Delete(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/MonitorCsatolo_Delete", ReplyAction="http://tempuri.org/ILogic/MonitorCsatolo_DeleteResponse")]
+        System.Threading.Tasks.Task MonitorCsatolo_DeleteAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogic/InsertingVideokartyaDB", ReplyAction="http://tempuri.org/ILogic/InsertingVideokartyaDBResponse")]
         void InsertingVideokartyaDB(int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, byte[] kep);
         
@@ -1363,6 +1429,94 @@ namespace ComputerStore.Client.BusinessLogic {
         
         public System.Threading.Tasks.Task<ComputerStore.DTO.Types.Monitor[]> Monitor_GetListByMeretAsync(int meretID) {
             return base.Channel.Monitor_GetListByMeretAsync(meretID);
+        }
+        
+        public void Gyarto_Delete(int id) {
+            base.Channel.Gyarto_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task Gyarto_DeleteAsync(int id) {
+            return base.Channel.Gyarto_DeleteAsync(id);
+        }
+        
+        public void HattertatCsatoloTipus_Delete(int id) {
+            base.Channel.HattertatCsatoloTipus_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task HattertatCsatoloTipus_DeleteAsync(int id) {
+            return base.Channel.HattertatCsatoloTipus_DeleteAsync(id);
+        }
+        
+        public void HattertarTipus_Delete(int id) {
+            base.Channel.HattertarTipus_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task HattertarTipus_DeleteAsync(int id) {
+            return base.Channel.HattertarTipus_DeleteAsync(id);
+        }
+        
+        public void MemoriaFoglalat_Delete(int id) {
+            base.Channel.MemoriaFoglalat_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task MemoriaFoglalat_DeleteAsync(int id) {
+            return base.Channel.MemoriaFoglalat_DeleteAsync(id);
+        }
+        
+        public void MonitorFelbontasTipus_Delete(int id) {
+            base.Channel.MonitorFelbontasTipus_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task MonitorFelbontasTipus_DeleteAsync(int id) {
+            return base.Channel.MonitorFelbontasTipus_DeleteAsync(id);
+        }
+        
+        public void MonitorMeretTipus_Delete(int id) {
+            base.Channel.MonitorMeretTipus_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task MonitorMeretTipus_DeleteAsync(int id) {
+            return base.Channel.MonitorMeretTipus_DeleteAsync(id);
+        }
+        
+        public void PCIExpress_Delete(int id) {
+            base.Channel.PCIExpress_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task PCIExpress_DeleteAsync(int id) {
+            return base.Channel.PCIExpress_DeleteAsync(id);
+        }
+        
+        public void ProcesszorFoglalat_Delete(int id) {
+            base.Channel.ProcesszorFoglalat_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task ProcesszorFoglalat_DeleteAsync(int id) {
+            return base.Channel.ProcesszorFoglalat_DeleteAsync(id);
+        }
+        
+        public void UsbTipus_Delete(int id) {
+            base.Channel.UsbTipus_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task UsbTipus_DeleteAsync(int id) {
+            return base.Channel.UsbTipus_DeleteAsync(id);
+        }
+        
+        public void VgaCsatolo_Delete(int id) {
+            base.Channel.VgaCsatolo_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task VgaCsatolo_DeleteAsync(int id) {
+            return base.Channel.VgaCsatolo_DeleteAsync(id);
+        }
+        
+        public void MonitorCsatolo_Delete(int id) {
+            base.Channel.MonitorCsatolo_Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task MonitorCsatolo_DeleteAsync(int id) {
+            return base.Channel.MonitorCsatolo_DeleteAsync(id);
         }
         
         public void InsertingVideokartyaDB(int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, byte[] kep) {

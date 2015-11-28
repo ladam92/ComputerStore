@@ -442,5 +442,38 @@ namespace CoputerStore.BL
 
         [OperationContract]
         List<Monitor> Monitor_GetListByMeret(int meretID);
+
+        [OperationContract]
+        void Gyarto_Delete(int id);
+
+        [OperationContract]
+        void HattertatCsatoloTipus_Delete(int id);
+
+        [OperationContract]
+        void HattertarTipus_Delete(int id);
+
+        [OperationContract]
+        void MemoriaFoglalat_Delete(int id);
+
+        [OperationContract]
+        void MonitorFelbontasTipus_Delete(int id);
+
+        [OperationContract]
+        void MonitorMeretTipus_Delete(int id);
+
+        [OperationContract]
+        void PCIExpress_Delete(int id);
+
+        [OperationContract]
+        void ProcesszorFoglalat_Delete(int id);
+
+        [OperationContract]
+        void UsbTipus_Delete(int id);
+
+        [OperationContract]
+        void VgaCsatolo_Delete(int id);
+
+        [OperationContract]
+        void MonitorCsatolo_Delete(int id);
     }
 }

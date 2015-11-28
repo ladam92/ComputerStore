@@ -23,6 +23,7 @@ namespace ComputerStore.DAL
     
         public int id { get; set; }
         public string megnevezes { get; set; }
+        public Nullable<bool> torolve { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alaplap> alaplap { get; set; }

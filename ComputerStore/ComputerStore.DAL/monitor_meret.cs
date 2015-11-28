@@ -22,6 +22,7 @@ namespace ComputerStore.DAL
     
         public int id { get; set; }
         public string meret { get; set; }
+        public Nullable<bool> torolve { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<monitor> monitor { get; set; }
