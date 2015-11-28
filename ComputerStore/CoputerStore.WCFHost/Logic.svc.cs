@@ -100,6 +100,62 @@ namespace CoputerStore.BL
             }
         }
 
+        public void InsertingProcesszorDB(int gyarto_id, int foglalat_id, string meg, int ar, int db, int magok, int frekvencia, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.cpu uj = new ComputerStore.DAL.cpu { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = meg, netto_ar = (Decimal)ar, kepek = k, proc_foglalat_tipus_id=foglalat_id, magok_darab=magok, frekvencia=frekvencia, frekvencia_mertekegyseg_id=1 };
+
+                ctx.cpu.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingSzamitogephazDB(int gyarto_id, string megnev, int ar, int db, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.szamitogep_haz uj = new ComputerStore.DAL.szamitogep_haz { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnev, netto_ar = (Decimal)ar, kepek = k };
+
+                ctx.szamitogep_haz.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingVideokartyaDB(int gyarto_id, int memoria_id, string megnev, int ar, int db, int meret, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.videokartya uj = new ComputerStore.DAL.videokartya { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnev, netto_ar = (Decimal)ar, kepek = k, memoria_meret_gb=meret, memoria_tipus_id=memoria_id};
+
+                ctx.videokartya.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public void InsertingTapegysegDB(int gyarto_id, string megnev, int ar, int db, int telj, Byte[] kep)
+        {
+            using (var ctx = new ComputerStoreEntities())
+            {
+
+                kepek k = new kepek { kep = kep };
+                ComputerStore.DAL.tapegyseg uj = new ComputerStore.DAL.tapegyseg { db = db, alkatresz_gyarto_id = gyarto_id, megnevezes = megnev, netto_ar = (Decimal)ar, kepek = k, teljesitmeny=telj };
+
+                ctx.tapegyseg.Add(uj);
+
+                ctx.SaveChanges();
+            }
+        }
+
         public void InsertingAlaplapDB(int gyarto_id, int foglalat_id, int memoria_id, int vga_id, int pci_id, int mem_db, int vga_db, bool ps2, string megnevezes, int ar, int db, Byte[]kep)
         {
             using (var ctx = new ComputerStoreEntities())

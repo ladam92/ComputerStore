@@ -403,18 +403,21 @@
     <Content Include="Views\Admin\AlaplapInsertSave.cshtml" />
     <Content Include="Views\Admin\BillentyuzetInsertSave.cshtml" />
     <Content Include="Views\Admin\HattertarInsertSave.cshtml" />
-    <Content Include="Views\Account\MonitorInsertSave.cshtml" />
     <Content Include="Views\Admin\EgerInsertSave.cshtml" />
     <Content Include="Views\Admin\MemoriaInsertSave.cshtml" />
     <Content Include="Views\Admin\MonitorInsertSave.cshtml" />
-    <Content Include="Views\GepOsszerako\GetGeposszarkoComboBoxes.cshtml" />
+<Content Include="Views\GepOsszerako\GetGeposszarkoComboBoxes.cshtml" />
     <Content Include="Views\Hattertar\GetComboBoxByAlaplapAndTipus.cshtml" />
     <Content Include="Views\Billentyuzet\GetComboBoxByUsb.cshtml" />
     <Content Include="Views\Billentyuzet\GetComboBoxPS2.cshtml" />
     <Content Include="Views\Eger\GetComboBoxByUsb.cshtml" />
     <Content Include="Views\Eger\GetComboBoxPS2.cshtml" />
     <Content Include="Views\Monitor\GetComboBoxByMeret.cshtml" />
-  </ItemGroup>
+<Content Include="Views\Admin\CPUInsertSave.cshtml" />
+    <Content Include="Views\Admin\SzamitogephazInsertSave.cshtml" />
+    <Content Include="Views\Admin\TapegysegInsertSave.cshtml" />
+    <Content Include="Views\Admin\VideokartyaInsertSave.cshtml" />
+ </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
