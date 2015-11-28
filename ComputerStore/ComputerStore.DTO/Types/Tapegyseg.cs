@@ -12,22 +12,11 @@ namespace ComputerStore.DTO.Types
     public class Tapegyseg:Kategoria
     {
         [DataMember]
-        public int ID { get; set; }
-
-        [DataMember]
         [Display(Name = "Gyártó")]
         public string Gyarto { get; set; }
 
         [DataMember]
         [Display(Name = "Teljesítmény")]
         public int Teljesitmeny { get; set; }
-
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        public int Db { get; set; }
-
     }
 }

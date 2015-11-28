@@ -2583,7 +2583,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var query = ctx.alaplap.Where(i => i.memoria_foglalat_tipus_id == id);
+                var query = ctx.alaplap.Where(i => i.proc_foglalat_tipus_id == id);
 
                 foreach (var item in query)
                 {
@@ -2710,7 +2710,8 @@ namespace CoputerStore.BL
                             Gyarto = hatterTar.alkatresz_gyarto.megnevezes,
                             Megnevezes = hatterTar.megnevezes,
                             NettoAr = hatterTar.netto_ar,
-                            Meret = hatterTar.meret_gb
+                            Meret = hatterTar.meret_gb,
+                            ID = hatterTar.id
                         });
                     }
                 }
@@ -2842,7 +2843,8 @@ namespace CoputerStore.BL
                     ret.Add(new Szamitogephaz
                     {
                         ID = item.id,
-                        Megnevezes = item.megnevezes
+                        Megnevezes = item.megnevezes,
+                        NettoAr = item.netto_ar
                     });
 
                 }
@@ -2862,7 +2864,8 @@ namespace CoputerStore.BL
                     ret.Add(new Tapegyseg
                     {
                         ID = item.id,
-                        Megnevezes = item.megnevezes
+                        Megnevezes = item.megnevezes,
+                        NettoAr = item.netto_ar
                     });
 
                 }
@@ -2882,7 +2885,8 @@ namespace CoputerStore.BL
                     ret.Add(new Monitor
                     {
                         ID = item.id,
-                        Megnevezes = item.megnevezes
+                        Megnevezes = item.megnevezes,
+                        NettoAr = item.netto_ar
                     });
 
                 }

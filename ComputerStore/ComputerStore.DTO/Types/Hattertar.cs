@@ -11,8 +11,6 @@ namespace ComputerStore.DTO.Types
     [DataContract]
     public class Hattertar:Kategoria
     {
-        [DataMember]
-        public int ID { get; set; }
 
         [DataMember]
         [Display(Name = "Gyártó")]
@@ -35,11 +33,5 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         [Display(Name = "Kapacitás (Gb)")]
         public int Meret { get; set; }
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        public int Db { get; set; }
     }
 }

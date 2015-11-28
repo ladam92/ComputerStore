@@ -12,9 +12,6 @@ namespace ComputerStore.DTO.Types
     public class Billentyuzet:Kategoria
     {
         [DataMember]
-        public int ID { get; set; }
-
-        [DataMember]
         [Display(Name = "Gyártó")]
         public string Gyarto { get; set; }
 
@@ -28,14 +25,6 @@ namespace ComputerStore.DTO.Types
         [DataMember]
         [Display(Name = "PS/2 port")]
         public bool IsPs2 { get; set; }
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        [Display(Name = "Raktáron (db)")]
-        public int Db { get; set; }
-
 
     }
 }

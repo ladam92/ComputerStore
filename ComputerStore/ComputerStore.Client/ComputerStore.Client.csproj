@@ -43,6 +43,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <IncludeIisSettings>true</IncludeIisSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -226,9 +228,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\doge.jpg" />
-    <Content Include="Content\doge_1.jpg" />
-    <Content Include="Content\logo.png" />
+    <Content Include="Content\logo1.jpg" />
+    <Content Include="Content\logo2.jpg" />
+    <Content Include="Content\logo3.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -261,6 +263,7 @@
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.AlaplapHatter.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.AlaplapUSB.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.VideokartyaMon.datasource" />
+    <None Include="Properties\PublishProfiles\alma.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

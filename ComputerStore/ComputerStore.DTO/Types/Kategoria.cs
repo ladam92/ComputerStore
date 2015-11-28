@@ -28,5 +28,13 @@ namespace ComputerStore.DTO.Types
 
         [DataMember]
         public Byte[] Kep { get; set; }
+
+        public string MegnevezesEsAr
+        {
+            get
+            {
+                return String.Concat(Megnevezes, " ", NettoAr, " Ft");
+            }
+        }
     }
 }

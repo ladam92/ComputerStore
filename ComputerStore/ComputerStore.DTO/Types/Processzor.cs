@@ -11,9 +11,6 @@ namespace ComputerStore.DTO.Types
     public class Processzor:Kategoria
     {
         [DataMember]
-        public int ID { get; set; }
-
-        [DataMember]
         public string Gyarto { get; set; }
 
 
@@ -34,11 +31,5 @@ namespace ComputerStore.DTO.Types
 
         [DataMember]
         public int ProcFoglalatID { get; set; }
-
-        [DataMember]
-        public Byte[] Kep { get; set; }
-
-        [DataMember]
-        public int Db { get; set; }
     }
 }

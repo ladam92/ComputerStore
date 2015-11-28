@@ -24,8 +24,73 @@ namespace ComputerStore.Client.Controllers
         [HttpPost]
         public ActionResult Index(GepOsszerakoViewModel model)
         {
-            
-            //Do something
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                if(model.AlaplapID.HasValue)
+                {
+                    var alaplap = bl.Alaplap_GetByID(model.AlaplapID.Value);
+                    SessionData.Instance.Kosar.Add(alaplap);
+                }
+
+                if(model.Processzor.HasValue)
+                {
+                    var proc = bl.Processzor_GetByID(model.Processzor.Value);
+                    SessionData.Instance.Kosar.Add(proc);
+                }
+
+                foreach (var item in model.Memoria)
+                {
+                    if(item.HasValue)
+                    {
+                        var memoria = bl.Memoria_GetByID(item.Value);
+                        SessionData.Instance.Kosar.Add(memoria);
+                    }
+                }
+
+                foreach (var item in model.Videokartya)
+                {
+                    if (item.HasValue)
+                    {
+                        var videokartya = bl.Videokartya_GetByID(item.Value);
+                        SessionData.Instance.Kosar.Add(videokartya);
+                    }
+                }
+
+                if (model.Hattertar.HasValue)
+                {
+                    var hattertar = bl.Hattertar_GetByID(model.Hattertar.Value);
+                    SessionData.Instance.Kosar.Add(hattertar);
+                }
+                if (model.Billentyuzet.HasValue)
+                {
+                    var billentyuzet = bl.Billentyuzet_GetByID(model.Billentyuzet.Value);
+                    SessionData.Instance.Kosar.Add(billentyuzet);
+                }
+
+                if(model.Eger.HasValue)
+                {
+                    var eger = bl.Eger_GetByID(model.Eger.Value);
+                    SessionData.Instance.Kosar.Add(eger);
+                }
+
+                if(model.Monitor.HasValue)
+                {
+                    var monitor = bl.Monitor_GetByID(model.Monitor.Value);
+                    SessionData.Instance.Kosar.Add(monitor);
+                }
+
+                if(model.SzamitogepHaz.HasValue)
+                {
+                    var szamitogepHaz = bl.Szamitogephaz_GetByID(model.SzamitogepHaz.Value);
+                    SessionData.Instance.Kosar.Add(szamitogepHaz);
+                }
+
+                if(model.Tapegyseg.HasValue)
+                {
+                    var tapegyseg = bl.Tapegyseg_GetByID(model.Tapegyseg.Value);
+                    SessionData.Instance.Kosar.Add(tapegyseg);
+                }
+            }
 
             return View();
         }
