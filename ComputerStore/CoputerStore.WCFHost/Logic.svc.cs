@@ -2511,7 +2511,7 @@ namespace CoputerStore.BL
 
             using (var ctx = new ComputerStoreEntities())
             {
-                var query = ctx.alaplap.Where(i => i.memoria_foglalat_tipus_id == id);
+                var query = ctx.alaplap.Where(i => i.proc_foglalat_tipus_id == id);
 
                 foreach (var item in query)
                 {
