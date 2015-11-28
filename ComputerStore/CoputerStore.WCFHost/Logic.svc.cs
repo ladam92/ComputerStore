@@ -2771,7 +2771,8 @@ namespace CoputerStore.BL
                     ret.Add(new Szamitogephaz
                     {
                         ID = item.id,
-                        Megnevezes = item.megnevezes
+                        Megnevezes = item.megnevezes,
+                        NettoAr = item.netto_ar
                     });
 
                 }
@@ -2791,7 +2792,8 @@ namespace CoputerStore.BL
                     ret.Add(new Tapegyseg
                     {
                         ID = item.id,
-                        Megnevezes = item.megnevezes
+                        Megnevezes = item.megnevezes,
+                        NettoAr = item.netto_ar
                     });
 
                 }
@@ -2811,7 +2813,8 @@ namespace CoputerStore.BL
                     ret.Add(new Monitor
                     {
                         ID = item.id,
-                        Megnevezes = item.megnevezes
+                        Megnevezes = item.megnevezes,
+                        NettoAr = item.netto_ar
                     });
 
                 }
