@@ -14,6 +14,7 @@ namespace ComputerStore.DTO.Types
     {
         [DataMember]
         [Display(Name = "Megnevezés")]
+        [Required(ErrorMessage ="Kötelező a megnevezést megadni!")]
         public string Megnevezes { get; set; }
 
         [DataMember]

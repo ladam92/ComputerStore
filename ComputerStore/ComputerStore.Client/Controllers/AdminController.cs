@@ -1492,107 +1492,114 @@ namespace ComputerStore.Client.Controllers
         [HttpPost]
         public ActionResult CreateCategory(CreateCategoryViewModel model)
         {
-            using (var bl = new BusinessLogic.LogicClient())
+            if (ModelState.IsValid)
             {
-                Kategoriak kat = model.Tipus;
-
-                switch (kat)
+                using (var bl = new BusinessLogic.LogicClient())
                 {
-                    case Kategoriak.AlkatreszGyarto:
-                        var gyartoToUpdate = new AlkatreszGyarto
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                    Kategoriak kat = model.Tipus;
 
-                        bl.Gyarto_Add(gyartoToUpdate);
-                        break;
-                    case Kategoriak.HattertarCsatoloTipus:
-                        var hatterCsatoloToUpdate = new HattertarCsatoloTipus
-                        {
-                            Megnevezes = model.Megnevezes
-                        };
+                    switch (kat)
+                    {
+                        case Kategoriak.AlkatreszGyarto:
+                            var gyartoToUpdate = new AlkatreszGyarto
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.HattertatCsatoloTipus_Add(hatterCsatoloToUpdate);
-                        break;
-                    case Kategoriak.HattertarTipus:
-                        var hatterTipusToUpdate = new HattertarTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.Gyarto_Add(gyartoToUpdate);
+                            break;
+                        case Kategoriak.HattertarCsatoloTipus:
+                            var hatterCsatoloToUpdate = new HattertarCsatoloTipus
+                            {
+                                Megnevezes = model.Megnevezes
+                            };
 
-                        bl.HattertatTipus_Add(hatterTipusToUpdate);
-                        break;
-                    case Kategoriak.MemoriaFoglalat:
-                        var memoriaToUpdate = new MemoriaTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.HattertatCsatoloTipus_Add(hatterCsatoloToUpdate);
+                            break;
+                        case Kategoriak.HattertarTipus:
+                            var hatterTipusToUpdate = new HattertarTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
+
+                            bl.HattertatTipus_Add(hatterTipusToUpdate);
+                            break;
+                        case Kategoriak.MemoriaFoglalat:
+                            var memoriaToUpdate = new MemoriaTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
 
-                        bl.MemoriaFoglalat_Add(memoriaToUpdate);
-                        break;
-                    case Kategoriak.MonitorFelbontas:
-                        var monitorFelbontasToUpdate = new MonitorFelbontas
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.MemoriaFoglalat_Add(memoriaToUpdate);
+                            break;
+                        case Kategoriak.MonitorFelbontas:
+                            var monitorFelbontasToUpdate = new MonitorFelbontas
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.MonitorFelbontasTipus_Add(monitorFelbontasToUpdate);
-                        break;
-                    case Kategoriak.MonitorMeret:
-                        var monitorMeretToUpdate = new MonitorMeret
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.MonitorFelbontasTipus_Add(monitorFelbontasToUpdate);
+                            break;
+                        case Kategoriak.MonitorMeret:
+                            var monitorMeretToUpdate = new MonitorMeret
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.MonitorMeretTipus_Add(monitorMeretToUpdate);
-                        break;
-                    case Kategoriak.PciExpress:
-                        var pciToUpdate = new PciExpressTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.MonitorMeretTipus_Add(monitorMeretToUpdate);
+                            break;
+                        case Kategoriak.PciExpress:
+                            var pciToUpdate = new PciExpressTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.PCIExpress_Add(pciToUpdate);
-                        break;
-                    case Kategoriak.ProcFoglalat:
-                        var procFoglalatToUpdate = new ProcesszorFoglalatTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.PCIExpress_Add(pciToUpdate);
+                            break;
+                        case Kategoriak.ProcFoglalat:
+                            var procFoglalatToUpdate = new ProcesszorFoglalatTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.ProcFoglalat_Add(procFoglalatToUpdate);
-                        break;
-                    case Kategoriak.USB:
-                        var usbToUpdate = new UsbTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.ProcFoglalat_Add(procFoglalatToUpdate);
+                            break;
+                        case Kategoriak.USB:
+                            var usbToUpdate = new UsbTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.UsbTipus_Add(usbToUpdate);
-                        break;
-                    case Kategoriak.VGACsatolo:
-                        var vgaToUpdate = new VgaCsatoloFeluletTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.UsbTipus_Add(usbToUpdate);
+                            break;
+                        case Kategoriak.VGACsatolo:
+                            var vgaToUpdate = new VgaCsatoloFeluletTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.VgaCsatolo_Add(vgaToUpdate);
-                        break;
-                    case Kategoriak.MonitorCsatolo:
-                        var monitorCsatoloToUpdate = new MonitorCsatoloTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                        };
+                            bl.VgaCsatolo_Add(vgaToUpdate);
+                            break;
+                        case Kategoriak.MonitorCsatolo:
+                            var monitorCsatoloToUpdate = new MonitorCsatoloTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                            };
 
-                        bl.MonitorCsatolo_Add(monitorCsatoloToUpdate);
-                        break;
-                    default:
-                        throw new NotImplementedException();
+                            bl.MonitorCsatolo_Add(monitorCsatoloToUpdate);
+                            break;
+                        default:
+                            throw new NotImplementedException();
+                    }
                 }
-            }
 
-            return RedirectToAction("CreateCategory");
+                return RedirectToAction("CreateCategory");
+            }
+            else
+            {
+                return View(model);
+            }
         }
 
         [HttpGet]
@@ -1649,118 +1656,125 @@ namespace ComputerStore.Client.Controllers
         [HttpPost]
         public ActionResult EditCategory(AlkatreszTipus model)
         {
-            using (var bl = new BusinessLogic.LogicClient())
+            if (ModelState.IsValid)
             {
-                Kategoriak kat = model.Tipus;
-
-                switch (kat)
+                using (var bl = new BusinessLogic.LogicClient())
                 {
-                    case Kategoriak.AlkatreszGyarto:
-                        var gyartoToUpdate = new AlkatreszGyarto
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                    Kategoriak kat = model.Tipus;
 
-                        bl.Gyarto_Update(gyartoToUpdate);
-                        break;
-                    case Kategoriak.HattertarCsatoloTipus:
-                        var hatterCsatoloToUpdate = new HattertarCsatoloTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                    switch (kat)
+                    {
+                        case Kategoriak.AlkatreszGyarto:
+                            var gyartoToUpdate = new AlkatreszGyarto
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.HattertatCsatoloTipus_Update(hatterCsatoloToUpdate);
-                        break;
-                    case Kategoriak.HattertarTipus:
-                        var hatterTipusToUpdate = new HattertarTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.Gyarto_Update(gyartoToUpdate);
+                            break;
+                        case Kategoriak.HattertarCsatoloTipus:
+                            var hatterCsatoloToUpdate = new HattertarCsatoloTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.HattertatTipus_Update(hatterTipusToUpdate);
-                        break;
-                    case Kategoriak.MemoriaFoglalat:
-                        var memoriaToUpdate = new MemoriaTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.HattertatCsatoloTipus_Update(hatterCsatoloToUpdate);
+                            break;
+                        case Kategoriak.HattertarTipus:
+                            var hatterTipusToUpdate = new HattertarTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
+
+                            bl.HattertatTipus_Update(hatterTipusToUpdate);
+                            break;
+                        case Kategoriak.MemoriaFoglalat:
+                            var memoriaToUpdate = new MemoriaTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
 
-                        bl.MemoriaFoglalat_Update(memoriaToUpdate);
-                        break;
-                    case Kategoriak.MonitorFelbontas:
-                        var monitorFelbontasToUpdate = new MonitorFelbontas
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.MemoriaFoglalat_Update(memoriaToUpdate);
+                            break;
+                        case Kategoriak.MonitorFelbontas:
+                            var monitorFelbontasToUpdate = new MonitorFelbontas
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.MonitorFelbontasTipus_Update(monitorFelbontasToUpdate);
-                        break;
-                    case Kategoriak.MonitorMeret:
-                        var monitorMeretToUpdate = new MonitorMeret
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.MonitorFelbontasTipus_Update(monitorFelbontasToUpdate);
+                            break;
+                        case Kategoriak.MonitorMeret:
+                            var monitorMeretToUpdate = new MonitorMeret
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.MonitorMeretTipus_Update(monitorMeretToUpdate);
-                        break;
-                    case Kategoriak.PciExpress:
-                        var pciToUpdate = new PciExpressTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.MonitorMeretTipus_Update(monitorMeretToUpdate);
+                            break;
+                        case Kategoriak.PciExpress:
+                            var pciToUpdate = new PciExpressTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.PCIExpress_Update(pciToUpdate);
-                        break;
-                    case Kategoriak.ProcFoglalat:
-                        var procFoglalatToUpdate = new ProcesszorFoglalatTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.PCIExpress_Update(pciToUpdate);
+                            break;
+                        case Kategoriak.ProcFoglalat:
+                            var procFoglalatToUpdate = new ProcesszorFoglalatTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.ProcFoglalat_Update(procFoglalatToUpdate);
-                        break;
-                    case Kategoriak.USB:
-                        var usbToUpdate = new UsbTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.ProcFoglalat_Update(procFoglalatToUpdate);
+                            break;
+                        case Kategoriak.USB:
+                            var usbToUpdate = new UsbTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.UsbTipus_Update(usbToUpdate);
-                        break;
-                    case Kategoriak.VGACsatolo:
-                        var vgaToUpdate = new VgaCsatoloFeluletTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.UsbTipus_Update(usbToUpdate);
+                            break;
+                        case Kategoriak.VGACsatolo:
+                            var vgaToUpdate = new VgaCsatoloFeluletTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.VgaCsatolo_Update(vgaToUpdate);
-                        break;
-                    case Kategoriak.MonitorCsatolo:
-                        var monitorCsatoloToUpdate = new MonitorCsatoloTipus
-                        {
-                            Megnevezes = model.Megnevezes,
-                            ID = model.ID
-                        };
+                            bl.VgaCsatolo_Update(vgaToUpdate);
+                            break;
+                        case Kategoriak.MonitorCsatolo:
+                            var monitorCsatoloToUpdate = new MonitorCsatoloTipus
+                            {
+                                Megnevezes = model.Megnevezes,
+                                ID = model.ID
+                            };
 
-                        bl.MonitorCsatolo_Update(monitorCsatoloToUpdate);
-                        break;
-                    default:
-                        throw new NotImplementedException();
+                            bl.MonitorCsatolo_Update(monitorCsatoloToUpdate);
+                            break;
+                        default:
+                            throw new NotImplementedException();
+                    }
                 }
-            }
 
-            return RedirectToAction("EditCategories");
+                return RedirectToAction("EditCategories");
+            }
+            else
+            {
+                return View(model);
+            }
         }
 
         public ActionResult EditCategories()
