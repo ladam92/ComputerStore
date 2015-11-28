@@ -353,25 +353,212 @@ namespace ComputerStore.Client.Controllers
             }
         }
 
-        //public ActionResult CPUInsertSave()
-        //{
+        public ActionResult CPUInsertSave(string megnev, string ar, string db, string magok, string frek, ProcesszorViewModel processzor, HttpPostedFileBase myPhoto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (myPhoto == null)
+                {
+                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
 
-        //}
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+                        var gyarto = bl.GyartoGet();
+                        processzor.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+                        processzor.ProcFoglalatList = new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes");
+                    }
+                    return View("CPUInserting", processzor);
+                }
+                else
+                {
+                    int ar1 = Int32.Parse(ar);
+                    int db1 = Int32.Parse(db);
+                    int magok1 = Int32.Parse(magok);
+                    int frekvencia1 = Int32.Parse(frek);
 
-        //public ActionResult SzamitogephazInsertSave()
-        //{
+                    byte[] kep = null;
+                    if (myPhoto != null && myPhoto.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(myPhoto.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Downloads"), fileName);
+                        myPhoto.SaveAs(path);
+                        kep = System.IO.File.ReadAllBytes(path);
+                    }
 
-        //}
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
 
-        //public ActionResult TapegysegInsertSave()
-        //{
+                        bl.InsertingProcesszorDB(processzor.Gyarto, processzor.ProcFoglalatID, megnev, ar1, db1, magok1, frekvencia1, kep);
+                    }
+                    return View();
+                }
+            }
+            else
+            {
+                using (var bl = new BusinessLogic.LogicClient())
+                {
+                    var gyarto = bl.GyartoGet();
+                    processzor.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+                    processzor.ProcFoglalatList = new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes");
 
-        //}
+                }
+                return View("CPUInserting", processzor);
+            }
+        }
 
-        //public ActionResult VideokartyaInsertSave()
-        //{
 
-        //}
+        public ActionResult SzamitogephazInsertSave(string megnev, string ar, string db, SzamitogephazViewModel haz, HttpPostedFileBase myPhoto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (myPhoto == null)
+                {
+                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+                        var gyarto = bl.GyartoGet();
+                        haz.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+                        
+                    }
+                    return View("SzamitogephazInserting", haz);
+                }
+                else
+                {
+                    int ar1 = Int32.Parse(ar);
+                    int db1 = Int32.Parse(db);
+
+                    byte[] kep = null;
+                    if (myPhoto != null && myPhoto.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(myPhoto.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Downloads"), fileName);
+                        myPhoto.SaveAs(path);
+                        kep = System.IO.File.ReadAllBytes(path);
+                    }
+
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+
+                        bl.InsertingSzamitogephazDB( haz.Gyarto, megnev, ar1, db1, kep);
+                    }
+                    return View();
+                }
+            }
+            else
+            {
+                using (var bl = new BusinessLogic.LogicClient())
+                {
+                    var gyarto = bl.GyartoGet();
+                    haz.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+
+                }
+                return View("SzamitogephazInserting", haz);
+            }
+        }
+
+        public ActionResult TapegysegInsertSave(string megnev, string ar, string db, string telj, TapegysegViewModel tap, HttpPostedFileBase myPhoto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (myPhoto == null)
+                {
+                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+                        var gyarto = bl.GyartoGet();
+                        tap.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+
+                    }
+                    return View("TapegysegInserting", tap);
+                }
+                else
+                {
+                    int ar1 = Int32.Parse(ar);
+                    int db1 = Int32.Parse(db);
+                    int telj1 = Int32.Parse(telj);
+
+                    byte[] kep = null;
+                    if (myPhoto != null && myPhoto.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(myPhoto.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Downloads"), fileName);
+                        myPhoto.SaveAs(path);
+                        kep = System.IO.File.ReadAllBytes(path);
+                    }
+
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+
+                        bl.InsertingTapegysegDB(tap.Gyarto, megnev, ar1, db1, telj1, kep);
+                    }
+                    return View();
+                }
+            }
+            else
+            {
+                using (var bl = new BusinessLogic.LogicClient())
+                {
+                    var gyarto = bl.GyartoGet();
+                    tap.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+
+                }
+                return View("TapegysegInserting", tap);
+            }
+        }
+
+        public ActionResult VideokartyaInsertSave(string megnev, string ar, string db, string meret, VideokartyaViewModel vid, HttpPostedFileBase myPhoto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (myPhoto == null)
+                {
+                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+                        var gyarto = bl.GyartoGet();
+                        vid.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+                        vid.MemoriaTipusList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes");
+
+                    }
+                    return View("VideokartyaInserting", vid);
+                }
+                else
+                {
+                    int ar1 = Int32.Parse(ar);
+                    int db1 = Int32.Parse(db);
+                    int meret1 = Int32.Parse(meret);
+
+                    byte[] kep = null;
+                    if (myPhoto != null && myPhoto.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(myPhoto.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Downloads"), fileName);
+                        myPhoto.SaveAs(path);
+                        kep = System.IO.File.ReadAllBytes(path);
+                    }
+
+                    using (var bl = new BusinessLogic.LogicClient())
+                    {
+
+                        bl.InsertingVideokartyaDB(vid.Gyarto, vid.MemoriaTipusID, megnev, ar1, db1, meret1, kep);
+                    }
+                    return View();
+                }
+            }
+            else
+            {
+                using (var bl = new BusinessLogic.LogicClient())
+                {
+                    var gyarto = bl.GyartoGet();
+                    vid.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
+                    vid.MemoriaTipusList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes");
+                }
+                return View("VideokartyaInserting", vid);
+            }
+        }
 
         public ActionResult AlaplapEditSave(string megnev, string ar, string db, string vgadb, string memdb, AlaplapViewModel alaplap)
         {           

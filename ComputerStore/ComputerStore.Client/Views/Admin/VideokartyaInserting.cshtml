@@ -5,7 +5,7 @@
 }
 
 
-@using (Html.BeginForm("VideokartyaInsertSave", "Admin", System.Web.Mvc.FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("VideokartyaInsertSave", "Admin", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
 
@@ -14,6 +14,7 @@
             <div class="col-md-offset-2 col-md-10">
                 <img id="uploadPreview" style="width: 100px; height: 100px;" />
                 <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+                @Html.ValidationMessageFor(model => model.Kep, "", new { @class = "text-danger" })
              </div>
         </div>
     
@@ -69,6 +70,18 @@
         </div>
     </div>
 }
+<script type="text/javascript">
+
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+</script>
 @section Scripts {
     @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
 }
