@@ -102,7 +102,7 @@ namespace ComputerStore.Client.Controllers
                 }
             }
 
-            return View();
+            return RedirectToAction("Index", "Kosar");
         }
 
         public ActionResult GetGeposszarkoComboBoxes(int alaplapID)
