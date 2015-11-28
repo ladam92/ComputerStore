@@ -21,113 +21,115 @@
             </div>
         </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Processzor</label>
-                <div class="col-md-9" id="procCombo">
-                    <input type="text" class="form-control" disabled/>
+        <div id="dataDiv" >
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Processzor</label>
+                    <div class="col-md-9" id="procCombo">
+                        <input type="text" class="form-control" disabled />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Memória</label>
-                <div class="col-md-9" id="memoriaCombo">
-                    <input type="text" class="form-control" disabled/>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Memória</label>
+                    <div class="col-md-9" id="memoriaCombo">
+                        <input type="text" class="form-control" disabled />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Videókártya</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" disabled/>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Videókártya</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" disabled />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Háttértár</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" disabled/>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Háttértár</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" disabled />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.HattertarList, "ID", "megnevezes"), "Típus", new { @class = "form-control pull-left", @disabled = "disabled" })
                 </div>
             </div>
-            <div class="col-md-3">
-                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.HattertarList, "ID", "megnevezes"), "Típus", new { @class = "form-control pull-left", @disabled = "disabled" })
-            </div>
-        </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Billentyűzet</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" disabled/>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Billentyűzet</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" disabled />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.UsbList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline", @disabled = "disabled" })
-                
-            </div>
-            <div class="col-md-3">
-                <div class="checkbox">
-                    <label>
-                        @Html.CheckBox("IsBillentyuzetPS2", false, new { @disabled = "disabled" })
-                        PS/2 port
-                    </label>
-                </div>               
-            </div>
-        </div>
+                <div class="col-md-3">
+                    @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.UsbList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline", @disabled = "disabled" })
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Egér</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" disabled/>
+                </div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBox("IsBillentyuzetPS2", false, new { @disabled = "disabled" })
+                            PS/2 port
+                        </label>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.UsbList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline", @disabled = "disabled" })
 
-            </div>
-            <div class="col-md-3">
-                <div class="checkbox">
-                    <label>
-                        @Html.CheckBox("IsBillentyuzetPS2", false, new { @disabled = "disabled" })
-                        PS/2 port
-                    </label>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Egér</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" disabled />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.UsbList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline", @disabled = "disabled" })
+
+                </div>
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBox("IsBillentyuzetPS2", false, new { @disabled = "disabled" })
+                            PS/2 port
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
 
             <div class="row" style="margin-top: 25px;">
                 <div class="col-md-5">
                     <label class="control-label col-md-3">Monitor</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" disabled/>
+                        <input type="text" class="form-control" disabled />
                     </div>
                 </div>
                 <div class="col-md-3">
-                    @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.MonitorMeretList, "ID", "megnevezes"), "Méret", new { @class = "form-control pull-left", @disabled="disabled" })
+                    @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.MonitorMeretList, "ID", "megnevezes"), "Méret", new { @class = "form-control pull-left", @disabled = "disabled" })
                 </div>
             </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Számítógép-ház</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" disabled/>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Számítógép-ház</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" disabled />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <label class="control-label col-md-3">Tápegység</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" disabled/>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-5">
+                    <label class="control-label col-md-3">Tápegység</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" disabled />
+                    </div>
                 </div>
             </div>
         </div>

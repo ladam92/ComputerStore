@@ -73,5 +73,17 @@ namespace ComputerStore.Client.Controllers
 
             return View(monitor);
         }
+
+        public ActionResult GetComboBoxByMeret(int meretID)
+        {
+            List<Monitor> model = null;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                model = bl.Monitor_GetListByMeret(meretID).ToList();
+            }
+
+            return PartialView(model);
+        }
 	}
 }

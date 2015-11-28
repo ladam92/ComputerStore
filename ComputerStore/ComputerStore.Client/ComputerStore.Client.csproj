@@ -204,6 +204,7 @@
     <Compile Include="Models\CreateCategoryViewModel.cs" />
     <Compile Include="Models\DeleteProductViewModel.cs" />
     <Compile Include="Models\EgerViewModel.cs" />
+    <Compile Include="Models\GepOsszerakoViewModel.cs" />
     <Compile Include="Models\HattertarViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -406,6 +407,13 @@
     <Content Include="Views\Admin\EgerInsertSave.cshtml" />
     <Content Include="Views\Admin\MemoriaInsertSave.cshtml" />
     <Content Include="Views\Admin\MonitorInsertSave.cshtml" />
+    <Content Include="Views\GepOsszerako\GetGeposszarkoComboBoxes.cshtml" />
+    <Content Include="Views\Hattertar\GetComboBoxByAlaplapAndTipus.cshtml" />
+    <Content Include="Views\Billentyuzet\GetComboBoxByUsb.cshtml" />
+    <Content Include="Views\Billentyuzet\GetComboBoxPS2.cshtml" />
+    <Content Include="Views\Eger\GetComboBoxByUsb.cshtml" />
+    <Content Include="Views\Eger\GetComboBoxPS2.cshtml" />
+    <Content Include="Views\Monitor\GetComboBoxByMeret.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

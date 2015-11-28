@@ -211,6 +211,12 @@
   <wsdl:message name="ILogic_Videokartya_GetByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:Videokartya_GetByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="ILogic_Videokartya_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Videokartya_GetList" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Videokartya_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Videokartya_GetListResponse" />
+  </wsdl:message>
   <wsdl:message name="ILogic_DeleteAlaplap_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteAlaplap" />
   </wsdl:message>
@@ -270,6 +276,60 @@
   </wsdl:message>
   <wsdl:message name="ILogic_DeleteVideokartya_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteVideokartyaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Hattertar_GetListByAlaplapAndTipus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hattertar_GetListByAlaplapAndTipus" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Hattertar_GetListByAlaplapAndTipus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Hattertar_GetListByAlaplapAndTipusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetUsbTipusok_InputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetUsbTipusok" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Alaplap_GetUsbTipusok_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Alaplap_GetUsbTipusokResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Billentyuzet_GetListByUsb_InputMessage">
+    <wsdl:part name="parameters" element="tns:Billentyuzet_GetListByUsb" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Billentyuzet_GetListByUsb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Billentyuzet_GetListByUsbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Billentyuzet_GetListPS2_InputMessage">
+    <wsdl:part name="parameters" element="tns:Billentyuzet_GetListPS2" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Billentyuzet_GetListPS2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Billentyuzet_GetListPS2Response" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetListByUsb_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetListByUsb" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetListByUsb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetListByUsbResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetListPS2_InputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetListPS2" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Eger_GetListPS2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Eger_GetListPS2Response" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_SzamitogepHaz_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SzamitogepHaz_GetList" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_SzamitogepHaz_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SzamitogepHaz_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Tapegyseg_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:Tapegyseg_GetList" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Tapegyseg_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Tapegyseg_GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Monitor_GetListByMeret_InputMessage">
+    <wsdl:part name="parameters" element="tns:Monitor_GetListByMeret" />
+  </wsdl:message>
+  <wsdl:message name="ILogic_Monitor_GetListByMeret_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Monitor_GetListByMeretResponse" />
   </wsdl:message>
   <wsdl:message name="ILogic_InsertingMonitorDB_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertingMonitorDB" />
@@ -918,6 +978,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetByID" message="tns:ILogic_Videokartya_GetByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetByIDResponse" message="tns:ILogic_Videokartya_GetByID_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Videokartya_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetList" message="tns:ILogic_Videokartya_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Videokartya_GetListResponse" message="tns:ILogic_Videokartya_GetList_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteAlaplap">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/DeleteAlaplap" message="tns:ILogic_DeleteAlaplap_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/DeleteAlaplapResponse" message="tns:ILogic_DeleteAlaplap_OutputMessage" />
@@ -957,6 +1021,42 @@
     <wsdl:operation name="DeleteVideokartya">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/DeleteVideokartya" message="tns:ILogic_DeleteVideokartya_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILogic/DeleteVideokartyaResponse" message="tns:ILogic_DeleteVideokartya_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hattertar_GetListByAlaplapAndTipus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetListByAlaplapAndTipus" message="tns:ILogic_Hattertar_GetListByAlaplapAndTipus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Hattertar_GetListByAlaplapAndTipusResponse" message="tns:ILogic_Hattertar_GetListByAlaplapAndTipus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetUsbTipusok">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetUsbTipusok" message="tns:ILogic_Alaplap_GetUsbTipusok_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Alaplap_GetUsbTipusokResponse" message="tns:ILogic_Alaplap_GetUsbTipusok_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Billentyuzet_GetListByUsb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetListByUsb" message="tns:ILogic_Billentyuzet_GetListByUsb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetListByUsbResponse" message="tns:ILogic_Billentyuzet_GetListByUsb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Billentyuzet_GetListPS2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetListPS2" message="tns:ILogic_Billentyuzet_GetListPS2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Billentyuzet_GetListPS2Response" message="tns:ILogic_Billentyuzet_GetListPS2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetListByUsb">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetListByUsb" message="tns:ILogic_Eger_GetListByUsb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetListByUsbResponse" message="tns:ILogic_Eger_GetListByUsb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetListPS2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Eger_GetListPS2" message="tns:ILogic_Eger_GetListPS2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Eger_GetListPS2Response" message="tns:ILogic_Eger_GetListPS2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SzamitogepHaz_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/SzamitogepHaz_GetList" message="tns:ILogic_SzamitogepHaz_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/SzamitogepHaz_GetListResponse" message="tns:ILogic_SzamitogepHaz_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Tapegyseg_GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Tapegyseg_GetList" message="tns:ILogic_Tapegyseg_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Tapegyseg_GetListResponse" message="tns:ILogic_Tapegyseg_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetListByMeret">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogic/Monitor_GetListByMeret" message="tns:ILogic_Monitor_GetListByMeret_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogic/Monitor_GetListByMeretResponse" message="tns:ILogic_Monitor_GetListByMeret_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertingMonitorDB">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogic/InsertingMonitorDB" message="tns:ILogic_InsertingMonitorDB_InputMessage" />
@@ -1607,6 +1707,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Videokartya_GetList">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Videokartya_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteAlaplap">
       <soap:operation soapAction="http://tempuri.org/ILogic/DeleteAlaplap" style="document" />
       <wsdl:input>
@@ -1690,6 +1799,87 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteVideokartya">
       <soap:operation soapAction="http://tempuri.org/ILogic/DeleteVideokartya" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hattertar_GetListByAlaplapAndTipus">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Hattertar_GetListByAlaplapAndTipus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Alaplap_GetUsbTipusok">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Alaplap_GetUsbTipusok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Billentyuzet_GetListByUsb">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Billentyuzet_GetListByUsb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Billentyuzet_GetListPS2">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Billentyuzet_GetListPS2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetListByUsb">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetListByUsb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eger_GetListPS2">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Eger_GetListPS2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SzamitogepHaz_GetList">
+      <soap:operation soapAction="http://tempuri.org/ILogic/SzamitogepHaz_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tapegyseg_GetList">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Tapegyseg_GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetListByMeret">
+      <soap:operation soapAction="http://tempuri.org/ILogic/Monitor_GetListByMeret" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -73,5 +73,17 @@ namespace ComputerStore.Client.Controllers
 
             return View(hattertar);
         }
+
+        public ActionResult GetComboBoxByAlaplapAndTipus(int alaplapID, int tipusID)
+        {
+            List<Hattertar> model = null;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                model = bl.Hattertar_GetListByAlaplapAndTipus(alaplapID, tipusID).ToList();
+            }
+
+            return PartialView(model);
+        }
 	}
 }

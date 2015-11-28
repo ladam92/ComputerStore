@@ -8,28 +8,13 @@
         var id = $("#alaplapComboBox").val();
 
         $.ajax({
-            url: "@Url.Action("GetComboBoxByAlaplap", "Processzor")",
+            url: "@Url.Action("GetGeposszarkoComboBoxes", "GepOsszerako")",
             type: "GET",
         data: {
             alaplapID: id,
             },
         success: function (response) {
-            $("#procCombo").html(response);
-
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        }
-        });
-
-        $.ajax({
-            url: "@Url.Action("GetComboBoxByAlaplap", "Memoria")",
-            type: "GET",
-        data: {
-            alaplapID: id,
-            },
-        success: function (response) {
-            $("#memoriaCombo").html(response);
+            $("#dataDiv").html(response);
 
         },
         error: function (jqXHR, textStatus, errorThrown) {

@@ -372,6 +372,9 @@ namespace CoputerStore.BL
         Videokartya Videokartya_GetByID(int id);
 
         [OperationContract]
+        List<Videokartya> Videokartya_GetList();
+
+        [OperationContract]
         void DeleteAlaplap(int id);
 
         [OperationContract]
@@ -400,5 +403,32 @@ namespace CoputerStore.BL
 
         [OperationContract]
         void DeleteVideokartya(int id);
+
+        [OperationContract]
+        List<Hattertar> Hattertar_GetListByAlaplapAndTipus(int alaplapId, int tipus);
+
+        [OperationContract]
+        List<UsbTipus> Alaplap_GetUsbTipusok(int alaplapID);
+
+        [OperationContract]
+        List<Billentyuzet> Billentyuzet_GetListByUsb(int usbID);
+
+        [OperationContract]
+        List<Billentyuzet> Billentyuzet_GetListPS2();
+
+        [OperationContract]
+        List<Eger> Eger_GetListByUsb(int usbID);
+
+        [OperationContract]
+        List<Eger> Eger_GetListPS2();
+
+        [OperationContract]
+        List<Szamitogephaz> SzamitogepHaz_GetList();
+
+        [OperationContract]
+        List<Tapegyseg> Tapegyseg_GetList();
+
+        [OperationContract]
+        List<Monitor> Monitor_GetListByMeret(int meretID);
     }
 }

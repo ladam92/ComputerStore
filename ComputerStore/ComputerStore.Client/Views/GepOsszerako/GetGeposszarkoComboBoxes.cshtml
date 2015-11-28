@@ -1,0 +1,262 @@
+﻿@model ComputerStore.Client.Models.GepOsszerakoViewModel
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Processzor</label>
+        <div class="col-md-9" id="procCombo">
+            @Html.DropDownList("Processzor", new SelectList(Model.ProcesszorList, "ID", "Megnevezes"), new { @class="form-control" })
+        </div>
+    </div>
+</div>
+
+@for (int i = 0; i < Model.Alaplap.MemoriaDarab; i++)
+{
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-md-5">
+            <label class="control-label col-md-3">Memória foglalat #@(i+1)</label>
+            <div class="col-md-9" id="memoriaCombo">
+                @if (i == 0)
+                {
+                    <text> @Html.DropDownList(String.Format("Memoria.[{0}]", i), new SelectList(Model.MemoriaList, "ID", "Megnevezes"), new { @class = "form-control" })  </text>
+                }
+                else
+                {
+                    <text> @Html.DropDownList(String.Format("Memoria.[{0}]", i), new SelectList(Model.MemoriaList, "ID", "Megnevezes"), "Nem kérem", new { @class = "form-control" }) </text>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@for (int i = 0; i < Model.Alaplap.VGADarab; i++)
+{
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-md-5">
+            <label class="control-label col-md-3">Videókártya #@(i+1)</label>
+            <div class="col-md-9">
+            @if (i == 0)
+                            {
+                <text> @Html.DropDownList("Videokartya", new SelectList(Model.VideoKartyaList, "ID", "Megnevezes"), new { @class = "form-control" })  </text>
+            }
+            else
+            {
+                <text> @Html.DropDownList("Videokartya", new SelectList(Model.VideoKartyaList, "ID", "Megnevezes"), "Nem kérem" ,new { @class = "form-control" }) </text>
+            }
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Háttértár</label>
+        <div class="col-md-9" id="hattertarDropDown">
+            <input type="text" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="col-md-3">
+        @Html.DropDownList("hatetrtarKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.HattertarList, "ID", "megnevezes"), "Típus", new { @class = "form-control pull-left", @id="hatetrtarTipus", @onchange= "HatterTypeChanged()" })
+    </div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Billentyűzet</label>
+        <div class="col-md-9" id="billCombobox">
+            <input type="text" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="col-md-3">
+        @Html.DropDownList("billKategoria", new SelectList(Model.UsbTipusList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline", @id= "billKategoria", @onchange= "billUsbChanged()" })
+
+    </div>
+    <div class="col-md-3">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox", name="IsBillentyuzetPS2" @if (!Model.Alaplap.IsPs2) { <text> disabled </text> } id="billPS2" onclick="billPS2Changed()">
+                PS/2 port
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Egér</label>
+        <div class="col-md-9" id="egerCombobox">
+            <input type="text" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="col-md-3">
+        @Html.DropDownList("alaplapKategoria", new SelectList(Model.UsbTipusList, "ID", "megnevezes"), "USB típus", new { @class = "form-control pull-left form-control-inline" , @id = "egerKategoria", @onchange = "egerUsbChanged()" })
+
+    </div>
+    <div class="col-md-3">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" , name="IsEgerPS2" @if (!Model.Alaplap.IsPs2) { <text> disabled </text>  } id="egerPS2" onclick="egerPS2Changed()">
+                PS/2 port
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Monitor</label>
+        <div class="col-md-9" id="monitorDropDown">
+            <input type="text" class="form-control" disabled />
+        </div>
+    </div>
+    <div class="col-md-3">
+        @Html.DropDownList("alaplapKategoria", new SelectList(ComputerStore.Client.Utils.SessionData.Instance.MonitorMeretList, "ID", "megnevezes"), "Méret", new { @class = "form-control pull-left", @onchange = "monitorMeretChanged()", @id="monitorMeret" })
+    </div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Számítógép-ház</label>
+        <div class="col-md-9">
+            @Html.DropDownList("SzamitogepHaz", new SelectList(Model.SzamitogephazList, "ID", "megnevezes"), "Nem kérem", new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-md-5">
+        <label class="control-label col-md-3">Tápegység</label>
+        <div class="col-md-9">
+            @Html.DropDownList("Tapegyseg", new SelectList(Model.TapegysegList, "ID", "megnevezes"), "Nem kérem", new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+
+<script>
+    function HatterTypeChanged()
+    {
+        var tipus = $("#hatetrtarTipus").val();
+        var alaplap = $("#alaplapComboBox").val();
+
+        $.ajax({
+            url: "@Url.Action("GetComboBoxByAlaplapAndTipus", "Hattertar")",
+            type: "GET",
+        data: {
+            alaplapID: alaplap,
+            tipusID: tipus
+            },
+        success: function (response) {
+            $("#hattertarDropDown").html(response);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+        });
+    }
+
+    function billUsbChanged() {
+        var usb = $("#billKategoria").val();
+
+        $.ajax({
+            url: "@Url.Action("GetComboBoxByUsb", "Billentyuzet")",
+            type: "GET",
+        data: {
+            usbID: usb
+        },
+        success: function (response) {
+            $("#billCombobox").html(response);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+    }
+
+    function billPS2Changed() {
+        if($("#billPS2").is(':checked'))
+        {
+            $("#billKategoria").attr("disabled", true);
+
+            $.ajax({
+                url: "@Url.Action("GetComboBoxPS2", "Billentyuzet")",
+                type: "GET",
+            success: function (response) {
+                $("#billCombobox").html(response);
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+        }
+        else
+        {
+            $("#billKategoria").removeAttr("disabled");
+            billUsbChanged();
+        }
+    }
+
+    function egerUsbChanged() {
+        var usb = $("#egerKategoria").val();
+
+        $.ajax({
+            url: "@Url.Action("GetComboBoxByUsb", "Eger")",
+            type: "GET",
+        data: {
+            usbID: usb
+        },
+        success: function (response) {
+            $("#egerCombobox").html(response);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+    }
+
+    function egerPS2Changed() {
+        if($("#egerPS2").is(':checked'))
+        {
+            $("#egeKategoria").attr("disabled", true);
+
+            $.ajax({
+                url: "@Url.Action("GetComboBoxPS2", "Eger")",
+                type: "GET",
+            success: function (response) {
+                $("#egerCombobox").html(response);
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+        }
+        else
+        {
+                $("#egerKategoria").removeAttr("disabled");
+            egerUsbChanged();
+        }
+    }
+
+    function monitorMeretChanged()
+    {
+        var meret = $("#monitorMeret").val();
+
+        $.ajax({
+            url: "@Url.Action("GetComboBoxByMeret", "Monitor")",
+            type: "GET",
+        data: {
+            meretID: meret
+        },
+        success: function (response) {
+            $("#monitorDropDown").html(response);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+    }
+</script>

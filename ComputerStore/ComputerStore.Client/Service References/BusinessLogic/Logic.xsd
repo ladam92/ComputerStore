@@ -363,6 +363,38 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Memoria" nillable="true" type="tns:Memoria" />
+  <xs:complexType name="ArrayOfHattertar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hattertar" nillable="true" type="tns:Hattertar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHattertar" nillable="true" type="tns:ArrayOfHattertar" />
+  <xs:complexType name="ArrayOfUsbTipus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsbTipus" nillable="true" type="tns:UsbTipus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsbTipus" nillable="true" type="tns:ArrayOfUsbTipus" />
+  <xs:complexType name="UsbTipus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AlkatreszTipus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UsbTipus" nillable="true" type="tns:UsbTipus" />
+  <xs:complexType name="ArrayOfBillentyuzet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillentyuzet" nillable="true" type="tns:ArrayOfBillentyuzet" />
+  <xs:complexType name="ArrayOfEger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Eger" nillable="true" type="tns:Eger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEger" nillable="true" type="tns:ArrayOfEger" />
   <xs:complexType name="ArrayOfMonitorFelbontas">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MonitorFelbontas" nillable="true" type="tns:MonitorFelbontas" />
@@ -419,20 +451,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="HattertarTipus" nillable="true" type="tns:HattertarTipus" />
-  <xs:complexType name="ArrayOfUsbTipus">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsbTipus" nillable="true" type="tns:UsbTipus" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfUsbTipus" nillable="true" type="tns:ArrayOfUsbTipus" />
-  <xs:complexType name="UsbTipus">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AlkatreszTipus">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="UsbTipus" nillable="true" type="tns:UsbTipus" />
   <xs:complexType name="ArrayOfMemoriaTipus">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MemoriaTipus" nillable="true" type="tns:MemoriaTipus" />
@@ -498,12 +516,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PageableListOfBillentyuzet6PZ3m5ND" nillable="true" type="tns:PageableListOfBillentyuzet6PZ3m5ND" />
-  <xs:complexType name="ArrayOfBillentyuzet">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Billentyuzet" nillable="true" type="tns:Billentyuzet" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfBillentyuzet" nillable="true" type="tns:ArrayOfBillentyuzet" />
   <xs:complexType name="PageableListOfEger6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -519,12 +531,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PageableListOfEger6PZ3m5ND" nillable="true" type="tns:PageableListOfEger6PZ3m5ND" />
-  <xs:complexType name="ArrayOfEger">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Eger" nillable="true" type="tns:Eger" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfEger" nillable="true" type="tns:ArrayOfEger" />
   <xs:complexType name="PageableListOfHattertar6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>
@@ -540,12 +546,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PageableListOfHattertar6PZ3m5ND" nillable="true" type="tns:PageableListOfHattertar6PZ3m5ND" />
-  <xs:complexType name="ArrayOfHattertar">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hattertar" nillable="true" type="tns:Hattertar" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfHattertar" nillable="true" type="tns:ArrayOfHattertar" />
   <xs:complexType name="PageableListOfMemoria6PZ3m5ND">
     <xs:annotation>
       <xs:appinfo>

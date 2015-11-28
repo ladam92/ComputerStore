@@ -468,6 +468,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Videokartya_GetList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Videokartya_GetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Videokartya_GetListResult" nillable="true" type="q35:ArrayOfVideokartya" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DeleteAlaplap">
     <xs:complexType>
       <xs:sequence>
@@ -586,6 +598,125 @@
   <xs:element name="DeleteVideokartyaResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Hattertar_GetListByAlaplapAndTipus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="alaplapId" type="xs:int" />
+        <xs:element minOccurs="0" name="tipus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Hattertar_GetListByAlaplapAndTipusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Hattertar_GetListByAlaplapAndTipusResult" nillable="true" type="q36:ArrayOfHattertar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Alaplap_GetUsbTipusok">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="alaplapID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Alaplap_GetUsbTipusokResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetUsbTipusokResult" nillable="true" type="q37:ArrayOfUsbTipus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Billentyuzet_GetListByUsb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usbID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Billentyuzet_GetListByUsbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetListByUsbResult" nillable="true" type="q38:ArrayOfBillentyuzet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Billentyuzet_GetListPS2">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Billentyuzet_GetListPS2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetListPS2Result" nillable="true" type="q39:ArrayOfBillentyuzet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eger_GetListByUsb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usbID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eger_GetListByUsbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Eger_GetListByUsbResult" nillable="true" type="q40:ArrayOfEger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eger_GetListPS2">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Eger_GetListPS2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Eger_GetListPS2Result" nillable="true" type="q41:ArrayOfEger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SzamitogepHaz_GetList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SzamitogepHaz_GetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="SzamitogepHaz_GetListResult" nillable="true" type="q42:ArrayOfSzamitogephaz" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Tapegyseg_GetList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Tapegyseg_GetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Tapegyseg_GetListResult" nillable="true" type="q43:ArrayOfTapegyseg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Monitor_GetListByMeret">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="meretID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Monitor_GetListByMeretResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Monitor_GetListByMeretResult" nillable="true" type="q44:ArrayOfMonitor" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertingMonitorDB">
@@ -885,7 +1016,7 @@
   <xs:element name="MonitorCsatoloTipusGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorCsatoloTipusGetResult" nillable="true" type="q35:ArrayOfMonitorCsatoloTipus" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorCsatoloTipusGetResult" nillable="true" type="q45:ArrayOfMonitorCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -897,7 +1028,7 @@
   <xs:element name="MonitorFelbontasGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasGetResult" nillable="true" type="q36:ArrayOfMonitorFelbontas" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasGetResult" nillable="true" type="q46:ArrayOfMonitorFelbontas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -909,7 +1040,7 @@
   <xs:element name="MonitorMeretGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretGetResult" nillable="true" type="q37:ArrayOfMonitorMeret" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretGetResult" nillable="true" type="q47:ArrayOfMonitorMeret" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -921,7 +1052,7 @@
   <xs:element name="HattertarCsatoloTipusGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertarCsatoloTipusGetResult" nillable="true" type="q38:ArrayOfHattertarCsatoloTipus" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertarCsatoloTipusGetResult" nillable="true" type="q48:ArrayOfHattertarCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -933,7 +1064,7 @@
   <xs:element name="HattertarTipusGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertarTipusGetResult" nillable="true" type="q39:ArrayOfHattertarTipus" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertarTipusGetResult" nillable="true" type="q49:ArrayOfHattertarTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -945,7 +1076,7 @@
   <xs:element name="UsbGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbGetResult" nillable="true" type="q40:ArrayOfUsbTipus" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbGetResult" nillable="true" type="q50:ArrayOfUsbTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -980,7 +1111,7 @@
   <xs:element name="PciGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="PciGetResult" nillable="true" type="q41:ArrayOfPciExpressTipus" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="PciGetResult" nillable="true" type="q51:ArrayOfPciExpressTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -992,7 +1123,7 @@
   <xs:element name="VgaGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="VgaGetResult" nillable="true" type="q42:ArrayOfVgaCsatoloFeluletTipus" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="VgaGetResult" nillable="true" type="q52:ArrayOfVgaCsatoloFeluletTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1004,7 +1135,7 @@
   <xs:element name="MemoriaGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaGetResult" nillable="true" type="q43:ArrayOfMemoriaTipus" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaGetResult" nillable="true" type="q53:ArrayOfMemoriaTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1016,7 +1147,7 @@
   <xs:element name="ProcesszorGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcesszorGetResult" nillable="true" type="q44:ArrayOfProcesszorFoglalatTipus" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcesszorGetResult" nillable="true" type="q54:ArrayOfProcesszorFoglalatTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1028,7 +1159,7 @@
   <xs:element name="GyartoGetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GyartoGetResult" nillable="true" type="q45:ArrayOfAlkatreszGyarto" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GyartoGetResult" nillable="true" type="q55:ArrayOfAlkatreszGyarto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1040,7 +1171,7 @@
   <xs:element name="GetAlaplapResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetAlaplapResult" nillable="true" type="q46:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetAlaplapResult" nillable="true" type="q56:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1052,7 +1183,7 @@
   <xs:element name="GetBillentyuzetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetBillentyuzetResult" nillable="true" type="q47:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetBillentyuzetResult" nillable="true" type="q57:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1064,7 +1195,7 @@
   <xs:element name="GetEgerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetEgerResult" nillable="true" type="q48:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetEgerResult" nillable="true" type="q58:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1076,7 +1207,7 @@
   <xs:element name="GetHattertarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetHattertarResult" nillable="true" type="q49:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetHattertarResult" nillable="true" type="q59:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1088,7 +1219,7 @@
   <xs:element name="GetMemoriaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetMemoriaResult" nillable="true" type="q50:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetMemoriaResult" nillable="true" type="q60:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1100,7 +1231,7 @@
   <xs:element name="GetMonitorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetMonitorResult" nillable="true" type="q51:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetMonitorResult" nillable="true" type="q61:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1112,7 +1243,7 @@
   <xs:element name="GetProcesszorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetProcesszorResult" nillable="true" type="q52:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetProcesszorResult" nillable="true" type="q62:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1124,7 +1255,7 @@
   <xs:element name="GetSzamitogephazResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetSzamitogephazResult" nillable="true" type="q53:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetSzamitogephazResult" nillable="true" type="q63:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1136,7 +1267,7 @@
   <xs:element name="GetTapegysegResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetTapegysegResult" nillable="true" type="q54:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetTapegysegResult" nillable="true" type="q64:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1148,7 +1279,7 @@
   <xs:element name="GetVideokartyaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetVideokartyaResult" nillable="true" type="q55:ArrayOfFokategoriatipus" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="GetVideokartyaResult" nillable="true" type="q65:ArrayOfFokategoriatipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1160,7 +1291,7 @@
   <xs:element name="ProcFoglalat_GetKategoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriakResult" nillable="true" type="q56:ArrayOfProcesszorFoglalatTipus" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriakResult" nillable="true" type="q66:ArrayOfProcesszorFoglalatTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1174,7 +1305,7 @@
   <xs:element name="ProcFoglalat_GetKategoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriakByNameResult" nillable="true" type="q57:ArrayOfProcesszorFoglalatTipus" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriakByNameResult" nillable="true" type="q67:ArrayOfProcesszorFoglalatTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1188,14 +1319,14 @@
   <xs:element name="ProcFoglalat_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriaByIDResult" nillable="true" type="q58:ProcesszorFoglalatTipus" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="ProcFoglalat_GetKategoriaByIDResult" nillable="true" type="q68:ProcesszorFoglalatTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ProcFoglalat_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q59:ProcesszorFoglalatTipus" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q69:ProcesszorFoglalatTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1207,7 +1338,7 @@
   <xs:element name="ProcFoglalat_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q60:ProcesszorFoglalatTipus" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q70:ProcesszorFoglalatTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1224,7 +1355,7 @@
   <xs:element name="MemoriaFoglalat_GetKaegoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKaegoriakResult" nillable="true" type="q61:ArrayOfMemoriaTipus" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKaegoriakResult" nillable="true" type="q71:ArrayOfMemoriaTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1238,7 +1369,7 @@
   <xs:element name="MemoriaFoglalat_GetKaegoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKaegoriakByNameResult" nillable="true" type="q62:ArrayOfMemoriaTipus" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKaegoriakByNameResult" nillable="true" type="q72:ArrayOfMemoriaTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1252,14 +1383,14 @@
   <xs:element name="MemoriaFoglalat_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKategoriaByIDResult" nillable="true" type="q63:MemoriaTipus" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MemoriaFoglalat_GetKategoriaByIDResult" nillable="true" type="q73:MemoriaTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MemoriaFoglalat_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q64:MemoriaTipus" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q74:MemoriaTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1271,7 +1402,7 @@
   <xs:element name="MemoriaFoglalat_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q65:MemoriaTipus" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q75:MemoriaTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1288,7 +1419,7 @@
   <xs:element name="UsbTipus_GetKaegoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKaegoriakResult" nillable="true" type="q66:ArrayOfUsbTipus" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKaegoriakResult" nillable="true" type="q76:ArrayOfUsbTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1302,14 +1433,14 @@
   <xs:element name="UsbTipus_GetKaegoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKaegoriakByNameResult" nillable="true" type="q67:ArrayOfUsbTipus" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKaegoriakByNameResult" nillable="true" type="q77:ArrayOfUsbTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UsbTipus_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q68:UsbTipus" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q78:UsbTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1321,7 +1452,7 @@
   <xs:element name="UsbTipus_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q69:UsbTipus" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q79:UsbTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1340,7 +1471,7 @@
   <xs:element name="UsbTipus_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKategoriaByIDResult" nillable="true" type="q70:UsbTipus" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="UsbTipus_GetKategoriaByIDResult" nillable="true" type="q80:UsbTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1352,7 +1483,7 @@
   <xs:element name="HattertatTipus_GetKaegoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKaegoriakResult" nillable="true" type="q71:ArrayOfHattertarTipus" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKaegoriakResult" nillable="true" type="q81:ArrayOfHattertarTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1366,7 +1497,7 @@
   <xs:element name="HattertatTipus_GetKaegoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKaegoriakByNameResult" nillable="true" type="q72:ArrayOfHattertarTipus" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKaegoriakByNameResult" nillable="true" type="q82:ArrayOfHattertarTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1380,14 +1511,14 @@
   <xs:element name="HattertatTipus_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKategoriaByIDResult" nillable="true" type="q73:HattertarTipus" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatTipus_GetKategoriaByIDResult" nillable="true" type="q83:HattertarTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HattertatTipus_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q74:HattertarTipus" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q84:HattertarTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1399,7 +1530,7 @@
   <xs:element name="HattertatTipus_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q75:HattertarTipus" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q85:HattertarTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1416,7 +1547,7 @@
   <xs:element name="HattertatCsatoloTipus_GetKaegoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKaegoriakResult" nillable="true" type="q76:ArrayOfHattertarCsatoloTipus" />
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKaegoriakResult" nillable="true" type="q86:ArrayOfHattertarCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1430,7 +1561,7 @@
   <xs:element name="HattertatCsatoloTipus_GetKaegoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKaegoriakByNameResult" nillable="true" type="q77:ArrayOfHattertarCsatoloTipus" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKaegoriakByNameResult" nillable="true" type="q87:ArrayOfHattertarCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1444,14 +1575,14 @@
   <xs:element name="HattertatCsatoloTipus_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKategoriaByIDResult" nillable="true" type="q78:HattertarCsatoloTipus" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="HattertatCsatoloTipus_GetKategoriaByIDResult" nillable="true" type="q88:HattertarCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="HattertatCsatoloTipus_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q79:HattertarCsatoloTipus" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q89:HattertarCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1463,7 +1594,7 @@
   <xs:element name="HattertatCsatoloTipus_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q80:HattertarCsatoloTipus" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q90:HattertarCsatoloTipus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1480,7 +1611,7 @@
   <xs:element name="MonitorFelbontasTipus_GetKaegoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKaegoriakResult" nillable="true" type="q81:ArrayOfMonitorFelbontas" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKaegoriakResult" nillable="true" type="q91:ArrayOfMonitorFelbontas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1494,7 +1625,7 @@
   <xs:element name="MonitorFelbontasTipus_GetKaegoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKaegoriakByNameResult" nillable="true" type="q82:ArrayOfMonitorFelbontas" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKaegoriakByNameResult" nillable="true" type="q92:ArrayOfMonitorFelbontas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1508,14 +1639,14 @@
   <xs:element name="MonitorFelbontasTipus_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKategoriaByIDResult" nillable="true" type="q83:MonitorFelbontas" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorFelbontasTipus_GetKategoriaByIDResult" nillable="true" type="q93:MonitorFelbontas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MonitorFelbontasTipus_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q84:MonitorFelbontas" />
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q94:MonitorFelbontas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1527,7 +1658,7 @@
   <xs:element name="MonitorFelbontasTipus_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q85:MonitorFelbontas" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="type" nillable="true" type="q95:MonitorFelbontas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1544,7 +1675,7 @@
   <xs:element name="MonitorMeretTipus_GetKaegoriakResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKaegoriakResult" nillable="true" type="q86:ArrayOfMonitorMeret" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKaegoriakResult" nillable="true" type="q96:ArrayOfMonitorMeret" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1558,7 +1689,7 @@
   <xs:element name="MonitorMeretTipus_GetKaegoriakByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKaegoriakByNameResult" nillable="true" type="q87:ArrayOfMonitorMeret" />
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKaegoriakByNameResult" nillable="true" type="q97:ArrayOfMonitorMeret" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1572,14 +1703,14 @@
   <xs:element name="MonitorMeretTipus_GetKategoriaByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKategoriaByIDResult" nillable="true" type="q88:MonitorMeret" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="MonitorMeretTipus_GetKategoriaByIDResult" nillable="true" type="q98:MonitorMeret" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MonitorMeretTipus_Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="meret" nillable="true" type="q89:MonitorMeret" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="meret" nillable="true" type="q99:MonitorMeret" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1591,7 +1722,7 @@
   <xs:element name="MonitorMeretTipus_Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="meret" nillable="true" type="q90:MonitorMeret" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="meret" nillable="true" type="q100:MonitorMeret" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1612,7 +1743,7 @@
   <xs:element name="Alaplap_GetByFoglalatIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetByFoglalatIDResult" nillable="true" type="q91:PageableListOfAlaplap6PZ3m5ND" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetByFoglalatIDResult" nillable="true" type="q101:PageableListOfAlaplap6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1626,7 +1757,7 @@
   <xs:element name="Alaplap_GetListByFoglalatIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetListByFoglalatIDResult" nillable="true" type="q92:ArrayOfAlaplap" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetListByFoglalatIDResult" nillable="true" type="q102:ArrayOfAlaplap" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1642,7 +1773,7 @@
   <xs:element name="Alaplap_GetByMemoriaIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetByMemoriaIDResult" nillable="true" type="q93:PageableListOfAlaplap6PZ3m5ND" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Alaplap_GetByMemoriaIDResult" nillable="true" type="q103:PageableListOfAlaplap6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1658,7 +1789,7 @@
   <xs:element name="Billentyuzet_GetByUsbIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetByUsbIDResult" nillable="true" type="q94:PageableListOfBillentyuzet6PZ3m5ND" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetByUsbIDResult" nillable="true" type="q104:PageableListOfBillentyuzet6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1673,7 +1804,7 @@
   <xs:element name="Billentyuzet_GetByPsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetByPsResult" nillable="true" type="q95:PageableListOfBillentyuzet6PZ3m5ND" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Billentyuzet_GetByPsResult" nillable="true" type="q105:PageableListOfBillentyuzet6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1689,7 +1820,7 @@
   <xs:element name="Eger_GetByUsbIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Eger_GetByUsbIDResult" nillable="true" type="q96:PageableListOfEger6PZ3m5ND" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Eger_GetByUsbIDResult" nillable="true" type="q106:PageableListOfEger6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1704,7 +1835,7 @@
   <xs:element name="Eger_GetByPsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Eger_GetByPsResult" nillable="true" type="q97:PageableListOfEger6PZ3m5ND" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Eger_GetByPsResult" nillable="true" type="q107:PageableListOfEger6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1720,7 +1851,7 @@
   <xs:element name="Hattertar_GetByHattertarTipusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Hattertar_GetByHattertarTipusResult" nillable="true" type="q98:PageableListOfHattertar6PZ3m5ND" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Hattertar_GetByHattertarTipusResult" nillable="true" type="q108:PageableListOfHattertar6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1736,7 +1867,7 @@
   <xs:element name="Hattertar_GetByHattertarCsatoloResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Hattertar_GetByHattertarCsatoloResult" nillable="true" type="q99:PageableListOfHattertar6PZ3m5ND" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Hattertar_GetByHattertarCsatoloResult" nillable="true" type="q109:PageableListOfHattertar6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1752,7 +1883,7 @@
   <xs:element name="Memoria_GetByFoglalatResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Memoria_GetByFoglalatResult" nillable="true" type="q100:PageableListOfMemoria6PZ3m5ND" />
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Memoria_GetByFoglalatResult" nillable="true" type="q110:PageableListOfMemoria6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1766,7 +1897,7 @@
   <xs:element name="Memoria_GetListByFoglalatResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Memoria_GetListByFoglalatResult" nillable="true" type="q101:ArrayOfMemoria" />
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Memoria_GetListByFoglalatResult" nillable="true" type="q111:ArrayOfMemoria" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1782,7 +1913,7 @@
   <xs:element name="Monitor_GetByMeretResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Monitor_GetByMeretResult" nillable="true" type="q102:PageableListOfMonitor6PZ3m5ND" />
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/ComputerStore.DTO.Types" minOccurs="0" name="Monitor_GetByMeretResult" nillable="true" type="q112:PageableListOfMonitor6PZ3m5ND" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

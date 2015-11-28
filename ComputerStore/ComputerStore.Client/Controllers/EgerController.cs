@@ -70,5 +70,29 @@ namespace ComputerStore.Client.Controllers
 
             return View(eger);
         }
-	}
+
+        public ActionResult GetComboBoxByUsb(int usbID)
+        {
+            List<Eger> model = null;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                model = bl.Eger_GetListByUsb(usbID).ToList();
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult GetComboBoxPS2()
+        {
+            List<Eger> model = null;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                model = bl.Eger_GetListPS2().ToList();
+            }
+
+            return PartialView(model);
+        }
+    }
 }

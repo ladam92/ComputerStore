@@ -74,7 +74,29 @@ namespace ComputerStore.Client.Controllers
         }
 
        
+        public ActionResult GetComboBoxByUsb(int usbID)
+        {
+            List<Billentyuzet> model = null;
 
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                model = bl.Billentyuzet_GetListByUsb(usbID).ToList();
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult GetComboBoxPS2()
+        {
+            List<Billentyuzet> model = null;
+
+            using (var bl = new BusinessLogic.LogicClient())
+            {
+                model = bl.Billentyuzet_GetListPS2().ToList();
+            }
+
+            return PartialView(model);
+        }
 
     }
 }

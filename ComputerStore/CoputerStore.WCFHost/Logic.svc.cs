@@ -2543,5 +2543,224 @@ namespace CoputerStore.BL
                 return ret;
             }
         }
+
+        public List<Videokartya> Videokartya_GetList()
+        {
+            List<Videokartya> ret = new List<Videokartya>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.videokartya)
+                {
+                    ret.Add(new Videokartya {
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        ID = item.id,
+                        Megnevezes = item.megnevezes,
+                        MemoriaMeret = item.memoria_meret_gb,
+                        NettoAr = item.netto_ar
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Hattertar> Hattertar_GetListByAlaplapAndTipus(int alaplapId, int tipus)
+        {
+            List<Hattertar> ret = new List<Hattertar>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var alaplap = ctx.alaplap.Single(i => i.id == alaplapId);
+
+                foreach (var item in alaplap.alaplap_hattertar)
+                {
+                    foreach (var hatterTar in item.hattertarolo_csatolo_tipus.hattertar.Where(i => i.hattertar_tipus_id == tipus))
+                    {
+                        ret.Add(new Hattertar {
+                            Csatolo = hatterTar.hattertarolo_csatolo_tipus.megnevezes,
+                            Gyarto = hatterTar.alkatresz_gyarto.megnevezes,
+                            Megnevezes = hatterTar.megnevezes,
+                            NettoAr = hatterTar.netto_ar,
+                            Meret = hatterTar.meret_gb
+                        });
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        public List<UsbTipus> Alaplap_GetUsbTipusok(int alaplapID)
+        {
+            List<UsbTipus> ret = new List<UsbTipus>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var alaplap = ctx.alaplap.Single(i => i.id == alaplapID);
+
+                foreach (var item in alaplap.alaplap_usb)
+                {
+                    ret.Add(new UsbTipus {
+                        Megnevezes = item.usb_tipus.megnevezes,
+                        ID = item.usb_tipus_id.Value
+                    });
+
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Billentyuzet> Billentyuzet_GetListByUsb(int usbID)
+        {
+            List<Billentyuzet> ret = new List<Billentyuzet>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.billentyuzet.Where(i => i.usb_tipus_id == usbID);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Billentyuzet {
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        ID = item.id,
+                        NettoAr = item.netto_ar,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Billentyuzet> Billentyuzet_GetListPS2()
+        {
+            List<Billentyuzet> ret = new List<Billentyuzet>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.billentyuzet.Where(i => i.is_ps2_csatolo);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Billentyuzet
+                    {
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        ID = item.id,
+                        NettoAr = item.netto_ar,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Eger> Eger_GetListByUsb(int usbID)
+        {
+            List<Eger> ret = new List<Eger>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.eger.Where(i => i.usb_tipus_id == usbID);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Eger
+                    {
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        ID = item.id,
+                        NettoAr = item.netto_ar,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Eger> Eger_GetListPS2()
+        {
+            List<Eger> ret = new List<Eger>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                var query = ctx.eger.Where(i => i.is_ps2_csatolo);
+
+                foreach (var item in query)
+                {
+                    ret.Add(new Eger
+                    {
+                        Gyarto = item.alkatresz_gyarto.megnevezes,
+                        ID = item.id,
+                        NettoAr = item.netto_ar,
+                        Megnevezes = item.megnevezes
+                    });
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Szamitogephaz> SzamitogepHaz_GetList()
+        {
+            List<Szamitogephaz> ret = new List<Szamitogephaz>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.szamitogep_haz)
+                {
+                    ret.Add(new Szamitogephaz
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Tapegyseg> Tapegyseg_GetList()
+        {
+            List<Tapegyseg> ret = new List<Tapegyseg>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.tapegyseg)
+                {
+                    ret.Add(new Tapegyseg
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+
+                }
+            }
+
+            return ret;
+        }
+
+        public List<Monitor> Monitor_GetListByMeret(int meretID)
+        {
+            List<Monitor> ret = new List<Monitor>();
+
+            using (var ctx = new ComputerStoreEntities())
+            {
+                foreach (var item in ctx.monitor.Where(i => i.monitor_meret_id == meretID))
+                {
+                    ret.Add(new Monitor
+                    {
+                        ID = item.id,
+                        Megnevezes = item.megnevezes
+                    });
+
+                }
+            }
+
+            return ret;
+        }
     }
 }
