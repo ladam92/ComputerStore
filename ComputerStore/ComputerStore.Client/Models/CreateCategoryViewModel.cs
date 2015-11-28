@@ -10,6 +10,7 @@ namespace ComputerStore.Client.Models
     public class CreateCategoryViewModel
     {
         [Display(Name="Megnevezés")]
+        [Required(ErrorMessage = "Megnevezést kötelező megadni!")]
         public string Megnevezes { get; set; }
 
         [Display(Name = "Kategória")]
