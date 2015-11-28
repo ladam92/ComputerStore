@@ -4,7 +4,12 @@
     ViewBag.Title = "Termék";
 }
 
-
+@if (Html.ValidationSummary(true) != null)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary("Validációs hiba", true)
+    </div>
+}
 @using (Html.BeginForm("CPUInsertSave", "Admin", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -22,6 +27,7 @@
             @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="text"  class="form-control" name="megnev" />
+                @Html.ValidationMessageFor(model => model.Megnevezes, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -30,6 +36,7 @@
             @Html.Label("Nettó Ár:", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="number" min="0" class="form-control" name="ar" />
+                @Html.ValidationMessageFor(model => model.NettoAr, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -37,6 +44,7 @@
             @Html.Label("Raktáron:", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="number" min="0" class="form-control" name="db" />
+                @Html.ValidationMessageFor(model => model.Db, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -44,6 +52,7 @@
             @Html.Label("Magok száma:", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="number" min="0"  class="form-control" name="magok" />
+                @Html.ValidationMessageFor(model => model.Magok, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -51,6 +60,7 @@
             @Html.Label("Frekvencia (MHz):", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="number" min="0" class="form-control" name="frek" />
+                @Html.ValidationMessageFor(model => model.Frekvencia, "", new { @class = "text-danger" })
             </div>
         </div>
 

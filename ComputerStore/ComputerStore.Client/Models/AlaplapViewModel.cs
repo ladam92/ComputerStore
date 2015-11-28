@@ -24,26 +24,42 @@ namespace ComputerStore.Client.Models
 
         public string MemoriaFoglalat { get; set; }
 
+        [Display(Name = "Memória darabszám")]
+        //[Required(ErrorMessage = "Memória darabszámot kötelező megadni!")]
         public int MemoriaDarab { get; set; }
 
+        [Display(Name = "VGA darabszám")]
+        //[Required(ErrorMessage = "VGA darabszámot kötelező megadni!")]
         public int VGADarab { get; set; }
 
         public bool IsPs2 { get; set; }
 
+        [Display(Name = "Kép")]
+        //[Required(ErrorMessage = "Képet kötelező megadni!")]
         public Byte[] Kep { get; set; }
 
+        [Display(Name = "Darabszám")]
+        //[Required(ErrorMessage = "Raktáron lévő darabszámot kötelező megadni!")]
         public int Db { get; set; }
    
+        [Display(Name="Megnevezés")]
+        //[Required(ErrorMessage = "Megnevezést kötelező megadni!")]
         public string Megnevezes { get; set; }
 
+        [Display(Name = "Nettó ár")]
+        //[Required(ErrorMessage = "Árat kötelező megadni!")]
         public decimal NettoAr { get; set; }
 
         public int USBID { get; set; }
 
+        [Display(Name = "USB darabszám")]
+        //[Required(ErrorMessage = "USB darabszámot kötelező megadni!")]
         public int USBdb { get; set; }
 
         public int HattertarCsatoloID { get; set; }
 
+        [Display(Name = "Háttértár csatoló darabszám")]
+        //[Required(ErrorMessage = "Háttértár csatoló darabszámot kötelező megadni!")]
         public int Hattertardb { get; set; }
 
         public int ID { get; set; }

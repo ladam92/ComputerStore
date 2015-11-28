@@ -25,9 +25,12 @@ namespace ComputerStore.Client.Controllers
 
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(hatdb, out dummy) || !Int32.TryParse(usbdb, out dummy) || !Int32.TryParse(ar, out dummy) ||
+                    !Int32.TryParse(db, out dummy) || !Int32.TryParse(vgadb, out dummy) || !Int32.TryParse(memdb, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -62,11 +65,12 @@ namespace ComputerStore.Client.Controllers
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
- 
+
                         bl.InsertingAlaplapDB(alaplap.USBID, alaplap.HattertarCsatoloID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, ar1, db1, kep, hatdb1, usbdb1);
                     }
                     return View();
                 }
+
             }
             else
             {
@@ -90,9 +94,12 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) ||  !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -140,11 +147,14 @@ namespace ComputerStore.Client.Controllers
 
         public ActionResult HattertarInsertSave(string megnev, string ar, string db, string meret, HattertarViewModel hat, HttpPostedFileBase myPhoto)
         {
-                 if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+               int dummy = 0;
+
+               if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || !Int32.TryParse(meret, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
+               
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -197,9 +207,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -249,9 +261,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || !Int32.TryParse(meret, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -301,9 +315,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -356,9 +372,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || !Int32.TryParse(magok, out dummy) || !Int32.TryParse(frek, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -410,9 +428,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -460,9 +480,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || !Int32.TryParse(telj, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {
@@ -511,9 +533,11 @@ namespace ComputerStore.Client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (myPhoto == null)
+                int dummy = 0;
+
+                if (String.IsNullOrEmpty(megnev) || !Int32.TryParse(ar, out dummy) || !Int32.TryParse(db, out dummy) || !Int32.TryParse(meret, out dummy) || !Int32.TryParse(mondb, out dummy) || myPhoto == null)
                 {
-                    ModelState.AddModelError("Kep", "Kép megadása kötelező!");
+                    ModelState.AddModelError(String.Empty, "Helytelenül lett megadva egy vagy több adat! Ügyeljen arra hogy minden mező kitöltése kötelező, beleértve a kép feltöltést is, illetve szám mezőkben számok szerepeljenek!");
 
                     using (var bl = new BusinessLogic.LogicClient())
                     {

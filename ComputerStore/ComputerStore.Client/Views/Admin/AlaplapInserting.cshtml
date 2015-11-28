@@ -4,6 +4,12 @@
     ViewBag.Title = "Termék";
 }
 
+@if(Html.ValidationSummary(true) != null)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary("Validációs hiba", true)
+    </div>
+}
 
 @using (Html.BeginForm("AlaplapInsertSave", "Admin", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
 {
@@ -26,6 +32,7 @@
                 @Html.Label("Megnevezés:", new { @class = "col-md-2 control-label" })
                 <div class="col-md-4">
                     <input type="text" class="form-control" name="megnev" />
+                    @Html.ValidationMessageFor(model => model.Megnevezes, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -35,6 +42,7 @@
                 @Html.Label("Nettó Ár:", new { @class = "col-md-2 control-label" })
                 <div class="col-md-4">
                     <input type="number" min="0" class="form-control" name="ar" />
+                    @Html.ValidationMessageFor(model => model.NettoAr, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -42,6 +50,7 @@
                 @Html.Label("Raktáron:", new { @class = "col-md-2 control-label" })
                 <div class="col-md-4">
                     <input type="number" min="0" class="form-control" name="db" />
+                    @Html.ValidationMessageFor(model => model.Db, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -98,6 +107,7 @@
             @Html.Label("Adott USB típus darabszáma:", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="number" min="0" class="form-control" name="usbdb" />
+                @Html.ValidationMessageFor(model => model.USBdb, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -112,6 +122,7 @@
             @Html.Label("Háttértár csatoló típus darabszáma:", new { @class = "col-md-2 control-label" })
             <div class="col-md-4">
                 <input type="number" min="0" class="form-control" name="hatdb" />
+                @Html.ValidationMessageFor(model => model.Hattertardb, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -119,6 +130,7 @@
                 @Html.Label("Memória foglalat db:", new { @class = "col-md-2 control-label" })
                 <div class="col-md-4">
                     <input type="number" min="0" class="form-control" name="memdb" />
+                    @Html.ValidationMessageFor(model => model.MemoriaDarab, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -126,6 +138,7 @@
                 @Html.Label("VGA csatoló darab:", new { @class = "col-md-2 control-label" })
                 <div class="col-md-4">
                     <input type="number" min="0" class="form-control" name="vgadb" />
+                    @Html.ValidationMessageFor(model => model.VGADarab, "", new { @class = "text-danger" })
                 </div>
             </div>
 
