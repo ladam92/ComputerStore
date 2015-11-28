@@ -29,12 +29,14 @@ namespace ComputerStore.Client.Controllers
                 if(model.AlaplapID.HasValue)
                 {
                     var alaplap = bl.Alaplap_GetByID(model.AlaplapID.Value);
+                    alaplap.Db = 1;
                     SessionData.Instance.Kosar.Add(alaplap);
                 }
 
                 if(model.Processzor.HasValue)
                 {
                     var proc = bl.Processzor_GetByID(model.Processzor.Value);
+                    proc.Db = 1;
                     SessionData.Instance.Kosar.Add(proc);
                 }
 
@@ -43,6 +45,7 @@ namespace ComputerStore.Client.Controllers
                     if(item.HasValue)
                     {
                         var memoria = bl.Memoria_GetByID(item.Value);
+                        memoria.Db = 1;
                         SessionData.Instance.Kosar.Add(memoria);
                     }
                 }
@@ -52,6 +55,7 @@ namespace ComputerStore.Client.Controllers
                     if (item.HasValue)
                     {
                         var videokartya = bl.Videokartya_GetByID(item.Value);
+                        videokartya.Db = 1;
                         SessionData.Instance.Kosar.Add(videokartya);
                     }
                 }
@@ -59,35 +63,41 @@ namespace ComputerStore.Client.Controllers
                 if (model.Hattertar.HasValue)
                 {
                     var hattertar = bl.Hattertar_GetByID(model.Hattertar.Value);
+                    hattertar.Db = 1;
                     SessionData.Instance.Kosar.Add(hattertar);
                 }
                 if (model.Billentyuzet.HasValue)
                 {
                     var billentyuzet = bl.Billentyuzet_GetByID(model.Billentyuzet.Value);
+                    billentyuzet.Db = 1;
                     SessionData.Instance.Kosar.Add(billentyuzet);
                 }
 
                 if(model.Eger.HasValue)
                 {
                     var eger = bl.Eger_GetByID(model.Eger.Value);
+                    eger.Db = 1;
                     SessionData.Instance.Kosar.Add(eger);
                 }
 
                 if(model.Monitor.HasValue)
                 {
                     var monitor = bl.Monitor_GetByID(model.Monitor.Value);
+                    monitor.Db = 1;
                     SessionData.Instance.Kosar.Add(monitor);
                 }
 
                 if(model.SzamitogepHaz.HasValue)
                 {
                     var szamitogepHaz = bl.Szamitogephaz_GetByID(model.SzamitogepHaz.Value);
+                    szamitogepHaz.Db = 1;
                     SessionData.Instance.Kosar.Add(szamitogepHaz);
                 }
 
                 if(model.Tapegyseg.HasValue)
                 {
                     var tapegyseg = bl.Tapegyseg_GetByID(model.Tapegyseg.Value);
+                    tapegyseg.Db = 1;
                     SessionData.Instance.Kosar.Add(tapegyseg);
                 }
             }
