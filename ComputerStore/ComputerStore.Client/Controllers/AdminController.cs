@@ -20,7 +20,7 @@ namespace ComputerStore.Client.Controllers
         }
 
 
-        public ActionResult AlaplapInsertSave(string megnev, string ar, string db, string vgadb, string memdb, AlaplapViewModel alaplap, HttpPostedFileBase myPhoto)
+        public ActionResult AlaplapInsertSave(string megnev, string hatdb, string usbdb, string ar, string db, string vgadb, string memdb, AlaplapViewModel alaplap, HttpPostedFileBase myPhoto)
         {
 
             if (ModelState.IsValid)
@@ -36,7 +36,9 @@ namespace ComputerStore.Client.Controllers
                         alaplap.ProcFoglalat = new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes");
                         alaplap.MemoriaFoglalatList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes");
                         alaplap.VGACsatolo = new SelectList(bl.VgaGet(), "ID", "Megnevezes");
-                        alaplap.PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes"); //azta ez milyen kombináció volt? xD   alt + egérhúzás
+                        alaplap.PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes");
+                        alaplap.USBList = new SelectList(bl.UsbGet(), "ID", "Megnevezes");
+                        alaplap.HattertarCsatoloList = new SelectList(bl.HattertarCsatoloTipusGet(), "ID", "Megnevezes");
                     }
                     return View("AlaplapInserting", alaplap);
                 }
@@ -46,6 +48,8 @@ namespace ComputerStore.Client.Controllers
                     int db1 = Int32.Parse(db);
                     int vgadb1 = Int32.Parse(vgadb);
                     int memdb1 = Int32.Parse(memdb);
+                    int hatdb1 = Int32.Parse(hatdb);
+                    int usbdb1 = Int32.Parse(usbdb);
 
                     byte[] kep = null;
                     if (myPhoto != null && myPhoto.ContentLength > 0)
@@ -59,7 +63,7 @@ namespace ComputerStore.Client.Controllers
                     using (var bl = new BusinessLogic.LogicClient())
                     {
  
-                        bl.InsertingAlaplapDB(alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, ar1, db1, kep); //leiras? XD töröljük már ki xD úgyse használjuk xD a jjé
+                        bl.InsertingAlaplapDB(alaplap.USBID, alaplap.HattertarCsatoloID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, ar1, db1, kep, hatdb1, usbdb1);
                     }
                     return View();
                 }
@@ -73,19 +77,14 @@ namespace ComputerStore.Client.Controllers
                     alaplap.ProcFoglalat = new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes");
                     alaplap.MemoriaFoglalatList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes");
                     alaplap.VGACsatolo = new SelectList(bl.VgaGet(), "ID", "Megnevezes");
-                    alaplap.PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes"); //azta ez milyen kombináció volt? xD   alt + egérhúzás
+                    alaplap.PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes");
+                    alaplap.USBList = new SelectList(bl.UsbGet(), "ID", "Megnevezes");
+                    alaplap.HattertarCsatoloList = new SelectList(bl.HattertarCsatoloTipusGet(), "ID", "Megnevezes");
                 }
                 return View("AlaplapInserting", alaplap);
             }
 
         }
-
-        //static byte[] GetBytes(string str)
-        //{
-        //    byte[] bytes = new byte[str.Length * sizeof(char)];
-        //    System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-        //    return bytes;
-        //}
 
         public ActionResult BillentyuzetInsertSave(string megnev, string ar, string db, BillentyuzetViewModel billentyuzet, HttpPostedFileBase myPhoto)
         {
@@ -508,7 +507,7 @@ namespace ComputerStore.Client.Controllers
             }
         }
 
-        public ActionResult VideokartyaInsertSave(string megnev, string ar, string db, string meret, VideokartyaViewModel vid, HttpPostedFileBase myPhoto)
+        public ActionResult VideokartyaInsertSave(string mondb, string megnev, string ar, string db, string meret, VideokartyaViewModel vid, HttpPostedFileBase myPhoto)
         {
             if (ModelState.IsValid)
             {
@@ -521,6 +520,7 @@ namespace ComputerStore.Client.Controllers
                         var gyarto = bl.GyartoGet();
                         vid.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
                         vid.MemoriaTipusList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes");
+                        vid.MonitorCsatoloList = new SelectList(bl.MonitorCsatoloTipusGet(), "ID", "Megnevezes");
 
                     }
                     return View("VideokartyaInserting", vid);
@@ -530,6 +530,7 @@ namespace ComputerStore.Client.Controllers
                     int ar1 = Int32.Parse(ar);
                     int db1 = Int32.Parse(db);
                     int meret1 = Int32.Parse(meret);
+                    int mondb1 = Int32.Parse(mondb);
 
                     byte[] kep = null;
                     if (myPhoto != null && myPhoto.ContentLength > 0)
@@ -543,7 +544,7 @@ namespace ComputerStore.Client.Controllers
                     using (var bl = new BusinessLogic.LogicClient())
                     {
 
-                        bl.InsertingVideokartyaDB(vid.Gyarto, vid.MemoriaTipusID, megnev, ar1, db1, meret1, kep);
+                        bl.InsertingVideokartyaDB(vid.MonitorCsatoloID, mondb1, vid.Gyarto, vid.MemoriaTipusID, megnev, ar1, db1, meret1, kep);
                     }
                     return View();
                 }
@@ -555,20 +556,23 @@ namespace ComputerStore.Client.Controllers
                     var gyarto = bl.GyartoGet();
                     vid.AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes");
                     vid.MemoriaTipusList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes");
+                    vid.MonitorCsatoloList = new SelectList(bl.MonitorCsatoloTipusGet(), "ID", "Megnevezes");
                 }
                 return View("VideokartyaInserting", vid);
             }
         }
 
-        public ActionResult AlaplapEditSave(string megnev, string ar, string db, string vgadb, string memdb, AlaplapViewModel alaplap)
+        public ActionResult AlaplapEditSave(string megnev, string usbdb, string hatdb, string ar, string db, string vgadb, string memdb, AlaplapViewModel alaplap)
         {           
             int ar1 = Int32.Parse(ar);
             int db1 = Int32.Parse(db);
             int vgadb1 = Int32.Parse(vgadb);
             int memdb1 = Int32.Parse(memdb);
+            int usbdb1 = Int32.Parse(usbdb);
+            int hatdb1 = Int32.Parse(hatdb);
             using (var bl = new BusinessLogic.LogicClient())
             {
-                bl.InsertAlaplap(alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, ar1, db1);
+                bl.InsertAlaplap(alaplap.HattertarCsatoloID, alaplap.USBID, usbdb1, hatdb1, alaplap.ID, alaplap.Gyarto, alaplap.FoglalatID, alaplap.MemoriaFoglalatID, alaplap.VGAID, alaplap.PCIID, memdb1, vgadb1, alaplap.IsPs2, megnev, ar1, db1);
             }
             return View();
         }
@@ -642,14 +646,15 @@ namespace ComputerStore.Client.Controllers
             return View("AlaplapEditSave");
         }
 
-        public ActionResult VideokartyaEditSave(string megnev, string ar, string db, string meret, VideokartyaViewModel vid)
+        public ActionResult VideokartyaEditSave(string megnev, string mondb, string ar, string db, string meret, VideokartyaViewModel vid)
         {
             int ar1 = Int32.Parse(ar);
             int db1 = Int32.Parse(db);
             int meret1 = Int32.Parse(meret);
+            int mondb1 = Int32.Parse(mondb);
             using (var bl = new BusinessLogic.LogicClient())
             {
-                bl.InsertVideokartya(vid.ID, vid.Gyarto, vid.MemoriaTipusID, megnev, ar1, db1, meret1);
+                bl.InsertVideokartya(vid.MonitorCsatoloID, mondb1, vid.ID, vid.Gyarto, vid.MemoriaTipusID, megnev, ar1, db1, meret1);
             }
             return View("AlaplapEditSave");
         }
@@ -687,6 +692,8 @@ namespace ComputerStore.Client.Controllers
             {     
                 var gyarto=bl.GyartoGet();
                 var model = bl.Alaplap_GetByID(id1);
+                var modelusb = bl.USBGetByAlaplapID(id1);
+                var modelhatter = bl.HattertarGetByAlaplapID(id1);
                 AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
                 int gyartoid = gyarto2.ID;
                 alaplap = new AlaplapViewModel
@@ -708,12 +715,17 @@ namespace ComputerStore.Client.Controllers
                     VGAID=model.VGAID,
                     PCI=model.PCI,
                     PCIID=model.PCIID,
+                    USBdb=modelusb.Darab,
+                    USBID=(Int32)modelusb.USB_ID,
+                    Hattertardb=modelhatter.Darab,
+                    HattertarCsatoloID=(Int32)modelhatter.Csatolo_ID,
                     AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
                     ProcFoglalat=new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes" ),
                     MemoriaFoglalatList=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
                     VGACsatolo=new SelectList(bl.VgaGet(), "ID", "Megnevezes"),
-                    PCIExpressz=new SelectList(bl.PciGet(), "ID", "Megnevezes")
-
+                    PCIExpressz=new SelectList(bl.PciGet(), "ID", "Megnevezes"),
+                    USBList=new SelectList(bl.UsbGet(), "ID", "Megnevezes"),
+                    HattertarCsatoloList=new SelectList(bl.HattertarCsatoloTipusGet(), "ID", "Megnevezes")
                 };
                
             }
@@ -849,6 +861,7 @@ namespace ComputerStore.Client.Controllers
             {
                 var gyarto = bl.GyartoGet();
                 var model = bl.Videokartya_GetByID(id1);
+                var modelvideo = bl.MonitorcsatoloGetByVideokartyaID(id1);
                 AlkatreszGyarto gyarto2 = bl.Gyarto_GetByName(model.Gyarto).Single();
                 int gyartoid = gyarto2.ID;
                 vid = new VideokartyaViewModel
@@ -862,6 +875,9 @@ namespace ComputerStore.Client.Controllers
                     MemoriaTipus=model.MemoriaTipus,
                     MemoriaTipusID=model.MemoriaTipusID,
                     MemoriaMeret=model.MemoriaMeret,
+                    Csatolodb=modelvideo.Darab,
+                    MonitorCsatoloID=modelvideo.CsatoloID,
+                    MonitorCsatoloList=new SelectList(bl.MonitorCsatoloTipusGet(), "ID", "Megnevezes"),
                     MemoriaTipusList=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
                     AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes")
 
@@ -1220,11 +1236,13 @@ namespace ComputerStore.Client.Controllers
                     ProcFoglalat = new SelectList(bl.ProcesszorGet(), "ID", "Megnevezes"),
                     MemoriaFoglalatList = new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
                     VGACsatolo = new SelectList(bl.VgaGet(), "ID", "Megnevezes"),
-                    PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes")
+                    PCIExpressz = new SelectList(bl.PciGet(), "ID", "Megnevezes"),
+                    USBList = new SelectList(bl.UsbGet(), "ID", "Megnevezes"),
+                    HattertarCsatoloList = new SelectList(bl.HattertarCsatoloTipusGet(), "ID", "Megnevezes"),
                 };
             }
 
-            return PartialView(model); //miért partial? okkal :D így lett olyan mint amit láttál :D jólvan xD
+            return PartialView(model);
         }
 
         public ActionResult BillentyuzetInserting()
@@ -1370,6 +1388,7 @@ namespace ComputerStore.Client.Controllers
                 {
                     AlkatreszGyarto = new SelectList(gyarto, "ID", "Megnevezes"),
                     MemoriaTipusList=new SelectList(bl.MemoriaGet(), "ID", "Megnevezes"),
+                    MonitorCsatoloList=new SelectList(bl.MonitorCsatoloTipusGet(), "ID", "Megnevezes")
                    
                 };
             }

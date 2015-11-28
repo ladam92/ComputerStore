@@ -22,6 +22,10 @@ namespace ComputerStore.Client.Models
 
         public int Db { get; set; }
 
+        public int MonitorCsatoloID { get; set; }
+
+        public int Csatolodb { get; set; }
+
         public string Megnevezes { get; set; }
 
         public decimal NettoAr { get; set; }
@@ -29,5 +33,7 @@ namespace ComputerStore.Client.Models
         public SelectList AlkatreszGyarto { get; set; }
 
         public SelectList MemoriaTipusList { get; set; }
+
+        public SelectList MonitorCsatoloList { get; set; }
     }
 }

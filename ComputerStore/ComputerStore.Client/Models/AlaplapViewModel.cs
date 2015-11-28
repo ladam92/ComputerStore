@@ -30,8 +30,6 @@ namespace ComputerStore.Client.Models
 
         public bool IsPs2 { get; set; }
 
-        public string Leiras { get; set; }
-
         public Byte[] Kep { get; set; }
 
         public int Db { get; set; }
@@ -40,11 +38,23 @@ namespace ComputerStore.Client.Models
 
         public decimal NettoAr { get; set; }
 
+        public int USBID { get; set; }
+
+        public int USBdb { get; set; }
+
+        public int HattertarCsatoloID { get; set; }
+
+        public int Hattertardb { get; set; }
+
         public int ID { get; set; }
 
         public string VGA { get; set; }
 
         public int VGAID { get; set; }
+
+        public SelectList USBList { get; set; }
+
+        public SelectList HattertarCsatoloList { get; set; }
 
         public SelectList AlkatreszGyarto { get; set; }
 

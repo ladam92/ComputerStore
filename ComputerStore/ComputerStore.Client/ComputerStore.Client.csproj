@@ -260,6 +260,9 @@
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.MonitorCsatoloTipus.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Kategoria.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Fokategoriatipus.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.AlaplapHatter.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.AlaplapUSB.datasource" />
+    <Content Include="Properties\DataSources\ComputerStore.DTO.Types.VideokartyaMon.datasource" />
     <None Include="Properties\PublishProfiles\alma.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
