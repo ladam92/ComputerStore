@@ -43,6 +43,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <IncludeIisSettings>true</IncludeIisSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -226,9 +228,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\doge.jpg" />
-    <Content Include="Content\doge_1.jpg" />
-    <Content Include="Content\logo.png" />
+    <Content Include="Content\logo1.jpg" />
+    <Content Include="Content\logo2.jpg" />
+    <Content Include="Content\logo3.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,6 +260,7 @@
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.MonitorCsatoloTipus.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Kategoria.datasource" />
     <Content Include="Properties\DataSources\ComputerStore.DTO.Types.Fokategoriatipus.datasource" />
+    <None Include="Properties\PublishProfiles\alma.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -406,18 +409,18 @@
     <Content Include="Views\Admin\EgerInsertSave.cshtml" />
     <Content Include="Views\Admin\MemoriaInsertSave.cshtml" />
     <Content Include="Views\Admin\MonitorInsertSave.cshtml" />
-<Content Include="Views\GepOsszerako\GetGeposszarkoComboBoxes.cshtml" />
+    <Content Include="Views\GepOsszerako\GetGeposszarkoComboBoxes.cshtml" />
     <Content Include="Views\Hattertar\GetComboBoxByAlaplapAndTipus.cshtml" />
     <Content Include="Views\Billentyuzet\GetComboBoxByUsb.cshtml" />
     <Content Include="Views\Billentyuzet\GetComboBoxPS2.cshtml" />
     <Content Include="Views\Eger\GetComboBoxByUsb.cshtml" />
     <Content Include="Views\Eger\GetComboBoxPS2.cshtml" />
     <Content Include="Views\Monitor\GetComboBoxByMeret.cshtml" />
-<Content Include="Views\Admin\CPUInsertSave.cshtml" />
+    <Content Include="Views\Admin\CPUInsertSave.cshtml" />
     <Content Include="Views\Admin\SzamitogephazInsertSave.cshtml" />
     <Content Include="Views\Admin\TapegysegInsertSave.cshtml" />
     <Content Include="Views\Admin\VideokartyaInsertSave.cshtml" />
- </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
